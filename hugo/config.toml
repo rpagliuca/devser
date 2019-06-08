@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://www.devser.com.br/"
+baseurl = "https://devser.com.br/"
 themesDir = "themes"
 languageCode = "pt-br"
 title = "/dev/ser"
