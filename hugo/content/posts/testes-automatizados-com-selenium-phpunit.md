@@ -19,7 +19,7 @@ Para nos ajudar no objetivo de automatizar esses testes, contamos com a bibliote
 
 O Selenium possui _bindings_ para algumas das principais linguagens de programaçaão: Java, Python, PHP, C#, sendo que alguns desses bindings são oficiais, enquanto outros são disponibilizados por terceiros.
 
-![](http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211245.png "Website do Selenium")
+![](/images/Screenshot-from-2017-03-13-211245.png "Website do Selenium")
 
 # PHPUnit
 
@@ -27,7 +27,7 @@ O PHPUnit é uma biblioteca do PHP tipicamente dedicada a testes unitários. Ent
 
 Exemplo de aplicação do PHPUnit retirado de [https://phpunit.de/getting-started.html](https://phpunit.de/getting-started.html):
 
-[![](http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211923-1024x550.png "Exemplo do PHPUnit")](http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211923.png)
+[![](/images/Screenshot-from-2017-03-13-211923.png "Exemplo do PHPUnit")](/images/Screenshot-from-2017-03-13-211923.png)
 
 # Instalação considerando o meu ambiente de desenvolvimento:
 

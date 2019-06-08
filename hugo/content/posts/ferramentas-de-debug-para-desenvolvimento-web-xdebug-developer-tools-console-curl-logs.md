@@ -81,9 +81,7 @@ Este programa pode ser instalado no Debian Jessie com o seguinte comando:
 
 Link para o meu regex personalizado **(/etc/colortail/conf.colortail)**: [https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e](https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e)
 
-Usando o regex personalizado, seu log ficará parecido com esse: [![](http://rs.anoluz.net/wp-content/uploads/2017/02/Screenshot-from-2017-02-24-081510-1024x291.png "Colortail com regex personalizado para erros do PHP")](http://rs.anoluz.net/wp-content/uploads/2017/02/Screenshot-from-2017-02-24-081510.png)
-
- 
+Usando o regex personalizado, seu log ficará parecido com esse: [![](/images/Screenshot-from-2017-02-24-081510.png "Colortail com regex personalizado para erros do PHP")](/images/Screenshot-from-2017-02-24-081510.png)
 
 # Developer Tools Console
 

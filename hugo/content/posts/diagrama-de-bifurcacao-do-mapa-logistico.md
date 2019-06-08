@@ -13,7 +13,7 @@ O diagrama de bifurcação representa quais os possíveis valores de _x_ (eixo v
 
 Perceba que conforme se aumenta o valor de _r_, o número de possíveis valores de _x_ dobra, até que, para valores de _r_ mais próximos de 4, uma infinidade de valores existem, adquirindo, assim, comportamento caótico naquela região. Segue o diagrama:
 
-[![](http://rs.anoluz.net/wp-content/uploads/2012/11/logistc_bifurcation-1024x704.png "Diagrama de Bifurcação do Mapa Logístico")](http://rs.anoluz.net/wp-content/uploads/2012/11/logistc_bifurcation.png)
+[![](/images/logistc_bifurcation.png "Diagrama de Bifurcação do Mapa Logístico")](/images/logistc_bifurcation.png)
 
 Código da rotina:
 

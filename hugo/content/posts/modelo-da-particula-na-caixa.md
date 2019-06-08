@@ -5,7 +5,7 @@ date: "2012-06-19"
 
 Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
 
-[![](http://rs.anoluz.net/wp-content/uploads/2012/06/atrator.png "Atrator da Partícula na Caixa")](http://rs.anoluz.net/wp-content/uploads/2012/06/atrator.png)
+[![](/images/atrator.png "Atrator da Partícula na Caixa")](/images/atrator.png)
 
 No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
 
