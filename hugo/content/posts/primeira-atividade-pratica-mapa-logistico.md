@@ -21,7 +21,7 @@ endfunction;
 
 Além disso, desenvolvi uma rotina em PHP que gera o gráfico do mapa logístico dinamicamente no próprio navegador utilizando as condições iniciais do visitante.
 
-[![Exemplo de gráfico do mapa logístico](http://devser.com.br//wp-content/uploads/2011/12/mapa_logistico_sample.jpg "Exemplo de gráfico do mapa logístico")](http://rs.anoluz.net/wp-content/uploads/2011/12/mapa_logistico_sample.jpg)
+![Exemplo de gráfico do mapa logístico](/images/mapa_logistico_sample.jpg "Exemplo de gráfico do mapa logístico")
 
 * O aplicativo do mapa logístico está disponível em: [http://mural.anoluz.net/mapa_logistico](http://mural.anoluz.net/mapa_logistico).
 

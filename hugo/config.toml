@@ -4,6 +4,7 @@ themesDir = "themes"
 languageCode = "pt-br"
 title = "/dev/ser"
 theme = "hugo-cactus-theme"
+canonifyURLs = true
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty
