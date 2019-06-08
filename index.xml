@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Migração do blog para Hugo (gohugo)</title>
-      <link>https://rpagliuca.github.io/devser/posts/migracao-para-gohugo/</link>
+      <title>Migrando de Wordpress para Hugo (gohugo)</title>
+      <link>https://rpagliuca.github.io/devser/posts/migrando-de-wordpress-para-gohugo/</link>
       <pubDate>Sat, 08 Jun 2019 09:04:34 -0300</pubDate>
       
-      <guid>https://rpagliuca.github.io/devser/posts/migracao-para-gohugo/</guid>
+      <guid>https://rpagliuca.github.io/devser/posts/migrando-de-wordpress-para-gohugo/</guid>
       <description>Hoje migrei a plataforma deste blog de Wordpress para Hugo (https://gohugo.io/), pelos seguintes motivos:
  Aumento de performance Redução de custos Abertura do código-fonte: https://github.com/rpagliuca/devser  Na verdade Hugo não é uma plataforma, e sim, uma biblioteca capaz de produzir um blog estático, a partir de arquivos declarativos .yml e markdown. Uma outra biblioteca bastante conhecida, similar ao Hugo, é a Jekyll (https://jekyllrb.com/). Como agora o blog ficou estático, estará hospedado na plataforma Github Pages.</description>
     </item>
@@ -40,10 +40,7 @@ Claro que esse armazenamento é volátil, portanto é recomendado apenas para am
       <description>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
 É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
 Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</description>
+ Instalar docker Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow Abrir link do jupyter (localhost:8888/…) que for exibido no terminal Acompanhar os tutoriais interativos de Tensor Flow no navegador  </description>
     </item>
     
     <item>
@@ -52,10 +49,9 @@ Siga os seguintes passos:
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://rpagliuca.github.io/devser/posts/compilador-para-computador-sap-1/</guid>
-      <description>A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/.
+      <description>A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo Simulando um computador SAP-1 (Simple As Possible 1).
 Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
-O script abaixo encontra-se funcionando no endereço http://devser.com.br/misc/sap-compiler.
-&amp;lt;?php if (isset($_POST[&amp;#39;code&amp;#39;]) and $_POST[&amp;#39;code&amp;#39;]) { $uniqid = uniqid(&amp;#39;&amp;#39;, true); $output_atmel = &amp;#34;out/$uniqid.</description>
+O script abaixo encontra-se funcionando no endereço http://devser.</description>
     </item>
     
     <item>
@@ -64,8 +60,8 @@ O script abaixo encontra-se funcionando no endereço http://devser.com.br/misc/s
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://rpagliuca.github.io/devser/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</guid>
-      <description>Introdução “Conheces teu inimigo e conhece-te a ti mesmo” — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo”)
-Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos” de tempo de processamento, o gargalo da execução.
+      <description>Introdução  &amp;ldquo;Conheces teu inimigo e conhece-te a ti mesmo&amp;rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&amp;rdquo;)
+ Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&amp;rdquo; de tempo de processamento, o gargalo da execução.
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script.</description>
     </item>
     
@@ -86,8 +82,7 @@ O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetand
       
       <guid>https://rpagliuca.github.io/devser/posts/testes-automatizados-com-selenium-phpunit/</guid>
       <description>Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
-1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
-Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</description>
+ Ajuda a evitar lesões por esforço repetivivo Evita erros Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio  Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</description>
     </item>
     
     <item>
@@ -142,7 +137,7 @@ Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software 
       <guid>https://rpagliuca.github.io/devser/posts/relacao-entre-otp-e-mapas-binarios/</guid>
       <description>Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
 Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
- Amplo keyspace (intervalo de condições iniciais)</description>
+ Amplo keyspace (intervalo de condições iniciais) Torna inviável ataques de força bruta Utilização de um mapa binário ou equivalente GLS na geração da keystream Garante que a operação seja análoga ao OTP Keystream sensível às condições iniciais A mensagem (ou até mesmo parte da mensagem) deve ser recuperada se e somente se as condições iniciais forem exatamente as mesmas Keystream sensível à mensagem Garante que o keystream gerado por uma mensagem pura conhecida (known plaintext) não possa ser determinado e aplicado na decodificação de outra mensagem  Meu principal objetivo atual é fazer com que meu sistema de criptografia satisfaça esse último requisito.</description>
     </item>
     
     <item>
@@ -152,6 +147,7 @@ Com essas informações, percebo agora que, para uma cifra ser resistente aos pr
       
       <guid>https://rpagliuca.github.io/devser/posts/modelo-da-particula-na-caixa/</guid>
       <description>Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
+
 No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
 Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente.</description>
     </item>
@@ -180,9 +176,20 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
     </item>
     
     <item>
+      <title>Mapa logístico</title>
+      <link>https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/</link>
+      <pubDate>Sun, 11 Dec 2011 04:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/</guid>
+      <description>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.
+Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que me foi proposto. Segue ao lado um dos gráficos gerados no QtOctave (http://www.ohloh.net/p/qtoctave), alternativa de código livre para o MATLAB.
+Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:</description>
+    </item>
+    
+    <item>
       <title>História da chave assimétrica</title>
       <link>https://rpagliuca.github.io/devser/posts/historia-da-chave-assimetrica/</link>
-      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 11 Dec 2011 03:00:00 +0000</pubDate>
       
       <guid>https://rpagliuca.github.io/devser/posts/historia-da-chave-assimetrica/</guid>
       <description>Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
@@ -193,34 +200,23 @@ Referências
     </item>
     
     <item>
-      <title>Mapa logístico</title>
-      <link>https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/</link>
-      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      <title>Início de iniciação científica em criptografia</title>
+      <link>https://rpagliuca.github.io/devser/posts/inicio-de-iniciacao-cientifica-em-criptografia/</link>
+      <pubDate>Sun, 11 Dec 2011 02:00:00 +0000</pubDate>
       
-      <guid>https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/</guid>
-      <description>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.
-Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que me foi proposto. Segue ao lado um dos gráficos gerados no QtOctave (http://www.ohloh.net/p/qtoctave), alternativa de código livre para o MATLAB.
-Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:</description>
+      <guid>https://rpagliuca.github.io/devser/posts/inicio-de-iniciacao-cientifica-em-criptografia/</guid>
+      <description>A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.
+Em 26 de outubro de 2011 entrei em contato com um dos professores do Departamento de Engenharia Elétrica, que me informou sobre sua área de pesquisa e me ofereceu uma lista de tópicos para serem superficalmente pesquisados:
+ Sistemas de segurança da informação Codificação Decodificação Esteganografia Criptografia Sistemas caóticos Aplicações de sistemas caóticos em telecomunicações  Pesquisei os tópicos sugeridos e, após alguns dias, entrei em contato novamente.</description>
     </item>
     
     <item>
       <title>Objetivo deste blog</title>
       <link>https://rpagliuca.github.io/devser/posts/objetivo-deste-blog/</link>
-      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 11 Dec 2011 01:00:00 +0000</pubDate>
       
       <guid>https://rpagliuca.github.io/devser/posts/objetivo-deste-blog/</guid>
       <description>Apenas um lugar para registrar ideias interessantes relacionadas com quaisquer tópicos com que eventualmente possa me aventurar.</description>
-    </item>
-    
-    <item>
-      <title>Sobre esta iniciação científica</title>
-      <link>https://rpagliuca.github.io/devser/posts/sobre-esta-iniciacao-cientifica/</link>
-      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://rpagliuca.github.io/devser/posts/sobre-esta-iniciacao-cientifica/</guid>
-      <description>A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.
-Em 26 de outubro de 2011 entrei em contato com um dos professores do Departamento de Engenharia Elétrica, que me informou sobre sua área de pesquisa e me ofereceu uma lista de tópicos para serem superficalmente pesquisados:
- Sistemas de segurança da informação Codificação Decodificação Esteganografia Criptografia Sistemas caóticos Aplicações de sistemas caóticos em telecomunicações  Pesquisei os tópicos sugeridos e, após alguns dias, entrei em contato novamente.</description>
     </item>
     
   </channel>

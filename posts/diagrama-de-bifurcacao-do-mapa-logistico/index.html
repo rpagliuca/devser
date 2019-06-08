@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="/dev/ser (ou não?!)">
-<meta name="description" content="Deve ser um ser dev.">
+<meta name="author" content="Rafael Santos">
+
 <meta name="generator" content="Hugo 0.55.6" />
 <title>Diagrama de Bifurcação do Mapa Logístico</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
@@ -60,13 +60,15 @@ O diagrama de bifurcação representa quais os possíveis valores de x (eixo ver
 <body>
     <nav class="main-nav">
 	
-        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:130%"> <span class="arrow">←</span>Voltar</a></center>
 	
 
 	
 
 	
 </nav>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
     <section id="wrapper">
         
@@ -90,7 +92,7 @@ O diagrama de bifurcação representa quais os possíveis valores de x (eixo ver
 
 <p>$$x_{n+1} = x_n r (1 - x_n)$$</p>
 
-<p>O diagrama de bifurcação representa quais os possíveis valores de <em>x</em> (eixo vertical) para cada valor de <em>r</em> (eixo horizontal), desconsiderando as primeiras iterações (o período transiente). Ou seja, para saber quais os possíveis valores de <em>x</em> para <em>r</em> = 3.5, por exemplo, trace uma linha imaginária vertical sobre o ponto <em>r</em> \= 3.5 (eixo horizontal) e veja quais pontos de <em>x</em> (eixo vertical) a reta corta.</p>
+<p>O diagrama de bifurcação representa quais os possíveis valores de <em>x</em> (eixo vertical) para cada valor de <em>r</em> (eixo horizontal), desconsiderando as primeiras iterações (o período transiente). Ou seja, para saber quais os possíveis valores de <em>x</em> para <em>r</em> = 3.5, por exemplo, trace uma linha imaginária vertical sobre o ponto <em>r</em> = 3.5 (eixo horizontal) e veja quais pontos de <em>x</em> (eixo vertical) a reta corta.</p>
 
 <p>Perceba que conforme se aumenta o valor de <em>r</em>, o número de possíveis valores de <em>x</em> dobra, até que, para valores de <em>r</em> mais próximos de 4, uma infinidade de valores existem, adquirindo, assim, comportamento caótico naquela região. Segue o diagrama:</p>
 
@@ -98,7 +100,7 @@ O diagrama de bifurcação representa quais os possíveis valores de x (eixo ver
 
 <p>Código da rotina:</p>
 
-<p>clear all
+<pre><code>clear all
 X = [];
 x0 = 0.6;
 r_min = 1;
@@ -118,10 +120,11 @@ hold on
 for i=1:n
     r = r_min + dr*(i-1)
     x = X(i, :);
-    plot(x.*0+r, x, &lsquo;.&rsquo;);
+    plot(x.*0+r, x, '.');
 end
 hold off
-pause</p>
+pause
+</code></pre>
 
     </section>
 </article>
@@ -130,7 +133,7 @@ pause</p>
     <div>
         <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
         <span class="dark">Rafael Santos</span>
-        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
         <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fdiagrama-de-bifurcacao-do-mapa-logistico%2f - Diagrama%20de%20Bifurca%c3%a7%c3%a3o%20do%20Mapa%20Log%c3%adstico "><span class="icon-twitter"> Compartilhe</span></a>
@@ -161,7 +164,7 @@ pause</p>
     
     
         <li>
-            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+            <a href="/devser/posts/migrando-de-wordpress-para-gohugo/">Migrando de Wordpress para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
         </li>
     
         <li>
@@ -225,7 +228,7 @@ pause</p>
     
     <p class="small">
     
-        © Copyright 2019 /dev/ser (ou não?!)
+        © Copyright 2019 Rafael Santos
     
     </p>
 </footer>

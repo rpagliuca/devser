@@ -1,3 +1,9 @@
 .post h2 {
     margin-bottom: 0;
 }
+#post-list a {
+    font-weight: normal;
+}
+aside.dates {
+    margin-left: 10px;
+}

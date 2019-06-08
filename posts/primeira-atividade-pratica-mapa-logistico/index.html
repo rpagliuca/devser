@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="/dev/ser (ou não?!)">
-<meta name="description" content="Deve ser um ser dev.">
+<meta name="author" content="Rafael Santos">
+
 <meta name="generator" content="Hugo 0.55.6" />
 <title>Mapa logístico</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
@@ -27,8 +27,8 @@ Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que 
 Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/" />
-<meta property="article:published_time" content="2011-12-11T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2011-12-11T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2011-12-11T04:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2011-12-11T04:00:00&#43;00:00"/>
 
 
 
@@ -38,8 +38,8 @@ Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que 
 Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:">
 
 
-<meta itemprop="datePublished" content="2011-12-11T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2011-12-11T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2011-12-11T04:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-12-11T04:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="165">
 
 
@@ -57,13 +57,15 @@ Segue o código para QtOctave da função que gerou o gráfico do mapa logístic
 <body>
     <nav class="main-nav">
 	
-        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:130%"> <span class="arrow">←</span>Voltar</a></center>
 	
 
 	
 
 	
 </nav>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
     <section id="wrapper">
         
@@ -81,21 +83,24 @@ Segue o código para QtOctave da função que gerou o gráfico do mapa logístic
         </h2>
     </header>
     <section id="post-body">
-        <p><a href="http://rs.anoluz.net/wp-content/uploads/2011/12/mapa_logistico_sample.jpg"><img src="http://rs.anoluz.net/wp-content/uploads/2011/12/mapa_logistico_sample-150x150.jpg" alt="Exemplo de gráfico do mapa logístico" title="Exemplo de gráfico do mapa logístico" /></a>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.</p>
+        <p>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.</p>
 
 <p>Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que me foi proposto. Segue ao lado um dos gráficos gerados no QtOctave (<a href="http://www.ohloh.net/p/qtoctave">http://www.ohloh.net/p/qtoctave</a>), alternativa de código livre para o MATLAB.</p>
 
 <p>Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:</p>
 
-<p>function mapa_logistico(r, x0, n)
+<pre><code>function mapa_logistico(r, x0, n)
 x(1) = x0;
 for i = 1:(n-1)
 x(1+i) = r * x(i) * (1-x(i));
 endfor;
 plot(1:n, x)
-endfunction;</p>
+endfunction;
+</code></pre>
 
 <p>Além disso, desenvolvi uma rotina em PHP que gera o gráfico do mapa logístico dinamicamente no próprio navegador utilizando as condições iniciais do visitante.</p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2011/12/mapa_logistico_sample.jpg"><img src="http://devser.com.br//wp-content/uploads/2011/12/mapa_logistico_sample.jpg" alt="Exemplo de gráfico do mapa logístico" title="Exemplo de gráfico do mapa logístico" /></a></p>
 
 <ul>
 <li>O aplicativo do mapa logístico está disponível em: <a href="http://mural.anoluz.net/mapa_logistico">http://mural.anoluz.net/mapa_logistico</a>.</li>
@@ -104,19 +109,13 @@ endfunction;</p>
 <p>Além disso, defini uma lista de tópicos que merecem atenção:</p>
 
 <ul>
-<li><p>Segurança da informação</p></li>
-
-<li><p>Composição</p></li>
-
-<li><p>Conceitos</p></li>
-
-<li><p>Cifragem em blocos ou bits</p></li>
-
-<li><p>Chave simétrica</p></li>
-
-<li><p>Chave assimétrica</p></li>
-
-<li><p>Chave privada e pública</p></li>
+<li>Segurança da informação</li>
+<li>Composição</li>
+<li>Conceitos</li>
+<li>Cifragem em blocos ou bits</li>
+<li>Chave simétrica</li>
+<li>Chave assimétrica</li>
+<li>Chave privada e pública</li>
 </ul>
 
     </section>
@@ -126,7 +125,7 @@ endfunction;</p>
     <div>
         <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
         <span class="dark">Rafael Santos</span>
-        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
         <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fprimeira-atividade-pratica-mapa-logistico%2f - Mapa%20log%c3%adstico "><span class="icon-twitter"> Compartilhe</span></a>
@@ -157,7 +156,7 @@ endfunction;</p>
     
     
         <li>
-            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+            <a href="/devser/posts/migrando-de-wordpress-para-gohugo/">Migrando de Wordpress para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
         </li>
     
         <li>
@@ -221,7 +220,7 @@ endfunction;</p>
     
     <p class="small">
     
-        © Copyright 2019 /dev/ser (ou não?!)
+        © Copyright 2019 Rafael Santos
     
     </p>
 </footer>

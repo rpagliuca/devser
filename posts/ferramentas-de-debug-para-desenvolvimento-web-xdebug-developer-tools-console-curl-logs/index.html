@@ -4,8 +4,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="/dev/ser (ou não?!)">
-<meta name="description" content="Deve ser um ser dev.">
+<meta name="author" content="Rafael Santos">
+
 <meta name="generator" content="Hugo 0.55.6" />
 <title>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
@@ -57,13 +57,15 @@ OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas mu
 <body>
     <nav class="main-nav">
 	
-        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:130%"> <span class="arrow">←</span>Voltar</a></center>
 	
 
 	
 
 	
 </nav>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
     <section id="wrapper">
         
@@ -97,17 +99,19 @@ OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas mu
 
 <p>Os logs do Apache2 estão ativados por padrão, e ficam armazenados nos seguintes caminhos:</p>
 
-<p>/var/log/apache2/error.log
-/var/log/apache2/access.log
-/var/log/apache2/other_vhosts_access.log</p>
+<ul>
+<li>/var/log/apache2/error.log</li>
+<li>/var/log/apache2/access.log</li>
+<li>/var/log/apache2/other_vhosts_access.log</li>
+</ul>
 
 <p>Como normalmente utilizamos VirtualHosts dentro do Apache, alguns dos arquivos anteriores estarão vazios, sendo substituídos pelos caminhos de logs configurados no próprio arquivo de configuração do VirtualHost, conforme exemplos de diretivas a seguir:</p>
 
-<p># File: /etc/apache2/sites-enabled/my_virtual_host.conf
- ServerName myvirtualhost
-ErrorLog /var/www/my_virtual_host/log/error.log
-CustomLog /var/www/my_virtual_host/log/access.log combined
- &hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#75715e"># File: /etc/apache2/sites-enabled/my_virtual_host.conf</span>
+ServerName myvirtualhost
+ErrorLog <span style="color:#e6db74">/var/www/my_virtual_host/log/error.log</span>
+CustomLog <span style="color:#e6db74">/var/www/my_virtual_host/log/access.log</span> combined
+ ...</code></pre></div>
 
 <h2 id="logs-do-php"> Logs do PHP</h2>
 
@@ -115,10 +119,12 @@ CustomLog /var/www/my_virtual_host/log/access.log combined
 
 <p>Abrindo a url <strong><a href="http://myvirtualhost/phpinfo.php">http://myvirtualhost/phpinfo.php</a></strong> (ou outra URL, conforme sua configuração de VirtualHost e também do arquivo /etc/hosts), teremos acesso a todas as diretivas de configuração do PHP. As que nos interessam, neste instante, são as seguintes:</p>
 
-<p>Loaded Configuration File: /etc/php/5.6/apache2/php.ini
-log_errors: true
-error_reporting: 32767
-error_log: no value</p>
+<ul>
+<li>Loaded Configuration File: /etc/php/5.6/apache2/php.ini</li>
+<li>log_errors: true</li>
+<li>error_reporting: 32767</li>
+<li>error_log: no value</li>
+</ul>
 
 <p>Informações detalhadas sobre as diretivas acima podem ser obtidas no manual do PHP: <a href="http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log">http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log</a> A parte importante é que os logs de erros estão ativados, e que tudo (incluindo NOTICES) serão exibidas. O fato de error_log ser <strong>null</strong> implica que os logs do PHP vão ser redirecionados para os logs de erro do Apache2. Simples, assim.</p>
 
@@ -132,17 +138,24 @@ error_log: no value</p>
 
 <p>Exemplo:</p>
 
-<p>tail /var/www/my_virtual_host/log/error.log</p>
+<p><code>tail /var/www/my_virtual_host/log/error.log</code></p>
 
 <p>Tudo fica mais interessante ao se adicionar o parâmetro <strong>-f</strong> ao comando tail, pois dessa forma, o terminal se tornará um monitor em tempo real do log, isto é, novos registros serão exibidos instantaneamente.</p>
 
-<p>tail -f /var/www/my_virtual_host/log/error.log</p>
+<p><code>tail -f /var/www/my_virtual_host/log/error.log</code></p>
 
 <h3 id="vim">Vim</h3>
 
 <p>Os programas <strong>vim</strong> ou mesmo o <strong>vi</strong> também são úteis para navegar em logs, principalmente aqueles com dezenas de megabytes ou gigabytes, já que eles só armazenam na memória parte do conteúdo do arquivo, ao contrário de outros editores que tentam ler todo o conteúdo do arquivo para a memória logo ao carregar o arquivo.</p>
 
-<p>Principais comandos para navegação nos logs: <strong>G</strong> -&gt; Ir para o final do log <strong>gg</strong> -&gt; Ir para o início do log <strong>/</strong> -&gt; Buscar por uma palavra <strong>n</strong> -&gt; Ir para próxima ocorrência da busca</p>
+<p>Principais comandos para navegação nos logs:</p>
+
+<ul>
+<li><strong>G</strong> -&gt; Ir para o final do log</li>
+<li><strong>gg</strong> -&gt; Ir para o início do log</li>
+<li><strong>/</strong> -&gt; Buscar por uma palavra</li>
+<li><strong>n</strong> -&gt; Ir para próxima ocorrência da busca</li>
+</ul>
 
 <h3 id="colortail">Colortail</h3>
 
@@ -150,7 +163,7 @@ error_log: no value</p>
 
 <p>Este programa pode ser instalado no Debian Jessie com o seguinte comando:</p>
 
-<p>sudo apt-get install colortail</p>
+<p><code>sudo apt-get install colortail</code></p>
 
 <p>Link para o meu regex personalizado <strong>(/etc/colortail/conf.colortail)</strong>: <a href="https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e">https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e</a></p>
 
@@ -190,19 +203,19 @@ error_log: no value</p>
 
 <p>No Debian Jessie, ele pode ser instalado via repositório:</p>
 
-<p>apt-get install php5-xdebug</p>
+<p><code>apt-get install php5-xdebug</code></p>
 
 <p>As seguintes linhas devem ser adicionadas ao <strong>php.ini </strong>para permitir o modo debug via Xdebug:</p>
 
-<p>xdebug.remote_enable=on
-xdebug.remote_handler=dbgp
-xdebug.remote_host=localhost
-xdebug.remote_port=9000
-xdebug.remote_log=/tmp/xdebug.log</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">xdebug.remote_enable</span><span style="color:#f92672">=</span><span style="color:#e6db74">on</span>
+<span style="color:#a6e22e">xdebug.remote_handler</span><span style="color:#f92672">=</span><span style="color:#e6db74">dbgp</span>
+<span style="color:#a6e22e">xdebug.remote_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">localhost</span>
+<span style="color:#a6e22e">xdebug.remote_port</span><span style="color:#f92672">=</span><span style="color:#e6db74">9000</span>
+<span style="color:#a6e22e">xdebug.remote_log</span><span style="color:#f92672">=</span><span style="color:#e6db74">/tmp/xdebug.log</span></code></pre></div>
 
 <p>Depois desta etapa, é necessário reiniciar o Apache:</p>
 
-<p>sudo service apache2 restart</p>
+<p><code>sudo service apache2 restart</code></p>
 
 <p>Acesse novamente a página <strong>phpinfo.php</strong> que você criou no início deste tutorial, para conferir se os novos parâmetros de xdebug foram lidos corretamente.</p>
 
@@ -219,7 +232,7 @@ xdebug.remote_log=/tmp/xdebug.log</p>
     <div>
         <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
         <span class="dark">Rafael Santos</span>
-        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
         <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs%2f - Ferramentas%20de%20debug%20para%20desenvolvimento%20web%3a%20Xdebug%20%2b%20Developer%20Tools%20Console%20%2b%20Curl%20%2b%20Logs "><span class="icon-twitter"> Compartilhe</span></a>
@@ -250,7 +263,7 @@ xdebug.remote_log=/tmp/xdebug.log</p>
     
     
         <li>
-            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+            <a href="/devser/posts/migrando-de-wordpress-para-gohugo/">Migrando de Wordpress para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
         </li>
     
         <li>
@@ -314,7 +327,7 @@ xdebug.remote_log=/tmp/xdebug.log</p>
     
     <p class="small">
     
-        © Copyright 2019 /dev/ser (ou não?!)
+        © Copyright 2019 Rafael Santos
     
     </p>
 </footer>
