@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="/dev/ser (ou não?!)">
+<meta name="description" content="Deve ser um ser dev.">
+<meta name="generator" content="Hugo 0.55.6" />
+<title>Compilador para computador SAP-1</title>
+<link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
+
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/custom-styles.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<meta property="og:title" content="Compilador para computador SAP-1" />
+<meta property="og:description" content="A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/.
+Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
+O script abaixo encontra-se funcionando no endereço http://devser.com.br/misc/sap-compiler.
+&lt;?php if (isset($_POST[&#39;code&#39;]) and $_POST[&#39;code&#39;]) { $uniqid = uniqid(&#39;&#39;, true); $output_atmel = &#34;out/$uniqid." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/compilador-para-computador-sap-1/" />
+<meta property="article:published_time" content="2017-04-18T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-04-18T00:00:00&#43;00:00"/>
+
+
+
+<meta itemprop="name" content="Compilador para computador SAP-1">
+<meta itemprop="description" content="A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/.
+Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
+O script abaixo encontra-se funcionando no endereço http://devser.com.br/misc/sap-compiler.
+&lt;?php if (isset($_POST[&#39;code&#39;]) and $_POST[&#39;code&#39;]) { $uniqid = uniqid(&#39;&#39;, true); $output_atmel = &#34;out/$uniqid.">
+
+
+<meta itemprop="datePublished" content="2017-04-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-04-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="308">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Compilador para computador SAP-1"/>
+<meta name="twitter:description" content="A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/.
+Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
+O script abaixo encontra-se funcionando no endereço http://devser.com.br/misc/sap-compiler.
+&lt;?php if (isset($_POST[&#39;code&#39;]) and $_POST[&#39;code&#39;]) { $uniqid = uniqid(&#39;&#39;, true); $output_atmel = &#34;out/$uniqid."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Compilador para computador SAP-1</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        18
+        Abril
+        2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        <p>A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo <a href="http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/">http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/</a>.</p>
+
+<p>Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.</p>
+
+<p>O script abaixo encontra-se funcionando no endereço <a href="http://devser.com.br/misc/sap-compiler">http://devser.com.br/misc/sap-compiler</a>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_POST[<span style="color:#e6db74">&#39;code&#39;</span>]) <span style="color:#66d9ef">and</span> $_POST[<span style="color:#e6db74">&#39;code&#39;</span>]) {
+    $uniqid <span style="color:#f92672">=</span> <span style="color:#a6e22e">uniqid</span>(<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#66d9ef">true</span>);
+    $output_atmel <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;out/</span><span style="color:#e6db74">$uniqid</span><span style="color:#e6db74">.sap.tmp&#34;</span>;
+    $content <span style="color:#f92672">=</span> $_POST[<span style="color:#e6db74">&#39;code&#39;</span>];
+    $content <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_replace</span>(<span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;LDA&#39;</span>, <span style="color:#e6db74">&#39;ADD&#39;</span>, <span style="color:#e6db74">&#39;SUB&#39;</span>, <span style="color:#e6db74">&#39;OUT&#39;</span>, <span style="color:#e6db74">&#39;HLT&#39;</span>, <span style="color:#e6db74">&#39; &#39;</span>), <span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;0&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;E0&#39;</span>, <span style="color:#e6db74">&#39;F0&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>), $content);
+    $lines <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, $content);
+    $output_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+    <span style="color:#66d9ef">foreach</span> ($lines <span style="color:#66d9ef">as</span> $line) {
+        $line <span style="color:#f92672">=</span> <span style="color:#a6e22e">trim</span>($line);
+        <span style="color:#66d9ef">if</span> ($line <span style="color:#66d9ef">AND</span> <span style="color:#a6e22e">strpos</span>($line, <span style="color:#e6db74">&#34;;&#34;</span>) <span style="color:#f92672">===</span> <span style="color:#66d9ef">FALSE</span>) {
+            $parts <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#34;:&#34;</span>, $line);
+            $address <span style="color:#f92672">=</span> $parts[<span style="color:#ae81ff">0</span>];
+            $data <span style="color:#f92672">=</span> $parts[<span style="color:#ae81ff">1</span>];
+            $formatted_line <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;$A&#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">str_pad</span>($address, <span style="color:#e6db74">&#39;4&#39;</span>, <span style="color:#e6db74">&#39;0&#39;</span>, <span style="color:#a6e22e">STR_PAD_LEFT</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">str_pad</span>($data, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;0&#39;</span>, <span style="color:#a6e22e">STR_PAD_LEFT</span>) <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+            $output_content <span style="color:#f92672">.=</span> $formatted_line;
+        }
+    }
+    <span style="color:#a6e22e">file_put_contents</span>($output_atmel, $output_content);
+    <span style="color:#a6e22e">system</span>(<span style="color:#e6db74">&#34;srec_cat -output </span><span style="color:#e6db74">$output_atmel</span><span style="color:#e6db74">.hex --Intel </span><span style="color:#e6db74">$output_atmel</span><span style="color:#e6db74"> --Needham_Hexadecimal&#34;</span>);
+    <span style="color:#a6e22e">unlink</span>($output_atmel);
+    <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-disposition: attachment; filename=&#34;SAP.hex&#34;&#39;</span>);
+    <span style="color:#a6e22e">readfile</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$output_atmel</span><span style="color:#e6db74">.hex&#34;</span>);
+    <span style="color:#a6e22e">unlink</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">$output_atmel</span><span style="color:#e6db74">.hex&#34;</span>);
+} <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-type: text/html; charset=utf-8&#39;</span>);
+<span style="color:#75715e">?&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">title</span>&gt;Compilador SAP-1&lt;/<span style="color:#f92672">title</span>&gt;
+&lt;<span style="color:#f92672">style</span>&gt;
+<span style="color:#f92672">textarea</span>{
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">600</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">400</span><span style="color:#66d9ef">px</span>;
+}
+&lt;/<span style="color:#f92672">style</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+&lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;code&#34;</span>&gt;
+; Programa exemplo
+; Linhas iniciadas com ponto e vírgula são comentários
+ 
+; Repare que toda linha de código deve começar com o número da linha e em seguida dois pontos, sempre em hexadecimal.
+; O SAP-1 trabalha com uma memória de 16 posições. Ou seja, podemos ter da linha 0 até a linha F.
+ 
+; Instruções
+0: LDA A
+1: ADD B
+2: OUT
+3: HLT
+ 
+; Dados
+A: 4
+B: 6
+ 
+; Eu gosto de iniciar os dados na posição A da memória, mas tanto faz. Poderia começar da 4, já que a última utilizada por uma instrução foi a linha 3
+&lt;/<span style="color:#f92672">textarea</span>&gt;
+&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Compilar&#34;</span>/&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+<span style="color:#75715e">&lt;?php</span>
+}
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <div>
+        <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
+        <span class="dark">Rafael Santos</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+    </div>
+    <section id="sharing" style="margin-top: 20px">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fcompilador-para-computador-sap-1%2f - Compilador%20para%20computador%20SAP-1 "><span class="icon-twitter"> Compartilhe</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Compartilhe</span>
+</a>
+
+    </section>
+</footer>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=682823301800780&autoLogAppEvents=1">
+</script>
+<center><div class="fb-comments" data-width="500"></div></center>
+
+<hr/>
+
+<ul id="post-list" class="archive readmore">
+    <h3>Últimos artigos</h3>
+
+    
+    
+    
+        <li>
+            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/">Deixe seu MySQL muito mais rápido rodando na memória RAM<aside class="dates">May 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/medindo-performance-e-gargalos-de-uma-pagina-php/">Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug<aside class="dates">Apr 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/">Criando plugins para a biblioteca de templates Smarty do PHP<aside class="dates">Mar 16 2017</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/rafaelpagliuca">
+        <i class="fa fa-facebook"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/rpagliuca">
+        <i class="fa fa-github"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2019 /dev/ser (ou não?!)
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/main.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

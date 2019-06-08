@@ -9,7 +9,7 @@
   </url>
   
   <url>
-    <loc>https://rpagliuca.github.io/devser/posts/hello-hugo/</loc>
+    <loc>https://rpagliuca.github.io/devser/posts/migracao-para-gohugo/</loc>
     <lastmod>2019-06-08T09:04:34-03:00</lastmod>
   </url>
   
@@ -17,6 +17,31 @@
     <loc>https://rpagliuca.github.io/devser/posts/</loc>
     <lastmod>2019-06-08T09:04:34-03:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://rpagliuca.github.io/devser/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/</loc>
+    <lastmod>2017-05-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rpagliuca.github.io/devser/posts/compilador-para-computador-sap-1/</loc>
+    <lastmod>2017-04-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rpagliuca.github.io/devser/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</loc>
+    <lastmod>2017-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rpagliuca.github.io/devser/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</loc>
+    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
