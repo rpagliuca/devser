@@ -37,6 +37,7 @@ Nesses casos, adicionaremos a seguinte configuração no arquivo php.ini:
 Outras vezes, quando estamos testando um script PHP por meio de um navegador de internet, é mais interessante configurar o XDebug em modo gatilho, para que o relatório de performance seja gerado apenas nos requests escolhidos, pois caso contrário, teríamos dificuldade em encontrar os relatórios certos em meio a dezenas de requisições ajax e GET e que muitas vezes são realizadas paralelamente durante o carregamento de uma página simples.
 
 `xdebug.profiler_enable_trigger=1`
+
 Além disso, deve ser instalado alguma extensão no navegador de internet para setar um cookie com valor XDEBUG_PROFILE=1 a cada vez que se deseja um novo relatório de performance. A extensão que eu utilizo para o Google Chrome é a Xdebug helper (https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc)
 
 # Visualização dos relatórios de performance
