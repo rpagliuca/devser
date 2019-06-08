@@ -61,7 +61,7 @@ de forma que o template principal seria dado por:
 
 A conversão do header e do footer para plugins em vez de subtemplates nesse caso específico não é vantajosa, mas em casos mais complexos isso é interessante pois nos permite executar código PHP toda vez que as tags {header} e {footer} sejam incluídas no template do Smarty.
 
-Suponha, por exemplo, que no {header} você queira sempre exibir uma mensagem customizada de acordo com a hora do dia (“bom dia”, “boa tarde”, “boa noite”). Esse é um caso simples do papel do plugin.
+Suponha, por exemplo, que no {header} você queira sempre exibir uma mensagem customizada de acordo com a hora do dia (“bom dia", “boa tarde", “boa noite"). Esse é um caso simples do papel do plugin.
 
 # Criando um plugin
 

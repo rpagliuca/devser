@@ -5,10 +5,9 @@ draft: false
 ---
 # Introdução
 
-“Conheces teu inimigo e conhece-te a ti mesmo” — Sun Tzu
-(a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo”)
+> "Conheces teu inimigo e conhece-te a ti mesmo" — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo")
 
-Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos” de tempo de processamento, o gargalo da execução.
+Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos" de tempo de processamento, o gargalo da execução.
 
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script. Saber como encontrar esses gargalos é o seu maior aliado na hora de otimizar páginas lentas.
 
@@ -25,7 +24,7 @@ O KCacheGrind também está disponível no repositório oficial, mas infelizment
 `sudo apt-get install kcachegrind`
 
 # Configuração do XDebug
-A configuração do XDebug é realizada via php.ini. Em um artigo anterior do blog (http://rs.anoluz.net/2017/02/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/), aprendemos como configurar o XDebug para debugar interativamente seu script. Hoje, não estamos interessados na função Debug, e sim na função Profile do Xdebug, portanto a configuração é um pouco diferente.
+A configuração do XDebug é realizada via php.ini. Em um artigo anterior do blog (<a href="{{<ref "posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs.md">}}">Ferramentas de debug para desenvolvimento web: Xdebug + Developer Tools Console + Curl + Logs</a>), aprendemos como configurar o XDebug para debugar interativamente seu script. Hoje, não estamos interessados na função Debug, e sim na função Profile do Xdebug, portanto a configuração é um pouco diferente.
 
 ## Modo sempre ativado
 Quando estamos debugando um único script PHP diretamente pelo terminal, podemos configurar o XDebug no php.ini para gerar sempre um novo relatório de performance.

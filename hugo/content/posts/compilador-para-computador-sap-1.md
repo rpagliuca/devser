@@ -3,7 +3,7 @@ title: "Compilador para computador SAP-1"
 date: 2017-04-18
 draft: false
 ---
-A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo http://devser.com.br/2013/10/simulando-um-computador-sap-1-simple-as-possible-1/.
+A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo <a href="{{<ref "posts/simulando-um-computador-sap-1-simple-as-possible-1.md">}}">Simulando um computador SAP-1 (Simple As Possible 1)</a>.
 
 Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
 
