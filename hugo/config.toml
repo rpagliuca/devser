@@ -8,6 +8,7 @@ theme = "hugo-cactus-theme"
 googleAnalytics = ""
 # Disable comments by leaving disqusShortname empty
 disqusShortname = "devser"
+paginate = 1000
 
 [params]
 	name = "/dev/ser (ou não?!)"
