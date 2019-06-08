@@ -2,7 +2,7 @@
 baseurl = "https://rpagliuca.github.io/devser/"
 themesDir = "themes"
 languageCode = "pt-br"
-title = "/dev/ser (ou não?!)"
+title = "/dev/ser"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
