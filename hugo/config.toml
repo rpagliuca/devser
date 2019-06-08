@@ -1,7 +1,7 @@
 # Site settings
-baseurl = "https://example.org/"
+baseurl = "https://rpagliuca.github.io/devser/"
 themesDir = "themes"
-languageCode = "en-us"
+languageCode = "pt-br"
 title = "/dev/ser (ou não?!)"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
