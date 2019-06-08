@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on /dev/ser</title>
-    <link>https://www.devser.com.br/posts/</link>
+    <link>https://devser.com.br/posts/</link>
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <lastBuildDate>Sat, 08 Jun 2019 09:04:34 -0300</lastBuildDate>
     
-	<atom:link href="https://www.devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Migrando de Wordpress para Hugo (gohugo)</title>
-      <link>https://www.devser.com.br/posts/migrando-de-wordpress-para-gohugo/</link>
+      <link>https://devser.com.br/posts/migrando-de-wordpress-para-gohugo/</link>
       <pubDate>Sat, 08 Jun 2019 09:04:34 -0300</pubDate>
       
-      <guid>https://www.devser.com.br/posts/migrando-de-wordpress-para-gohugo/</guid>
+      <guid>https://devser.com.br/posts/migrando-de-wordpress-para-gohugo/</guid>
       <description>Hoje migrei a plataforma deste blog de Wordpress para Hugo (https://gohugo.io/), pelos seguintes motivos:
  Aumento de performance Redução de custos Abertura do código-fonte: https://github.com/rpagliuca/devser  Na verdade Hugo não é uma plataforma, e sim, uma biblioteca capaz de produzir um blog estático, a partir de arquivos declarativos .yml e markdown. Uma outra biblioteca bastante conhecida, similar ao Hugo, é a Jekyll (https://jekyllrb.com/). Como agora o blog ficou estático, estará hospedado na plataforma Github Pages.</description>
     </item>
     
     <item>
       <title>Deixe seu MySQL muito mais rápido rodando na memória RAM</title>
-      <link>https://www.devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</link>
+      <link>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</guid>
+      <guid>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</guid>
       <description>Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.
 Claro que esse armazenamento é volátil, portanto é recomendado apenas para ambiente de desenvolvimento, onde muitas vezes um script ou importação de dump é executado múltiplas vezes por dia, tomando preciosos minutos do desenvolvedor.</description>
     </item>
     
     <item>
       <title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
-      <link>https://www.devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</link>
+      <link>https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</link>
       <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</guid>
+      <guid>https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</guid>
       <description>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
 É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
 Siga os seguintes passos:
@@ -45,10 +45,10 @@ Siga os seguintes passos:
     
     <item>
       <title>Compilador para computador SAP-1</title>
-      <link>https://www.devser.com.br/posts/compilador-para-computador-sap-1/</link>
+      <link>https://devser.com.br/posts/compilador-para-computador-sap-1/</link>
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/compilador-para-computador-sap-1/</guid>
+      <guid>https://devser.com.br/posts/compilador-para-computador-sap-1/</guid>
       <description>A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo Simulando um computador SAP-1 (Simple As Possible 1).
 Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
 O script abaixo encontra-se funcionando no endereço http://devser.</description>
@@ -56,10 +56,10 @@ O script abaixo encontra-se funcionando no endereço http://devser.</description
     
     <item>
       <title>Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug</title>
-      <link>https://www.devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</link>
+      <link>https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</link>
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</guid>
+      <guid>https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</guid>
       <description>Introdução  &amp;ldquo;Conheces teu inimigo e conhece-te a ti mesmo&amp;rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&amp;rdquo;)
  Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&amp;rdquo; de tempo de processamento, o gargalo da execução.
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script.</description>
@@ -67,30 +67,30 @@ Normalmente, das centenas de métodos que são chamados em um único script, pou
     
     <item>
       <title>Criando plugins para a biblioteca de templates Smarty do PHP</title>
-      <link>https://www.devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</link>
+      <link>https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</link>
       <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</guid>
+      <guid>https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</guid>
       <description>Introdução ao Smarty A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.
 O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:</description>
     </item>
     
     <item>
       <title>Testes automatizados com Selenium &#43; PHPUnit</title>
-      <link>https://www.devser.com.br/posts/testes-automatizados-com-selenium-phpunit/</link>
+      <link>https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/</link>
       <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/testes-automatizados-com-selenium-phpunit/</guid>
+      <guid>https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/</guid>
       <description>Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
  Ajuda a evitar lesões por esforço repetivivo Evita erros Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio  Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</description>
     </item>
     
     <item>
       <title>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs</title>
-      <link>https://www.devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</link>
+      <link>https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</link>
       <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</guid>
+      <guid>https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</guid>
       <description>Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc
 Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
 OBS - A partir de agora, assumo um ambiente Linux + Apache + PHP, mas muito disso pode ser reaproveitado em outros ambientes.</description>
@@ -98,20 +98,20 @@ OBS - A partir de agora, assumo um ambiente Linux + Apache + PHP, mas muito diss
     
     <item>
       <title>Simulando um computador SAP-1 (Simple As Possible 1)</title>
-      <link>https://www.devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</link>
+      <link>https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</link>
       <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</guid>
+      <guid>https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</guid>
       <description>Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &amp;ldquo;Tão Simples Quanto Possível 1&amp;rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
 Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf.</description>
     </item>
     
     <item>
       <title>Diagrama de Bifurcação do Mapa Logístico</title>
-      <link>https://www.devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/</link>
+      <link>https://devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/</link>
       <pubDate>Sat, 17 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/</guid>
+      <guid>https://devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/</guid>
       <description>Ontem, desenvolvi em Octave (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.
 Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:
 $$x_{n+1} = x_n r (1 - x_n)$$
@@ -120,10 +120,10 @@ O diagrama de bifurcação representa quais os possíveis valores de x (eixo ver
     
     <item>
       <title>Gerenciador de Artigos Científicos</title>
-      <link>https://www.devser.com.br/posts/gerenciador-de-artigos-cientificos/</link>
+      <link>https://devser.com.br/posts/gerenciador-de-artigos-cientificos/</link>
       <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/gerenciador-de-artigos-cientificos/</guid>
+      <guid>https://devser.com.br/posts/gerenciador-de-artigos-cientificos/</guid>
       <description>O software I, Librarian tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
 Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.
 Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação Digital Objetct Identifier (DOI).</description>
@@ -131,10 +131,10 @@ Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software 
     
     <item>
       <title>Relação entre OTP e Mapas Binários</title>
-      <link>https://www.devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/</link>
+      <link>https://devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/</link>
       <pubDate>Wed, 14 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/</guid>
+      <guid>https://devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/</guid>
       <description>Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
 Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
  Amplo keyspace (intervalo de condições iniciais) Torna inviável ataques de força bruta Utilização de um mapa binário ou equivalente GLS na geração da keystream Garante que a operação seja análoga ao OTP Keystream sensível às condições iniciais A mensagem (ou até mesmo parte da mensagem) deve ser recuperada se e somente se as condições iniciais forem exatamente as mesmas Keystream sensível à mensagem Garante que o keystream gerado por uma mensagem pura conhecida (known plaintext) não possa ser determinado e aplicado na decodificação de outra mensagem  Meu principal objetivo atual é fazer com que meu sistema de criptografia satisfaça esse último requisito.</description>
@@ -142,10 +142,10 @@ Com essas informações, percebo agora que, para uma cifra ser resistente aos pr
     
     <item>
       <title>Modelo da Partícula na Caixa</title>
-      <link>https://www.devser.com.br/posts/modelo-da-particula-na-caixa/</link>
+      <link>https://devser.com.br/posts/modelo-da-particula-na-caixa/</link>
       <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/modelo-da-particula-na-caixa/</guid>
+      <guid>https://devser.com.br/posts/modelo-da-particula-na-caixa/</guid>
       <description>Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
 
 No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
@@ -154,10 +154,10 @@ Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4
     
     <item>
       <title>Criptografia Com Equações de Chua</title>
-      <link>https://www.devser.com.br/posts/criptografia-com-equacoes-de-chua/</link>
+      <link>https://devser.com.br/posts/criptografia-com-equacoes-de-chua/</link>
       <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/criptografia-com-equacoes-de-chua/</guid>
+      <guid>https://devser.com.br/posts/criptografia-com-equacoes-de-chua/</guid>
       <description>Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
 \[\begin{aligned} \dot{x_1} &amp;amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp;amp; = x1 - x2 + x3\\ \dot{x_3} &amp;amp; = -\beta x_2 \end{aligned} \]
 Este outro modelo foi originalmente proposto por Vaidya em 1998, e aperfeiçoado alguns anos depois por C. H. Oliveira.
@@ -166,10 +166,10 @@ Algumas das vantagens desta nova implementação em comparação à anterior sã
     
     <item>
       <title>Criptografia com Caos - Baptista</title>
-      <link>https://www.devser.com.br/posts/criptografia-com-caos-baptista/</link>
+      <link>https://devser.com.br/posts/criptografia-com-caos-baptista/</link>
       <pubDate>Sun, 01 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/criptografia-com-caos-baptista/</guid>
+      <guid>https://devser.com.br/posts/criptografia-com-caos-baptista/</guid>
       <description>Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
 O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
  A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.</description>
@@ -177,10 +177,10 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
     
     <item>
       <title>Mapa logístico</title>
-      <link>https://www.devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/</link>
+      <link>https://devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/</link>
       <pubDate>Sun, 11 Dec 2011 04:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/</guid>
+      <guid>https://devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/</guid>
       <description>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.
 Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que me foi proposto. Segue ao lado um dos gráficos gerados no QtOctave (http://www.ohloh.net/p/qtoctave), alternativa de código livre para o MATLAB.
 Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:</description>
@@ -188,10 +188,10 @@ Segue o código para QtOctave da função que gerou o gráfico do mapa logístic
     
     <item>
       <title>História da chave assimétrica</title>
-      <link>https://www.devser.com.br/posts/historia-da-chave-assimetrica/</link>
+      <link>https://devser.com.br/posts/historia-da-chave-assimetrica/</link>
       <pubDate>Sun, 11 Dec 2011 03:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/historia-da-chave-assimetrica/</guid>
+      <guid>https://devser.com.br/posts/historia-da-chave-assimetrica/</guid>
       <description>Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
 Referências
 [1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf
@@ -201,10 +201,10 @@ Referências
     
     <item>
       <title>Início de iniciação científica em criptografia</title>
-      <link>https://www.devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/</link>
+      <link>https://devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/</link>
       <pubDate>Sun, 11 Dec 2011 02:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/</guid>
+      <guid>https://devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/</guid>
       <description>A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.
 Em 26 de outubro de 2011 entrei em contato com um dos professores do Departamento de Engenharia Elétrica, que me informou sobre sua área de pesquisa e me ofereceu uma lista de tópicos para serem superficalmente pesquisados:
  Sistemas de segurança da informação Codificação Decodificação Esteganografia Criptografia Sistemas caóticos Aplicações de sistemas caóticos em telecomunicações  Pesquisei os tópicos sugeridos e, após alguns dias, entrei em contato novamente.</description>
@@ -212,10 +212,10 @@ Em 26 de outubro de 2011 entrei em contato com um dos professores do Departament
     
     <item>
       <title>Objetivo deste blog</title>
-      <link>https://www.devser.com.br/posts/objetivo-deste-blog/</link>
+      <link>https://devser.com.br/posts/objetivo-deste-blog/</link>
       <pubDate>Sun, 11 Dec 2011 01:00:00 +0000</pubDate>
       
-      <guid>https://www.devser.com.br/posts/objetivo-deste-blog/</guid>
+      <guid>https://devser.com.br/posts/objetivo-deste-blog/</guid>
       <description>Apenas um lugar para registrar ideias interessantes relacionadas com quaisquer tópicos com que eventualmente possa me aventurar.</description>
     </item>
     
