@@ -4,7 +4,7 @@ install:
   - sudo dpkg -i /tmp/hugo.deb
 
 script:
-  - cd hugo && hugo
+  - cd hugo && hugo && echo "devser.com.br" > public/CNAME
 
 deploy:
   provider: pages
