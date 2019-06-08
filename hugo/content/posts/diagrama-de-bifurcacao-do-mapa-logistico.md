@@ -17,6 +17,7 @@ Perceba que conforme se aumenta o valor de _r_, o número de possíveis valores 
 
 Código da rotina:
 
+```
 clear all
 X = \[\];
 x0 = 0.6;
@@ -41,3 +42,4 @@ for i=1:n
 end
 hold off
 pause
+```

@@ -19,12 +19,26 @@ Para quem quiser se aventurar, seguem dois projetos separados do Proteus, pronto
 
 [Arquivo de projeto 1: SAP-1 - Programação manual (via chaves)](http://rs.anoluz.net/wp-content/uploads/2013/10/SAP-Programacao_Manual.zip)
 
-[Arquivo de projeto 2: SAP-1 - Programação automática (compilador + ROM)](http://rs.anoluz.net/wp-content/uploads/2013/10/SAP-Programacao_ROM.zip) Para programar, utilize o compilador online: [http://rs.anoluz.net/misc/sap-compiler/](http://rs.anoluz.net/misc/sap-compiler/) Siga os passos a seguir para carregar o arquivo SAP.hex do compilador online dentro da memória ROM:
+[Arquivo de projeto 2: SAP-1 - Programação automática (compilador + ROM)](http://rs.anoluz.net/wp-content/uploads/2013/10/SAP-Programacao_ROM.zip)
 
-[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-1-300x187.jpg "sap-programacao-1")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-1.jpg) Passo 1: Procure a memória ROM (destacada acima) e dê dois cliques sobre ela.
+Para programar, utilize o compilador online: [http://rs.anoluz.net/misc/sap-compiler/](http://rs.anoluz.net/misc/sap-compiler/)
 
-[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-2-300x187.jpg "sap-programacao-2")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-2.jpg) [](http://rs.anoluz.net/misc/sap-compiler/) Passo 2: Clique no ícone da pastinha amarela. [](http://rs.anoluz.net/misc/sap-compiler/) [![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-3-300x187.jpg "sap-programacao-3")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-3.jpg) Passo 3: Selecione o arquivo SAP.hex que você salvou a partir do compilador online.
+Siga os passos a seguir para carregar o arquivo SAP.hex do compilador online dentro da memória ROM:
 
-[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-4-300x187.jpg "sap-programacao-4")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-4.jpg) Passo 4: Selecione o botão "Play" no canto inferior esquerdo da tela. O resultado da cálculo será exibido em forma binária nos LEDs.
+[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-1-300x187.jpg "sap-programacao-1")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-1.jpg)
+
+Passo 1: Procure a memória ROM (destacada acima) e dê dois cliques sobre ela.
+
+[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-2-300x187.jpg "sap-programacao-2")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-2.jpg)
+
+Passo 2: Clique no ícone da pastinha amarela.
+
+[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-3-300x187.jpg "sap-programacao-3")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-3.jpg)
+
+Passo 3: Selecione o arquivo SAP.hex que você salvou a partir do compilador online.
+
+[![](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-4-300x187.jpg "sap-programacao-4")](http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-4.jpg)
+
+Passo 4: Selecione o botão "Play" no canto inferior esquerdo da tela. O resultado da cálculo será exibido em forma binária nos LEDs.
 
 Dúvidas? Estou à disposição.

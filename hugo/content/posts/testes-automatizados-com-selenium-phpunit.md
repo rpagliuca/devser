@@ -7,7 +7,9 @@ date: "2017-03-14"
 
 Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
 
-1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
+1. Ajuda a evitar lesões por esforço repetivivo
+2. Evita erros
+3. Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
 
 Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.
 
@@ -27,42 +29,27 @@ Exemplo de aplicação do PHPUnit retirado de [https://phpunit.de/getting-starte
 
 [![](http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211923-1024x550.png "Exemplo do PHPUnit")](http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211923.png)
 
-# Instalação considerando o ambiente G. Fox
+# Instalação considerando o meu ambiente de desenvolvimento:
 
-Para rodar os testes funcionais via PHPUnit + Selenium (tests/functional/\*), acompanhe os passos seguintes:
+Para rodar os testes funcionais via PHPUnit + Selenium (tests/functional/*), acompanhe os passos seguintes:
 
-1) Baixar o phpunit-5.\*.\*.phar [https://phar.phpunit.de](https://phar.phpunit.de) e copiar para /usr/local/bin, adicionando permissão de execução (chmod a+x)
-
-2) Baixar o Selenium Server (selenium-server-standalone-\*.jar) [http://www.seleniumhq.org/download/](http://www.seleniumhq.org/download/) em uma pasta de sua preferência
-
-3) Baixar o Google Chrome Driver [https://sites.google.com/a/chromium.org/chromedriver/](https://sites.google.com/a/chromium.org/chromedriver/) e descompactar na mesma pasta escolhida no passo 2
-
-4) Instalar o pacote phpunit-selenium via composer a partir da pasta raiz do git do G. Fox: composer.phar update --dev
-
-5) Configurar config.json do G. Fox, adicionando o grupo abaixo de acordo com suas credenciais:
-
+1. Baixar o phpunit-5.*.*.phar [https://phar.phpunit.de](https://phar.phpunit.de) e copiar para /usr/local/bin, adicionando permissão de execução (chmod a+x)
+2. Baixar o Selenium Server (selenium-server-standalone-*.jar) [http://www.seleniumhq.org/download/](http://www.seleniumhq.org/download/) em uma pasta de sua preferência
+3. Baixar o Google Chrome Driver [https://sites.google.com/a/chromium.org/chromedriver/](https://sites.google.com/a/chromium.org/chromedriver/) e descompactar na mesma pasta escolhida no passo 2
+4. Instalar o pacote phpunit-selenium via composer a partir da pasta raiz do git do G. Fox: composer.phar update --dev
+5. Configurar config.json do G. Fox, adicionando o grupo abaixo de acordo com suas credenciais:
     "selenium": {
-      "user": "meu.usuario@\*\*\*.com",
+      "user": "meu.usuario@***.com",
       "password": "minha\_senha"
     }
-    
-
-6) Depois de baixar todas as dependências acima:
-
-6.1) Entrar na pasta escolhida no passo 2, e rodar servidor do Selenium Server com o comando a seguir
-
-java -jar selenium-server-standalone-3.0.1.jar
-
-OBS1 - O nome do arquivo pode ser diferente conforme a versão OBS2 - Se der erro para inicializar selenium-server-standalone, verifique se Google Chrome Driver foi instalado no caminho correto, a partir das mensagens de erros.
-
-6.2) Por último, rode o phpunit a partir da pasta raiz do repositório git do G. Fox:
-
-phpunit-5.5.4.phar --verbose --bootstrap load.inc tests/functional/browseEveryPageTest.php
-
-OBS - O nome do executável pode ser diferente conforme a versão
+6. Depois de baixar todas as dependências acima:
+    1. Entrar na pasta escolhida no passo 2, e rodar servidor do Selenium Server com o comando a seguir
+java -jar selenium-server-standalone-3.0.1.jar. OBS1 - O nome do arquivo pode ser diferente conforme a versão. OBS2 - Se der erro para inicializar selenium-server-standalone, verifique se Google Chrome Driver foi instalado no caminho correto, a partir das mensagens de erros.
+    2. Por último, rode o phpunit a partir da pasta raiz do repositório git do G. Fox: phpunit-5.5.4.phar --verbose --bootstrap load.inc tests/functional/browseEveryPageTest.php. OBS - O nome do executável pode ser diferente conforme a versão
 
 # Métodos úteis
 
+{{<highlight php>}}
 class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
 
   protected static $implicitTimeout = 20000;
@@ -74,7 +61,7 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     ),
   );
 
-  /\* This method is required to keep session alive even after failing tests \*/
+  /* This method is required to keep session alive even after failing tests */
   public function onNotSuccessfulTest($e){
     throw $e;
   }
@@ -92,10 +79,10 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     $this->prepareSession()->currentWindow()->maximize();
   }
 
-  /\*\*
-   \* Custom assertion
-   \* Checks if text of html body contains text
-   \*/
+  /**
+   * Custom assertion
+   * Checks if text of html body contains text
+   */
   protected function assertPageContains($string) {
     try {
       $this->assertContains($string, $this->byCssSelector('body')->text());
@@ -104,10 +91,10 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     }
   }
 
-  /\*\*
-   \* Custom assertion
-   \* Checks if text of html body does not contain text
-   \*/
+  /**
+   * Custom assertion
+   * Checks if text of html body does not contain text
+   */
   protected function assertPageDoesNotContain($string) {
     try {
       $this->assertNotContains($string, $this->byCssSelector('html')->attribute('innerHTML'));
@@ -116,24 +103,24 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     }
   }
 
-  /\* Block that types a value on autocomplete field, waits for
-   \* the options and click on the first option \*/
+  /* Block that types a value on autocomplete field, waits for
+   * the options and click on the first option */
   protected function clickOnAutocomplete($selector, $value) {
-    /\*  Remove autocomplete elements that are left over on DOM, before trying to use a new one \*/
+    /*  Remove autocomplete elements that are left over on DOM, before trying to use a new one */
     $this->execute(array(
       'script' => '$(".ui-menu-item").remove()',
       'args' => array(),
     ));
     $this->byCssSelector($selector)->value($value);
     $this->byCssSelector('.ui-menu-item')->click();
-    /\* Blur event \*/
+    /* Blur event */
     $this->execute(array(
       'script' => '!!document.activeElement ? document.activeElement.blur() : 0',
       'args' => array(),
     ));
   }
 
-  /\* Sometimes Selenium cannot click on an element, so we can use this workaround \*/
+  /* Sometimes Selenium cannot click on an element, so we can use this workaround */
   protected function jsClick($selector) {
     $this->execute(array(
       'script' => "$('$selector').click();",
@@ -153,13 +140,13 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     sleep(99999);
   }
 
-  /\* Login \*/
+  /* Login */
   protected function testLoginCorrect() {
 
-    /\* Wait for 10 seconds at most for an element to be found \*/
+    /* Wait for 10 seconds at most for an element to be found */
     $this->timeouts()->implicitWait(self::$implicitTimeout);
 
-    /\* First we logout \*/
+    /* First we logout */
     $this->url('/login/logout');
 
     $this->url('/');
@@ -167,7 +154,7 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     $this->byId('senha')->value($this->test\_password);
     $this->byId('login')->submit();
 
-    /\* Redirect to home, skipping Tela Favorita \*/
+    /* Redirect to home, skipping Tela Favorita */
     $this->url($this->tela\_url . '/navegacao');
 
     $this->assertEquals($this->teste\_url . '/navegacao', $this->url());
@@ -175,23 +162,23 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     $this->assertPageContains('NAVEGAR');
   }
 
-  /\*\*
-   \* Default tests for a page
-   \*
-   \* Check for Call Stack
-   \* Test button INSERIR
-   \* Test button VISUALIZAR
-   \*/
+  /**
+   * Default tests for a page
+   *
+   * Check for Call Stack
+   * Test button INSERIR
+   * Test button VISUALIZAR
+   */
   protected function defaultPageTests() {
     $this->closeOpenedAlert();
     $url = $this->url();
-    /\* Check if main page does not have Call Stack \*/
+    /* Check if main page does not have Call Stack */
     $this->assertPageDoesNotContain("Call Stack");
 
-    /\* Click on button INSERIR, if exists, and check if does not have Call Stack \*/
+    /* Click on button INSERIR, if exists, and check if does not have Call Stack */
     $this->checkButtonByText('INSERIR', $url);
 
-    /\* Do the same check for button BUSCAR \*/
+    /* Do the same check for button BUSCAR */
     if ($this->checkButtonByText(array('BUSCAR', 'VISUALIZAR'))) {
       $this->checkShow();
       $this->url($url);
@@ -200,26 +187,26 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
   }
 
   function checkShow() {
-    /\* Do the same check for button A -> ALTERAR \*/
+    /* Do the same check for button A -> ALTERAR */
     if ($this->checkButtonByText(array('A', 'V'))) {
       $this->checkButtonByText(array('SALVAR', 'GRAVAR'));
     }
   }
 
-  /\* Close any opened alert dialog \*/
+  /* Close any opened alert dialog */
   protected function closeOpenedAlert() {
     $this->timeouts()->implicitWait(0);
     try {
       $this->acceptAlert();
     } catch (Exception $e) {
-      /\* Do nothing... It means that there is no alert dialog at the moment. \*/
+      /* Do nothing... It means that there is no alert dialog at the moment. */
     }
     $this->timeouts()->implicitWait(self::$implicitTimeout);
   }
 
   protected function checkButtonByText($search\_texts, $back\_url = false, $implicitTimeout = 0) {
 
-    /\* Transforma primeiro parâmetro em array de textos a serem pesquisados \*/
+    /* Transforma primeiro parâmetro em array de textos a serem pesquisados */
     if (!is\_array($search\_texts)) {
       $search\_texts = array($search\_texts);
     }
@@ -227,26 +214,26 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     $this->closeOpenedAlert();
     $this->timeouts()->implicitWait($implicitTimeout);
     try {
-      /\* If exists input #bloqueado or name='bloqueado', set its val to '0' so we can show records \*/
-      $this->select($this->byXPath("//\*\[@id = '#bloqueado'\] | //\*\[@name = 'bloqueado'\]"))->selectOptionByValue('0');
+      /* If exists input #bloqueado or name='bloqueado', set its val to '0' so we can show records */
+      $this->select($this->byXPath("//*\[@id = '#bloqueado'\] | //*\[@name = 'bloqueado'\]"))->selectOptionByValue('0');
     } catch (Exception $e) {
     }
 
     $xpath\_queries = array();
     foreach ($search\_texts as $text) {
-      $xpath\_queries\[\] = "//\*\[text()='$text'\]/ancestor::\*\[contains(@class, 'btn')\] | //\*\[text()='$text' and contains(@class, 'btn')\] | //\*\[@value='$text' and contains(@class, 'btn')\]";
+      $xpath\_queries\[\] = "//*\[text()='$text'\]/ancestor::*\[contains(@class, 'btn')\] | //*\[text()='$text' and contains(@class, 'btn')\] | //*\[@value='$text' and contains(@class, 'btn')\]";
     }
     $xpath\_query = implode($xpath\_queries, ' | ');
 
     try {
       $button = $this->byXPath($xpath\_query);
     } catch (Exception $e) {
-      /\* If element not found, return test without errors \*/
+      /* If element not found, return test without errors */
       $this->timeouts()->implicitWait(self::$implicitTimeout);
       return false;
     }
 
-    /\* If found any button that matches $search\_texts \*/
+    /* If found any button that matches $search\_texts */
     $button->click();
     $this->timeouts()->implicitWait(self::$implicitTimeout);
     $this->closeOpenedAlert();
@@ -257,3 +244,4 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     return true;
   }
 }
+{{</highlight>}}

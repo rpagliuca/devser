@@ -9,11 +9,7 @@ Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
 
 Siga os seguintes passos:
 
-1) Instalar docker
-
-2) Rodar no terminal `sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow`
-
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador
-
+1. Instalar docker
+2. Rodar no terminal `sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow`
+3. Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
+4. Acompanhar os tutoriais interativos de Tensor Flow no navegador

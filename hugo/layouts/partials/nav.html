@@ -1,6 +1,6 @@
 <nav class="main-nav">
 	{{ if not .IsHome }}
-        <center><a href='{{ .Site.BaseURL }}' style="font-size:100%"> <span class="arrow">←</span>{{ .Site.Params.home | default "Voltar" }}</a></center>
+        <center><a href='{{ .Site.BaseURL }}' style="font-size:130%"> <span class="arrow">←</span>{{ .Site.Params.home | default "Voltar" }}</a></center>
 	{{ end }}
 
 	{{ range .Site.Menus.main }}
@@ -11,3 +11,5 @@
 		<a class="cta" href="{{ .Site.RSSLink }}">{{ .Site.Params.subscribe | default "Subscribe" }}</a>
 	{{ end }}
 </nav>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>

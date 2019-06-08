@@ -17,17 +17,19 @@ Logs do Apache e do PHP são seus melhores amigos, já que eles gravam de forma 
 
 Os logs do Apache2 estão ativados por padrão, e ficam armazenados nos seguintes caminhos:
 
-/var/log/apache2/error.log
-/var/log/apache2/access.log
-/var/log/apache2/other\_vhosts\_access.log
+* /var/log/apache2/error.log
+* /var/log/apache2/access.log
+* /var/log/apache2/other_vhosts_access.log
 
 Como normalmente utilizamos VirtualHosts dentro do Apache, alguns dos arquivos anteriores estarão vazios, sendo substituídos pelos caminhos de logs configurados no próprio arquivo de configuração do VirtualHost, conforme exemplos de diretivas a seguir:
 
-\# File: /etc/apache2/sites-enabled/my\_virtual\_host.conf
- ServerName myvirtualhost
-ErrorLog /var/www/my\_virtual\_host/log/error.log
-CustomLog /var/www/my\_virtual\_host/log/access.log combined
+{{<highlight apache>}}
+\# File: /etc/apache2/sites-enabled/my_virtual_host.conf
+ServerName myvirtualhost
+ErrorLog /var/www/my_virtual_host/log/error.log
+CustomLog /var/www/my_virtual_host/log/access.log combined
  ...
+{{</highlight>}}
 
 ##  Logs do PHP
 
@@ -35,12 +37,12 @@ A maneira mais fácil de investigar o seu ambiente PHP é criar um novo arquivo 
 
 Abrindo a url **http://myvirtualhost/phpinfo.php** (ou outra URL, conforme sua configuração de VirtualHost e também do arquivo /etc/hosts), teremos acesso a todas as diretivas de configuração do PHP. As que nos interessam, neste instante, são as seguintes:
 
-Loaded Configuration File: /etc/php/5.6/apache2/php.ini
-log\_errors: true
-error\_reporting: 32767
-error\_log: no value
+* Loaded Configuration File: /etc/php/5.6/apache2/php.ini
+* log_errors: true
+* error_reporting: 32767
+* error_log: no value
 
-Informações detalhadas sobre as diretivas acima podem ser obtidas no manual do PHP: [http://php.net/manual/pt\_BR/errorfunc.configuration.php#ini.error-log](http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log) A parte importante é que os logs de erros estão ativados, e que tudo (incluindo NOTICES) serão exibidas. O fato de error\_log ser **null** implica que os logs do PHP vão ser redirecionados para os logs de erro do Apache2. Simples, assim.
+Informações detalhadas sobre as diretivas acima podem ser obtidas no manual do PHP: [http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log](http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log) A parte importante é que os logs de erros estão ativados, e que tudo (incluindo NOTICES) serão exibidas. O fato de error_log ser **null** implica que os logs do PHP vão ser redirecionados para os logs de erro do Apache2. Simples, assim.
 
 ## Visualização de logs
 
@@ -52,17 +54,22 @@ O programa **tail**, quando chamado sem nenhum parâmetro exceto o nome do arqui
 
 Exemplo:
 
-tail /var/www/my\_virtual\_host/log/error.log
+`tail /var/www/my_virtual_host/log/error.log`
 
 Tudo fica mais interessante ao se adicionar o parâmetro **\-f** ao comando tail, pois dessa forma, o terminal se tornará um monitor em tempo real do log, isto é, novos registros serão exibidos instantaneamente.
 
-tail -f /var/www/my\_virtual\_host/log/error.log
+`tail -f /var/www/my_virtual_host/log/error.log`
 
 ### Vim
 
 Os programas **vim** ou mesmo o **vi** também são úteis para navegar em logs, principalmente aqueles com dezenas de megabytes ou gigabytes, já que eles só armazenam na memória parte do conteúdo do arquivo, ao contrário de outros editores que tentam ler todo o conteúdo do arquivo para a memória logo ao carregar o arquivo.
 
-Principais comandos para navegação nos logs: **G** \-> Ir para o final do log **gg** \-> Ir para o início do log **/** -> Buscar por uma palavra **n** -> Ir para próxima ocorrência da busca
+Principais comandos para navegação nos logs:
+
+* **G** \-> Ir para o final do log
+* **gg** \-> Ir para o início do log
+* **/** -> Buscar por uma palavra
+* **n** -> Ir para próxima ocorrência da busca
 
 ### Colortail
 
@@ -70,7 +77,7 @@ Uma versão estendida do **tail**, que conta com output colorido conforme regex 
 
 Este programa pode ser instalado no Debian Jessie com o seguinte comando:
 
-sudo apt-get install colortail
+`sudo apt-get install colortail`
 
 Link para o meu regex personalizado **(/etc/colortail/conf.colortail)**: [https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e](https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e)
 
@@ -110,24 +117,26 @@ O Xdebug é um plugin para o PHP que possibilita debug interativo do de scripts 
 
 No Debian Jessie, ele pode ser instalado via repositório:
 
-apt-get install php5-xdebug
+`apt-get install php5-xdebug`
 
 As seguintes linhas devem ser adicionadas ao **php.ini **para permitir o modo debug via Xdebug:
 
-xdebug.remote\_enable=on
-xdebug.remote\_handler=dbgp
-xdebug.remote\_host=localhost
-xdebug.remote\_port=9000
-xdebug.remote\_log=/tmp/xdebug.log
+{{<highlight ini>}}
+xdebug.remote_enable=on
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.remote_log=/tmp/xdebug.log
+{{</highlight>}}
 
 Depois desta etapa, é necessário reiniciar o Apache:
 
-sudo service apache2 restart
+`sudo service apache2 restart`
 
 Acesse novamente a página **phpinfo.php** que você criou no início deste tutorial, para conferir se os novos parâmetros de xdebug foram lidos corretamente.
 
 Por último, é necessário configurar a sua IDE para aguardar conexões do Xdebug. Essa configuração depende muito da IDE, então optei por apenas encaminhar o leitor a instruções adicionais:
 
-Para quem utiliza o Netbeans: [https://netbeans.org/kb/docs/php/debugging\_pt\_BR.html#howDebuggerWorks](https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks) [https://blogs.oracle.com/netbeansphp/entry/path\_mapping\_in\_php\_debugger](https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger)
+Para quem utiliza o Netbeans: [https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks](https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks) [https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger](https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger)
 
 Para quem utiliza o Vim: [https://github.com/joonty/vdebug](https://github.com/joonty/vdebug)

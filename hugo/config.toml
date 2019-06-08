@@ -11,9 +11,9 @@ disqusShortname = "devser"
 paginate = 1000
 
 [params]
-	name = "/dev/ser (ou não?!)"
-	description = "Deve ser um ser dev."
-	bio = "Deve ser um ser dev."
+	name = "Rafael Santos"
+	bio = "Deve ser um ser dev"
+
 	# Enter optionally your twitter account
 	#twitter = "Your Twitter account"
 	enableRSS = false
@@ -35,7 +35,7 @@ paginate = 1000
 	readMore = ""
 	copyright = ""
 	# Sharing options and author information in posts
-	aboutAuthor = "Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006."
+	aboutAuthor = "Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006."
 	tweet = ""
 	share = ""
 	# 404 page
