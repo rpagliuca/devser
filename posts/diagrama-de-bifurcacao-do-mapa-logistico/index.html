@@ -7,7 +7,7 @@
 <meta name="author" content="/dev/ser (ou não?!)">
 <meta name="description" content="Deve ser um ser dev.">
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+<title>Diagrama de Bifurcação do Mapa Logístico</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
@@ -21,48 +21,39 @@
 
 
 
-<meta property="og:title" content="Aprendizado de máquina com Python &#43; Tensor Flow" />
-<meta property="og:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador" />
+<meta property="og:title" content="Diagrama de Bifurcação do Mapa Logístico" />
+<meta property="og:description" content="Ontem, desenvolvi em Octave (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.
+Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:
+$$x_{n&#43;1} = x_n r (1 - x_n)$$
+O diagrama de bifurcação representa quais os possíveis valores de x (eixo vertical) para cada valor de r (eixo horizontal), desconsiderando as primeiras iterações (o período transiente)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/" />
-<meta property="article:published_time" content="2017-05-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/" />
+<meta property="article:published_time" content="2012-11-17T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-11-17T00:00:00&#43;00:00"/>
 
 
 
-<meta itemprop="name" content="Aprendizado de máquina com Python &#43; Tensor Flow">
-<meta itemprop="description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador">
+<meta itemprop="name" content="Diagrama de Bifurcação do Mapa Logístico">
+<meta itemprop="description" content="Ontem, desenvolvi em Octave (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.
+Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:
+$$x_{n&#43;1} = x_n r (1 - x_n)$$
+O diagrama de bifurcação representa quais os possíveis valores de x (eixo vertical) para cada valor de r (eixo horizontal), desconsiderando as primeiras iterações (o período transiente).">
 
 
-<meta itemprop="datePublished" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="datePublished" content="2012-11-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="231">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aprendizado de máquina com Python &#43; Tensor Flow"/>
-<meta name="twitter:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador"/>
+<meta name="twitter:title" content="Diagrama de Bifurcação do Mapa Logístico"/>
+<meta name="twitter:description" content="Ontem, desenvolvi em Octave (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.
+Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:
+$$x_{n&#43;1} = x_n r (1 - x_n)$$
+O diagrama de bifurcação representa quais os possíveis valores de x (eixo vertical) para cada valor de r (eixo horizontal), desconsiderando as primeiras iterações (o período transiente)."/>
 
 
     </head>
@@ -82,30 +73,55 @@ Siga os seguintes passos:
         
 <article class="post">
     <header>
-        <h1>Aprendizado de máquina com Python &#43; Tensor Flow</h1>
+        <h1>Diagrama de Bifurcação do Mapa Logístico</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        12
-        Maio
-        2017
+        17
+        Novembro
+        2012
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:</p>
+        <p>Ontem, desenvolvi em <a href="https://www.gnu.org/software/octave/">Octave</a> (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.</p>
 
-<p>É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.</p>
+<p>Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:</p>
 
-<p>Siga os seguintes passos:</p>
+<p>$$x_{n+1} = x_n r (1 - x_n)$$</p>
 
-<p>1) Instalar docker</p>
+<p>O diagrama de bifurcação representa quais os possíveis valores de <em>x</em> (eixo vertical) para cada valor de <em>r</em> (eixo horizontal), desconsiderando as primeiras iterações (o período transiente). Ou seja, para saber quais os possíveis valores de <em>x</em> para <em>r</em> = 3.5, por exemplo, trace uma linha imaginária vertical sobre o ponto <em>r</em> \= 3.5 (eixo horizontal) e veja quais pontos de <em>x</em> (eixo vertical) a reta corta.</p>
 
-<p>2) Rodar no terminal <code>sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</code></p>
+<p>Perceba que conforme se aumenta o valor de <em>r</em>, o número de possíveis valores de <em>x</em> dobra, até que, para valores de <em>r</em> mais próximos de 4, uma infinidade de valores existem, adquirindo, assim, comportamento caótico naquela região. Segue o diagrama:</p>
 
-<p>3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal</p>
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2012/11/logistc_bifurcation.png"><img src="http://rs.anoluz.net/wp-content/uploads/2012/11/logistc_bifurcation-1024x704.png" alt="" title="Diagrama de Bifurcação do Mapa Logístico" /></a></p>
 
-<p>4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</p>
+<p>Código da rotina:</p>
+
+<p>clear all
+X = [];
+x0 = 0.6;
+r_min = 1;
+r_max = 4;
+dr = 0.001;
+n = (r_max - r_min)/dr;
+for r=r_min:dr:r_max
+    r   
+    x = [ x0 ];
+    for i=1:1000
+        next_x = r*x(end)*(1-x(end));
+        x = [ x next_x ];
+    end
+    X = [ X ; x(100:end) ];
+end
+hold on
+for i=1:n
+    r = r_min + dr*(i-1)
+    x = X(i, :);
+    plot(x.*0+r, x, &lsquo;.&rsquo;);
+end
+hold off
+pause</p>
 
     </section>
 </article>
@@ -117,7 +133,7 @@ Siga os seguintes passos:
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2faprendizado-de-maquina-com-python-tensor-flow%2f - Aprendizado%20de%20m%c3%a1quina%20com%20Python%20%2b%20Tensor%20Flow "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fdiagrama-de-bifurcacao-do-mapa-logistico%2f - Diagrama%20de%20Bifurca%c3%a7%c3%a3o%20do%20Mapa%20Log%c3%adstico "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -153,6 +169,10 @@ Siga os seguintes passos:
         </li>
     
         <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
             <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
         </li>
     
@@ -174,10 +194,6 @@ Siga os seguintes passos:
     
         <li>
             <a href="/devser/posts/simulando-um-computador-sap-1-simple-as-possible-1/">Simulando um computador SAP-1 (Simple As Possible 1)<aside class="dates">Oct 15 2013</aside></a>
-        </li>
-    
-        <li>
-            <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
         </li>
     
         <li>

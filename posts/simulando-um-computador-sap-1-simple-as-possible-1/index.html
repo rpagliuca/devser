@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="/dev/ser (ou não?!)">
+<meta name="description" content="Deve ser um ser dev.">
+<meta name="generator" content="Hugo 0.55.6" />
+<title>Simulando um computador SAP-1 (Simple As Possible 1)</title>
+<link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
+
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/custom-styles.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<meta property="og:title" content="Simulando um computador SAP-1 (Simple As Possible 1)" />
+<meta property="og:description" content="Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
+Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/simulando-um-computador-sap-1-simple-as-possible-1/" />
+<meta property="article:published_time" content="2013-10-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-10-15T00:00:00&#43;00:00"/>
+
+
+
+<meta itemprop="name" content="Simulando um computador SAP-1 (Simple As Possible 1)">
+<meta itemprop="description" content="Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
+Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf.">
+
+
+<meta itemprop="datePublished" content="2013-10-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-10-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="328">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Simulando um computador SAP-1 (Simple As Possible 1)"/>
+<meta name="twitter:description" content="Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
+Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Simulando um computador SAP-1 (Simple As Possible 1)</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        15
+        Outubro
+        2013
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        <p>Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.</p>
+
+<p>Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em <a href="http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf">http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf</a>.</p>
+
+<p>Além disso, informações mais detalhadas sobre os principais componentes desse circuito podem ser lidas no documento <a href="http://rs.anoluz.net/wp-content/uploads/2013/10/Relatório_SAP-1.pdf">Relatório_SAP-1.pdf</a></p>
+
+<p>Valeu a pena ter tocado o projeto até o final. Para mim, um computador agora não parece mais um artefato tão místico quanto costumava ser. Eu até fui além de simplesmente simular o SAP-1 e cheguei a construir um compiladorzinho pra ele!</p>
+
+<p>Segue vídeo da simulação desse tipo de computador usando o software Proteus. Primeiro eu dou uma visão geral do computador, depois mostro a execução de uma rotina programada de modo manual (via chaves) e depois usando um modo mais prático: compilador &ldquo;caseiro&rdquo; + memória ROM.</p>
+
+<p><a href="http://www.youtube.com/watch?v=qIYe6vY4N0M&amp;feature=youtu.be">http://www.youtube.com/watch?v=qIYe6vY4N0M&amp;feature=youtu.be</a></p>
+
+<p>Para quem quiser se aventurar, seguem dois projetos separados do Proteus, prontos para serem simulados. O primeiro é pra quem quiser programar manualmente através das chaves. Já o segundo, só roda se carregar um arquivo .HEX contendo o programa dentro da memória EEPROM.</p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2013/10/SAP-Programacao_Manual.zip">Arquivo de projeto 1: SAP-1 - Programação manual (via chaves)</a></p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2013/10/SAP-Programacao_ROM.zip">Arquivo de projeto 2: SAP-1 - Programação automática (compilador + ROM)</a> Para programar, utilize o compilador online: <a href="http://rs.anoluz.net/misc/sap-compiler/">http://rs.anoluz.net/misc/sap-compiler/</a> Siga os passos a seguir para carregar o arquivo SAP.hex do compilador online dentro da memória ROM:</p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-1.jpg"><img src="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-1-300x187.jpg" alt="" title="sap-programacao-1" /></a> Passo 1: Procure a memória ROM (destacada acima) e dê dois cliques sobre ela.</p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-2.jpg"><img src="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-2-300x187.jpg" alt="" title="sap-programacao-2" /></a> [](<a href="http://rs.anoluz.net/misc/sap-compiler/">http://rs.anoluz.net/misc/sap-compiler/</a>) Passo 2: Clique no ícone da pastinha amarela. [](<a href="http://rs.anoluz.net/misc/sap-compiler/">http://rs.anoluz.net/misc/sap-compiler/</a>) <a href="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-3.jpg"><img src="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-3-300x187.jpg" alt="" title="sap-programacao-3" /></a> Passo 3: Selecione o arquivo SAP.hex que você salvou a partir do compilador online.</p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-4.jpg"><img src="http://rs.anoluz.net/wp-content/uploads/2013/10/sap-programacao-4-300x187.jpg" alt="" title="sap-programacao-4" /></a> Passo 4: Selecione o botão &ldquo;Play&rdquo; no canto inferior esquerdo da tela. O resultado da cálculo será exibido em forma binária nos LEDs.</p>
+
+<p>Dúvidas? Estou à disposição.</p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <div>
+        <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
+        <span class="dark">Rafael Santos</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+    </div>
+    <section id="sharing" style="margin-top: 20px">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fsimulando-um-computador-sap-1-simple-as-possible-1%2f - Simulando%20um%20computador%20SAP-1%20%28Simple%20As%20Possible%201%29 "><span class="icon-twitter"> Compartilhe</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Compartilhe</span>
+</a>
+
+    </section>
+</footer>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=682823301800780&autoLogAppEvents=1">
+</script>
+<center><div class="fb-comments" data-width="500"></div></center>
+
+<hr/>
+
+<ul id="post-list" class="archive readmore">
+    <h3>Últimos artigos</h3>
+
+    
+    
+    
+        <li>
+            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/">Deixe seu MySQL muito mais rápido rodando na memória RAM<aside class="dates">May 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/medindo-performance-e-gargalos-de-uma-pagina-php/">Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug<aside class="dates">Apr 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/">Criando plugins para a biblioteca de templates Smarty do PHP<aside class="dates">Mar 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/testes-automatizados-com-selenium-phpunit/">Testes automatizados com Selenium &#43; PHPUnit<aside class="dates">Mar 14 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/">Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs<aside class="dates">Feb 21 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/rafaelpagliuca">
+        <i class="fa fa-facebook"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/rpagliuca">
+        <i class="fa fa-github"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2019 /dev/ser (ou não?!)
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/main.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

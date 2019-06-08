@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="/dev/ser (ou não?!)">
+<meta name="description" content="Deve ser um ser dev.">
+<meta name="generator" content="Hugo 0.55.6" />
+<title>Testes automatizados com Selenium &#43; PHPUnit</title>
+<link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
+
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/custom-styles.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<meta property="og:title" content="Testes automatizados com Selenium &#43; PHPUnit" />
+<meta property="og:description" content="Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
+1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
+Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript &#43; CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/testes-automatizados-com-selenium-phpunit/" />
+<meta property="article:published_time" content="2017-03-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-03-14T00:00:00&#43;00:00"/>
+
+
+
+<meta itemprop="name" content="Testes automatizados com Selenium &#43; PHPUnit">
+<meta itemprop="description" content="Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
+1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
+Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript &#43; CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.">
+
+
+<meta itemprop="datePublished" content="2017-03-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-03-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1054">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Testes automatizados com Selenium &#43; PHPUnit"/>
+<meta name="twitter:description" content="Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
+1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
+Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript &#43; CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Testes automatizados com Selenium &#43; PHPUnit</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        14
+        Março
+        2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<h1 id="introdução">Introdução</h1>
+
+<p>Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:</p>
+
+<p>1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio</p>
+
+<p>Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</p>
+
+<h1 id="selenium">Selenium</h1>
+
+<p>Para nos ajudar no objetivo de automatizar esses testes, contamos com a biblioteca Selenium (cujo slogan é <strong>Selenium automates browsers</strong>), que se comunica com os principais navegadores de internet do mercado por meio de seus webdrivers, permitindo abrir URLs, clicar em links, inspecionar propriedades de elementos HTML e muito mais.</p>
+
+<p>O Selenium possui <em>bindings</em> para algumas das principais linguagens de programaçaão: Java, Python, PHP, C#, sendo que alguns desses bindings são oficiais, enquanto outros são disponibilizados por terceiros.</p>
+
+<p><img src="http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211245.png" alt="" title="Website do Selenium" /></p>
+
+<h1 id="phpunit">PHPUnit</h1>
+
+<p>O PHPUnit é uma biblioteca do PHP tipicamente dedicada a testes unitários. Entretanto, utilizando-a em conjunto com o Selenium, pode-se gerar testes funcionais automatizados. É uma biblioteca com um objetivo bem definido, voltada para validar se algumas alegações (assertions) são verdadeiras ou falsas. Normalmente alegações falsas são comportamentos inesperados, e portanto são reportados pelo PHPUnit na forma de um relatório ao final da bateria de testes.</p>
+
+<p>Exemplo de aplicação do PHPUnit retirado de <a href="https://phpunit.de/getting-started.html">https://phpunit.de/getting-started.html</a>:</p>
+
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211923.png"><img src="http://rs.anoluz.net/wp-content/uploads/2017/03/Screenshot-from-2017-03-13-211923-1024x550.png" alt="" title="Exemplo do PHPUnit" /></a></p>
+
+<h1 id="instalação-considerando-o-ambiente-g-fox">Instalação considerando o ambiente G. Fox</h1>
+
+<p>Para rodar os testes funcionais via PHPUnit + Selenium (tests/functional/*), acompanhe os passos seguintes:</p>
+
+<p>1) Baixar o phpunit-5.*.*.phar <a href="https://phar.phpunit.de">https://phar.phpunit.de</a> e copiar para /usr/local/bin, adicionando permissão de execução (chmod a+x)</p>
+
+<p>2) Baixar o Selenium Server (selenium-server-standalone-*.jar) <a href="http://www.seleniumhq.org/download/">http://www.seleniumhq.org/download/</a> em uma pasta de sua preferência</p>
+
+<p>3) Baixar o Google Chrome Driver <a href="https://sites.google.com/a/chromium.org/chromedriver/">https://sites.google.com/a/chromium.org/chromedriver/</a> e descompactar na mesma pasta escolhida no passo 2</p>
+
+<p>4) Instalar o pacote phpunit-selenium via composer a partir da pasta raiz do git do G. Fox: composer.phar update &ndash;dev</p>
+
+<p>5) Configurar config.json do G. Fox, adicionando o grupo abaixo de acordo com suas credenciais:</p>
+
+<pre><code>&quot;selenium&quot;: {
+  &quot;user&quot;: &quot;meu.usuario@\*\*\*.com&quot;,
+  &quot;password&quot;: &quot;minha\_senha&quot;
+}
+</code></pre>
+
+<p>6) Depois de baixar todas as dependências acima:</p>
+
+<p>6.1) Entrar na pasta escolhida no passo 2, e rodar servidor do Selenium Server com o comando a seguir</p>
+
+<p>java -jar selenium-server-standalone-3.0.1.jar</p>
+
+<p>OBS1 - O nome do arquivo pode ser diferente conforme a versão OBS2 - Se der erro para inicializar selenium-server-standalone, verifique se Google Chrome Driver foi instalado no caminho correto, a partir das mensagens de erros.</p>
+
+<p>6.2) Por último, rode o phpunit a partir da pasta raiz do repositório git do G. Fox:</p>
+
+<p>phpunit-5.5.4.phar &ndash;verbose &ndash;bootstrap load.inc tests/functional/browseEveryPageTest.php</p>
+
+<p>OBS - O nome do executável pode ser diferente conforme a versão</p>
+
+<h1 id="métodos-úteis">Métodos úteis</h1>
+
+<p>class MyCustomSeleniumTestCase extends PHPUnit_Extensions_Selenium2TestCase {</p>
+
+<p>protected static $implicitTimeout = 20000;</p>
+
+<p>public static $browsers = array(
+    array(
+      &lsquo;browserName&rsquo; =&gt; &lsquo;chrome&rsquo;,
+      &lsquo;sessionStrategy&rsquo; =&gt; &lsquo;shared&rsquo;,
+    ),
+  );</p>
+
+<p>/* This method is required to keep session alive even after failing tests */
+  public function onNotSuccessfulTest($e){
+    throw $e;
+  }</p>
+
+<p>protected function setUp() {
+    global $CFG;
+    try {
+      $this-&gt;test_user = $CFG-&gt;selenium-&gt;user;
+      $this-&gt;test_password = $CFG-&gt;selenium-&gt;password;
+      $this-&gt;test_url = $CFG-&gt;url-&gt;https;
+    } catch (Exception $e) {
+      throw new Exception(&lsquo;Incorrect config.json settings ($CFG-&gt;selenium-&gt;user, $CFG-&gt;selenium-&gt;password, $CFG-&gt;url-&gt;http)&rsquo;);
+    }
+    $this-&gt;setBrowserUrl($CFG-&gt;url-&gt;http);
+    $this-&gt;prepareSession()-&gt;currentWindow()-&gt;maximize();
+  }</p>
+
+<p>/**
+   * Custom assertion
+   * Checks if text of html body contains text
+   */
+  protected function assertPageContains($string) {
+    try {
+      $this-&gt;assertContains($string, $this-&gt;byCssSelector(&lsquo;body&rsquo;)-&gt;text());
+    } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+      throw new PHPUnit_Framework_ExpectationFailedException(&ldquo;Test failed. Page &lt;{$this-&gt;url()}&gt; does not contain &lsquo;$string&rsquo;.&ldquo;);
+    }
+  }</p>
+
+<p>/**
+   * Custom assertion
+   * Checks if text of html body does not contain text
+   */
+  protected function assertPageDoesNotContain($string) {
+    try {
+      $this-&gt;assertNotContains($string, $this-&gt;byCssSelector(&lsquo;html&rsquo;)-&gt;attribute(&lsquo;innerHTML&rsquo;));
+    } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+      throw new PHPUnit_Framework_ExpectationFailedException(&ldquo;Test failed. Page &lt;{$this-&gt;url()}&gt; contains &lsquo;$string&rsquo;.&ldquo;);
+    }
+  }</p>
+
+<p>/* Block that types a value on autocomplete field, waits for
+   * the options and click on the first option */
+  protected function clickOnAutocomplete($selector, $value) {
+    /*  Remove autocomplete elements that are left over on DOM, before trying to use a new one */
+    $this-&gt;execute(array(
+      &lsquo;script&rsquo; =&gt; &lsquo;$(&ldquo;.ui-menu-item&rdquo;).remove()&rsquo;,
+      &lsquo;args&rsquo; =&gt; array(),
+    ));
+    $this-&gt;byCssSelector($selector)-&gt;value($value);
+    $this-&gt;byCssSelector(&lsquo;.ui-menu-item&rsquo;)-&gt;click();
+    /* Blur event */
+    $this-&gt;execute(array(
+      &lsquo;script&rsquo; =&gt; &lsquo;!!document.activeElement ? document.activeElement.blur() : 0&rsquo;,
+      &lsquo;args&rsquo; =&gt; array(),
+    ));
+  }</p>
+
+<p>/* Sometimes Selenium cannot click on an element, so we can use this workaround */
+  protected function jsClick($selector) {
+    $this-&gt;execute(array(
+      &lsquo;script&rsquo; =&gt; &ldquo;$(&lsquo;$selector&rsquo;).click();&rdquo;,
+      &lsquo;args&rsquo; =&gt; array(),
+    ));
+  }</p>
+
+<p>protected function waitShort() {
+    sleep(2);
+  }</p>
+
+<p>protected function waitLong() {
+    sleep(10);
+  }</p>
+
+<p>protected function stop() {
+    sleep(99999);
+  }</p>
+
+<p>/* Login */
+  protected function testLoginCorrect() {</p>
+
+<pre><code>/\* Wait for 10 seconds at most for an element to be found \*/
+$this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
+
+/\* First we logout \*/
+$this-&gt;url('/login/logout');
+
+$this-&gt;url('/');
+$this-&gt;byId('usuario')-&gt;value($this-&gt;test\_user);
+$this-&gt;byId('senha')-&gt;value($this-&gt;test\_password);
+$this-&gt;byId('login')-&gt;submit();
+
+/\* Redirect to home, skipping Tela Favorita \*/
+$this-&gt;url($this-&gt;tela\_url . '/navegacao');
+
+$this-&gt;assertEquals($this-&gt;teste\_url . '/navegacao', $this-&gt;url());
+$this-&gt;assertPageContains('AMBIENTE');
+$this-&gt;assertPageContains('NAVEGAR');
+</code></pre>
+
+<p>}</p>
+
+<p>/**
+   * Default tests for a page
+   *
+   * Check for Call Stack
+   * Test button INSERIR
+   * Test button VISUALIZAR
+   */
+  protected function defaultPageTests() {
+    $this-&gt;closeOpenedAlert();
+    $url = $this-&gt;url();
+    /* Check if main page does not have Call Stack */
+    $this-&gt;assertPageDoesNotContain(&ldquo;Call Stack&rdquo;);</p>
+
+<pre><code>/\* Click on button INSERIR, if exists, and check if does not have Call Stack \*/
+$this-&gt;checkButtonByText('INSERIR', $url);
+
+/\* Do the same check for button BUSCAR \*/
+if ($this-&gt;checkButtonByText(array('BUSCAR', 'VISUALIZAR'))) {
+  $this-&gt;checkShow();
+  $this-&gt;url($url);
+}
+$this-&gt;checkShow();
+</code></pre>
+
+<p>}</p>
+
+<p>function checkShow() {
+    /* Do the same check for button A -&gt; ALTERAR */
+    if ($this-&gt;checkButtonByText(array(&lsquo;A&rsquo;, &lsquo;V&rsquo;))) {
+      $this-&gt;checkButtonByText(array(&lsquo;SALVAR&rsquo;, &lsquo;GRAVAR&rsquo;));
+    }
+  }</p>
+
+<p>/* Close any opened alert dialog */
+  protected function closeOpenedAlert() {
+    $this-&gt;timeouts()-&gt;implicitWait(0);
+    try {
+      $this-&gt;acceptAlert();
+    } catch (Exception $e) {
+      /* Do nothing&hellip; It means that there is no alert dialog at the moment. */
+    }
+    $this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
+  }</p>
+
+<p>protected function checkButtonByText($search_texts, $back_url = false, $implicitTimeout = 0) {</p>
+
+<pre><code>/\* Transforma primeiro parâmetro em array de textos a serem pesquisados \*/
+if (!is\_array($search\_texts)) {
+  $search\_texts = array($search\_texts);
+}
+
+$this-&gt;closeOpenedAlert();
+$this-&gt;timeouts()-&gt;implicitWait($implicitTimeout);
+try {
+  /\* If exists input #bloqueado or name='bloqueado', set its val to '0' so we can show records \*/
+  $this-&gt;select($this-&gt;byXPath(&quot;//\*\[@id = '#bloqueado'\] | //\*\[@name = 'bloqueado'\]&quot;))-&gt;selectOptionByValue('0');
+} catch (Exception $e) {
+}
+
+$xpath\_queries = array();
+foreach ($search\_texts as $text) {
+  $xpath\_queries\[\] = &quot;//\*\[text()='$text'\]/ancestor::\*\[contains(@class, 'btn')\] | //\*\[text()='$text' and contains(@class, 'btn')\] | //\*\[@value='$text' and contains(@class, 'btn')\]&quot;;
+}
+$xpath\_query = implode($xpath\_queries, ' | ');
+
+try {
+  $button = $this-&gt;byXPath($xpath\_query);
+} catch (Exception $e) {
+  /\* If element not found, return test without errors \*/
+  $this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
+  return false;
+}
+
+/\* If found any button that matches $search\_texts \*/
+$button-&gt;click();
+$this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
+$this-&gt;closeOpenedAlert();
+$this-&gt;assertPageDoesNotContain(&quot;Call Stack&quot;);
+if (!empty($back\_url)) {
+  $this-&gt;url($back\_url);
+}
+return true;
+</code></pre>
+
+<p>}
+}</p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <div>
+        <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
+        <span class="dark">Rafael Santos</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+    </div>
+    <section id="sharing" style="margin-top: 20px">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2ftestes-automatizados-com-selenium-phpunit%2f - Testes%20automatizados%20com%20Selenium%20%2b%20PHPUnit "><span class="icon-twitter"> Compartilhe</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Compartilhe</span>
+</a>
+
+    </section>
+</footer>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=682823301800780&autoLogAppEvents=1">
+</script>
+<center><div class="fb-comments" data-width="500"></div></center>
+
+<hr/>
+
+<ul id="post-list" class="archive readmore">
+    <h3>Últimos artigos</h3>
+
+    
+    
+    
+        <li>
+            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/">Deixe seu MySQL muito mais rápido rodando na memória RAM<aside class="dates">May 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/medindo-performance-e-gargalos-de-uma-pagina-php/">Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug<aside class="dates">Apr 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/">Criando plugins para a biblioteca de templates Smarty do PHP<aside class="dates">Mar 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/">Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs<aside class="dates">Feb 21 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/simulando-um-computador-sap-1-simple-as-possible-1/">Simulando um computador SAP-1 (Simple As Possible 1)<aside class="dates">Oct 15 2013</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/rafaelpagliuca">
+        <i class="fa fa-facebook"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/rpagliuca">
+        <i class="fa fa-github"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2019 /dev/ser (ou não?!)
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/main.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

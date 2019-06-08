@@ -7,7 +7,7 @@
 <meta name="author" content="/dev/ser (ou não?!)">
 <meta name="description" content="Deve ser um ser dev.">
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+<title>História da chave assimétrica</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
@@ -21,48 +21,42 @@
 
 
 
-<meta property="og:title" content="Aprendizado de máquina com Python &#43; Tensor Flow" />
-<meta property="og:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador" />
+<meta property="og:title" content="História da chave assimétrica" />
+<meta property="og:description" content="Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
+Referências
+[1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf
+[2] DIFFIE, HELLMAN. New directions in cryptography. Disponível em: http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf
+[3] RIVEST, R. L." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/" />
-<meta property="article:published_time" content="2017-05-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/historia-da-chave-assimetrica/" />
+<meta property="article:published_time" content="2011-12-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2011-12-11T00:00:00&#43;00:00"/>
 
 
 
-<meta itemprop="name" content="Aprendizado de máquina com Python &#43; Tensor Flow">
-<meta itemprop="description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador">
+<meta itemprop="name" content="História da chave assimétrica">
+<meta itemprop="description" content="Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
+Referências
+[1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf
+[2] DIFFIE, HELLMAN. New directions in cryptography. Disponível em: http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf
+[3] RIVEST, R. L.">
 
 
-<meta itemprop="datePublished" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="datePublished" content="2011-12-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-12-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="87">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aprendizado de máquina com Python &#43; Tensor Flow"/>
-<meta name="twitter:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador"/>
+<meta name="twitter:title" content="História da chave assimétrica"/>
+<meta name="twitter:description" content="Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
+Referências
+[1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf
+[2] DIFFIE, HELLMAN. New directions in cryptography. Disponível em: http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf
+[3] RIVEST, R. L."/>
 
 
     </head>
@@ -82,30 +76,26 @@ Siga os seguintes passos:
         
 <article class="post">
     <header>
-        <h1>Aprendizado de máquina com Python &#43; Tensor Flow</h1>
+        <h1>História da chave assimétrica</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        12
-        Maio
-        2017
+        11
+        Dezembro
+        2011
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:</p>
+        <p>Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.</p>
 
-<p>É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.</p>
+<p><em>Referências</em></p>
 
-<p>Siga os seguintes passos:</p>
+<p>[1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: <a href="http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf">http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf</a></p>
 
-<p>1) Instalar docker</p>
+<p>[2] DIFFIE, HELLMAN. New directions in cryptography. Disponível em: <a href="http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf">http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf</a></p>
 
-<p>2) Rodar no terminal <code>sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</code></p>
-
-<p>3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal</p>
-
-<p>4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</p>
+<p>[3] RIVEST, R. L., SHAMIR, A., ADLEMAN, L. A Method for Obtaining Digital Signatures and Public-Key Cryptosystems. Disponível em: <a href="http://www.math.toronto.edu/lgoldmak/302/RSA.pdf">http://www.math.toronto.edu/lgoldmak/302/RSA.pdf</a></p>
 
     </section>
 </article>
@@ -117,7 +107,7 @@ Siga os seguintes passos:
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2faprendizado-de-maquina-com-python-tensor-flow%2f - Aprendizado%20de%20m%c3%a1quina%20com%20Python%20%2b%20Tensor%20Flow "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fhistoria-da-chave-assimetrica%2f - Hist%c3%b3ria%20da%20chave%20assim%c3%a9trica "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -153,6 +143,10 @@ Siga os seguintes passos:
         </li>
     
         <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
             <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
         </li>
     
@@ -178,10 +172,6 @@ Siga os seguintes passos:
     
         <li>
             <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
-        </li>
-    
-        <li>
-            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
         </li>
     
 </ul>

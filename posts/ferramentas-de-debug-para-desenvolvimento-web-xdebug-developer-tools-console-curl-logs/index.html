@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="/dev/ser (ou não?!)">
+<meta name="description" content="Deve ser um ser dev.">
+<meta name="generator" content="Hugo 0.55.6" />
+<title>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs</title>
+<link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
+
+<link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/custom-styles.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<meta property="og:title" content="Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs" />
+<meta property="og:description" content="Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C&#43;&#43;, Java, .NET, etc
+Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
+OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas muito disso pode ser reaproveitado em outros ambientes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/" />
+<meta property="article:published_time" content="2017-02-21T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-02-21T00:00:00&#43;00:00"/>
+
+
+
+<meta itemprop="name" content="Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs">
+<meta itemprop="description" content="Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C&#43;&#43;, Java, .NET, etc
+Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
+OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas muito disso pode ser reaproveitado em outros ambientes.">
+
+
+<meta itemprop="datePublished" content="2017-02-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-02-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1004">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs"/>
+<meta name="twitter:description" content="Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C&#43;&#43;, Java, .NET, etc
+Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
+OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas muito disso pode ser reaproveitado em outros ambientes."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+        <center><a href='https://rpagliuca.github.io/devser/' style="font-size:100%"> <span class="arrow">←</span>Voltar</a></center>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        21
+        Fevereiro
+        2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc</p>
+
+<p>Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.</p>
+
+<p>OBS - A partir de agora, assumo um ambiente Linux + Apache + PHP, mas muito disso pode ser reaproveitado em outros ambientes.</p>
+
+<h1 id="logs-do-apache-php">Logs do Apache + PHP</h1>
+
+<p>Logs do Apache e do PHP são seus melhores amigos, já que eles gravam de forma definitiva todos os erros que possam ter estourado em seu código, independentemente da página a ser testada emitir um redirect para outra página, por exemplo.</p>
+
+<h2 id="logs-do-apache">Logs do Apache</h2>
+
+<p>Os logs do Apache2 estão ativados por padrão, e ficam armazenados nos seguintes caminhos:</p>
+
+<p>/var/log/apache2/error.log
+/var/log/apache2/access.log
+/var/log/apache2/other_vhosts_access.log</p>
+
+<p>Como normalmente utilizamos VirtualHosts dentro do Apache, alguns dos arquivos anteriores estarão vazios, sendo substituídos pelos caminhos de logs configurados no próprio arquivo de configuração do VirtualHost, conforme exemplos de diretivas a seguir:</p>
+
+<p># File: /etc/apache2/sites-enabled/my_virtual_host.conf
+ ServerName myvirtualhost
+ErrorLog /var/www/my_virtual_host/log/error.log
+CustomLog /var/www/my_virtual_host/log/access.log combined
+ &hellip;</p>
+
+<h2 id="logs-do-php"> Logs do PHP</h2>
+
+<p>A maneira mais fácil de investigar o seu ambiente PHP é criar um novo arquivo chamado <strong>phpinfo.php</strong> com o seguinte conteúdo e colocá-lo no diretório público de seu VirtualHost.</p>
+
+<p>Abrindo a url <strong><a href="http://myvirtualhost/phpinfo.php">http://myvirtualhost/phpinfo.php</a></strong> (ou outra URL, conforme sua configuração de VirtualHost e também do arquivo /etc/hosts), teremos acesso a todas as diretivas de configuração do PHP. As que nos interessam, neste instante, são as seguintes:</p>
+
+<p>Loaded Configuration File: /etc/php/5.6/apache2/php.ini
+log_errors: true
+error_reporting: 32767
+error_log: no value</p>
+
+<p>Informações detalhadas sobre as diretivas acima podem ser obtidas no manual do PHP: <a href="http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log">http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log</a> A parte importante é que os logs de erros estão ativados, e que tudo (incluindo NOTICES) serão exibidas. O fato de error_log ser <strong>null</strong> implica que os logs do PHP vão ser redirecionados para os logs de erro do Apache2. Simples, assim.</p>
+
+<h2 id="visualização-de-logs">Visualização de logs</h2>
+
+<p>Algumas ferramentas que estão disponíveis em qualquer máquina Linux são ótimas para visualizar logs.</p>
+
+<h3 id="tail"> Tail</h3>
+
+<p>O programa <strong>tail</strong>, quando chamado sem nenhum parâmetro exceto o nome do arquivo, apenas exibe as últimas linhas do log.</p>
+
+<p>Exemplo:</p>
+
+<p>tail /var/www/my_virtual_host/log/error.log</p>
+
+<p>Tudo fica mais interessante ao se adicionar o parâmetro <strong>-f</strong> ao comando tail, pois dessa forma, o terminal se tornará um monitor em tempo real do log, isto é, novos registros serão exibidos instantaneamente.</p>
+
+<p>tail -f /var/www/my_virtual_host/log/error.log</p>
+
+<h3 id="vim">Vim</h3>
+
+<p>Os programas <strong>vim</strong> ou mesmo o <strong>vi</strong> também são úteis para navegar em logs, principalmente aqueles com dezenas de megabytes ou gigabytes, já que eles só armazenam na memória parte do conteúdo do arquivo, ao contrário de outros editores que tentam ler todo o conteúdo do arquivo para a memória logo ao carregar o arquivo.</p>
+
+<p>Principais comandos para navegação nos logs: <strong>G</strong> -&gt; Ir para o final do log <strong>gg</strong> -&gt; Ir para o início do log <strong>/</strong> -&gt; Buscar por uma palavra <strong>n</strong> -&gt; Ir para próxima ocorrência da busca</p>
+
+<h3 id="colortail">Colortail</h3>
+
+<p>Uma versão estendida do <strong>tail</strong>, que conta com output colorido conforme regex que pode ser customizado por você mesmo.</p>
+
+<p>Este programa pode ser instalado no Debian Jessie com o seguinte comando:</p>
+
+<p>sudo apt-get install colortail</p>
+
+<p>Link para o meu regex personalizado <strong>(/etc/colortail/conf.colortail)</strong>: <a href="https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e">https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e</a></p>
+
+<p>Usando o regex personalizado, seu log ficará parecido com esse: <a href="http://rs.anoluz.net/wp-content/uploads/2017/02/Screenshot-from-2017-02-24-081510.png"><img src="http://rs.anoluz.net/wp-content/uploads/2017/02/Screenshot-from-2017-02-24-081510-1024x291.png" alt="" title="Colortail com regex personalizado para erros do PHP" /></a></p>
+
+<p> </p>
+
+<h1 id="developer-tools-console">Developer Tools Console</h1>
+
+<p>Principalmente utilizado para debugar Javascript, Ajax, e HTTP Requests. Está disponível tanto no navegador Chrome quanto no Firefox apertando a tecla F12. Vou comentar algumas funcionalidades importantes do Developer Tools do navegador Chrome, mas as ferramentas do Firefox são similiares.</p>
+
+<p>As funcionalides a seguir estão todas contidas na aba <strong>Network/Rede</strong>:</p>
+
+<h2 id="1-configuração">1) Configuração:</h2>
+
+<p>1.1) <strong>Filter</strong>: Permite definir quais tipos de request serão listados na aba Network. Normalmente pode não ser interessante logar requests para arquivos JS, CSS ou Img, por exemplo.</p>
+
+<p>1.2) <strong>Preserve Log</strong>: Útil para páginas com redirect, ou com ajax seguido de submissão de form. Preserva o log de todos os request, até que sejam manualmente apagados.</p>
+
+<p>1.3) <strong>Disable Cache</strong>: Desabilita cache de imagens e javascript, crucial para debug de arquivos recém alterados.</p>
+
+<h2 id="2-requests">2) Requests:</h2>
+
+<p>2.1) <strong>Initiator</strong>: Informação sobre quem disparou o request. Pode ter sido um form da página, uma linha de javascript, etc. No caso de javascript, é apresentado um <strong>backtrace</strong> do disparo. Essa informação é fundamental para debugar ajax.</p>
+
+<p>2.2) <strong>Headers</strong> (Response Headers/Request Headers): Permite visualizar se o formulário ou ajax a ser testado está enviando e recebendo corretamente as informações esperadas, via GET ou POST.</p>
+
+<p>2.3) <strong>Cookies</strong>: Lista todos os cookies dispníveis para o navegador a partir da URL atual. Com essa informação, é possível até inspecionar o arquivo de de sessão do PHP dentro do servidor.</p>
+
+<p>2.4) <strong>Replay XHR</strong> (para Ajax): Muito útil, mas no Chrome funciona apenas com ajax. Permite reproduzir um request qualquer. É muito útil para testar ações repetitivas, como submeter formulários. Para suprir essa falta de <strong>Replay</strong> para requests GET e POST em geral, utilizamos o item a seguir.</p>
+
+<p>2.5) <strong>Copy -&gt; Copy as cURL</strong>: Supre muito bem a falta de um <strong>Replay</strong> genérico no Chrome. Utilizando essa ação, um comando de request do tipo cURL é criado e pode ser colado diretamente no terminal. Dessa forma, ações repetitivas podem ser muito facilmente testadas.</p>
+
+<h1 id="xdebug">Xdebug</h1>
+
+<p>O Xdebug é um plugin para o PHP que possibilita debug interativo do de scripts php a partir do interpretador PHP, permitindo <strong>breakpoints</strong>, <strong>step over</strong>, <strong>step into</strong>, visualização de valores de variáveis, etc.</p>
+
+<p>No Debian Jessie, ele pode ser instalado via repositório:</p>
+
+<p>apt-get install php5-xdebug</p>
+
+<p>As seguintes linhas devem ser adicionadas ao <strong>php.ini </strong>para permitir o modo debug via Xdebug:</p>
+
+<p>xdebug.remote_enable=on
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.remote_log=/tmp/xdebug.log</p>
+
+<p>Depois desta etapa, é necessário reiniciar o Apache:</p>
+
+<p>sudo service apache2 restart</p>
+
+<p>Acesse novamente a página <strong>phpinfo.php</strong> que você criou no início deste tutorial, para conferir se os novos parâmetros de xdebug foram lidos corretamente.</p>
+
+<p>Por último, é necessário configurar a sua IDE para aguardar conexões do Xdebug. Essa configuração depende muito da IDE, então optei por apenas encaminhar o leitor a instruções adicionais:</p>
+
+<p>Para quem utiliza o Netbeans: <a href="https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks">https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks</a> <a href="https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger">https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger</a></p>
+
+<p>Para quem utiliza o Vim: <a href="https://github.com/joonty/vdebug">https://github.com/joonty/vdebug</a></p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <div>
+        <img class="avatar" src="https://rpagliuca.github.io/devser/images/avatar.png" style="float: left">
+        <span class="dark">Rafael Santos</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
+    </div>
+    <section id="sharing" style="margin-top: 20px">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs%2f - Ferramentas%20de%20debug%20para%20desenvolvimento%20web%3a%20Xdebug%20%2b%20Developer%20Tools%20Console%20%2b%20Curl%20%2b%20Logs "><span class="icon-twitter"> Compartilhe</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Compartilhe</span>
+</a>
+
+    </section>
+</footer>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=682823301800780&autoLogAppEvents=1">
+</script>
+<center><div class="fb-comments" data-width="500"></div></center>
+
+<hr/>
+
+<ul id="post-list" class="archive readmore">
+    <h3>Últimos artigos</h3>
+
+    
+    
+    
+        <li>
+            <a href="/devser/posts/migracao-para-gohugo/">Migração do blog para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/">Deixe seu MySQL muito mais rápido rodando na memória RAM<aside class="dates">May 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/medindo-performance-e-gargalos-de-uma-pagina-php/">Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug<aside class="dates">Apr 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/">Criando plugins para a biblioteca de templates Smarty do PHP<aside class="dates">Mar 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/testes-automatizados-com-selenium-phpunit/">Testes automatizados com Selenium &#43; PHPUnit<aside class="dates">Mar 14 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/simulando-um-computador-sap-1-simple-as-possible-1/">Simulando um computador SAP-1 (Simple As Possible 1)<aside class="dates">Oct 15 2013</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/rafaelpagliuca">
+        <i class="fa fa-facebook"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/rpagliuca">
+        <i class="fa fa-github"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2019 /dev/ser (ou não?!)
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/main.js"></script>
+<script src="https://rpagliuca.github.io/devser/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

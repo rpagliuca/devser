@@ -7,7 +7,7 @@
 <meta name="author" content="/dev/ser (ou não?!)">
 <meta name="description" content="Deve ser um ser dev.">
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+<title>Modelo da Partícula na Caixa</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
@@ -21,48 +21,36 @@
 
 
 
-<meta property="og:title" content="Aprendizado de máquina com Python &#43; Tensor Flow" />
-<meta property="og:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador" />
+<meta property="og:title" content="Modelo da Partícula na Caixa" />
+<meta property="og:description" content="Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
+No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
+Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/" />
-<meta property="article:published_time" content="2017-05-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/modelo-da-particula-na-caixa/" />
+<meta property="article:published_time" content="2012-06-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-06-19T00:00:00&#43;00:00"/>
 
 
 
-<meta itemprop="name" content="Aprendizado de máquina com Python &#43; Tensor Flow">
-<meta itemprop="description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador">
+<meta itemprop="name" content="Modelo da Partícula na Caixa">
+<meta itemprop="description" content="Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
+No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
+Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente.">
 
 
-<meta itemprop="datePublished" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="datePublished" content="2012-06-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-06-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="109">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aprendizado de máquina com Python &#43; Tensor Flow"/>
-<meta name="twitter:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador"/>
+<meta name="twitter:title" content="Modelo da Partícula na Caixa"/>
+<meta name="twitter:description" content="Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
+No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
+Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente."/>
 
 
     </head>
@@ -82,30 +70,24 @@ Siga os seguintes passos:
         
 <article class="post">
     <header>
-        <h1>Aprendizado de máquina com Python &#43; Tensor Flow</h1>
+        <h1>Modelo da Partícula na Caixa</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        12
-        Maio
-        2017
+        19
+        Junho
+        2012
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:</p>
+        <p>Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.</p>
 
-<p>É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.</p>
+<p><a href="http://rs.anoluz.net/wp-content/uploads/2012/06/atrator.png"><img src="http://rs.anoluz.net/wp-content/uploads/2012/06/atrator-297x300.png" alt="" title="Atrator da Partícula na Caixa" /></a>No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.</p>
 
-<p>Siga os seguintes passos:</p>
+<p>Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente.</p>
 
-<p>1) Instalar docker</p>
-
-<p>2) Rodar no terminal <code>sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</code></p>
-
-<p>3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal</p>
-
-<p>4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</p>
+<p>A imagem é um exemplo de atrator gerado durante a solução numérica do sistema caótico, para condições iniciais quaisquer.</p>
 
     </section>
 </article>
@@ -117,7 +99,7 @@ Siga os seguintes passos:
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2faprendizado-de-maquina-com-python-tensor-flow%2f - Aprendizado%20de%20m%c3%a1quina%20com%20Python%20%2b%20Tensor%20Flow "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fmodelo-da-particula-na-caixa%2f - Modelo%20da%20Part%c3%adcula%20na%20Caixa "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -153,6 +135,10 @@ Siga os seguintes passos:
         </li>
     
         <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
             <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
         </li>
     
@@ -178,10 +164,6 @@ Siga os seguintes passos:
     
         <li>
             <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
-        </li>
-    
-        <li>
-            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
         </li>
     
 </ul>

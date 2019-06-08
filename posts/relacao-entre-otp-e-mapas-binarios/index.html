@@ -7,7 +7,7 @@
 <meta name="author" content="/dev/ser (ou não?!)">
 <meta name="description" content="Deve ser um ser dev.">
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+<title>Relação entre OTP e Mapas Binários</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
@@ -21,48 +21,36 @@
 
 
 
-<meta property="og:title" content="Aprendizado de máquina com Python &#43; Tensor Flow" />
-<meta property="og:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador" />
+<meta property="og:title" content="Relação entre OTP e Mapas Binários" />
+<meta property="og:description" content="Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
+Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
+ Amplo keyspace (intervalo de condições iniciais)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/" />
-<meta property="article:published_time" content="2017-05-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/relacao-entre-otp-e-mapas-binarios/" />
+<meta property="article:published_time" content="2012-11-14T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-11-14T00:00:00&#43;00:00"/>
 
 
 
-<meta itemprop="name" content="Aprendizado de máquina com Python &#43; Tensor Flow">
-<meta itemprop="description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador">
+<meta itemprop="name" content="Relação entre OTP e Mapas Binários">
+<meta itemprop="description" content="Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
+Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
+ Amplo keyspace (intervalo de condições iniciais)">
 
 
-<meta itemprop="datePublished" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="datePublished" content="2012-11-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="182">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aprendizado de máquina com Python &#43; Tensor Flow"/>
-<meta name="twitter:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador"/>
+<meta name="twitter:title" content="Relação entre OTP e Mapas Binários"/>
+<meta name="twitter:description" content="Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
+Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
+ Amplo keyspace (intervalo de condições iniciais)"/>
 
 
     </head>
@@ -82,30 +70,44 @@ Siga os seguintes passos:
         
 <article class="post">
     <header>
-        <h1>Aprendizado de máquina com Python &#43; Tensor Flow</h1>
+        <h1>Relação entre OTP e Mapas Binários</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        12
-        Maio
-        2017
+        14
+        Novembro
+        2012
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:</p>
+        <p>Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).</p>
 
-<p>É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.</p>
+<p>Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:</p>
 
-<p>Siga os seguintes passos:</p>
+<ul>
+<li><p>Amplo keyspace (intervalo de condições iniciais)</p></li>
 
-<p>1) Instalar docker</p>
+<li><p>Torna inviável ataques de força bruta</p></li>
 
-<p>2) Rodar no terminal <code>sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</code></p>
+<li><p>Utilização de um mapa binário ou equivalente GLS na geração da keystream</p></li>
 
-<p>3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal</p>
+<li><p>Garante que a operação seja análoga ao OTP</p></li>
 
-<p>4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</p>
+<li><p>Keystream sensível às condições iniciais</p></li>
+
+<li><p>A mensagem (ou até mesmo parte da mensagem) deve ser recuperada se e somente se as condições iniciais forem exatamente as mesmas</p></li>
+
+<li><p>Keystream sensível à mensagem</p></li>
+
+<li><p>Garante que o keystream gerado por uma mensagem pura conhecida (known plaintext) não possa ser determinado e aplicado na decodificação de outra mensagem</p></li>
+</ul>
+
+<p>Meu principal objetivo atual é fazer com que meu sistema de criptografia satisfaça esse último requisito.</p>
+
+<p><em>Referências</em></p>
+
+<p>[1] Nagaraj, Nithin (2012-11-01). One-Time Pad as a nonlinear dynamical system . <em>17</em>, 4029-4036. <a href="http://dx.doi.org/10.1016/j.cnsns.2012.03.020">http://dx.doi.org/10.1016/j.cnsns.2012.03.020</a></p>
 
     </section>
 </article>
@@ -117,7 +119,7 @@ Siga os seguintes passos:
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2faprendizado-de-maquina-com-python-tensor-flow%2f - Aprendizado%20de%20m%c3%a1quina%20com%20Python%20%2b%20Tensor%20Flow "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2frelacao-entre-otp-e-mapas-binarios%2f - Rela%c3%a7%c3%a3o%20entre%20OTP%20e%20Mapas%20Bin%c3%a1rios "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -153,6 +155,10 @@ Siga os seguintes passos:
         </li>
     
         <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
             <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
         </li>
     
@@ -178,10 +184,6 @@ Siga os seguintes passos:
     
         <li>
             <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
-        </li>
-    
-        <li>
-            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
         </li>
     
 </ul>

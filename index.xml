@@ -79,5 +79,149 @@ Normalmente, das centenas de métodos que são chamados em um único script, pou
 O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:</description>
     </item>
     
+    <item>
+      <title>Testes automatizados com Selenium &#43; PHPUnit</title>
+      <link>https://rpagliuca.github.io/devser/posts/testes-automatizados-com-selenium-phpunit/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/testes-automatizados-com-selenium-phpunit/</guid>
+      <description>Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
+1) Ajuda a evitar lesões por esforço repetivivo 2) Evita erros 3) Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio
+Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</description>
+    </item>
+    
+    <item>
+      <title>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs</title>
+      <link>https://rpagliuca.github.io/devser/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</link>
+      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</guid>
+      <description>Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc
+Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
+OBS - A partir de agora, assumo um ambiente Linux + Apache + PHP, mas muito disso pode ser reaproveitado em outros ambientes.</description>
+    </item>
+    
+    <item>
+      <title>Simulando um computador SAP-1 (Simple As Possible 1)</title>
+      <link>https://rpagliuca.github.io/devser/posts/simulando-um-computador-sap-1-simple-as-possible-1/</link>
+      <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/simulando-um-computador-sap-1-simple-as-possible-1/</guid>
+      <description>Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &amp;ldquo;Tão Simples Quanto Possível 1&amp;rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
+Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf.</description>
+    </item>
+    
+    <item>
+      <title>Diagrama de Bifurcação do Mapa Logístico</title>
+      <link>https://rpagliuca.github.io/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/</link>
+      <pubDate>Sat, 17 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/</guid>
+      <description>Ontem, desenvolvi em Octave (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.
+Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:
+$$x_{n+1} = x_n r (1 - x_n)$$
+O diagrama de bifurcação representa quais os possíveis valores de x (eixo vertical) para cada valor de r (eixo horizontal), desconsiderando as primeiras iterações (o período transiente).</description>
+    </item>
+    
+    <item>
+      <title>Gerenciador de Artigos Científicos</title>
+      <link>https://rpagliuca.github.io/devser/posts/gerenciador-de-artigos-cientificos/</link>
+      <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/gerenciador-de-artigos-cientificos/</guid>
+      <description>O software I, Librarian tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
+Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.
+Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação Digital Objetct Identifier (DOI).</description>
+    </item>
+    
+    <item>
+      <title>Relação entre OTP e Mapas Binários</title>
+      <link>https://rpagliuca.github.io/devser/posts/relacao-entre-otp-e-mapas-binarios/</link>
+      <pubDate>Wed, 14 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/relacao-entre-otp-e-mapas-binarios/</guid>
+      <description>Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
+Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
+ Amplo keyspace (intervalo de condições iniciais)</description>
+    </item>
+    
+    <item>
+      <title>Modelo da Partícula na Caixa</title>
+      <link>https://rpagliuca.github.io/devser/posts/modelo-da-particula-na-caixa/</link>
+      <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/modelo-da-particula-na-caixa/</guid>
+      <description>Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
+No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
+Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente.</description>
+    </item>
+    
+    <item>
+      <title>Criptografia Com Equações de Chua</title>
+      <link>https://rpagliuca.github.io/devser/posts/criptografia-com-equacoes-de-chua/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/criptografia-com-equacoes-de-chua/</guid>
+      <description>Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
+\[\begin{aligned} \dot{x_1} &amp;amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp;amp; = x1 - x2 + x3\\ \dot{x_3} &amp;amp; = -\beta x_2 \end{aligned} \]
+Este outro modelo foi originalmente proposto por Vaidya em 1998, e aperfeiçoado alguns anos depois por C. H. Oliveira.
+Algumas das vantagens desta nova implementação em comparação à anterior são:</description>
+    </item>
+    
+    <item>
+      <title>Criptografia com Caos - Baptista</title>
+      <link>https://rpagliuca.github.io/devser/posts/criptografia-com-caos-baptista/</link>
+      <pubDate>Sun, 01 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/criptografia-com-caos-baptista/</guid>
+      <description>Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
+O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
+ A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.</description>
+    </item>
+    
+    <item>
+      <title>História da chave assimétrica</title>
+      <link>https://rpagliuca.github.io/devser/posts/historia-da-chave-assimetrica/</link>
+      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/historia-da-chave-assimetrica/</guid>
+      <description>Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
+Referências
+[1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf
+[2] DIFFIE, HELLMAN. New directions in cryptography. Disponível em: http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf
+[3] RIVEST, R. L.</description>
+    </item>
+    
+    <item>
+      <title>Mapa logístico</title>
+      <link>https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/</link>
+      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/primeira-atividade-pratica-mapa-logistico/</guid>
+      <description>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.
+Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que me foi proposto. Segue ao lado um dos gráficos gerados no QtOctave (http://www.ohloh.net/p/qtoctave), alternativa de código livre para o MATLAB.
+Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:</description>
+    </item>
+    
+    <item>
+      <title>Objetivo deste blog</title>
+      <link>https://rpagliuca.github.io/devser/posts/objetivo-deste-blog/</link>
+      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/objetivo-deste-blog/</guid>
+      <description>Apenas um lugar para registrar ideias interessantes relacionadas com quaisquer tópicos com que eventualmente possa me aventurar.</description>
+    </item>
+    
+    <item>
+      <title>Sobre esta iniciação científica</title>
+      <link>https://rpagliuca.github.io/devser/posts/sobre-esta-iniciacao-cientifica/</link>
+      <pubDate>Sun, 11 Dec 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://rpagliuca.github.io/devser/posts/sobre-esta-iniciacao-cientifica/</guid>
+      <description>A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.
+Em 26 de outubro de 2011 entrei em contato com um dos professores do Departamento de Engenharia Elétrica, que me informou sobre sua área de pesquisa e me ofereceu uma lista de tópicos para serem superficalmente pesquisados:
+ Sistemas de segurança da informação Codificação Decodificação Esteganografia Criptografia Sistemas caóticos Aplicações de sistemas caóticos em telecomunicações  Pesquisei os tópicos sugeridos e, após alguns dias, entrei em contato novamente.</description>
+    </item>
+    
   </channel>
 </rss>

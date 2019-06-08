@@ -7,7 +7,7 @@
 <meta name="author" content="/dev/ser (ou não?!)">
 <meta name="description" content="Deve ser um ser dev.">
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+<title>Criptografia Com Equações de Chua</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
@@ -21,48 +21,39 @@
 
 
 
-<meta property="og:title" content="Aprendizado de máquina com Python &#43; Tensor Flow" />
-<meta property="og:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador" />
+<meta property="og:title" content="Criptografia Com Equações de Chua" />
+<meta property="og:description" content="Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
+\[\begin{aligned} \dot{x_1} &amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp; = x1 - x2 &#43; x3\\ \dot{x_3} &amp; = -\beta x_2 \end{aligned} \]
+Este outro modelo foi originalmente proposto por Vaidya em 1998, e aperfeiçoado alguns anos depois por C. H. Oliveira.
+Algumas das vantagens desta nova implementação em comparação à anterior são:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/" />
-<meta property="article:published_time" content="2017-05-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/criptografia-com-equacoes-de-chua/" />
+<meta property="article:published_time" content="2012-05-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-05-11T00:00:00&#43;00:00"/>
 
 
 
-<meta itemprop="name" content="Aprendizado de máquina com Python &#43; Tensor Flow">
-<meta itemprop="description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador">
+<meta itemprop="name" content="Criptografia Com Equações de Chua">
+<meta itemprop="description" content="Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
+\[\begin{aligned} \dot{x_1} &amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp; = x1 - x2 &#43; x3\\ \dot{x_3} &amp; = -\beta x_2 \end{aligned} \]
+Este outro modelo foi originalmente proposto por Vaidya em 1998, e aperfeiçoado alguns anos depois por C. H. Oliveira.
+Algumas das vantagens desta nova implementação em comparação à anterior são:">
 
 
-<meta itemprop="datePublished" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="datePublished" content="2012-05-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-05-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="170">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aprendizado de máquina com Python &#43; Tensor Flow"/>
-<meta name="twitter:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador"/>
+<meta name="twitter:title" content="Criptografia Com Equações de Chua"/>
+<meta name="twitter:description" content="Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
+\[\begin{aligned} \dot{x_1} &amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp; = x1 - x2 &#43; x3\\ \dot{x_3} &amp; = -\beta x_2 \end{aligned} \]
+Este outro modelo foi originalmente proposto por Vaidya em 1998, e aperfeiçoado alguns anos depois por C. H. Oliveira.
+Algumas das vantagens desta nova implementação em comparação à anterior são:"/>
 
 
     </head>
@@ -82,30 +73,33 @@ Siga os seguintes passos:
         
 <article class="post">
     <header>
-        <h1>Aprendizado de máquina com Python &#43; Tensor Flow</h1>
+        <h1>Criptografia Com Equações de Chua</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        12
+        11
         Maio
-        2017
+        2012
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:</p>
+        <p>Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.</p>
 
-<p>É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.</p>
+<p>\[\begin{aligned} \dot{x_1} &amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp; = x1 - x2 + x3\\ \dot{x_3} &amp; = -\beta x_2 \end{aligned} \]</p>
 
-<p>Siga os seguintes passos:</p>
+<p>Este outro modelo foi originalmente proposto por <a href="http://scholar.google.com.br/scholar?q=+vaidya+Implementation+of+chaotic+cryptography+with+chaotic+synchronization&amp;btnG=&amp;hl=pt-BR&amp;as_sdt=0">Vaidya</a> em 1998, e aperfeiçoado alguns anos depois por <a href="http://scholar.google.com.br/scholar?q=cleber+henrique+oliveira+cryptography+with+chaos&amp;btnG=&amp;hl=pt-BR&amp;as_sdt=0">C. H. Oliveira</a>.</p>
 
-<p>1) Instalar docker</p>
+<p>Algumas das vantagens desta nova implementação em comparação à anterior são:</p>
 
-<p>2) Rodar no terminal <code>sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</code></p>
+<ul>
+<li>Cada caractere da mensagem pura necessita de 1 byte para ser armazenado após a cifragem. Ou seja, o tamanho da mensagem não é afetado pelo processo da cifragem.</li>
+<li>O novo sistema é mais rápido, já que necessita de um número pequeno de ciclos para cada caracter a ser cifrado.</li>
+</ul>
 
-<p>3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal</p>
+<p>Esta implementação necessitou de um pouco mais de atenção por se basear em um sistema de equações diferenciais.</p>
 
-<p>4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</p>
+<p>Finalizada mais esta etapa da pesquisa, na próxima etapa implementarei um sistema de criptografia simétrica utilizando um modelo caótico jamais antes utilizado para este fim.</p>
 
     </section>
 </article>
@@ -117,7 +111,7 @@ Siga os seguintes passos:
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2faprendizado-de-maquina-com-python-tensor-flow%2f - Aprendizado%20de%20m%c3%a1quina%20com%20Python%20%2b%20Tensor%20Flow "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fcriptografia-com-equacoes-de-chua%2f - Criptografia%20Com%20Equa%c3%a7%c3%b5es%20de%20Chua "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -153,6 +147,10 @@ Siga os seguintes passos:
         </li>
     
         <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
             <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
         </li>
     
@@ -178,10 +176,6 @@ Siga os seguintes passos:
     
         <li>
             <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
-        </li>
-    
-        <li>
-            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
         </li>
     
 </ul>

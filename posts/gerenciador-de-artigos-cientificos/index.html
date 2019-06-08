@@ -7,7 +7,7 @@
 <meta name="author" content="/dev/ser (ou não?!)">
 <meta name="description" content="Deve ser um ser dev.">
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+<title>Gerenciador de Artigos Científicos</title>
 <link rel="shortcut icon" href="https://rpagliuca.github.io/devser/images/favicon.ico">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/style.css">
 <link rel="stylesheet" href="https://rpagliuca.github.io/devser/css/highlight.css">
@@ -21,48 +21,36 @@
 
 
 
-<meta property="og:title" content="Aprendizado de máquina com Python &#43; Tensor Flow" />
-<meta property="og:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador" />
+<meta property="og:title" content="Gerenciador de Artigos Científicos" />
+<meta property="og:description" content="O software I, Librarian tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
+Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.
+Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação Digital Objetct Identifier (DOI)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/" />
-<meta property="article:published_time" content="2017-05-12T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-12T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://rpagliuca.github.io/devser/posts/gerenciador-de-artigos-cientificos/" />
+<meta property="article:published_time" content="2012-11-15T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-11-15T00:00:00&#43;00:00"/>
 
 
 
-<meta itemprop="name" content="Aprendizado de máquina com Python &#43; Tensor Flow">
-<meta itemprop="description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador">
+<meta itemprop="name" content="Gerenciador de Artigos Científicos">
+<meta itemprop="description" content="O software I, Librarian tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
+Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.
+Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação Digital Objetct Identifier (DOI).">
 
 
-<meta itemprop="datePublished" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="70">
+<meta itemprop="datePublished" content="2012-11-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-11-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="266">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aprendizado de máquina com Python &#43; Tensor Flow"/>
-<meta name="twitter:description" content="Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
-É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
-Siga os seguintes passos:
-1) Instalar docker
-2) Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow
-3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal
-4) Acompanhar os tutoriais interativos de Tensor Flow no navegador"/>
+<meta name="twitter:title" content="Gerenciador de Artigos Científicos"/>
+<meta name="twitter:description" content="O software I, Librarian tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
+Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.
+Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação Digital Objetct Identifier (DOI)."/>
 
 
     </head>
@@ -82,30 +70,32 @@ Siga os seguintes passos:
         
 <article class="post">
     <header>
-        <h1>Aprendizado de máquina com Python &#43; Tensor Flow</h1>
+        <h1>Gerenciador de Artigos Científicos</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        12
-        Maio
-        2017
+        15
+        Novembro
+        2012
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:</p>
+        <p>O software <em><a href="http://www.bioinformatics.org/librarian/">I, Librarian</a></em> tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.</p>
 
-<p>É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.</p>
+<p>Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha  um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.</p>
 
-<p>Siga os seguintes passos:</p>
+<p>Já com o <a href="http://www.bioinformatics.org/librarian/"><em>I, Librarian</em></a> tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação <a href="http://www.doi.org">Digital Objetct Identifier</a> (DOI). Com o número DOI, o próprio software busca online e armazena as metainformações do artigo (autores, palavras-chaves, abstract etc).</p>
 
-<p>1) Instalar docker</p>
+<p>Além disso, o software possibilita que os artigos sejam listados e filtrados das mais diferentes formas, garantindo que o artigo desejado seja rapidamente encontrado.</p>
 
-<p>2) Rodar no terminal <code>sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow</code></p>
+<p>Muito prática também é sua funcionalidade de exportar as referências para vários formatos: texto puro, Bibtext, CSV, EndNote, RIS etc. O que eu faço é exportar toda a minha biblioteca para um arquivo Bibtex, e, quando desejo citar algum artigo, o próprio <em><a href="http://www.bioinformatics.org/librarian/">I, Librarian</a></em> me fornece qual identificação de citação utilizar no meu documento Latex.</p>
 
-<p>3) Abrir link do jupyter (localhost:8888/…) que for exibido no terminal</p>
+<p>Um detalhe a ser levado em conta é que o software utiliza uma plataforma pouco habitual para a maior parte dos usuários: ele roda no navegador - utilizando servidor Apache, banco de dados MySQL e linguagem PHP. No entanto, isso não deve ser um problema, já que o autor do programa disponibiliza um executável de fácil instalação para o <a href="http://www.ubuntu.com/">Ubuntu (Linux)</a> e para o Windows.</p>
 
-<p>4) Acompanhar os tutoriais interativos de Tensor Flow no navegador</p>
+<p>Seguem a seguir algumas telas do software, mostrando um pouco de seus recursos:</p>
+
+<p>[gallery link=&ldquo;file&rdquo; columns=&ldquo;2&rdquo;]</p>
 
     </section>
 </article>
@@ -117,7 +107,7 @@ Siga os seguintes passos:
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento web desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2faprendizado-de-maquina-com-python-tensor-flow%2f - Aprendizado%20de%20m%c3%a1quina%20com%20Python%20%2b%20Tensor%20Flow "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2frpagliuca.github.io%2fdevser%2fposts%2fgerenciador-de-artigos-cientificos%2f - Gerenciador%20de%20Artigos%20Cient%c3%adficos "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -153,6 +143,10 @@ Siga os seguintes passos:
         </li>
     
         <li>
+            <a href="/devser/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
             <a href="/devser/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
         </li>
     
@@ -178,10 +172,6 @@ Siga os seguintes passos:
     
         <li>
             <a href="/devser/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
-        </li>
-    
-        <li>
-            <a href="/devser/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
         </li>
     
 </ul>
