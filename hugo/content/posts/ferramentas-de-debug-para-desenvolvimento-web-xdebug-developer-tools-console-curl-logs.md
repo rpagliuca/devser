@@ -24,7 +24,7 @@ Os logs do Apache2 estão ativados por padrão, e ficam armazenados nos seguinte
 Como normalmente utilizamos VirtualHosts dentro do Apache, alguns dos arquivos anteriores estarão vazios, sendo substituídos pelos caminhos de logs configurados no próprio arquivo de configuração do VirtualHost, conforme exemplos de diretivas a seguir:
 
 {{<highlight apache>}}
-\# File: /etc/apache2/sites-enabled/my_virtual_host.conf
+# File: /etc/apache2/sites-enabled/my_virtual_host.conf
 ServerName myvirtualhost
 ErrorLog /var/www/my_virtual_host/log/error.log
 CustomLog /var/www/my_virtual_host/log/access.log combined
@@ -56,7 +56,7 @@ Exemplo:
 
 `tail /var/www/my_virtual_host/log/error.log`
 
-Tudo fica mais interessante ao se adicionar o parâmetro **\-f** ao comando tail, pois dessa forma, o terminal se tornará um monitor em tempo real do log, isto é, novos registros serão exibidos instantaneamente.
+Tudo fica mais interessante ao se adicionar o parâmetro **-f** ao comando tail, pois dessa forma, o terminal se tornará um monitor em tempo real do log, isto é, novos registros serão exibidos instantaneamente.
 
 `tail -f /var/www/my_virtual_host/log/error.log`
 
@@ -66,8 +66,8 @@ Os programas **vim** ou mesmo o **vi** também são úteis para navegar em logs,
 
 Principais comandos para navegação nos logs:
 
-* **G** \-> Ir para o final do log
-* **gg** \-> Ir para o início do log
+* **G** -> Ir para o final do log
+* **gg** -> Ir para o início do log
 * **/** -> Buscar por uma palavra
 * **n** -> Ir para próxima ocorrência da busca
 

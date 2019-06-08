@@ -14,7 +14,3 @@ Além disso, o software possibilita que os artigos sejam listados e filtrados da
 Muito prática também é sua funcionalidade de exportar as referências para vários formatos: texto puro, Bibtext, CSV, EndNote, RIS etc. O que eu faço é exportar toda a minha biblioteca para um arquivo Bibtex, e, quando desejo citar algum artigo, o próprio _[I, Librarian](http://www.bioinformatics.org/librarian/)_ me fornece qual identificação de citação utilizar no meu documento Latex.
 
 Um detalhe a ser levado em conta é que o software utiliza uma plataforma pouco habitual para a maior parte dos usuários: ele roda no navegador - utilizando servidor Apache, banco de dados MySQL e linguagem PHP. No entanto, isso não deve ser um problema, já que o autor do programa disponibiliza um executável de fácil instalação para o [Ubuntu (Linux)](http://www.ubuntu.com/) e para o Windows.
-
-Seguem a seguir algumas telas do software, mostrando um pouco de seus recursos:
-
-\[gallery link="file" columns="2"\]

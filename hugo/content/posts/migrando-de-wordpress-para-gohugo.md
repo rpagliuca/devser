@@ -1,5 +1,5 @@
 ---
-title: "Migração do blog para Hugo (gohugo)"
+title: "Migrando de Wordpress para Hugo (gohugo)"
 date: 2019-06-08T09:04:34-03:00
 draft: false
 ---

@@ -5,7 +5,7 @@ date: "2012-05-11"
 
 Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
 
-\\\[\\begin{aligned} \\dot{x\_1} & = \\alpha(x\_2 - f(x\_1))\\\\ \\dot{x\_2} & = x1 - x2 + x3\\\\ \\dot{x\_3} & = -\\beta x\_2 \\end{aligned} \\\]
+\\[\\begin{aligned} \\dot{x_1} & = \\alpha(x_2 - f(x_1))\\\\ \\dot{x_2} & = x1 - x2 + x3\\\\ \\dot{x_3} & = -\\beta x_2 \\end{aligned} \\]
 
 Este outro modelo foi originalmente proposto por [Vaidya](http://scholar.google.com.br/scholar?q=+vaidya+Implementation+of+chaotic+cryptography+with+chaotic+synchronization&btnG=&hl=pt-BR&as_sdt=0) em 1998, e aperfeiçoado alguns anos depois por [C. H. Oliveira](http://scholar.google.com.br/scholar?q=cleber+henrique+oliveira+cryptography+with+chaos&btnG=&hl=pt-BR&as_sdt=0).
 

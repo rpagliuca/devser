@@ -7,13 +7,13 @@ Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastan
 
 Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em [http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf](http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf).
 
-Além disso, informações mais detalhadas sobre os principais componentes desse circuito podem ser lidas no documento [Relatório\_SAP-1.pdf](http://rs.anoluz.net/wp-content/uploads/2013/10/Relatório_SAP-1.pdf)
+Além disso, informações mais detalhadas sobre os principais componentes desse circuito podem ser lidas no documento [Relatório_SAP-1.pdf](http://rs.anoluz.net/wp-content/uploads/2013/10/Relatório_SAP-1.pdf)
 
 Valeu a pena ter tocado o projeto até o final. Para mim, um computador agora não parece mais um artefato tão místico quanto costumava ser. Eu até fui além de simplesmente simular o SAP-1 e cheguei a construir um compiladorzinho pra ele!
 
 Segue vídeo da simulação desse tipo de computador usando o software Proteus. Primeiro eu dou uma visão geral do computador, depois mostro a execução de uma rotina programada de modo manual (via chaves) e depois usando um modo mais prático: compilador "caseiro" + memória ROM.
 
-http://www.youtube.com/watch?v=qIYe6vY4N0M&feature=youtu.be
+{{<youtube qIYe6vY4N0M>}}
 
 Para quem quiser se aventurar, seguem dois projetos separados do Proteus, prontos para serem simulados. O primeiro é pra quem quiser programar manualmente através das chaves. Já o segundo, só roda se carregar um arquivo .HEX contendo o programa dentro da memória EEPROM.
 

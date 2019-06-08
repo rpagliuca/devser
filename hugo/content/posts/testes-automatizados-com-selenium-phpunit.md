@@ -40,7 +40,7 @@ Para rodar os testes funcionais via PHPUnit + Selenium (tests/functional/*), aco
 5. Configurar config.json do G. Fox, adicionando o grupo abaixo de acordo com suas credenciais:
     "selenium": {
       "user": "meu.usuario@***.com",
-      "password": "minha\_senha"
+      "password": "minha_senha"
     }
 6. Depois de baixar todas as dependências acima:
     1. Entrar na pasta escolhida no passo 2, e rodar servidor do Selenium Server com o comando a seguir
@@ -50,7 +50,7 @@ java -jar selenium-server-standalone-3.0.1.jar. OBS1 - O nome do arquivo pode se
 # Métodos úteis
 
 {{<highlight php>}}
-class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
+class MyCustomSeleniumTestCase extends PHPUnit_Extensions_Selenium2TestCase {
 
   protected static $implicitTimeout = 20000;
 
@@ -69,9 +69,9 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
   protected function setUp() {
     global $CFG;
     try {
-      $this->test\_user = $CFG->selenium->user;
-      $this->test\_password = $CFG->selenium->password;
-      $this->test\_url = $CFG->url->https;
+      $this->test_user = $CFG->selenium->user;
+      $this->test_password = $CFG->selenium->password;
+      $this->test_url = $CFG->url->https;
     } catch (Exception $e) {
       throw new Exception('Incorrect config.json settings ($CFG->selenium->user, $CFG->selenium->password, $CFG->url->http)');
     }
@@ -86,8 +86,8 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
   protected function assertPageContains($string) {
     try {
       $this->assertContains($string, $this->byCssSelector('body')->text());
-    } catch (PHPUnit\_Framework\_ExpectationFailedException $e) {
-      throw new PHPUnit\_Framework\_ExpectationFailedException("Test failed. Page <{$this->url()}> does not contain '$string'.");
+    } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+      throw new PHPUnit_Framework_ExpectationFailedException("Test failed. Page <{$this->url()}> does not contain '$string'.");
     }
   }
 
@@ -98,8 +98,8 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
   protected function assertPageDoesNotContain($string) {
     try {
       $this->assertNotContains($string, $this->byCssSelector('html')->attribute('innerHTML'));
-    } catch (PHPUnit\_Framework\_ExpectationFailedException $e) {
-      throw new PHPUnit\_Framework\_ExpectationFailedException("Test failed. Page <{$this->url()}> contains '$string'.");
+    } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+      throw new PHPUnit_Framework_ExpectationFailedException("Test failed. Page <{$this->url()}> contains '$string'.");
     }
   }
 
@@ -150,14 +150,14 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     $this->url('/login/logout');
 
     $this->url('/');
-    $this->byId('usuario')->value($this->test\_user);
-    $this->byId('senha')->value($this->test\_password);
+    $this->byId('usuario')->value($this->test_user);
+    $this->byId('senha')->value($this->test_password);
     $this->byId('login')->submit();
 
     /* Redirect to home, skipping Tela Favorita */
-    $this->url($this->tela\_url . '/navegacao');
+    $this->url($this->tela_url . '/navegacao');
 
-    $this->assertEquals($this->teste\_url . '/navegacao', $this->url());
+    $this->assertEquals($this->teste_url . '/navegacao', $this->url());
     $this->assertPageContains('AMBIENTE');
     $this->assertPageContains('NAVEGAR');
   }
@@ -204,42 +204,42 @@ class MyCustomSeleniumTestCase extends PHPUnit\_Extensions\_Selenium2TestCase {
     $this->timeouts()->implicitWait(self::$implicitTimeout);
   }
 
-  protected function checkButtonByText($search\_texts, $back\_url = false, $implicitTimeout = 0) {
+  protected function checkButtonByText($search_texts, $back_url = false, $implicitTimeout = 0) {
 
     /* Transforma primeiro parâmetro em array de textos a serem pesquisados */
-    if (!is\_array($search\_texts)) {
-      $search\_texts = array($search\_texts);
+    if (!is_array($search_texts)) {
+      $search_texts = array($search_texts);
     }
 
     $this->closeOpenedAlert();
     $this->timeouts()->implicitWait($implicitTimeout);
     try {
       /* If exists input #bloqueado or name='bloqueado', set its val to '0' so we can show records */
-      $this->select($this->byXPath("//*\[@id = '#bloqueado'\] | //*\[@name = 'bloqueado'\]"))->selectOptionByValue('0');
+      $this->select($this->byXPath("//*[@id = '#bloqueado'] | //*[@name = 'bloqueado']"))->selectOptionByValue('0');
     } catch (Exception $e) {
     }
 
-    $xpath\_queries = array();
-    foreach ($search\_texts as $text) {
-      $xpath\_queries\[\] = "//*\[text()='$text'\]/ancestor::*\[contains(@class, 'btn')\] | //*\[text()='$text' and contains(@class, 'btn')\] | //*\[@value='$text' and contains(@class, 'btn')\]";
+    $xpath_queries = array();
+    foreach ($search_texts as $text) {
+      $xpath_queries[] = "//*[text()='$text']/ancestor::*[contains(@class, 'btn')] | //*[text()='$text' and contains(@class, 'btn')] | //*[@value='$text' and contains(@class, 'btn')]";
     }
-    $xpath\_query = implode($xpath\_queries, ' | ');
+    $xpath_query = implode($xpath_queries, ' | ');
 
     try {
-      $button = $this->byXPath($xpath\_query);
+      $button = $this->byXPath($xpath_query);
     } catch (Exception $e) {
       /* If element not found, return test without errors */
       $this->timeouts()->implicitWait(self::$implicitTimeout);
       return false;
     }
 
-    /* If found any button that matches $search\_texts */
+    /* If found any button that matches $search_texts */
     $button->click();
     $this->timeouts()->implicitWait(self::$implicitTimeout);
     $this->closeOpenedAlert();
     $this->assertPageDoesNotContain("Call Stack");
-    if (!empty($back\_url)) {
-      $this->url($back\_url);
+    if (!empty($back_url)) {
+      $this->url($back_url);
     }
     return true;
   }
