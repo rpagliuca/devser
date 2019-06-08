@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on /dev/ser (ou não?!)</title>
-    <link>https://example.org/posts/</link>
+    <link>https://rpagliuca.github.io/devser/posts/</link>
     <description>Recent content in Posts on /dev/ser (ou não?!)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>pt-br</language>
     <lastBuildDate>Sat, 08 Jun 2019 09:04:34 -0300</lastBuildDate>
     
-	<atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rpagliuca.github.io/devser/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello, Hugo!</title>
-      <link>https://example.org/posts/hello-hugo/</link>
+      <link>https://rpagliuca.github.io/devser/posts/hello-hugo/</link>
       <pubDate>Sat, 08 Jun 2019 09:04:34 -0300</pubDate>
       
-      <guid>https://example.org/posts/hello-hugo/</guid>
+      <guid>https://rpagliuca.github.io/devser/posts/hello-hugo/</guid>
       <description>Olá, Hugo! Baseado em https://gohugo.io/.</description>
     </item>
     
