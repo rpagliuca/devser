@@ -6,10 +6,20 @@
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 08 Jun 2019 09:04:34 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 18:43:35 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Defesa da Dissertação de Mestrado</title>
+      <link>https://devser.com.br/posts/defesa-dissertacao-mestrado/</link>
+      <pubDate>Sat, 08 Jun 2019 18:43:35 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/defesa-dissertacao-mestrado/</guid>
+      <description>No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado na minha defesa de dissertação de mestrado, intitulada Análise da rede de produtos comprados em conjunto no comércio eletrônico.
+A área de estudos de redes complexas fornece ferramentas para analisar redes de variados tipos, como redes biológicas (por exemplo, proteínas associadas a doenças), redes de comunicação, redes sociais (virtuais ou não), redes comerciais, redes políticas, apenas para listar algumas.</description>
+    </item>
     
     <item>
       <title>Migrando de Wordpress para Hugo (gohugo)</title>
