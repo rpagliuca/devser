@@ -2,7 +2,7 @@
 baseurl = "https://example.org/"
 themesDir = "themes"
 languageCode = "en-us"
-title = "Hugo Cactus Theme"
+title = "/dev/ser (ou não?!)"
 theme = "hugo-cactus-theme"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
@@ -34,7 +34,7 @@ disqusShortname = "spf13"
 	readMore = ""
 	copyright = ""
 	# Sharing options and author information in posts
-	aboutAuthor = "I'm an blogger."
+	aboutAuthor = "Rafael Santos é Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio cedo: criou seu primeiro website pessoal em 1999, e trabalha com desenvolvimento web desde 2006."
 	tweet = ""
 	share = ""
 	# 404 page
