@@ -40,8 +40,8 @@ paginate = 1000
 	tweet = ""
 	share = ""
 	# 404 page
-	title404 = ""
-	subtitle404 = ""
+	title404 = "Ops... artigo não encontrado!"
+	subtitle404 = "Este blog foi recentemente migrado de plataforma, e por isso alguns links deixaram de funcionar. Por favor, utilize a lista abaixo para acessar o artigo desejado."
 
 	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
 	iconFont = "font-awesome"
