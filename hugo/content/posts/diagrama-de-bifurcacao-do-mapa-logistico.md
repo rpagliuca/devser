@@ -1,6 +1,8 @@
 ---
 title: "Diagrama de Bifurcação do Mapa Logístico"
 date: "2012-11-17"
+aliases:
+- /2012/11/diagrama-de-bifurcacao-do-mapa-logistico/
 ---
 
 Ontem, desenvolvi em [Octave](https://www.gnu.org/software/octave/) (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.

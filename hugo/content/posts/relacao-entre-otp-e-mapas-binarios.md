@@ -1,6 +1,8 @@
 ---
 title: "Relação entre OTP e Mapas Binários"
 date: "2012-11-14"
+aliases:
+- /2012/11/relacao-entre-otp-e-mapas-binarios/
 ---
 
 Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).

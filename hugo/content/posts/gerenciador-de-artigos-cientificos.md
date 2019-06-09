@@ -1,8 +1,9 @@
 ---
 title: "Gerenciador de Artigos Científicos"
 date: "2012-11-15"
+aliases:
+- /2012/11/gerenciador-de-artigos-cientificos/
 ---
-
 O software _[I, Librarian](http://www.bioinformatics.org/librarian/)_ tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
 
 Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha  um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.

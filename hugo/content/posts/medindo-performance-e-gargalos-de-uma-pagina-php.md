@@ -2,6 +2,8 @@
 title: "Medindo performance e gargalos de uma página PHP com KCacheGrind + XDebug"
 date: 2017-04-17
 draft: false
+aliases:
+- /2017/04/medindo-performance-e-gargalos-de-uma-pagina-php/
 ---
 # Introdução
 

@@ -2,6 +2,8 @@
 title: "Compilador para computador SAP-1"
 date: 2017-04-18
 draft: false
+aliases:
+- /2017/04/compilador-para-computador-sap-1/
 ---
 A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo <a href="{{<ref "posts/simulando-um-computador-sap-1-simple-as-possible-1.md">}}">Simulando um computador SAP-1 (Simple As Possible 1)</a>.
 

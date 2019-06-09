@@ -1,8 +1,9 @@
 ---
 title: "Modelo da Partícula na Caixa"
 date: "2012-06-19"
+aliases:
+- /2012/06/modelo-da-particula-na-caixa/
 ---
-
 Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
 
 [![](/images/atrator.png "Atrator da Partícula na Caixa")](/images/atrator.png)

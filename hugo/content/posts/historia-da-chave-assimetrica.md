@@ -1,6 +1,8 @@
 ---
 title: "História da chave assimétrica"
 date: "2011-12-11T03:00:00"
+aliases:
+- /2011/12/historia-da-chave-assimetrica/
 ---
 
 Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.

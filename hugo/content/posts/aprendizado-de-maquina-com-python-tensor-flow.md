@@ -2,6 +2,8 @@
 title: "Aprendizado de máquina com Python + Tensor Flow"
 date: 2017-05-12
 draft: false
+aliases:
+- /2017/05/aprendizado-de-maquina-com-python-tensor-flow/
 ---
 Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
 

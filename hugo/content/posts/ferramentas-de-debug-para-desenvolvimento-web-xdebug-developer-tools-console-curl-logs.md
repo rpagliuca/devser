@@ -1,6 +1,8 @@
 ---
 title: "Ferramentas de debug para desenvolvimento web: Xdebug + Developer Tools Console + Curl + Logs"
 date: "2017-02-21"
+aliases:
+- /2017/02/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/
 ---
 
 Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc

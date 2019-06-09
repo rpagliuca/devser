@@ -2,6 +2,8 @@
 title: "Criando plugins para a biblioteca de templates Smarty do PHP"
 date: 2017-03-16
 draft: false 
+aliases:
+- /2017/03/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/
 ---
 # Introdução ao Smarty
 

@@ -1,6 +1,8 @@
 ---
 title: "Criptografia Com Equações de Chua"
 date: "2012-05-11"
+aliases:
+- /2012/05/criptografia-com-equacoes-de-chua/
 ---
 
 Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
