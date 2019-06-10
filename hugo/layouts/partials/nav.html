@@ -1,4 +1,11 @@
-<nav class="main-nav">
+<nav class="primary-nav">
+<ul>
+{{ range .Site.Taxonomies.categories }}
+<li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+{{ end }}
+</ul>
+</nav>
+<nav class="secondary-nav">
 	{{ if not .IsHome }}
         <center><a href='{{ .Site.BaseURL }}' style="font-size:130%"> <span class="arrow">←</span>{{ .Site.Params.home | default "Voltar" }}</a></center>
 	{{ end }}

@@ -3,6 +3,8 @@ title: "Gerenciador de Artigos Científicos"
 date: "2012-11-15"
 aliases:
 - /2012/11/gerenciador-de-artigos-cientificos/
+categories:
+- Redes Complexas
 ---
 O software _[I, Librarian](http://www.bioinformatics.org/librarian/)_ tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
 

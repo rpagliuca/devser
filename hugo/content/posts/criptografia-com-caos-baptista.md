@@ -3,6 +3,8 @@ title: "Criptografia com Caos - Baptista"
 date: "2012-04-01"
 aliases:
 - /2012/04/criptografia-com-caos-baptista/
+categories:
+- Criptografia
 ---
 
 Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo [sistema proposto por Baptista](https://encrypted.google.com/url?sa=t&rct=j&q=baptista%20cyrptography%20with%20chaos&source=web&cd=1&cad=rja&ved=0CCIQFjAA&url=http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F1998PhLA..240...50B&ei=2_yKUNqCEYGk8ASdzIC4CA&usg=AFQjCNFc2ZHwJXBLhtRdMD5dHieyCo3FLA) em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.

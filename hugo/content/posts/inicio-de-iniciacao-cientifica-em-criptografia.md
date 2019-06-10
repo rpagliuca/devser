@@ -1,6 +1,8 @@
 ---
 title: "Início de iniciação científica em criptografia"
 date: "2011-12-11T02:00:00"
+categories:
+- Criptografia
 ---
 
 A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.

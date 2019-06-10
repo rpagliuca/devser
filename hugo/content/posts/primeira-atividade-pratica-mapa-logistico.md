@@ -3,6 +3,8 @@ title: "Mapa logístico"
 date: "2011-12-11T04:00:00"
 aliases:
 - /2011/12/primeira-atividade-pratica-mapa-logistico/
+categories:
+- Criptografia
 ---
 
 Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.

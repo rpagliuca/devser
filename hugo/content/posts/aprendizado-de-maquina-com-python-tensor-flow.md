@@ -4,6 +4,8 @@ date: 2017-05-12
 draft: false
 aliases:
 - /2017/05/aprendizado-de-maquina-com-python-tensor-flow/
+categories:
+- Machine Learning
 ---
 Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
 

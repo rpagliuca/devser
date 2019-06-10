@@ -3,6 +3,8 @@ title: "Simulando um computador SAP-1 (Simple As Possible 1)"
 date: "2013-10-15"
 aliases:
 - /2013/10/simulando-um-computador-sap-1-simple-as-possible-1/
+categories:
+- Microcontroladores
 ---
 
 Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - "Tão Simples Quanto Possível 1") é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.

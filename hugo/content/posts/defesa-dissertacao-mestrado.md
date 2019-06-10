@@ -2,6 +2,8 @@
 title: "Defesa da Dissertação de Mestrado"
 date: 2019-06-08T18:43:35-03:00
 draft: false
+categories:
+- Redes Complexas
 ---
 No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado
 na minha defesa de dissertação de mestrado, intitulada *Análise da rede de produtos comprados
