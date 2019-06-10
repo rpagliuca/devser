@@ -8,7 +8,7 @@
 <meta name="author" content="Rafael Santos">
 
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Simulando um computador SAP-1 (Simple As Possible 1) &middot; /dev/ser</title>
+<title>Silveira &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
 <link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
@@ -22,33 +22,30 @@
 
 
 
-<meta property="og:title" content="Simulando um computador SAP-1 (Simple As Possible 1)" />
-<meta property="og:description" content="Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
-Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf." />
+<meta property="og:title" content="Silveira" />
+<meta property="og:description" content="Olá, mundo! Post teste." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/" />
-<meta property="article:published_time" content="2013-10-15T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2013-10-15T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://devser.com.br/posts/silveira/" />
+<meta property="article:published_time" content="2019-06-10T07:34:19-03:00"/>
+<meta property="article:modified_time" content="2019-06-10T07:34:19-03:00"/>
 
 
 
-<meta itemprop="name" content="Simulando um computador SAP-1 (Simple As Possible 1)">
-<meta itemprop="description" content="Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
-Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf.">
+<meta itemprop="name" content="Silveira">
+<meta itemprop="description" content="Olá, mundo! Post teste.">
 
 
-<meta itemprop="datePublished" content="2013-10-15T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2013-10-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="325">
+<meta itemprop="datePublished" content="2019-06-10T07:34:19-03:00" />
+<meta itemprop="dateModified" content="2019-06-10T07:34:19-03:00" />
+<meta itemprop="wordCount" content="4">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Simulando um computador SAP-1 (Simple As Possible 1)"/>
-<meta name="twitter:description" content="Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
-Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf."/>
+<meta name="twitter:title" content="Silveira"/>
+<meta name="twitter:description" content="Olá, mundo! Post teste."/>
 
 
     </head>
@@ -70,60 +67,19 @@ Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos
         
 <article class="post">
     <header>
-        <h1>Simulando um computador SAP-1 (Simple As Possible 1)</h1>
+        <h1>Silveira</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        15
-        Outubro
-        2013
+        10
+        Junho
+        2019
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &ldquo;Tão Simples Quanto Possível 1&rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.</p>
-
-<p>Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em <a href="http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf">http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf</a>.</p>
-
-<p>Além disso, informações mais detalhadas sobre os principais componentes desse circuito podem ser lidas no documento <a href="https://devser.com.br/downloads/Relatório_SAP-1.pdf">Relatório_SAP-1.pdf</a></p>
-
-<p>Valeu a pena ter tocado o projeto até o final. Para mim, um computador agora não parece mais um artefato tão místico quanto costumava ser. Eu até fui além de simplesmente simular o SAP-1 e cheguei a construir um compiladorzinho pra ele!</p>
-
-<p>Segue vídeo da simulação desse tipo de computador usando o software Proteus. Primeiro eu dou uma visão geral do computador, depois mostro a execução de uma rotina programada de modo manual (via chaves) e depois usando um modo mais prático: compilador &ldquo;caseiro&rdquo; + memória ROM.</p>
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/qIYe6vY4N0M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-
-<p>Para quem quiser se aventurar, seguem dois projetos separados do Proteus, prontos para serem simulados. O primeiro é pra quem quiser programar manualmente através das chaves. Já o segundo, só roda se carregar um arquivo .HEX contendo o programa dentro da memória EEPROM.</p>
-
-<p><a href="https://devser.com.br/downloads/SAP-Programacao_Manual.zip">Arquivo de projeto 1: SAP-1 - Programação manual (via chaves)</a></p>
-
-<p><a href="https://devser.com.br/downloads/SAP-Programacao_ROM.zip">Arquivo de projeto 2: SAP-1 - Programação automática (compilador + ROM)</a></p>
-
-<p>Para programar, utilize o compilador online: <a href="http://rs.anoluz.net/misc/sap-compiler/">http://rs.anoluz.net/misc/sap-compiler/</a></p>
-
-<p>Siga os passos a seguir para carregar o arquivo SAP.hex do compilador online dentro da memória ROM:</p>
-
-<p><a href="https://devser.com.br/images/sap-programacao-1.jpg"><img src="https://devser.com.br/images/sap-programacao-1.jpg" alt="" title="sap-programacao-1" /></a></p>
-
-<p>Passo 1: Procure a memória ROM (destacada acima) e dê dois cliques sobre ela.</p>
-
-<p><a href="https://devser.com.br/images/sap-programacao-2.jpg"><img src="https://devser.com.br/images/sap-programacao-2.jpg" alt="" title="sap-programacao-2" /></a></p>
-
-<p>Passo 2: Clique no ícone da pastinha amarela.</p>
-
-<p><a href="https://devser.com.br/images/sap-programacao-3.jpg"><img src="https://devser.com.br/images/sap-programacao-3.jpg" alt="" title="sap-programacao-3" /></a></p>
-
-<p>Passo 3: Selecione o arquivo SAP.hex que você salvou a partir do compilador online.</p>
-
-<p><a href="https://devser.com.br/images/sap-programacao-4.jpg"><img src="https://devser.com.br/images/sap-programacao-4.jpg" alt="" title="sap-programacao-4" /></a></p>
-
-<p>Passo 4: Selecione o botão &ldquo;Play&rdquo; no canto inferior esquerdo da tela. O resultado da cálculo será exibido em forma binária nos LEDs.</p>
-
-<p>Dúvidas? Estou à disposição.</p>
+        <p>Olá, mundo!
+Post teste.</p>
 
     </section>
 </article>
@@ -135,7 +91,7 @@ Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fsimulando-um-computador-sap-1-simple-as-possible-1%2f - Simulando%20um%20computador%20SAP-1%20%28Simple%20As%20Possible%201%29 "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fsilveira%2f - Silveira "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -161,10 +117,6 @@ Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos
 
     
     
-    
-        <li>
-            <a href="https://devser.com.br/posts/silveira/">Silveira<aside class="dates">Jun 10 2019</aside></a>
-        </li>
     
         <li>
             <a href="https://devser.com.br/posts/defesa-dissertacao-mestrado/">Defesa da Dissertação de Mestrado<aside class="dates">Jun 8 2019</aside></a>
@@ -200,6 +152,10 @@ Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos
     
         <li>
             <a href="https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/">Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs<aside class="dates">Feb 21 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/">Simulando um computador SAP-1 (Simple As Possible 1)<aside class="dates">Oct 15 2013</aside></a>
         </li>
     
         <li>
