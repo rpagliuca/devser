@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microcontroladores on /dev/ser</title>
+    <link>https://devser.com.br/categories/microcontroladores/</link>
+    <description>Recent content in Microcontroladores on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 18 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://devser.com.br/categories/microcontroladores/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Compilador para computador SAP-1</title>
+      <link>https://devser.com.br/posts/compilador-para-computador-sap-1/</link>
+      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/compilador-para-computador-sap-1/</guid>
+      <description>A pedidos do amigo Antonio Souza, segue código-fonte do compilador para computador SAP-1 utilizado no artigo Simulando um computador SAP-1 (Simple As Possible 1).
+Desenvolvi esse compilador em PHP, para poder disponibilizá-lo online juntamente ao referido artigo. A parte principal do compilador é dada pelas primeiras 25 linhas do código. O restante se refere simplesmente ao próprio formulário HTML para receber um texto e convertê-lo em binário.
+O script abaixo encontra-se funcionando no endereço http://devser.</description>
+    </item>
+    
+    <item>
+      <title>Simulando um computador SAP-1 (Simple As Possible 1)</title>
+      <link>https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</link>
+      <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</guid>
+      <description>Nada melhor do que um modelo simplificado para nos ajudar a entender algo bastante complicado. A arquitetura de computador SAP-1 (Simple As Possible 1 - &amp;ldquo;Tão Simples Quanto Possível 1&amp;rdquo;) é um exemplo disso. É um computador bem simples, que basicamente só consegue somar, subtrair e acender LEDs para exibir o resultado do cálculo de forma binária.
+Os detalhes técnicos e diagramas esquemáticos da arquitetura podem ser obtidos em http://www.ic.unicamp.br/~ducatte/mc542/2012S2/sap-1.pdf.</description>
+    </item>
+    
+  </channel>
+</rss>

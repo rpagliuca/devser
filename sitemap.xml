@@ -9,6 +9,12 @@
   </url>
   
   <url>
+    <loc>https://devser.com.br/categories/</loc>
+    <lastmod>2019-06-08T18:43:35-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://devser.com.br/posts/defesa-dissertacao-mestrado/</loc>
     <lastmod>2019-06-08T18:43:35-03:00</lastmod>
   </url>
@@ -16,6 +22,18 @@
   <url>
     <loc>https://devser.com.br/posts/</loc>
     <lastmod>2019-06-08T18:43:35-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/redes-complexas/</loc>
+    <lastmod>2019-06-08T18:43:35-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/blog/</loc>
+    <lastmod>2019-06-08T09:04:34-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -30,13 +48,31 @@
   </url>
   
   <url>
+    <loc>https://devser.com.br/categories/php-e-db/</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</loc>
     <lastmod>2017-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>https://devser.com.br/categories/machine-learning/</loc>
+    <lastmod>2017-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://devser.com.br/posts/compilador-para-computador-sap-1/</loc>
     <lastmod>2017-04-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/microcontroladores/</loc>
+    <lastmod>2017-04-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -62,6 +98,12 @@
   <url>
     <loc>https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/</loc>
     <lastmod>2013-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/criptografia/</loc>
+    <lastmod>2012-11-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -112,11 +154,6 @@
   <url>
     <loc>https://devser.com.br/posts/objetivo-deste-blog/</loc>
     <lastmod>2011-12-11T01:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://devser.com.br/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>

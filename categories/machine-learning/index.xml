@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on /dev/ser</title>
+    <link>https://devser.com.br/categories/machine-learning/</link>
+    <description>Recent content in Machine Learning on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Fri, 12 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://devser.com.br/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aprendizado de máquina com Python &#43; Tensor Flow</title>
+      <link>https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</link>
+      <pubDate>Fri, 12 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/</guid>
+      <description>Seguem passos para configurar o ambiente do Tensor Flow no Debian ou Ubuntu:
+É incrivelmente fácil, já que o Google fez um container para o docker com todas as bibliotecas pré-instaladas.
+Siga os seguintes passos:
+ Instalar docker Rodar no terminal sudo docker run -it -p 8888:8888 gcr.io/tensorflow/tensorflow Abrir link do jupyter (localhost:8888/…) que for exibido no terminal Acompanhar os tutoriais interativos de Tensor Flow no navegador  </description>
+    </item>
+    
+  </channel>
+</rss>

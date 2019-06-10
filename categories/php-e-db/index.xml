@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP e DB on /dev/ser</title>
+    <link>https://devser.com.br/categories/php-e-db/</link>
+    <description>Recent content in PHP e DB on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://devser.com.br/categories/php-e-db/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deixe seu MySQL muito mais rápido rodando na memória RAM</title>
+      <link>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</guid>
+      <description>Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.
+Claro que esse armazenamento é volátil, portanto é recomendado apenas para ambiente de desenvolvimento, onde muitas vezes um script ou importação de dump é executado múltiplas vezes por dia, tomando preciosos minutos do desenvolvedor.</description>
+    </item>
+    
+    <item>
+      <title>Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug</title>
+      <link>https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</link>
+      <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</guid>
+      <description>Introdução  &amp;ldquo;Conheces teu inimigo e conhece-te a ti mesmo&amp;rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&amp;rdquo;)
+ Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&amp;rdquo; de tempo de processamento, o gargalo da execução.
+Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script.</description>
+    </item>
+    
+    <item>
+      <title>Criando plugins para a biblioteca de templates Smarty do PHP</title>
+      <link>https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</link>
+      <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</guid>
+      <description>Introdução ao Smarty A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.
+O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:</description>
+    </item>
+    
+    <item>
+      <title>Testes automatizados com Selenium &#43; PHPUnit</title>
+      <link>https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/</link>
+      <pubDate>Tue, 14 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/</guid>
+      <description>Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
+ Ajuda a evitar lesões por esforço repetivivo Evita erros Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio  Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</description>
+    </item>
+    
+    <item>
+      <title>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs</title>
+      <link>https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</link>
+      <pubDate>Tue, 21 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/</guid>
+      <description>Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc
+Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
+OBS - A partir de agora, assumo um ambiente Linux + Apache + PHP, mas muito disso pode ser reaproveitado em outros ambientes.</description>
+    </item>
+    
+  </channel>
+</rss>

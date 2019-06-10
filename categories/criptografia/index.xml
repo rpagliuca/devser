@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Criptografia on /dev/ser</title>
+    <link>https://devser.com.br/categories/criptografia/</link>
+    <description>Recent content in Criptografia on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sat, 17 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://devser.com.br/categories/criptografia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diagrama de Bifurcação do Mapa Logístico</title>
+      <link>https://devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/</link>
+      <pubDate>Sat, 17 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/</guid>
+      <description>Ontem, desenvolvi em Octave (alternativa ao Matlab) uma rotina que desenha o diagrama de bifurcação do mapa logístico.
+Em posts anteriores já falei um pouco sobre o mapa logístico, um sistema caótico que é muito estudado em grande parte por sua extrema simplicidade:
+$$x_{n+1} = x_n r (1 - x_n)$$
+O diagrama de bifurcação representa quais os possíveis valores de x (eixo vertical) para cada valor de r (eixo horizontal), desconsiderando as primeiras iterações (o período transiente).</description>
+    </item>
+    
+    <item>
+      <title>Relação entre OTP e Mapas Binários</title>
+      <link>https://devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/</link>
+      <pubDate>Wed, 14 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/</guid>
+      <description>Em [1], o autor mostra a relação entre o One-Time Pad e Mapas Binários, provando que a cifragem com OTP pode ser entendida como a obtenção das condições iniciais de um par de mapas binários (da família de Séries Generalizadas de Luröth - GLS).
+Com essas informações, percebo agora que, para uma cifra ser resistente aos principais ataques, os seguintes requisitos devem ser satisfeitos:
+ Amplo keyspace (intervalo de condições iniciais) Torna inviável ataques de força bruta Utilização de um mapa binário ou equivalente GLS na geração da keystream Garante que a operação seja análoga ao OTP Keystream sensível às condições iniciais A mensagem (ou até mesmo parte da mensagem) deve ser recuperada se e somente se as condições iniciais forem exatamente as mesmas Keystream sensível à mensagem Garante que o keystream gerado por uma mensagem pura conhecida (known plaintext) não possa ser determinado e aplicado na decodificação de outra mensagem  Meu principal objetivo atual é fazer com que meu sistema de criptografia satisfaça esse último requisito.</description>
+    </item>
+    
+    <item>
+      <title>Modelo da Partícula na Caixa</title>
+      <link>https://devser.com.br/posts/modelo-da-particula-na-caixa/</link>
+      <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/modelo-da-particula-na-caixa/</guid>
+      <description>Utilizando o modelo caótico da partícula na caixa cujo ângulo com a horizontal é variado periodicamente, obteve-se um novo sistema para cifragem de dados.
+
+No intervalo caótico obtido, infere-se espectro de chaves de pouco mais de 100 bits, limitado pelo menor dígito significativo armazenado como um número real pelo computador em uma linguagem de programação tradicional.
+Uma melhoria proposta para o sistema atual é a utilização do Runge-Kutta de 4ª ordem para a solução numérica do sistema caótico, em vez do Euler de 2º ordem que está sendo utilizado atualmente.</description>
+    </item>
+    
+    <item>
+      <title>Criptografia Com Equações de Chua</title>
+      <link>https://devser.com.br/posts/criptografia-com-equacoes-de-chua/</link>
+      <pubDate>Fri, 11 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/criptografia-com-equacoes-de-chua/</guid>
+      <description>Após o recente sucesso na implementação do modelo proposto por Baptista, optei agora por desenvolver um sistema mais sofisticado, utilizando agora as equações de Chua normalizadas.
+\[\begin{aligned} \dot{x_1} &amp;amp; = \alpha(x_2 - f(x_1))\\ \dot{x_2} &amp;amp; = x1 - x2 + x3\\ \dot{x_3} &amp;amp; = -\beta x_2 \end{aligned} \]
+Este outro modelo foi originalmente proposto por Vaidya em 1998, e aperfeiçoado alguns anos depois por C. H. Oliveira.
+Algumas das vantagens desta nova implementação em comparação à anterior são:</description>
+    </item>
+    
+    <item>
+      <title>Criptografia com Caos - Baptista</title>
+      <link>https://devser.com.br/posts/criptografia-com-caos-baptista/</link>
+      <pubDate>Sun, 01 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/criptografia-com-caos-baptista/</guid>
+      <description>Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
+O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
+ A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.</description>
+    </item>
+    
+    <item>
+      <title>Mapa logístico</title>
+      <link>https://devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/</link>
+      <pubDate>Sun, 11 Dec 2011 04:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/</guid>
+      <description>Me foi proposta uma tarefa: modelar em MATLAB o mapa logístico e obter seu gráfico. Tem tudo a ver com criptografia, que é uma área sobre a qual gostaria de aprender um pouco mais.
+Nos dias seguintes, pesquisei um pouco sobre o modelo e consegui concluir o que me foi proposto. Segue ao lado um dos gráficos gerados no QtOctave (http://www.ohloh.net/p/qtoctave), alternativa de código livre para o MATLAB.
+Segue o código para QtOctave da função que gerou o gráfico do mapa logístico:</description>
+    </item>
+    
+    <item>
+      <title>História da chave assimétrica</title>
+      <link>https://devser.com.br/posts/historia-da-chave-assimetrica/</link>
+      <pubDate>Sun, 11 Dec 2011 03:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/historia-da-chave-assimetrica/</guid>
+      <description>Pesquisando sobre chaves assimétricas, vi que a ideia foi teorizada independentemente em 1970 por Ellis [1] e em 1976 por Diffie e Hellman [2], e colocada em prática publicamente pela primeira vez pelo trio Rivest, Shamir e Adleman [3], alguns anos depois.
+Referências
+[1] ELLIS, J. H. The Possibility of Secure Non-Secret Digital Encryption. Disponível em: http://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf
+[2] DIFFIE, HELLMAN. New directions in cryptography. Disponível em: http://securespeech.cs.cmu.edu/reports/DiffieHellman.pdf
+[3] RIVEST, R. L.</description>
+    </item>
+    
+    <item>
+      <title>Início de iniciação científica em criptografia</title>
+      <link>https://devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/</link>
+      <pubDate>Sun, 11 Dec 2011 02:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/</guid>
+      <description>A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.
+Em 26 de outubro de 2011 entrei em contato com um dos professores do Departamento de Engenharia Elétrica, que me informou sobre sua área de pesquisa e me ofereceu uma lista de tópicos para serem superficalmente pesquisados:
+ Sistemas de segurança da informação Codificação Decodificação Esteganografia Criptografia Sistemas caóticos Aplicações de sistemas caóticos em telecomunicações  Pesquisei os tópicos sugeridos e, após alguns dias, entrei em contato novamente.</description>
+    </item>
+    
+  </channel>
+</rss>

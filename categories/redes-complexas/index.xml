@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redes Complexas on /dev/ser</title>
+    <link>https://devser.com.br/categories/redes-complexas/</link>
+    <description>Recent content in Redes Complexas on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sat, 08 Jun 2019 18:43:35 -0300</lastBuildDate>
+    
+	<atom:link href="https://devser.com.br/categories/redes-complexas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Defesa da Dissertação de Mestrado</title>
+      <link>https://devser.com.br/posts/defesa-dissertacao-mestrado/</link>
+      <pubDate>Sat, 08 Jun 2019 18:43:35 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/defesa-dissertacao-mestrado/</guid>
+      <description>No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado na minha defesa de dissertação de mestrado, intitulada Análise da rede de produtos comprados em conjunto no comércio eletrônico.
+A área de estudos de redes complexas fornece ferramentas para analisar redes de variados tipos, como redes biológicas (por exemplo, proteínas associadas a doenças), redes de comunicação, redes sociais (virtuais ou não), redes comerciais, redes políticas, apenas para listar algumas.</description>
+    </item>
+    
+    <item>
+      <title>Gerenciador de Artigos Científicos</title>
+      <link>https://devser.com.br/posts/gerenciador-de-artigos-cientificos/</link>
+      <pubDate>Thu, 15 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/gerenciador-de-artigos-cientificos/</guid>
+      <description>O software I, Librarian tem sido uma mão na roda para mim há alguns meses no gerenciamento dos artigos científicos que possuo.
+Antes dele, precisava ficar renomeando os artigos e organizando-os em pastas no disco rígido, e eu mantinha um arquivo de texto separado contendo o resumo de todos os artigos, para facilitar a busca por temas e palavras-chaves.
+Já com o I, Librarian tudo fica mais fácil. Eu só preciso salvar no software o arquivo PDF do artigo e fornecer sua identificação Digital Objetct Identifier (DOI).</description>
+    </item>
+    
+  </channel>
+</rss>
