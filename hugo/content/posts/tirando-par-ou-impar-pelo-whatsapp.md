@@ -1,7 +1,7 @@
 ---
 title: "Tirando par ou ímpar pelo Whatsapp"
 date: 2019-06-11T12:17:48-03:00
-categorias:
+categories:
 - Criptografia
 aliases:
 - /posts/jogando-par-ou-impar-pelo-whatsapp
