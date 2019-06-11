@@ -79,6 +79,11 @@ Rodando o comando acima no Linux, você vai ter certeza de que eu não roubei!
 
 E se você não está utilizando o Linux, ainda assim pode validar a minha mensagem, utilizando
 qualquer site que calcula o hash SHA-512 (por exemplo, https://emn178.github.io/online-tools/sha512.html).
+É só gerar o SHA-512 do seguinte conteúdo:
+
+```
+Número: 3, Salt: Dq2VibypZm7
+```
 
 Problema resolvido.
 ***Go go go!***
