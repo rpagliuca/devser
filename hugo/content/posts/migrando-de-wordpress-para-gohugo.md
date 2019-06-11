@@ -3,7 +3,7 @@ title: "Migrando de Wordpress para Hugo (gohugo)"
 date: 2019-06-08T09:04:34-03:00
 draft: false
 categories:
-- Blog
+- Blogging
 ---
 Hoje migrei a plataforma deste blog de Wordpress para Hugo (https://gohugo.io/), pelos seguintes motivos:
 
