@@ -6,10 +6,19 @@
     <description>Recent content in Categories on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 11 Jun 2019 09:44:39 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 12:17:48 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Criptografia</title>
+      <link>https://devser.com.br/categories/criptografia/</link>
+      <pubDate>Tue, 11 Jun 2019 12:17:48 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/criptografia/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Devops</title>
@@ -62,15 +71,6 @@
       <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://devser.com.br/categories/microcontroladores/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Criptografia</title>
-      <link>https://devser.com.br/categories/criptografia/</link>
-      <pubDate>Sat, 17 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://devser.com.br/categories/criptografia/</guid>
       <description></description>
     </item>
     
