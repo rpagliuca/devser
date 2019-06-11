@@ -1,7 +1,9 @@
 ---
-title: "Jogando par ou ímpar pelo Whatsapp"
+title: "Tirando par ou ímpar pelo Whatsapp"
 date: 2019-06-11T12:17:48-03:00
 categorias: criptografia
+aliases:
+- /posts/jogando-par-ou-impar-pelo-whatsapp
 ---
 Você está conversando com aquele seu camarada pelo Whatsapp, combinando a jogatina da noite,
 tentando decidir (sem sucesso) se vão jogar CS ou Minecraft. Você quer jogar CS, e o cara quer jogar Minecraft.
@@ -27,7 +29,7 @@ Apresento a vocês, o protocolo de ***commitment*** (compromisso).
 
 ## Commitment
 
-Usando conceitos de criptografia, mais especificamente funções de *hash*, podemos jogar *par ou ímpar* pelo
+Usando conceitos de criptografia, mais especificamente funções de *hash*, podemos tirar *par ou ímpar* pelo
 Whatsapp de forma totalmente justa. O protocolo funciona assim:
 
 1. A primeira pessoa envia uma mensagem contendo um ***commitment***, um compromisso, como por exemplo, o *hash* do número que escolheu. Ela ainda não manda o número
