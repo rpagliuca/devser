@@ -24,9 +24,9 @@ antes de responder com o número `3`?
 Com certeza ele ganhou na malandragem.
 
 ***Calma***! Esse tipo de problema é bem comum em comunicação assíncrona. Sendo assim, os estudiosos de criptografia
-já desenvolveram uma solução há muitas decádas.
+já desenvolveram uma solução há algumas decádas.
 
-Apresento a vocês, o protocolo de ***commitment*** (compromisso).
+Apresento, a vocês, o protocolo de ***commitment*** (compromisso).
 
 ## Commitment
 
