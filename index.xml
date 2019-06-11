@@ -6,10 +6,21 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 11 Jun 2019 09:44:39 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 12:17:48 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jogando par ou ímpar pelo Whatsapp</title>
+      <link>https://devser.com.br/posts/jogando-par-ou-impar-pelo-whatsapp/</link>
+      <pubDate>Tue, 11 Jun 2019 12:17:48 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/jogando-par-ou-impar-pelo-whatsapp/</guid>
+      <description>Você está conversando com aquele seu camarada pelo Whatsapp, combinando a jogatina da noite, tentando decidir (sem sucesso) se vão jogar CS ou Minecraft. Você quer jogar CS, e o cara quer jogar Minecraft.
+Perdidos 20 minutos de discussão, vocês se dão conta de que seus antepassados já desenvolveram uma solução infalível para resolver esse tipo de impasse:
+Par ou ímpar! Por que não?! E o desenrolar da disputa acontece em seguida:</description>
+    </item>
     
     <item>
       <title>Investigação de fatores de latência de rede em um cluster Kubernetes</title>
