@@ -6,7 +6,7 @@ title = "/dev/ser"
 theme = "hugo-cactus-theme"
 canonifyURLs = true
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
+googleAnalytics = "UA-97834327-1"
 # Disable comments by leaving disqusShortname empty
 disqusShortname = "devser"
 paginate = 1000
