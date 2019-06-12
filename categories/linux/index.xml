@@ -36,5 +36,18 @@ Você quer monitorar, em tempo real, a balança e publicar o valor medido, conti
 Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada.</description>
     </item>
     
+    <item>
+      <title>Comunicação segura utilizando GPG</title>
+      <link>https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/</link>
+      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/</guid>
+      <description>(Co-publicado em Time Raposa)
+Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, principalmente em se tratando de credenciais de produção.
+Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:
+ Rodízio constante de senhas Senhas diferentes para cada usuário  Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.
+Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird.</description>
+    </item>
+    
   </channel>
 </rss>
