@@ -6,10 +6,19 @@
     <description>Recent content in Categories on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 11 Jun 2019 12:17:48 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2019 19:28:54 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://devser.com.br/categories/blogging/</link>
+      <pubDate>Wed, 12 Jun 2019 19:28:54 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/blogging/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Criptografia</title>
@@ -35,15 +44,6 @@
       <pubDate>Sat, 08 Jun 2019 18:43:35 -0300</pubDate>
       
       <guid>https://devser.com.br/categories/redes-complexas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blogging</title>
-      <link>https://devser.com.br/categories/blogging/</link>
-      <pubDate>Sat, 08 Jun 2019 09:04:34 -0300</pubDate>
-      
-      <guid>https://devser.com.br/categories/blogging/</guid>
       <description></description>
     </item>
     
