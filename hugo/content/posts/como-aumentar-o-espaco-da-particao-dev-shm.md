@@ -6,7 +6,7 @@ categories:
 - Linux
 ---
 
-(Co-publicado em [Time Raposa](http://www.timeraposa.com.br/2018/11/como-aumentar-o-espaco-da-particao-devshm))
+(Co-publicado em [Time Raposa](http://www.timeraposa.com.br/2018/11/como-aumentar-o-espaco-da-particao-devshm/))
 
 A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.
 
