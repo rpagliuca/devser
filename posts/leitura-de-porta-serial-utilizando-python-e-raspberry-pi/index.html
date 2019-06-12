@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta property="fb:app_id" content="194513401446491"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Rafael Santos">
+
+<meta name="generator" content="Hugo 0.55.6" />
+<title>Leitura de porta serial utilizando Python e Raspberry PI &middot; /dev/ser</title>
+<link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
+<link rel="stylesheet" href="https://devser.com.br/css/style.css">
+<link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
+
+<link rel="stylesheet" href="https://devser.com.br/css/custom-styles.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<meta property="og:title" content="Leitura de porta serial utilizando Python e Raspberry PI" />
+<meta property="og:description" content="(Co-publicado em Time Raposa)
+Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspberry PI.
+Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.
+Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?
+Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/" />
+<meta property="article:published_time" content="2018-03-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-03-02T00:00:00&#43;00:00"/>
+
+
+
+<meta itemprop="name" content="Leitura de porta serial utilizando Python e Raspberry PI">
+<meta itemprop="description" content="(Co-publicado em Time Raposa)
+Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspberry PI.
+Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.
+Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?
+Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada.">
+
+
+<meta itemprop="datePublished" content="2018-03-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-03-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2023">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leitura de porta serial utilizando Python e Raspberry PI"/>
+<meta name="twitter:description" content="(Co-publicado em Time Raposa)
+Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspberry PI.
+Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.
+Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?
+Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada."/>
+
+
+    </head>
+<body>
+    <nav class="primary-nav">
+<ul>
+
+<li><a href="https://devser.com.br/categories/blogging/">Blogging</a></li>
+
+<li><a href="https://devser.com.br/categories/criptografia/">Criptografia</a></li>
+
+<li><a href="https://devser.com.br/categories/devops/">Devops</a></li>
+
+<li><a href="https://devser.com.br/categories/linux/">Linux</a></li>
+
+<li><a href="https://devser.com.br/categories/machine-learning/">Machine Learning</a></li>
+
+<li><a href="https://devser.com.br/categories/microcontroladores/">Microcontroladores</a></li>
+
+<li><a href="https://devser.com.br/categories/php-e-db/">PHP e DB</a></li>
+
+<li><a href="https://devser.com.br/categories/python/">Python</a></li>
+
+<li><a href="https://devser.com.br/categories/redes-complexas/">Redes Complexas</a></li>
+
+</ul>
+</nav>
+<nav class="secondary-nav">
+	
+        <center><a href='https://devser.com.br/' style="font-size:130%"> <span class="arrow">←</span>Voltar</a></center>
+	
+
+	
+
+	
+</nav>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Leitura de porta serial utilizando Python e Raspberry PI</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        2
+        Março
+        2018
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>(Co-publicado em <a href="http://www.timeraposa.com.br/2018/03/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/">Time Raposa</a>)</p>
+
+<p>Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspberry PI.</p>
+
+<p>Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.</p>
+
+<p>Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?</p>
+
+<h2 id="passo-1-obtenha-a-documentação-do-fabricante">Passo 1 – Obtenha a documentação do fabricante</h2>
+
+<p>Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada.</p>
+
+<p>Estudando os manuais dos dois produtos (balança Toledo 820J/XIV e display Toledo 8540), você irá descobrir que o fabricante disponibilizou uma porta serial RS232 no display Toledo 8540 que publica, em uma taxa de 4 a 5 vezes por segundo, o valor medido no display.</p>
+
+<p><a href="https://devser.com.br/downloads/protocolo-toledo-8540.pdf">Faça download da documentação do display Toledo 8540</a></p>
+
+<p>O manual pode parecer confuso, mas, com certo esforço e paciência, é possível identificar os principais pontos da comunicação.</p>
+
+<h2 id="passo-2-obtenha-um-emulador-do-hardware">Passo 2 – Obtenha um emulador do hardware</h2>
+
+<p>Este passo é opcional, mas com certeza ajuda muito durante o desenvolvimento quando você não tem um hardware real à sua disposição para os testes iniciais.</p>
+
+<p>Pesquise se existe um emulador oficial produzido pelo próprio fabricante, ou então se alguma alma caridosa implementou e disponibilizou algum emulador extra-oficial em algum fórum especializado, ou blog.</p>
+
+<p>No caso do display Toledo 8540, após 1 ou 2 horas de pesquisa, não encontrei nenhum emulador para o meu sistema operacional Linux (distribuição Debian). Encontrei alguns links somente para Windows.</p>
+
+<p>Sendo assim, pulei esta etapa e prossegui para o próximo passo.</p>
+
+<h2 id="passo-3-emule-uma-porta-serial-com-o-programa-socat-do-linux">Passo 3 – Emule uma porta serial com o programa <code>socat</code>do Linux</h2>
+
+<p>O programa <code>socat</code>do Linux permite criar portas seriais virtuais (emuladas). Elas podem ser muito úteis para fazer testes rápidos.</p>
+
+<p>Exemplo de execução de comando:</p>
+
+<pre><code>socat -d -d pty,raw,echo=0 pty,raw,echo=0
+</code></pre>
+
+<p>Na minha máquina, o comando acima imprimiu a seguinte saída (pode variar para o seu caso):</p>
+
+<pre><code>2018/03/02 14:14:51 socat[27691] N PTY is /dev/pts/29
+2018/03/02 14:14:51 socat[27691] N PTY is /dev/pts/30
+2018/03/02 14:14:51 socat[27691] N starting data transfer loop with FDs [5,5] and [7,7]
+</code></pre>
+
+<h2 id="passo-4-explore-a-comunicação-serial-utilizando-o-programa-screen-do-linux">Passo 4 – Explore a comunicação serial utilizando o programa <em>screen</em> do Linux</h2>
+
+<p>O programa <code>screen</code> do Linux, entre outras coisas, é capaz de ler continuamente de uma porta serial e imprimir no terminal tudo o que está sendo lido.</p>
+
+<p>É uma ótima ferramenta exploratória.</p>
+
+<p>Por exemplo, para conectarmos o screen às portas virtuais criadas no passo anterior, executamos em uma janela do terminal o comando a seguir:</p>
+
+<pre><code>screen /dev/pts/29
+</code></pre>
+
+<p>Em outra janela do terminal, conectamos à segunda porta (ver número da porta conforme saída do comando <code>socat</code>)</p>
+
+<pre><code>screen /dev/pts/30
+</code></pre>
+
+<p>Agora, abra as janelas 1 e 2 do terminal lado a lado. Clique na janela 1, e digite alguns caracteres. Surpresa! Os caracteres digitados serão imprimidos na janela 2.</p>
+
+<p>Isso acontece porque o programa <code>socat</code> simulou uma conexão serial RS232. Ao digitar caracteres em um lado da conexão, você na verdade está enviando um “sinal elétrico” para o outro lado do cabo.</p>
+
+<h2 id="passo-5-programa-em-python-de-leitura-serial">Passo 5 – Programa em Python de leitura serial</h2>
+
+<p>Após algumas análises exploratórias do seu hardware e da comunicação serial, você está pronto para criar um programa em Python para fazer a leitura.</p>
+
+<p>Eu utilizei o Python 2.7, mas provavelmente você não terá dificuldades em migrar esse script para Python 3.</p>
+
+<pre><code># Arquivo config.py
+# Serial port (COM port)
+serial_port = '/dev/ttyUSB0' 
+
+# Webservice endpoint
+webservice = &quot;https://webservice.mydomain.com/publicar-dados-balanca&quot; 
+
+# Webservice authentication token (see weighing_scale class)
+webservice_token = &quot;4ff86e02514dd8f3610b83ee6947ccf9&quot; 
+
+# Name of the scale
+weighing_scale_identifier = &quot;MINHA_BALANCA_1&quot;
+
+# Unit of the scale
+unit = 'kg' 
+
+# Interval, in seconds, for updating data into the webservice
+webservice_publication_interval = 1 
+</code></pre>
+
+<pre><code># Arquivo reader.py
+
+import serial
+import sys
+import config
+
+while True:
+    with serial.Serial(
+            config.serial_port,
+            bytesize=serial.SEVENBITS,
+            parity=serial.PARITY_EVEN,
+            stopbits=serial.STOPBITS_TWO,
+            baudrate=4800,
+            timeout=1
+        ) as ser:
+        line = ser.read(18)
+        formattedLine = &quot;:&quot;.join(&quot;{:02x}&quot;.format(ord(c)) for c in line)
+        print formattedLine
+        sys.stdout.flush()
+</code></pre>
+
+<p>O que o programa acima faz é muito simples, mas já é um grande passo rumo ao nosso objetivo.</p>
+
+<p>O programa simplesmente define um loop infinito, lendo tudo que chega por meio da porta /dev/ttyUSB0, convertendo para hexadecimal, e imprimindo no terminal, permitindo monitorar com mais qualidade tudo que o hardware (ou emulador) enviou via porta serial, já que nem sempre serão enviados somente dados correspondentes às letras da tabela ASCII.</p>
+
+<p>Agora podemos testar o nosso programa utilizando a conexão serial criada com o comando <code>socat</code> anteriormente. Para isso, temos que fazer as seguintes modificações:</p>
+
+<ol>
+<li>Alterar a porta “/dev/ttyUSB0″ para a porta virtual. No meu caso, “/dev/pts/29″.</li>
+<li>Importante! Precisamos comentar os parâmetros byteserial=… e parity=… do script acima, pois esses dois parâmetros não funcionam com a porta serial emulada. Entretanto, quando formos utilizar o hardware real, devemos reabilitar esses 2 parâmetros, respeitando as especificações do hardware.</li>
+</ol>
+
+<p>Com o programa do passo anterior, podemos gravar, por alguns minutos, a leitura real proveniente do hardware. Verifique se a porta “/dev/ttyUSB0″ realmente se refere ao hardware do seu display Toledo 8540, e em seguida rode o programa usando o python, redirecionando o output para um arquivo de texto.</p>
+
+<pre><code>python reader.py &gt; serial_output
+</code></pre>
+
+<p>Deixe o programa rodando por alguns minutos. O arquivo /tmp/serial_output será util para você testar o restante do programa sem depender do hardware real. O que estamos fazendo é gravar um arquivo de “replay”, assim podemos emular fielmente o hardware real, sempre que precisarmos.</p>
+
+<p>Se você não tem um hardware real disponível para gravar esse arquivo de “replay”, <a href="https://devser.com.br/downloads/serial_output.txt">baixe aqui o arquivo serial_output.txt que eu gerei com o meu hardware</a>.</p>
+
+<h2 id="passo-7-programa-em-python-para-traduzir-a-saída-hexadecimal-gerada-pelo-programa-anterior">Passo 7 – Programa em python para traduzir a saída hexadecimal (gerada pelo programa anterior)</h2>
+
+<p>Agora que já temos um arquivo de replay (/tmp/serial_output), podemos emular mais fielmente os dados enviados pelo hardware. Usaremos esse arquivo para testar o restante do nosso programa.</p>
+
+<p>O próximo programa que criaremos será responsável por traduzir a saída hexadecimal para uma saída legível para humanos.</p>
+
+<pre><code># Arquivo processor.py
+
+import sys
+import time
+import config
+
+def validate(byteArray):
+    if len(byteArray) != 18:
+        return False
+    if byteArray[0] != '02':
+        return False
+    if byteArray[16] != '0d':
+        return False
+    return True
+
+def weight(byteArray):
+    weightString = &quot;&quot;
+    for i in range(5, 10):
+        weightString += intValue(byteArray[i])
+    return weightString
+
+def intValue(byteString):
+    return chr(int(byteString, 16))
+
+def parse(line):
+    bytes = line.split(&quot;:&quot;)
+    if (validate(bytes)):
+        return weight(bytes)
+    return &quot;&quot;
+
+while 1:
+    line = sys.stdin.readline()
+    formattedWeight = parse(line)
+    if (formattedWeight):
+        print &quot;%s ::: %s ::: %s&quot; % (time.time(), formattedWeight, config.unit)
+        sys.stdout.flush()
+</code></pre>
+
+<p>O programa acima lê, linha a linha, o output gerado pelo programa 1 (reader.py), e converte para o formato desejado. Além disso, o método validate() confere que o primeiro byte da linha é 02, e que o byte da posição 17 é 0d. Esses dois bytes estão especificados na documentação obtida no passo 1, e nos permitem descartar qualquer dado com ruído que possa ter sido recebido pela conexão serial.</p>
+
+<p>Para testar esse programa, vamos imprimir o conteúdo do arquivo de replay de dados (/tmp/serial_output) e fazer um pipe para o programa tradutor.</p>
+
+<pre><code>cat /tmp/serial_output | python processor.py
+</code></pre>
+
+<p>Ao rodar o comando acima, você deverá visualizar a seguinte saída em seu terminal:</p>
+
+<p><img src="https://devser.com.br/images/python-leitura-serial-1.png" alt="" /></p>
+
+<p>Para rodar junto ao harware real, o comando é similar:</p>
+
+<pre><code>python reader.py | python processor.py
+</code></pre>
+
+<h2 id="passo-8-publicar-os-dados-traduzidos-via-webservice">Passo 8 – Publicar os dados traduzidos via webservice</h2>
+
+<p>Este passo é opcional, e vai depender da necessidade do seu cliente. No meu caso, optei por publicar via webservice, a cada 1 segundo, o valor lido da balança.</p>
+
+<pre><code># Arquivo publisher.py
+
+import sys
+import datetime
+import pprint
+import time
+import re
+from subprocess import Popen
+import urllib
+import config
+
+LAST_PUBLICATION_TIMESTAMP = time.time()
+
+def parse(line):
+    data = line.strip().split(&quot; ::: &quot;)
+    if (validate(data)):
+        return sanitize(data)
+
+def validate(data):
+    if len(data) != 3:
+        return False
+    return True
+
+def sanitize(data):
+    data[2] = re.sub(&quot;[^a-zA-Z]&quot;, &quot;&quot;, data[2])
+    return data
+
+def needsPublishing():
+    interval = time.time() - LAST_PUBLICATION_TIMESTAMP
+    return (interval &gt; config.webservice_publication_interval)
+
+def publish(data):
+
+    global LAST_PUBLICATION_TIMESTAMP
+
+    if not needsPublishing():
+        return True
+
+    LAST_PUBLICATION_TIMESTAMP = time.time()
+
+    data = {
+        'token': config.webservice_token,
+        'weighing_scale_identifier': config.weighing_scale_identifier,
+        'timestamp': data[0],
+        'weight': data[1],
+        'unit': data[2]
+    }
+
+    cmd = [&quot;curl&quot;, &quot;-X&quot;, &quot;POST&quot;, &quot;--max-time&quot;, &quot;10&quot;, &quot;--data&quot;, urllib.urlencode(data), config.webservice]
+
+    try:
+        p = Popen(cmd)
+    except Exception as e:
+        print(e)
+        pass
+
+while 1:
+    line = sys.stdin.readline()
+    data = parse(line)
+    if data:
+        pprint.pprint(data)
+        publish(data)
+</code></pre>
+
+<p>Para testar o último programa, podemos usar os dados de replay, ou então o hardware real.</p>
+
+<h3 id="opção-1-arquivo-de-replay">Opção 1 – Arquivo de replay</h3>
+
+<pre><code>cat /tmp/serial_output | python processor.py | python publisher.py
+</code></pre>
+
+<h3 id="opção-2-hardware-real">Opção 2 - Hardware real</h3>
+
+<p>Para rodar junto ao harware real, o comando é similar:</p>
+
+<pre><code>python reader.py | python processor.py | python publisher.py
+</code></pre>
+
+<p>Se tudo deu certo, você terá uma leitura contínua (com taxa de 1 publicação por segundo) sendo publicada em seu webservice.</p>
+
+<h2 id="passo-9-testar-software-para-o-raspberry-pi">Passo 9 – Testar software para o Raspberry PI</h2>
+
+<p>Felizmente, o Raspberry PI utiliza a distribuição Raspbian, baseada no Debian. Portanto, não precisei fazer nenhum tipo de adaptação para que o meu programa que estava rodando no meu notebook com Debian 9 funcionasse sem problemas no Raspberry PI.</p>
+
+<p>Tive apenas que instalar algumas dependências que não são instaladas por padrão, como por exemplo o python. Mas nada que alguns apt-get install não resolvessem rapidamente.</p>
+
+<p>Para conectar o display Toledo 8540 no Raspberry PI, utilizei um cabo conversor RS232/USB da marca Digitus, com chipset FT232RL. Enfim, qualquer conversor comprado no Mercado Livre deve funcionar bem também.</p>
+
+<h2 id="passo-10-configurar-programa-para-rodar-sempre-que-o-raspberry-for-conectado-à-tomada">Passo 10 – Configurar programa para rodar sempre que o Raspberry for conectado à tomada</h2>
+
+<p>Essa etapa também é muito simples, já que o próprio Linux possui esse recurso.</p>
+
+<p>Precisamos apenas editar o arquivo /etc/rc.local e incluir o comando que execute os nossos programas. No meu caso, o arquivo /etc/rc.local ficou assim:</p>
+
+<pre><code>#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will &quot;exit 0&quot; on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ &quot;$_IP&quot; ]; then
+  printf &quot;My IP address is %s\n&quot; &quot;$_IP&quot;
+fi
+
+# Start SSH
+service ssh start
+
+# Start Balança
+cd /home/pi/balanca/ &amp;&amp; (python reader.py | python processor.py | python publisher.py) &gt;&gt; /dev/null 2&gt;&amp;1 &amp;
+
+exit 0
+</code></pre>
+
+<p>Sendo que as únicas alterações que fiz nesse arquivo foram inicializar o servidor SSH (que antes eu instalei com apt-get install), e adicionei a linha que executa o nosso programa em python.</p>
+
+<h2 id="passo-11-instalação-do-watchdog">Passo 11 – Instalação do watchdog</h2>
+
+<p>Nosso projeto já está funcionando muito bem, mas podemos dar mais robustez ao nosso sistema instalando e configurando o programa <code>watchdog</code> do Linux. Não detalherei neste artigo como fazer isso, mas recomendo que você tente estudar e configurar esse programa por sua própria conta.</p>
+
+<p>Com ele, podemos definir alguns critérios de saúde do sistema operacional do nosso Raspberry PI. Quando qualquer desses critérios não estiver sendo respeitado, o aplicativo irá automaticamente rebootar a placa. Assim, não precisamos nos preocupar (tanto!) com desperdício de memória RAM, perda de conexão de rede, CPU load altíssimo, etc.</p>
+
+<p><strong><em>Dica bônus</em></strong> - Armazene seus dados no banco NoSQL AWS DynamoDB
+Você deve ter percebido que, 1 vez por segundo, toda nova leitura da balança é publicada no webservice, mesmo quando o peso é 0kg. Isso pode parecer desperdício à primeira vista, mas é muito útil pois nos passa uma garantia maior de que o sistema está funcionando a todo instante, mesmo quando não há peso na balança.</p>
+
+<p>Mesmo com essa importante vantagem, não podemos ignorar o fato de que essa escolha acarreta um alto custo de armazenamento. Sendo assim, aproveito aqui para oferecer uma dica adicional: o sistema AWS DynamoDB permite armazenar até 25GB de dados gratuitamente, o que estimei que será suficiente para gravar um registro por segundo por mais de 8 anos.</p>
+
+<p>Sendo assim, optei por configurar o webservice para armazenar os meus dados no DynamoDB, e recomendo que você também estude essa opção. Para mais informações, acesse <a href="https://aws.amazon.com/pt/dynamodb/">https://aws.amazon.com/pt/dynamodb/</a>.</p>
+
+<h2 id="até-a-próxima">Até a próxima!</h2>
+
+<p>Pronto, se você chegou até aqui, tem um projeto totalmente funcional que faz a leitura contínua do valor medido pelo display Toledo 8540.
+Em caso de dúvidas, me avise pelos comentários!</p>
+
+<p>Até mais.</p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <div>
+        <img class="avatar" src="https://devser.com.br/images/avatar.png" style="float: left">
+        <span class="dark">Rafael Santos</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
+    </div>
+    <section id="sharing" style="margin-top: 20px">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fleitura-de-porta-serial-utilizando-python-e-raspberry-pi%2f - Leitura%20de%20porta%20serial%20utilizando%20Python%20e%20Raspberry%20PI "><span class="icon-twitter"> Compartilhe</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Compartilhe</span>
+</a>
+
+    </section>
+</footer>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=682823301800780&autoLogAppEvents=1">
+</script>
+<center>
+    <div class="fb-comments"
+         data-width="500"
+         data-href="https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/"
+    >
+    </div>
+</center>
+
+<hr/>
+
+<ul id="post-list" class="archive readmore">
+    <h3>Outros artigos</h3>
+
+    
+    
+    
+        <li>
+            <a href="https://devser.com.br/posts/tirando-par-ou-impar-pelo-whatsapp/">Tirando par ou ímpar pelo Whatsapp<aside class="dates">Jun 11 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/investigacao-de-fatores-de-latencia-de-rede-em-um-cluster-kubernetes/">Investigação de fatores de latência de rede em um cluster Kubernetes<aside class="dates">Jun 11 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/defesa-dissertacao-mestrado/">Defesa da Dissertação de Mestrado<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/migrando-de-wordpress-para-gohugo/">Migrando de Wordpress para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/">Como aumentar o espaço da partição /dev/shm<aside class="dates">Nov 6 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/">Deixe seu MySQL muito mais rápido rodando na memória RAM<aside class="dates">May 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/">Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug<aside class="dates">Apr 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/">Criando plugins para a biblioteca de templates Smarty do PHP<aside class="dates">Mar 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/">Testes automatizados com Selenium &#43; PHPUnit<aside class="dates">Mar 14 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/">Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs<aside class="dates">Feb 21 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/">Simulando um computador SAP-1 (Simple As Possible 1)<aside class="dates">Oct 15 2013</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/">Relação entre OTP e Mapas Binários<aside class="dates">Nov 14 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/modelo-da-particula-na-caixa/">Modelo da Partícula na Caixa<aside class="dates">Jun 19 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criptografia-com-equacoes-de-chua/">Criptografia Com Equações de Chua<aside class="dates">May 11 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criptografia-com-caos-baptista/">Criptografia com Caos - Baptista<aside class="dates">Apr 1 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/">Mapa logístico<aside class="dates">Dec 11 2011</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/historia-da-chave-assimetrica/">História da chave assimétrica<aside class="dates">Dec 11 2011</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/">Início de iniciação científica em criptografia<aside class="dates">Dec 11 2011</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/rafaelpagliuca">
+        <i class="fa fa-facebook"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/rpagliuca">
+        <i class="fa fa-github"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2019 Rafael Santos
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://devser.com.br/js/main.js"></script>
+<script src="https://devser.com.br/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-97834327-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+</body>
+</html>

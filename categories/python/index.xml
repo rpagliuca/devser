@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on /dev/ser</title>
-    <link>https://devser.com.br/categories/linux/</link>
-    <description>Recent content in Linux on /dev/ser</description>
+    <title>Python on /dev/ser</title>
+    <link>https://devser.com.br/categories/python/</link>
+    <description>Recent content in Python on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 06 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://devser.com.br/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devser.com.br/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Como aumentar o espaço da partição /dev/shm</title>
-      <link>https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/</link>
-      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/</guid>
-      <description>(Co-publicado em Time Raposa)
-A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.
-Essa partição é muito importante para facilitar a troca de informações entre diferentes processos do sistema operacional, e também para deixar alguns processos mais rápidos.
-No Debian 9 (e em outras distros também), o padrão é que essa partição seja montada com 50% da memória RAM. No meu caso, tenho uma máquina com 16GB de RAM, então quando eu ligo meu sistema, possuo 8GB nessa partição:</description>
-    </item>
     
     <item>
       <title>Leitura de porta serial utilizando Python e Raspberry PI</title>

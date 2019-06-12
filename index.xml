@@ -66,6 +66,19 @@ No Debian 9 (e em outras distros também), o padrão é que essa partição seja
     </item>
     
     <item>
+      <title>Leitura de porta serial utilizando Python e Raspberry PI</title>
+      <link>https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/</link>
+      <pubDate>Fri, 02 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/</guid>
+      <description>(Co-publicado em Time Raposa)
+Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspberry PI.
+Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.
+Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?
+Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada.</description>
+    </item>
+    
+    <item>
       <title>Deixe seu MySQL muito mais rápido rodando na memória RAM</title>
       <link>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
