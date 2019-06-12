@@ -54,6 +54,18 @@ A área de estudos de redes complexas fornece ferramentas para analisar redes de
     </item>
     
     <item>
+      <title>Como aumentar o espaço da partição /dev/shm</title>
+      <link>https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/</link>
+      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/</guid>
+      <description>(Co-publicado em Time Raposa)
+A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.
+Essa partição é muito importante para facilitar a troca de informações entre diferentes processos do sistema operacional, e também para deixar alguns processos mais rápidos.
+No Debian 9 (e em outras distros também), o padrão é que essa partição seja montada com 50% da memória RAM. No meu caso, tenho uma máquina com 16GB de RAM, então quando eu ligo meu sistema, possuo 8GB nessa partição:</description>
+    </item>
+    
+    <item>
       <title>Deixe seu MySQL muito mais rápido rodando na memória RAM</title>
       <link>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
