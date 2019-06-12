@@ -6,20 +6,10 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 12 Jun 2019 18:28:48 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 12:17:48 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Why I migrated my blog from Wordpress to Hugo</title>
-      <link>https://devser.com.br/posts/why-i-migrated-my-blog-from-wordpress-to-hugo/</link>
-      <pubDate>Wed, 12 Jun 2019 18:28:48 -0300</pubDate>
-      
-      <guid>https://devser.com.br/posts/why-i-migrated-my-blog-from-wordpress-to-hugo/</guid>
-      <description>Key factors:
- Reduced hosting cost (free!) Blazing fast page loading Workflow based on tools that I&amp;rsquo;m already familiar with and enjoy working with:  linux terminal vim git travis-ci   Continuous deployment demo:   </description>
-    </item>
     
     <item>
       <title>Tirando par ou ímpar pelo Whatsapp</title>
