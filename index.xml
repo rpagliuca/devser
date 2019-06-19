@@ -6,19 +6,21 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 12 Jun 2019 21:35:49 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2019 21:36:28 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Why I migrated from Wordpress to Hugo</title>
-      <link>https://devser.com.br/posts/why-i-migrated-from-wordpress-to-hugo/</link>
-      <pubDate>Wed, 12 Jun 2019 21:35:49 -0300</pubDate>
+      <title>Como gerar uma senha aleatória no terminal do Linux</title>
+      <link>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</link>
+      <pubDate>Tue, 18 Jun 2019 21:36:28 -0300</pubDate>
       
-      <guid>https://devser.com.br/posts/why-i-migrated-from-wordpress-to-hugo/</guid>
-      <description>Key factors:
- Reduced hosting cost (free!) Blazing fast page loading Workflow based on tools which I&amp;rsquo;m already familiar with and enjoy working with:  Linux terminal git vim travis-ci   Continuous deployment demo:   </description>
+      <guid>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</guid>
+      <description>Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de terceiros.
+Execute o comando abaixo no terminal:
+cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32  Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:
+  </description>
     </item>
     
     <item>
