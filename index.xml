@@ -6,10 +6,20 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 18 Jun 2019 21:36:28 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2019 18:19:27 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apresentando a moeda Libra</title>
+      <link>https://devser.com.br/posts/apresentando-a-moeda-libra/</link>
+      <pubDate>Thu, 20 Jun 2019 18:19:27 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/apresentando-a-moeda-libra/</guid>
+      <description>Esta semana foi apresentada a nova moeda Libra, criptomoeda desenvolvida pelo Facebook em conjunto com a Associação Libra, entidade sem fins lucrativos constituída por diversas empresas de peso, como Visa, Mastercard, PayPal, MercadoPago, Ebay, Spotify e Uber.
+De modo geral, à parte de questões jurídicas (não tenho capacidade para discutir sobre a legalidade desse tipo de moeda paralela nas jurisdições mundo afora), gostei bastante da iniciativa. Fiquei com a impressão de que o Facebook e a Associação Libra estão se esforçando para reduzir seus próprios poderes, antecipando respostas a questões relacionadas à privacidade e a centralização de poder.</description>
+    </item>
     
     <item>
       <title>Como gerar uma senha aleatória no terminal do Linux</title>
