@@ -8,7 +8,7 @@
 <meta name="author" content="Rafael Santos">
 
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Defesa da Dissertação de Mestrado &middot; /dev/ser</title>
+<title>Hello world e SHA-256 em C &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
 <link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
@@ -22,33 +22,39 @@
 
 
 
-<meta property="og:title" content="Defesa da Dissertação de Mestrado" />
-<meta property="og:description" content="No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado na minha defesa de dissertação de mestrado, intitulada Análise da rede de produtos comprados em conjunto no comércio eletrônico.
-A área de estudos de redes complexas fornece ferramentas para analisar redes de variados tipos, como redes biológicas (por exemplo, proteínas associadas a doenças), redes de comunicação, redes sociais (virtuais ou não), redes comerciais, redes políticas, apenas para listar algumas." />
+<meta property="og:title" content="Hello world e SHA-256 em C" />
+<meta property="og:description" content="No vídeo de hoje, eu mostro como implementar um simples &ldquo;Hello, world!&rdquo; utilizando a linguagem de programação C.
+Para os mais curiosos, vou além e ensino também como utilizar a biblioteca OpenSSL para calcular o hash SHA-256 de uma string.
+Segue código final da rotina (arquivo main.c):
+// File: main.c  #include &lt;stdio.h&gt;#include &lt;openssl/sha.h&gt;#include &lt;string.h&gt; int main(int argcount, char **args) { if (argcount != 2) { printf(&#34;Usage: %s &lt;string&gt;\n&#34;, args[0]); return 1; } printf(&#34;INPUT: %s\n&#34;, args[1]); unsigned char *hash = SHA256(args[1], strlen(args[1]), NULL); printf(&#34;SHA256: &#34;); for (int i = 0; i &lt; 32; i&#43;&#43;) { printf(&#34;%02x&#34;, hash[i]); } printf(&#34;\n&#34;); return 0; } Comandos para compilar e executar a rotina acima, no terminal do Linux:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devser.com.br/posts/defesa-dissertacao-mestrado/" />
-<meta property="article:published_time" content="2019-06-08T18:43:35-03:00"/>
-<meta property="article:modified_time" content="2019-06-08T18:43:35-03:00"/>
+<meta property="og:url" content="https://devser.com.br/posts/hello-world-e-sha256-em-c/" />
+<meta property="article:published_time" content="2019-06-20T18:19:27-03:00"/>
+<meta property="article:modified_time" content="2019-06-20T18:19:27-03:00"/>
 
 
 
-<meta itemprop="name" content="Defesa da Dissertação de Mestrado">
-<meta itemprop="description" content="No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado na minha defesa de dissertação de mestrado, intitulada Análise da rede de produtos comprados em conjunto no comércio eletrônico.
-A área de estudos de redes complexas fornece ferramentas para analisar redes de variados tipos, como redes biológicas (por exemplo, proteínas associadas a doenças), redes de comunicação, redes sociais (virtuais ou não), redes comerciais, redes políticas, apenas para listar algumas.">
+<meta itemprop="name" content="Hello world e SHA-256 em C">
+<meta itemprop="description" content="No vídeo de hoje, eu mostro como implementar um simples &ldquo;Hello, world!&rdquo; utilizando a linguagem de programação C.
+Para os mais curiosos, vou além e ensino também como utilizar a biblioteca OpenSSL para calcular o hash SHA-256 de uma string.
+Segue código final da rotina (arquivo main.c):
+// File: main.c  #include &lt;stdio.h&gt;#include &lt;openssl/sha.h&gt;#include &lt;string.h&gt; int main(int argcount, char **args) { if (argcount != 2) { printf(&#34;Usage: %s &lt;string&gt;\n&#34;, args[0]); return 1; } printf(&#34;INPUT: %s\n&#34;, args[1]); unsigned char *hash = SHA256(args[1], strlen(args[1]), NULL); printf(&#34;SHA256: &#34;); for (int i = 0; i &lt; 32; i&#43;&#43;) { printf(&#34;%02x&#34;, hash[i]); } printf(&#34;\n&#34;); return 0; } Comandos para compilar e executar a rotina acima, no terminal do Linux:">
 
 
-<meta itemprop="datePublished" content="2019-06-08T18:43:35-03:00" />
-<meta itemprop="dateModified" content="2019-06-08T18:43:35-03:00" />
-<meta itemprop="wordCount" content="179">
+<meta itemprop="datePublished" content="2019-06-20T18:19:27-03:00" />
+<meta itemprop="dateModified" content="2019-06-20T18:19:27-03:00" />
+<meta itemprop="wordCount" content="119">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Defesa da Dissertação de Mestrado"/>
-<meta name="twitter:description" content="No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado na minha defesa de dissertação de mestrado, intitulada Análise da rede de produtos comprados em conjunto no comércio eletrônico.
-A área de estudos de redes complexas fornece ferramentas para analisar redes de variados tipos, como redes biológicas (por exemplo, proteínas associadas a doenças), redes de comunicação, redes sociais (virtuais ou não), redes comerciais, redes políticas, apenas para listar algumas."/>
+<meta name="twitter:title" content="Hello world e SHA-256 em C"/>
+<meta name="twitter:description" content="No vídeo de hoje, eu mostro como implementar um simples &ldquo;Hello, world!&rdquo; utilizando a linguagem de programação C.
+Para os mais curiosos, vou além e ensino também como utilizar a biblioteca OpenSSL para calcular o hash SHA-256 de uma string.
+Segue código final da rotina (arquivo main.c):
+// File: main.c  #include &lt;stdio.h&gt;#include &lt;openssl/sha.h&gt;#include &lt;string.h&gt; int main(int argcount, char **args) { if (argcount != 2) { printf(&#34;Usage: %s &lt;string&gt;\n&#34;, args[0]); return 1; } printf(&#34;INPUT: %s\n&#34;, args[1]); unsigned char *hash = SHA256(args[1], strlen(args[1]), NULL); printf(&#34;SHA256: &#34;); for (int i = 0; i &lt; 32; i&#43;&#43;) { printf(&#34;%02x&#34;, hash[i]); } printf(&#34;\n&#34;); return 0; } Comandos para compilar e executar a rotina acima, no terminal do Linux:"/>
 
 
     </head>
@@ -93,10 +99,10 @@ A área de estudos de redes complexas fornece ferramentas para analisar redes de
         
 <article class="post">
     <header>
-        <h1>Defesa da Dissertação de Mestrado</h1>
+        <h1>Hello world e SHA-256 em C</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        8
+        20
         Junho
         2019
         <br>
@@ -104,30 +110,46 @@ A área de estudos de redes complexas fornece ferramentas para analisar redes de
         </h2>
     </header>
     <section id="post-body">
-        <p>No dia 22 de maio de 2019, finalizei a mais importante etapa da minha carreira até o momento: fui aprovado
-na minha defesa de dissertação de mestrado, intitulada <em>Análise da rede de produtos comprados
-em conjunto no comércio eletrônico</em>.</p>
-
-<p>A área de estudos de redes complexas fornece ferramentas para analisar redes de variados tipos, como
-redes biológicas (por exemplo, proteínas associadas a doenças),
-redes de comunicação, redes sociais (virtuais ou não),
-redes comerciais, redes políticas, apenas para listar algumas.</p>
-
-<p>Com essas ferramentas, podemos identificar, por exemplo, quem são os principais membros de uma rede política,
-ou quem são as pessoas mais influentes em uma rede social. Essas mesmas análises são utilizadas em
-estudos de saúde pública: em um cenário de escassez de vacinas, como decidir quais pessoas vacinar para
-evitar uma epidemia? O estudo de redes fornece essa resposta.</p>
-
-<p>No meu trabalho, treinei um modelo de aprendizado de máquina capaz de prever o preço de produtos,
-e um outro modelo capaz de identificar se dois produtos estão, ou não, relacionados.</p>
-
-<p>Dissertação completa: <a href="https://devser.com.br/downloads/Dissertação Mestrado - 7630771 - Rafael Santos.pdf">Dissertação Mestrado - 7630771 - Rafael Santos.pdf</a></p>
-
-
+        
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/sdgvJ207WRA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/FHa6x_NPZKg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+
+<p><br/></p>
+
+<p>No vídeo de hoje, eu mostro como implementar um simples &ldquo;Hello, world!&rdquo; utilizando a linguagem de programação C.</p>
+
+<p>Para os mais curiosos, vou além e ensino também como utilizar a biblioteca OpenSSL para calcular
+o hash SHA-256 de uma string.</p>
+
+<p>Segue código final da rotina (arquivo <strong>main.c</strong>):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// File: main.c
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;openssl/sha.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argcount, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>args) {
+    <span style="color:#66d9ef">if</span> (argcount <span style="color:#f92672">!=</span> <span style="color:#ae81ff">2</span>) {
+        printf(<span style="color:#e6db74">&#34;Usage: %s &lt;string&gt;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, args[<span style="color:#ae81ff">0</span>]);
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    }
+    printf(<span style="color:#e6db74">&#34;INPUT: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, args[<span style="color:#ae81ff">1</span>]);
+    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>hash <span style="color:#f92672">=</span> SHA256(args[<span style="color:#ae81ff">1</span>], strlen(args[<span style="color:#ae81ff">1</span>]), NULL);
+    printf(<span style="color:#e6db74">&#34;SHA256: &#34;</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">32</span>; i<span style="color:#f92672">++</span>) {
+        printf(<span style="color:#e6db74">&#34;%02x&#34;</span>, hash[i]);
+    }
+    printf(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}</code></pre></div>
+
+<p>Comandos para compilar e executar a rotina acima, no terminal do Linux:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gcc -lcrypto main.c
+./a.out <span style="color:#e6db74">&#34;My string&#34;</span></code></pre></div>
 
     </section>
 </article>
@@ -139,7 +161,7 @@ e um outro modelo capaz de identificar se dois produtos estão, ou não, relacio
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fdefesa-dissertacao-mestrado%2f - Defesa%20da%20Disserta%c3%a7%c3%a3o%20de%20Mestrado "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fhello-world-e-sha256-em-c%2f - Hello%20world%20e%20SHA-256%20em%20C "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -159,7 +181,7 @@ e um outro modelo capaz de identificar se dois produtos estão, ou não, relacio
 <center>
     <div class="fb-comments"
          data-width="500"
-         data-href="https://devser.com.br/posts/defesa-dissertacao-mestrado/"
+         data-href="https://devser.com.br/posts/hello-world-e-sha256-em-c/"
     >
     </div>
 </center>
@@ -177,10 +199,6 @@ e um outro modelo capaz de identificar se dois produtos estão, ou não, relacio
         </li>
     
         <li>
-            <a href="https://devser.com.br/posts/hello-world-e-sha256-em-c/">Hello world e SHA-256 em C<aside class="dates">Jun 20 2019</aside></a>
-        </li>
-    
-        <li>
             <a href="https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/">Como gerar uma senha aleatória no terminal do Linux<aside class="dates">Jun 18 2019</aside></a>
         </li>
     
@@ -190,6 +208,10 @@ e um outro modelo capaz de identificar se dois produtos estão, ou não, relacio
     
         <li>
             <a href="https://devser.com.br/posts/investigacao-de-fatores-de-latencia-de-rede-em-um-cluster-kubernetes/">Investigação de fatores de latência de rede em um cluster Kubernetes<aside class="dates">Jun 11 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/defesa-dissertacao-mestrado/">Defesa da Dissertação de Mestrado<aside class="dates">Jun 8 2019</aside></a>
         </li>
     
         <li>
