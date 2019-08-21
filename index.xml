@@ -17,8 +17,9 @@
       <pubDate>Wed, 21 Aug 2019 11:18:05 -0300</pubDate>
       
       <guid>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</guid>
-      <description>Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
-   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &amp;ldquo;Hello, world!</description>
+      <description>Com contribução de Felipe Finhane e Marcio Zacarias.
+Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello   Clojure Clojure JVM Não Não N/A    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &amp;ldquo;Hello, world!</description>
     </item>
     
     <item>

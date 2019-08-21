@@ -23,8 +23,9 @@
 
 
 <meta property="og:title" content="Comparando a perfomance de Go, .NET e PHP" />
-<meta property="og:description" content="Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
-   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &ldquo;Hello, world!" />
+<meta property="og:description" content="Com contribução de Felipe Finhane e Marcio Zacarias.
+Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello   Clojure Clojure JVM Não Não N/A    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &ldquo;Hello, world!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/" />
 <meta property="article:published_time" content="2019-08-21T11:18:05-03:00"/>
@@ -33,13 +34,14 @@
 
 
 <meta itemprop="name" content="Comparando a perfomance de Go, .NET e PHP">
-<meta itemprop="description" content="Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
-   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &ldquo;Hello, world!">
+<meta itemprop="description" content="Com contribução de Felipe Finhane e Marcio Zacarias.
+Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello   Clojure Clojure JVM Não Não N/A    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &ldquo;Hello, world!">
 
 
 <meta itemprop="datePublished" content="2019-08-21T11:18:05-03:00" />
 <meta itemprop="dateModified" content="2019-08-21T11:18:05-03:00" />
-<meta itemprop="wordCount" content="711">
+<meta itemprop="wordCount" content="808">
 
 
 
@@ -47,8 +49,9 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Comparando a perfomance de Go, .NET e PHP"/>
-<meta name="twitter:description" content="Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
-   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &ldquo;Hello, world!"/>
+<meta name="twitter:description" content="Com contribução de Felipe Finhane e Marcio Zacarias.
+Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello   Clojure Clojure JVM Não Não N/A    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &ldquo;Hello, world!"/>
 
 
     </head>
@@ -105,6 +108,8 @@
     </header>
     <section id="post-body">
         
+
+<p>Com contribução de <a href="https://www.finhane.com">Felipe Finhane</a> e <a href="https://programaresimples.blogspot.com">Marcio Zacarias</a>.</p>
 
 <h2 id="cenários-comparados">Cenários comparados</h2>
 
@@ -185,6 +190,15 @@
 <td>Sim</td>
 <td>nginxdemos/hello</td>
 </tr>
+
+<tr>
+<td>Clojure</td>
+<td>Clojure</td>
+<td>JVM</td>
+<td>Não</td>
+<td>Não</td>
+<td>N/A</td>
+</tr>
 </tbody>
 </table>
 
@@ -195,6 +209,8 @@ servir a resposta HTTP esperada.</p>
 
 <p>Já os cenários .NET, PHP-3 e PHP-4 estão estruturados como projetos web MVC, sendo que o .NET está utilizando
 apenas bibliotecas padrões do .NET Core, e os PHP-3 e PHP-4 estão rodando o framework Symfony.</p>
+
+<p>Clojure utiliza o projeto Leiningen para criação da estrutura e Pedestal como biblioteca de API.</p>
 
 <p>Os ambientes acima foram disponibilizados no GitHub: <a href="https://github.com/rpagliuca/go-vs-dotnet-vs-php">https://github.com/rpagliuca/go-vs-dotnet-vs-php</a>.</p>
 
@@ -245,6 +261,11 @@ apenas bibliotecas padrões do .NET Core, e os PHP-3 e PHP-4 estão rodando o fr
 <td>Static</td>
 <td>9798</td>
 </tr>
+
+<tr>
+<td>Clojure</td>
+<td>1692</td>
+</tr>
 </tbody>
 </table>
 
@@ -258,6 +279,8 @@ do filesystem.</p>
 
 <p>O cenário .NET não ficou muito longe, com quase 7.000 requests por segundo. Esse resultado me surpreendeu positivamente,
 já que é um projeto bem mais complexo, estruturado no formato MVC, e rodando no runtime .NET Core dentro do Docker.</p>
+
+<p>Clojure demostrou uma perfomace melhor que PHP (utilizando framework) mas não chegou a 20% da performace do .NET.</p>
 
 <p>Por último, o PHP conseguiu apenas 50% da performance do .NET, mas apenas quando utilizando o cenário sem frameworks. Já quando
 utilizamos o Symfony, a performance
@@ -394,6 +417,24 @@ Running 1s test @ http://172.23.0.2
   9861 requests in 1.01s, 8.25MB read
 Requests/sec:   9797.95
 Transfer/sec:      8.19MB
+</pre>
+
+<h3 id="clojure">Clojure</h3>
+
+<pre>
+Running 1s test @ http://localhost:8080
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   766.97us    1.13ms  13.80ms   95.05%
+    Req/Sec     1.70k   417.51     2.06k    70.00%
+  Latency Distribution
+    50%  506.00us
+    75%  672.00us
+    90%    0.93ms
+    99%    6.80ms
+    1694 requests in 1.00s, 1.81MB read
+Requests/sec:   1692.34
+Transfer/sec:      1.81MB
 </pre>
 
     </section>
