@@ -3,6 +3,8 @@ title: "Comparando a perfomance de Go, .NET e PHP"
 date: 2019-08-21T11:18:05-03:00
 ---
 
+Com contribução de [Felipe Finhane](https://www.finhane.com) e [Marcio Zacarias](https://programaresimples.blogspot.com).
+
 ## Cenários comparados
 
 Utilizando o programa [wrk](https://github.com/wg/wrk), calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
@@ -16,6 +18,7 @@ Utilizando o programa [wrk](https://github.com/wg/wrk), calculei a capacidade de
 | PHP-3    | PHP       | Nginx    | Symfony   | Sim    | richarvey/nginx-php-fpm                    |
 | PHP-4    | PHP       | Nginx    | Symfony   | Sim    | (private)                                  |
 | Static   | N/A       | Nginx    | Não       | Sim    | nginxdemos/hello                           |
+| Clojure  | Clojure   | JVM      | Não       | Não    | N/A                                        |
 
 Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string "Hello, world!".
 
@@ -24,6 +27,8 @@ servir a resposta HTTP esperada.
 
 Já os cenários .NET, PHP-3 e PHP-4 estão estruturados como projetos web MVC, sendo que o .NET está utilizando
 apenas bibliotecas padrões do .NET Core, e os PHP-3 e PHP-4 estão rodando o framework Symfony.
+
+Clojure utiliza o projeto Leiningen para criação da estrutura e Pedestal como biblioteca de API.
 
 Os ambientes acima foram disponibilizados no GitHub: https://github.com/rpagliuca/go-vs-dotnet-vs-php.  
 
@@ -40,6 +45,7 @@ Os resultados foram os seguintes:
 | PHP-3    | 353                  |
 | PHP-4    | 19                   |
 | Static   | 9798                 |
+| Clojure  | 1692                 |
 
 O Go venceu com folga, com 30.000 requests por segundo, já que além de ser uma linguagem compilada diretamente
 para código nativo, o servidor web
@@ -51,6 +57,8 @@ do filesystem.
 
 O cenário .NET não ficou muito longe, com quase 7.000 requests por segundo. Esse resultado me surpreendeu positivamente,
 já que é um projeto bem mais complexo, estruturado no formato MVC, e rodando no runtime .NET Core dentro do Docker.
+
+Clojure demostrou uma perfomace melhor que PHP (utilizando framework) mas não chegou a 20% da performace do .NET.
 
 Por último, o PHP conseguiu apenas 50% da performance do .NET, mas apenas quando utilizando o cenário sem frameworks. Já quando
 utilizamos o Symfony, a performance
@@ -181,4 +189,21 @@ Running 1s test @ http://172.23.0.2
   9861 requests in 1.01s, 8.25MB read
 Requests/sec:   9797.95
 Transfer/sec:      8.19MB
+</pre>
+
+### Clojure
+<pre>
+Running 1s test @ http://localhost:8080
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   766.97us    1.13ms  13.80ms   95.05%
+    Req/Sec     1.70k   417.51     2.06k    70.00%
+  Latency Distribution
+    50%  506.00us
+    75%  672.00us
+    90%    0.93ms
+    99%    6.80ms
+    1694 requests in 1.00s, 1.81MB read
+Requests/sec:   1692.34
+Transfer/sec:      1.81MB
 </pre>
