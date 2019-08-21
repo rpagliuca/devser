@@ -50,7 +50,7 @@ sendo que a diferença provavelmente se dá pela necessidade de o servidor Nginx
 do filesystem.
 
 O cenário .NET não ficou muito longe, com quase 7.000 requests por segundo. Esse resultado me surpreendeu positivamente,
-já que é um projeto bem mais complexo, estruturado no formato MVC, e rodando em no runtime .NET Core dentro do Docker.
+já que é um projeto bem mais complexo, estruturado no formato MVC, e rodando no runtime .NET Core dentro do Docker.
 
 Por último, o PHP conseguiu apenas 50% da performance do .NET, mas apenas quando utilizando o cenário sem frameworks. Já quando
 utilizamos o Symfony, a performance
