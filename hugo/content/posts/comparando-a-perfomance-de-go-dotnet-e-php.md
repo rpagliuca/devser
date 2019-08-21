@@ -3,6 +3,8 @@ title: "Comparando a perfomance de Go, .NET e PHP"
 date: 2019-08-21T11:18:05-03:00
 ---
 
+Com contribução de [Felipe Finhane](https://www.finhane.com) e [Marcio Zacarias](https://programaresimples.blogspot.com).
+
 ## Cenários comparados
 
 Utilizando o programa [wrk](https://github.com/wg/wrk), calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
@@ -56,7 +58,7 @@ do filesystem.
 O cenário .NET não ficou muito longe, com quase 7.000 requests por segundo. Esse resultado me surpreendeu positivamente,
 já que é um projeto bem mais complexo, estruturado no formato MVC, e rodando no runtime .NET Core dentro do Docker.
 
-Clojure demostrou uma perfomace melhor que PHP (Utilizando framework) mas não chegou a 20% da performace do .NET.
+Clojure demostrou uma perfomace melhor que PHP (utilizando framework) mas não chegou a 20% da performace do .NET.
 
 Por último, o PHP conseguiu apenas 50% da performance do .NET, mas apenas quando utilizando o cenário sem frameworks. Já quando
 utilizamos o Symfony, a performance
