@@ -6,10 +6,20 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 19 Aug 2019 20:21:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2019 11:18:05 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comparando a perfomance de Go, .NET e PHP</title>
+      <link>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</link>
+      <pubDate>Wed, 21 Aug 2019 11:18:05 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</guid>
+      <description>Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &amp;ldquo;Hello, world!</description>
+    </item>
     
     <item>
       <title>Hello world e SHA-256 em C</title>
