@@ -39,7 +39,7 @@ Caso contrário, gere um par de chaves com o comando abaixo.">
 
 <meta itemprop="datePublished" content="2019-10-08T13:27:39-03:00" />
 <meta itemprop="dateModified" content="2019-10-08T13:27:39-03:00" />
-<meta itemprop="wordCount" content="291">
+<meta itemprop="wordCount" content="286">
 
 
 
@@ -124,21 +124,21 @@ de sua preferência.</p>
 <p>Para gerar uma requisição de assinatuar de certificado (CSR - Certificate Signing Request), rode
 o comando abaixo passando o nome do certificado gerado no passo 1 (no nosso caso, <code>meu_certificado</code> é o nome da chave).</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -key meu_certificado.key -nodes -subj <span style="color:#e6db74">&#34;/O=grupo_kubernetes/CN=usuario_kubernetes&#34;</span> -out meu_certificado.csr -addext <span style="color:#e6db74">&#34;extendedKeyUsage = clientAuth&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -new -key meu_certificado.key -out meu_certificado.csr -subj <span style="color:#e6db74">&#34;/CN=usuario_kubernetes/O=grupo_kubernetes&#34;</span></code></pre></div>
 
 <h2 id="parte-2-etapas-a-serem-executadas-pelo-administrador-do-cluster-kubernetes">Parte 2 - Etapas a serem executadas pelo administrador do cluster Kubernetes</h2>
 
 <h3 id="2-1-criar-um-csr-no-kubernetes">2.1) Criar um CSR no Kubernetes</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF | kubectl apply -f -                                                                                 
-</span><span style="color:#e6db74">apiVersion: certificates.k8s.io/v1beta1                                                                                 
-</span><span style="color:#e6db74">kind: CertificateSigningRequest                                                                                         
-</span><span style="color:#e6db74">metadata:                                                                                                               
-</span><span style="color:#e6db74">    name: meu_certificado.csr                                                                                           
-</span><span style="color:#e6db74">spec:                                                                                                                   
-</span><span style="color:#e6db74">  request: $(cat meu_certificado.csr | base64 | tr -d &#39;\n&#39;)                                                             
-</span><span style="color:#e6db74">  usages:                                                                                                               
-</span><span style="color:#e6db74">  - client auth                                                                                                         
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF | kubectl apply -f -
+</span><span style="color:#e6db74">apiVersion: certificates.k8s.io/v1beta1
+</span><span style="color:#e6db74">kind: CertificateSigningRequest
+</span><span style="color:#e6db74">metadata:
+</span><span style="color:#e6db74">    name: meu_certificado.csr
+</span><span style="color:#e6db74">spec:
+</span><span style="color:#e6db74">  request: $(cat meu_certificado.csr | base64 | tr -d &#39;\n&#39;)
+</span><span style="color:#e6db74">  usages:
+</span><span style="color:#e6db74">  - client auth
 </span><span style="color:#e6db74">EOF</span></code></pre></div>
 
 <h3 id="2-2-aprovar-certificado">2.2) Aprovar certificado</h3>
