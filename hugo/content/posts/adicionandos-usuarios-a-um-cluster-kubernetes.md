@@ -24,7 +24,7 @@ Para gerar uma requisição de assinatuar de certificado (CSR - Certificate Sign
 o comando abaixo passando o nome do certificado gerado no passo 1 (no nosso caso, `meu_certificado` é o nome da chave).
 
 {{<highlight bash>}}
-openssl req -new -key meu_certificado.key -nodes -subj "/O=grupo_kubernetes/CN=usuario_kubernetes" -out meu_certificado.csr -addext "extendedKeyUsage = clientAuth"
+openssl req -new -key meu_certificado.key -out meu_certificado.csr -subj "/CN=usuario_kubernetes/O=grupo_kubernetes"
 {{</highlight>}}
 
 ## Parte 2 - Etapas a serem executadas pelo administrador do cluster Kubernetes
@@ -32,15 +32,15 @@ openssl req -new -key meu_certificado.key -nodes -subj "/O=grupo_kubernetes/CN=u
 ### 2.1) Criar um CSR no Kubernetes
 
 {{<highlight bash>}}
-cat <<EOF | kubectl apply -f -                                                                                 
-apiVersion: certificates.k8s.io/v1beta1                                                                                 
-kind: CertificateSigningRequest                                                                                         
-metadata:                                                                                                               
-    name: meu_certificado.csr                                                                                           
-spec:                                                                                                                   
-  request: $(cat meu_certificado.csr | base64 | tr -d '\n')                                                             
-  usages:                                                                                                               
-  - client auth                                                                                                         
+cat <<EOF | kubectl apply -f -
+apiVersion: certificates.k8s.io/v1beta1
+kind: CertificateSigningRequest
+metadata:
+    name: meu_certificado.csr
+spec:
+  request: $(cat meu_certificado.csr | base64 | tr -d '\n')
+  usages:
+  - client auth
 EOF
 {{</highlight>}}
 
