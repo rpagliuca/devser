@@ -6,26 +6,35 @@
     <description>Recent content in Categories on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 11 Jun 2019 12:17:48 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Criptografia</title>
-      <link>https://devser.com.br/categories/criptografia/</link>
-      <pubDate>Tue, 11 Jun 2019 12:17:48 -0300</pubDate>
+      <title>DevOps</title>
+      <link>https://devser.com.br/categories/devops/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://devser.com.br/categories/criptografia/</guid>
+      <guid>https://devser.com.br/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Devops</title>
-      <link>https://devser.com.br/categories/devops/</link>
-      <pubDate>Tue, 11 Jun 2019 09:44:39 -0300</pubDate>
+      <title>Linux</title>
+      <link>https://devser.com.br/categories/linux/</link>
+      <pubDate>Mon, 19 Aug 2019 20:21:00 -0300</pubDate>
       
-      <guid>https://devser.com.br/categories/devops/</guid>
+      <guid>https://devser.com.br/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Criptografia</title>
+      <link>https://devser.com.br/categories/criptografia/</link>
+      <pubDate>Thu, 20 Jun 2019 18:19:27 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/criptografia/</guid>
       <description></description>
     </item>
     
@@ -44,15 +53,6 @@
       <pubDate>Sat, 08 Jun 2019 09:04:34 -0300</pubDate>
       
       <guid>https://devser.com.br/categories/blogging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://devser.com.br/categories/linux/</link>
-      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://devser.com.br/categories/linux/</guid>
       <description></description>
     </item>
     

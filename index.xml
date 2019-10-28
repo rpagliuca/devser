@@ -6,10 +6,21 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 08 Oct 2019 13:27:39 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DevOpsDays Campinas</title>
+      <link>https://devser.com.br/posts/devopsdays-campinas/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://devser.com.br/posts/devopsdays-campinas/</guid>
+      <description>Na última sexta-feira, 25 de outubro de 2019, a Unicamp sediou a primeira edição do evento DevOpsDays Campinas.
+Após o evento, alguns dos palestrantes disponibilizaram seus slides para download:
+ Wellington Figueira da Silva - DevOps em times distribuídos Alessandra Monteiro - DevSecOps como estratégia para Jornadas by Design e by Default Fernando Ike - DevOps é cultura? Por que só falamos de ferramenta?  Outras palestras que também gostei bastante:</description>
+    </item>
     
     <item>
       <title>Adicionando usuários a um cluster do Kubernetes</title>
