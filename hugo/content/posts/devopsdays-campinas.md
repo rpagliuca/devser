@@ -5,7 +5,7 @@ draft: false
 aliases:
 - /2019/10/devopsdays-campinas/
 categories:
-- Devops
+- DevOps
 ---
 Na última sexta-feira, 25 de outubro de 2019, a Unicamp sediou a primeira edição do evento DevOpsDays Campinas.
 

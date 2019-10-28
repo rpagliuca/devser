@@ -1,6 +1,7 @@
 ---
 title: "Adicionando usuários a um cluster do Kubernetes"
 date: 2019-10-08T13:27:39-03:00
+categories: DevOps
 ---
 
 ## Parte 1 - Etapas a serem executadas pelo próprio usuário

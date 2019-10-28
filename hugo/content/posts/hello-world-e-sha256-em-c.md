@@ -1,6 +1,7 @@
 ---
 title: "Hello world e SHA-256 em C"
 date: 2019-08-19T20:21:00-03:00
+categories: Linux
 ---
 
 {{<youtube -zPMxKuXdr8>}}

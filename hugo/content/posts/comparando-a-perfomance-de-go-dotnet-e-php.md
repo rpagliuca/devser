@@ -1,6 +1,7 @@
 ---
 title: "Comparando a perfomance de Go, .NET e PHP"
 date: 2019-08-21T11:18:05-03:00
+categories: DevOps
 ---
 
 Com contribução de [Felipe Finhane](https://www.finhane.com) e [Marcio Zacarias](https://programaresimples.blogspot.com).

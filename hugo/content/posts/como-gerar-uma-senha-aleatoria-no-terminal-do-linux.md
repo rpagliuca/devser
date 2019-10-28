@@ -1,6 +1,8 @@
 ---
 title: "Como gerar uma senha aleatória no terminal do Linux"
 date: 2019-06-18T21:36:28-03:00
+categories:
+- Linux
 ---
 
 Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois
