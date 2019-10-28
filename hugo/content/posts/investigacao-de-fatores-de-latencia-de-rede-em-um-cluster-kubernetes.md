@@ -2,7 +2,7 @@
 title: "Investigação de fatores de latência de rede em um cluster Kubernetes"
 date: 2019-06-11T09:44:39-03:00
 draft: false
-categories: Devops
+categories: DevOps
 aliases:
 - /posts/investigacao-da-latencia-do-nosso-cluster-do-kubernetes
 ---
