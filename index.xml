@@ -6,10 +6,20 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 09:18:17 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Serverless do zero</title>
+      <link>https://devser.com.br/posts/serverless-do-zero/</link>
+      <pubDate>Sat, 23 May 2020 09:18:17 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/serverless-do-zero/</guid>
+      <description>Introdução Antes desse artigo, eu nunca havia programado nenhuma aplicação serverless do zero. Entretanto, já tive algum contato com aplicações desse tipo:
+ Há uns 2 anos instalei, na AWS, uma aplicação de redimensionamento de imagens com AWS Lambda Functions (https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/). Ah, também já instalei Lambda Functions para limpar o cache do CloudFront, que é chamado em um dos stages do AWS Code Pipeline de um de nossos projetos.  Mas minha experiência terminava aí.</description>
+    </item>
     
     <item>
       <title>DevOpsDays Campinas</title>
