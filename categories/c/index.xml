@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on /dev/ser</title>
+    <link>https://devser.com.br/categories/c/</link>
+    <description>Recent content in C on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 19 Aug 2019 20:21:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://devser.com.br/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello world e SHA-256 em C</title>
+      <link>https://devser.com.br/posts/hello-world-e-sha256-em-c/</link>
+      <pubDate>Mon, 19 Aug 2019 20:21:00 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/hello-world-e-sha256-em-c/</guid>
+      <description>No vídeo de hoje, eu mostro como implementar um simples &amp;ldquo;Hello, world!&amp;rdquo; utilizando a linguagem de programação C.
+Para os mais curiosos, vou além e ensino também como utilizar a biblioteca OpenSSL para calcular o hash SHA-256 de uma string.
+Segue código final da rotina (arquivo main.c):
+// File: main.c  #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;openssl/sha.h&amp;gt;#include &amp;lt;string.h&amp;gt; int main(int argcount, char **args) { if (argcount != 2) { printf(&amp;#34;Usage: %s &amp;lt;string&amp;gt;\n&amp;#34;, args[0]); return 1; } printf(&amp;#34;INPUT: %s\n&amp;#34;, args[1]); unsigned char *hash = SHA256(args[1], strlen(args[1]), NULL); printf(&amp;#34;SHA256: &amp;#34;); for (int i = 0; i &amp;lt; 32; i++) { printf(&amp;#34;%02x&amp;#34;, hash[i]); } printf(&amp;#34;\n&amp;#34;); return 0; } Comandos para compilar e executar a rotina acima, no terminal do Linux:</description>
+    </item>
+    
+  </channel>
+</rss>

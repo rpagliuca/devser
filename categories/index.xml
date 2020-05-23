@@ -39,9 +39,27 @@
     </item>
     
     <item>
+      <title>PHP</title>
+      <link>https://devser.com.br/categories/php/</link>
+      <pubDate>Wed, 21 Aug 2019 11:18:05 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://devser.com.br/categories/c/</link>
+      <pubDate>Mon, 19 Aug 2019 20:21:00 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://devser.com.br/categories/linux/</link>
-      <pubDate>Mon, 19 Aug 2019 20:21:00 -0300</pubDate>
+      <pubDate>Tue, 18 Jun 2019 21:36:28 -0300</pubDate>
       
       <guid>https://devser.com.br/categories/linux/</guid>
       <description></description>
@@ -50,7 +68,7 @@
     <item>
       <title>Criptografia</title>
       <link>https://devser.com.br/categories/criptografia/</link>
-      <pubDate>Thu, 20 Jun 2019 18:19:27 -0300</pubDate>
+      <pubDate>Tue, 11 Jun 2019 12:17:48 -0300</pubDate>
       
       <guid>https://devser.com.br/categories/criptografia/</guid>
       <description></description>
@@ -84,11 +102,11 @@
     </item>
     
     <item>
-      <title>PHP e DB</title>
-      <link>https://devser.com.br/categories/php-e-db/</link>
+      <title>MySQL</title>
+      <link>https://devser.com.br/categories/mysql/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://devser.com.br/categories/php-e-db/</guid>
+      <guid>https://devser.com.br/categories/mysql/</guid>
       <description></description>
     </item>
     

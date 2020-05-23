@@ -59,30 +59,37 @@
   </url>
   
   <url>
+    <loc>https://devser.com.br/categories/php/</loc>
+    <lastmod>2019-08-21T11:18:05-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/c/</loc>
+    <lastmod>2019-08-19T20:21:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://devser.com.br/posts/hello-world-e-sha256-em-c/</loc>
     <lastmod>2019-08-19T20:21:00-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://devser.com.br/categories/linux/</loc>
-    <lastmod>2019-08-19T20:21:00-03:00</lastmod>
-    <priority>0</priority>
+    <loc>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</loc>
+    <lastmod>2019-06-18T21:36:28-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://devser.com.br/posts/apresentando-a-moeda-libra/</loc>
-    <lastmod>2019-06-20T18:19:27-03:00</lastmod>
+    <loc>https://devser.com.br/categories/linux/</loc>
+    <lastmod>2019-06-18T21:36:28-03:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://devser.com.br/categories/criptografia/</loc>
-    <lastmod>2019-06-20T18:19:27-03:00</lastmod>
+    <lastmod>2019-06-11T12:17:48-03:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</loc>
-    <lastmod>2019-06-18T21:36:28-03:00</lastmod>
   </url>
   
   <url>
@@ -144,7 +151,7 @@
   </url>
   
   <url>
-    <loc>https://devser.com.br/categories/php-e-db/</loc>
+    <loc>https://devser.com.br/categories/mysql/</loc>
     <lastmod>2017-05-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

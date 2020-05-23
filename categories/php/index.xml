@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PHP e DB on /dev/ser</title>
-    <link>https://devser.com.br/categories/php-e-db/</link>
-    <description>Recent content in PHP e DB on /dev/ser</description>
+    <title>PHP on /dev/ser</title>
+    <link>https://devser.com.br/categories/php/</link>
+    <description>Recent content in PHP on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Aug 2019 11:18:05 -0300</lastBuildDate>
     
-	<atom:link href="https://devser.com.br/categories/php-e-db/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devser.com.br/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Deixe seu MySQL muito mais rápido rodando na memória RAM</title>
-      <link>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      <title>Comparando a perfomance de Go, .NET e PHP</title>
+      <link>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</link>
+      <pubDate>Wed, 21 Aug 2019 11:18:05 -0300</pubDate>
       
-      <guid>https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/</guid>
-      <description>Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.
-Claro que esse armazenamento é volátil, portanto é recomendado apenas para ambiente de desenvolvimento, onde muitas vezes um script ou importação de dump é executado múltiplas vezes por dia, tomando preciosos minutos do desenvolvedor.</description>
+      <guid>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</guid>
+      <description>Com contribução de Felipe Finhane e Marcio Zacarias.
+Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello   Clojure Clojure JVM Não Não N/A    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &amp;ldquo;Hello, world!</description>
     </item>
     
     <item>

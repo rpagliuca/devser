@@ -21,5 +21,16 @@
  Há uns 2 anos instalei, na AWS, uma aplicação de redimensionamento de imagens com AWS Lambda Functions (https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/). Ah, também já instalei Lambda Functions para limpar o cache do CloudFront, que é chamado em um dos stages do AWS Code Pipeline de um de nossos projetos.  Mas minha experiência terminava aí.</description>
     </item>
     
+    <item>
+      <title>Comparando a perfomance de Go, .NET e PHP</title>
+      <link>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</link>
+      <pubDate>Wed, 21 Aug 2019 11:18:05 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</guid>
+      <description>Com contribução de Felipe Finhane e Marcio Zacarias.
+Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisições por segundo das seguintes variações de ambiente:
+   Cenário Linguagem Servidor Framework Docker Imagem Docker     Go Go Embutido Não Não N/A   .NET .NET Embutido Não Sim microsoft/dotnet:2.2-aspnetcore-runtime   PHP-1 PHP Embutido Não Não N/A   PHP-2 PHP Nginx Não Sim N/A   PHP-3 PHP Nginx Symfony Sim richarvey/nginx-php-fpm   PHP-4 PHP Nginx Symfony Sim (private)   Static N/A Nginx Não Sim nginxdemos/hello   Clojure Clojure JVM Não Não N/A    Todos os ambientes foram configurados para retornar uma única linha contendo repetições da string &amp;ldquo;Hello, world!</description>
+    </item>
+    
   </channel>
 </rss>
