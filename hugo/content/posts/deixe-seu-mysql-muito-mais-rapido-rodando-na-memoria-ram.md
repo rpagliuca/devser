@@ -5,7 +5,7 @@ draft: false
 aliases:
 - /2017/05/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram
 categories:
-- PHP e DB
+- MySQL
 ---
 Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.
 

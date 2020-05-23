@@ -5,7 +5,7 @@ draft: false
 aliases:
 - /2017/04/medindo-performance-e-gargalos-de-uma-pagina-php/
 categories:
-- PHP e DB
+- PHP
 ---
 # Introdução
 

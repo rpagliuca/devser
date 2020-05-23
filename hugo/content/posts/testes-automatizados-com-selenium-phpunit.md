@@ -4,7 +4,7 @@ date: "2017-03-14"
 aliases:
 - /2017/03/testes-automatizados-com-selenium-phpunit/
 categories:
-- PHP e DB
+- PHP
 ---
 
 # Introdução

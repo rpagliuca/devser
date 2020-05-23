@@ -5,7 +5,7 @@ draft: false
 aliases:
 - /2017/03/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/
 categories:
-- PHP e DB
+- PHP
 ---
 # Introdução ao Smarty
 

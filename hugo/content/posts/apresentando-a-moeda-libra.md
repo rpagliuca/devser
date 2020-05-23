@@ -2,6 +2,7 @@
 title: "Apresentando a moeda Libra"
 date: 2019-06-20T18:19:27-03:00
 categories: Criptografia
+draft: true
 ---
 
 ![](/images/libra-logo.png)
