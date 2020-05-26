@@ -8,7 +8,7 @@
 <meta name="author" content="Rafael Santos">
 
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Como gerar uma senha aleatória no terminal do Linux &middot; /dev/ser</title>
+<title>Streaming MySQL changes to MongoDB with go-mysql &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
 <link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
@@ -22,39 +22,39 @@
 
 
 
-<meta property="og:title" content="Como gerar uma senha aleatória no terminal do Linux" />
-<meta property="og:description" content="Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de terceiros.
-Execute o comando abaixo no terminal:
-cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32  Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:
-  " />
+<meta property="og:title" content="Streaming MySQL changes to MongoDB with go-mysql" />
+<meta property="og:description" content="I&rsquo;ve setup a proof-of-concept environment with docker-compose, for streaming MySQL data changes into a MongoDB collection.
+It&rsquo;s based on the great go-mysql library.
+You can check out the project code in here: https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go
+Also, here is a videocast of the project up and running:   " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/" />
-<meta property="article:published_time" content="2019-06-18T21:36:28-03:00"/>
-<meta property="article:modified_time" content="2019-06-18T21:36:28-03:00"/>
+<meta property="og:url" content="https://devser.com.br/posts/streaming-mysql-changes-to-mongodb-using-go-mysql/" />
+<meta property="article:published_time" content="2020-05-26T15:49:55-03:00"/>
+<meta property="article:modified_time" content="2020-05-26T15:49:55-03:00"/>
 
 
 
-<meta itemprop="name" content="Como gerar uma senha aleatória no terminal do Linux">
-<meta itemprop="description" content="Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de terceiros.
-Execute o comando abaixo no terminal:
-cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32  Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:
-  ">
+<meta itemprop="name" content="Streaming MySQL changes to MongoDB with go-mysql">
+<meta itemprop="description" content="I&rsquo;ve setup a proof-of-concept environment with docker-compose, for streaming MySQL data changes into a MongoDB collection.
+It&rsquo;s based on the great go-mysql library.
+You can check out the project code in here: https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go
+Also, here is a videocast of the project up and running:   ">
 
 
-<meta itemprop="datePublished" content="2019-06-18T21:36:28-03:00" />
-<meta itemprop="dateModified" content="2019-06-18T21:36:28-03:00" />
-<meta itemprop="wordCount" content="68">
+<meta itemprop="datePublished" content="2020-05-26T15:49:55-03:00" />
+<meta itemprop="dateModified" content="2020-05-26T15:49:55-03:00" />
+<meta itemprop="wordCount" content="44">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Como gerar uma senha aleatória no terminal do Linux"/>
-<meta name="twitter:description" content="Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de terceiros.
-Execute o comando abaixo no terminal:
-cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32  Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:
-  "/>
+<meta name="twitter:title" content="Streaming MySQL changes to MongoDB with go-mysql"/>
+<meta name="twitter:description" content="I&rsquo;ve setup a proof-of-concept environment with docker-compose, for streaming MySQL data changes into a MongoDB collection.
+It&rsquo;s based on the great go-mysql library.
+You can check out the project code in here: https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go
+Also, here is a videocast of the project up and running:   "/>
 
 
     </head>
@@ -109,32 +109,30 @@ cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32 
         
 <article class="post">
     <header>
-        <h1>Como gerar uma senha aleatória no terminal do Linux</h1>
+        <h1>Streaming MySQL changes to MongoDB with go-mysql</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        18
-        Junho
-        2019
+        26
+        Maio
+        2020
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois
-assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de terceiros.</p>
+        <p>I&rsquo;ve setup a proof-of-concept environment with docker-compose, for streaming MySQL data changes into a MongoDB collection.</p>
 
-<p>Execute o comando abaixo no terminal:</p>
+<p>It&rsquo;s based on the great <a href="https://github.com/siddontang/go-mysql">go-mysql library</a>.</p>
 
-<pre><code>cat /dev/random | stdbuf -o0 tr -cd '[:graph:]' | stdbuf -o0 head -c 32
-</code></pre>
+<p>You can check out the project code in here:
+<a href="https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go">https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go</a></p>
 
-<p>Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:</p>
-
+<p>Also, here is a videocast of the project up and running:
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/u4SclZyo4Pg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/U6X0dFx2ayg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
+</p>
 
     </section>
 </article>
@@ -146,7 +144,7 @@ assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de 
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fcomo-gerar-uma-senha-aleatoria-no-terminal-do-linux%2f - Como%20gerar%20uma%20senha%20aleat%c3%b3ria%20no%20terminal%20do%20Linux "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fstreaming-mysql-changes-to-mongodb-using-go-mysql%2f - Streaming%20MySQL%20changes%20to%20MongoDB%20with%20go-mysql "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -166,7 +164,7 @@ assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de 
 <center>
     <div class="fb-comments"
          data-width="500"
-         data-href="https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/"
+         data-href="https://devser.com.br/posts/streaming-mysql-changes-to-mongodb-using-go-mysql/"
     >
     </div>
 </center>
@@ -178,10 +176,6 @@ assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de 
 
     
     
-    
-        <li>
-            <a href="https://devser.com.br/posts/streaming-mysql-changes-to-mongodb-using-go-mysql/">Streaming MySQL changes to MongoDB with go-mysql<aside class="dates">May 26 2020</aside></a>
-        </li>
     
         <li>
             <a href="https://devser.com.br/posts/serverless-do-zero/">Serverless do zero<aside class="dates">May 23 2020</aside></a>
@@ -201,6 +195,10 @@ assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de 
     
         <li>
             <a href="https://devser.com.br/posts/hello-world-e-sha256-em-c/">Hello world e SHA-256 em C<aside class="dates">Aug 19 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/">Como gerar uma senha aleatória no terminal do Linux<aside class="dates">Jun 18 2019</aside></a>
         </li>
     
         <li>

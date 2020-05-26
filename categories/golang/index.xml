@@ -6,10 +6,22 @@
     <description>Recent content in Golang on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 23 May 2020 09:18:17 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2020 15:49:55 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Streaming MySQL changes to MongoDB with go-mysql</title>
+      <link>https://devser.com.br/posts/streaming-mysql-changes-to-mongodb-using-go-mysql/</link>
+      <pubDate>Tue, 26 May 2020 15:49:55 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/streaming-mysql-changes-to-mongodb-using-go-mysql/</guid>
+      <description>I&amp;rsquo;ve setup a proof-of-concept environment with docker-compose, for streaming MySQL data changes into a MongoDB collection.
+It&amp;rsquo;s based on the great go-mysql library.
+You can check out the project code in here: https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go
+Also, here is a videocast of the project up and running:   </description>
+    </item>
     
     <item>
       <title>Serverless do zero</title>
