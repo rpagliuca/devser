@@ -13,6 +13,7 @@ Hosted by Github Pages
 To publish new content:
     - Install hugo client
     - `cd hugo`
-    - Run `hugo new hugo/content/posts/<article_name>.md`
+    - Run `hugo new content/posts/<article_name>.md`
     - Add category tag and write content
+    - Preview with `hugo server`
     - Push content to Github
