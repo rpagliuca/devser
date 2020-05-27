@@ -14,4 +14,4 @@ You can check out the project code in here:
 https://github.com/rpagliuca/stream-mysql-to-mongodb-with-go
 
 Also, here is a videocast of the project up and running:
-{{<youtube U6X0dFx2ayg>}}
+{{<youtube Xz4L-pwVDXo>}}
