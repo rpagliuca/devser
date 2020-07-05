@@ -6,10 +6,19 @@
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 20 Jun 2020 09:44:31 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 15:45:00 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Meu post de demonstração</title>
+      <link>https://devser.com.br/posts/post-demonstracao/</link>
+      <pubDate>Sun, 05 Jul 2020 15:45:00 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/post-demonstracao/</guid>
+      <description>Título 1 Título 2 Olá mundo!</description>
+    </item>
     
     <item>
       <title>Drop every MongoDB database [snippet]</title>
@@ -366,15 +375,6 @@ Referências
       <description>A ideia de participar de uma iniciação científica veio dos diversos palestrantes da disciplina Introdução a Engenharia Física, ministrada aos alunos de Engenharia Física da UFSCar.
 Em 26 de outubro de 2011 entrei em contato com um dos professores do Departamento de Engenharia Elétrica, que me informou sobre sua área de pesquisa e me ofereceu uma lista de tópicos para serem superficalmente pesquisados:
  Sistemas de segurança da informação Codificação Decodificação Esteganografia Criptografia Sistemas caóticos Aplicações de sistemas caóticos em telecomunicações  Pesquisei os tópicos sugeridos e, após alguns dias, entrei em contato novamente.</description>
-    </item>
-    
-    <item>
-      <title>Meu post de demonstração</title>
-      <link>https://devser.com.br/posts/post-demonstracao/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://devser.com.br/posts/post-demonstracao/</guid>
-      <description>Título 1 Título 2 Olá mundo!</description>
     </item>
     
   </channel>

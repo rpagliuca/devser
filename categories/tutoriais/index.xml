@@ -6,6 +6,7 @@
     <description>Recent content in Tutoriais on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
+    <lastBuildDate>Sun, 05 Jul 2020 15:45:00 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/categories/tutoriais/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +14,7 @@
     <item>
       <title>Meu post de demonstração</title>
       <link>https://devser.com.br/posts/post-demonstracao/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Jul 2020 15:45:00 -0300</pubDate>
       
       <guid>https://devser.com.br/posts/post-demonstracao/</guid>
       <description>Título 1 Título 2 Olá mundo!</description>
