@@ -265,7 +265,16 @@
   </url>
   
   <url>
+    <loc>https://devser.com.br/posts/post-demonstracao/</loc>
+  </url>
+  
+  <url>
     <loc>https://devser.com.br/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/tutoriais/</loc>
     <priority>0</priority>
   </url>
   
