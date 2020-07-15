@@ -18,6 +18,7 @@ composed of Kubernetes, Docker, Golang, Golang Standard Testing Library, MongoDB
 Prometheus, Grafana, AWS SQS, AWS SNS, AWS EC2, AWS S3, Kops, ReactJS, and
 Jenkins for an automated deploy pipeline (CD), among other technologies.
 
+
 ╔═╗┬─┐┌─┐┌─┐┌─┐┌─┐┌─┐┬┌─┐┌┐┌┌─┐┬    ╔═╗─┐ ┬┌─┐┌─┐┬─┐┬┌─┐┌┐┌┌─┐┌─┐
 ╠═╝├┬┘│ │├┤ ├┤ └─┐└─┐││ ││││├─┤│    ║╣ ┌┴┬┘├─┘├┤ ├┬┘│├┤ ││││  ├┤ 
 ╩  ┴└─└─┘└  └─┘└─┘└─┘┴└─┘┘└┘┴ ┴┴─┘  ╚═╝┴ └─┴  └─┘┴└─┴└─┘┘└┘└─┘└─┘
@@ -26,6 +27,7 @@ Jenkins for an automated deploy pipeline (CD), among other technologies.
 * Amazon Web Services: 10+ years
 * General Purpose Web Development (LAMP stack): 10+ years
 
+
 ╦  ┬┌┐┌┬┌─┌─┐
 ║  ││││├┴┐└─┐
 ╩═╝┴┘└┘┴ ┴└─┘
@@ -33,6 +35,7 @@ Jenkins for an automated deploy pipeline (CD), among other technologies.
 🌐 LinkedIn: https://www.linkedin.com/in/rafael-j-pagliuca-dos-santos-7a08b9a1
 🌐 GitHub: https://github.com/rpagliuca
 🌐 Blog: https://devser.com.br
+
 
 ╔═╗┬ ┬┬─┐┌─┐┌┐┌┌─┐┬  ┌─┐┌─┐┬ ┬
 ║  ├─┤├┬┘│ │││││ ││  │ ││ ┬└┬┘
@@ -56,3 +59,101 @@ Jenkins for an automated deploy pipeline (CD), among other technologies.
 2005 | High-school exchange student in Watrous, SK, Canada for one year
 
 1999 | My first hobby website
+
+
+
+
+
+
+
+╔╦╗┌─┐┌┬┐┌─┐┬┬  ┌─┐┌┬┐  ╔═╗─┐ ┬┌─┐┌─┐┬─┐┬┌─┐┌┐┌┌─┐┌─┐
+ ║║├┤  │ ├─┤││  ├┤  ││  ║╣ ┌┴┬┘├─┘├┤ ├┬┘│├┤ ││││  ├┤ 
+═╩╝└─┘ ┴ ┴ ┴┴┴─┘└─┘─┴┘  ╚═╝┴ └─┴  └─┘┴└─┴└─┘┘└┘└─┘└─┘
+
+
+2018-2020 | Tech Lead @ YES.Technology
+          |
+          | * Led the migration from a monolith system to
+          |   microservices architecture
+          | * Benchmarked different technology stacks before choosing Golang
+          |   with MongoDB
+          | * Set up a Kubernetes cluster on AWS using Kops
+          | * Configured our CI/CD pipeline, using Git, Bitbucket Webhooks,
+          |   Jenkins, Docker, AWS ECR and Keel running on the Kubernetes cluster
+          | * Designed and implemented platform components such as
+          |   authentication, authorization, and backup services
+          | * Co-designed and documented the system architecture
+          |
+          | Stack: Golang microservices on Kubernetes on AWS
+
+
+2017-2018 | Senior Back-end Developer @ YES.Technology
+          |
+          | * Co-designed e-commerce platform
+          | * Integrated e-commerce platform with credit card payment providers
+          | * Integrated e-commerce platform with vehicle routing service
+          | * Implemented several APIs consumed by Android app and
+          |   web frontend for business projects, based on provided
+          |   requirements and specifications, such as business reports,
+          |   authentication, authorization.
+          | * Designed and implemented e-commerce homepage performance
+          |   optimizations such as caching, anticipating for planned
+          |   television advertisement
+          |
+          | Stack: PHP, MySQL, AWS CloudFront, AWS S3, Redis on AWS 
+
+
+2016-2017 | Mid-level Back-end Developer @ YES.Technology
+          | 
+          | * Implemented APIs consumed by Android app for business
+          |   projects, based on provided requirements and specifications
+          | * Features ranged from file uploading and handling,
+          |   inventory management, business reports, among others.
+          |
+          | Stack: PHP, MySQL, jQuery hosted on AWS
+
+
+2015-2016 | Technology Development Analyst @ CNPEM
+          |
+          | * I've solely developed a scientific image processing software:
+          |   https://github.com/rpagliuca/xds_vonhamos_preview_tool
+          | * My team published some results from the software in the
+          |   following scientific article: https://lnkd.in/d_yj4Hs
+          |
+          | Stack: Python Desktop Application
+
+
+2011-2013 | Junior Full-stack software developer @ BrProg
+          |
+          | * Integrated e-commerce platform with credit card payment providers,
+          |   such as Cielo (Visa), PagSeguro and MoIP
+          | * Integrated e-commerce platform with Brazilian Internal Revenue APIs
+          |   using SOAP and X.509 digital certificates
+          | * Designed and implemented inventory module
+          | * Implemented several minor features for the e-commerce platform
+          |
+          | Stack: PHP, MySQL, jQuery hosted on WebFaction
+
+
+2008-2009 | Full-stack Developer @ AndraCarros
+          |
+          | * As an entrepreneur, I've designed, developed and operated an
+          | online automobile classifier website for my local community.
+          | * I was the single technical person in the company, working alongside
+          | two other partners who took care of sales and
+          | operational responsibilities.
+          |
+          | Stack: PHP, MySQL deployed on shared hosting
+
+
+2006-2010 | Freelance Full-stack Developer
+          |
+          | * As a freelance full-stack web developer, I've deployed
+          | simple websites using MySQL, PHP, Drupal, for clients in several
+          | segments such as vehicle dealers, bands, restaurants, print shops
+          | and more.
+          | * I had sole responsibility on running the projects, starting
+          | from client acquisition, moving on to requirement gathering,
+          | frontend and backend design, implementation, and deployment.
+          | 
+          | Stack: PHP, MySQL, Drupal deployed on shared hosting and AWS EC2
