@@ -6,10 +6,21 @@
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 20 Jun 2020 09:44:31 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 07:42:36 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GUI Isolation on Linux</title>
+      <link>https://devser.com.br/posts/linux-xorg-gui-isolation/</link>
+      <pubDate>Sat, 22 Aug 2020 07:42:36 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/linux-xorg-gui-isolation/</guid>
+      <description>Introduction The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.
+But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.
+Key concepts Display managers The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc.</description>
+    </item>
     
     <item>
       <title>Drop every MongoDB database [snippet]</title>

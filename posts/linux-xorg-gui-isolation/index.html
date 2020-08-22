@@ -8,7 +8,7 @@
 <meta name="author" content="Rafael Santos">
 
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Comunicação segura utilizando GPG &middot; /dev/ser</title>
+<title>GUI Isolation on Linux &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
 <link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
@@ -22,42 +22,36 @@
 
 
 
-<meta property="og:title" content="Comunicação segura utilizando GPG" />
-<meta property="og:description" content="(Co-publicado em Time Raposa)
-Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, principalmente em se tratando de credenciais de produção.
-Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:
- Rodízio constante de senhas Senhas diferentes para cada usuário  Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.
-Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird." />
+<meta property="og:title" content="GUI Isolation on Linux" />
+<meta property="og:description" content="Introduction The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.
+But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.
+Key concepts Display managers The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/" />
-<meta property="article:published_time" content="2017-11-28T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-11-28T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://devser.com.br/posts/linux-xorg-gui-isolation/" />
+<meta property="article:published_time" content="2020-08-22T07:42:36-03:00"/>
+<meta property="article:modified_time" content="2020-08-22T07:42:36-03:00"/>
 
 
 
-<meta itemprop="name" content="Comunicação segura utilizando GPG">
-<meta itemprop="description" content="(Co-publicado em Time Raposa)
-Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, principalmente em se tratando de credenciais de produção.
-Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:
- Rodízio constante de senhas Senhas diferentes para cada usuário  Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.
-Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird.">
+<meta itemprop="name" content="GUI Isolation on Linux">
+<meta itemprop="description" content="Introduction The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.
+But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.
+Key concepts Display managers The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc.">
 
 
-<meta itemprop="datePublished" content="2017-11-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="354">
+<meta itemprop="datePublished" content="2020-08-22T07:42:36-03:00" />
+<meta itemprop="dateModified" content="2020-08-22T07:42:36-03:00" />
+<meta itemprop="wordCount" content="653">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Comunicação segura utilizando GPG"/>
-<meta name="twitter:description" content="(Co-publicado em Time Raposa)
-Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, principalmente em se tratando de credenciais de produção.
-Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:
- Rodízio constante de senhas Senhas diferentes para cada usuário  Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.
-Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird."/>
+<meta name="twitter:title" content="GUI Isolation on Linux"/>
+<meta name="twitter:description" content="Introduction The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.
+But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.
+Key concepts Display managers The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc."/>
 
 
     </head>
@@ -112,93 +106,98 @@ Uma solução para esse problema de comunicação é utilizar certificados GPG, 
         
 <article class="post">
     <header>
-        <h1>Comunicação segura utilizando GPG</h1>
+        <h1>GUI Isolation on Linux</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        28
-        Novembro
-        2017
+        22
+        Agosto
+        2020
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>(Co-publicado em <a href="http://www.timeraposa.com.br/2017/11/comunicacao-segura-utilizando-gpg/">Time Raposa</a>)</p>
+        
 
-<p>Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, principalmente em se tratando de credenciais de produção.</p>
+<h2 id="introduction">Introduction</h2>
 
-<p>Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:</p>
+<p>The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.</p>
 
-<ul>
-<li>Rodízio constante de senhas</li>
-<li>Senhas diferentes para cada usuário</li>
-</ul>
+<p>But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.</p>
 
-<p>Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.</p>
+<h2 id="key-concepts">Key concepts</h2>
 
-<p>Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird.</p>
+<h3 id="display-managers">Display managers</h3>
 
-<p>Para isso:</p>
+<p>The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc.</p>
 
-<p>1) Crie uma nova credencial GPG usando um dos dois comandos abaixo:</p>
+<h3 id="window-managers">Window managers</h3>
 
-<p>Em versões mais novas do gpg:</p>
+<p>The software that gives super-powers to the usually super basic windows provided by the display managers.</p>
 
-<pre><code>gpg --full-generate-key
-</code></pre>
+<h3 id="window-compositors">Window compositors</h3>
 
-<p>Em versões mais antigas do gpg:</p>
+<p>The software that provides nice visual effects for windows.</p>
 
-<pre><code>gpg --gen-key
-</code></pre>
+<h2 id="layered-architecture">Layered architecture</h2>
 
-<p>Nessa etapa, é prudente utilizar o maior tamanho de chave possível (no meu caso, foi 4096). Recomendo utilizar seu e-mail pessoal, pois sua identificação não depende diretamente da organização com que você está envolvido. Se for o caso, posteriormente você pode criar chaves específicas (exemplo: e-mail de sua organização) vinculadas à sua chave pessoal.</p>
+<p>You can have a fully working Linux system without graphics by choosing not to run a display manager and the subsequent layers. More than that, you can choose to stop by whichever layer you prefer, i.e., you can also choose to run your system without a window manager (you will have very basic windows provided by the display manager which cannot be moved or resized), or without a window compositor (windows without opacity control and some other visual tweaks).</p>
 
-<p>2) Envie suas credenciais para um servidor público de chaves GPG. O padrão do Debian é o keys.gnupg.net.</p>
+<h2 id="about-x-org-design">About X.Org design</h2>
 
-<pre><code>gpg --send-key IDCHAVE
-</code></pre>
+<p>X.Org has been the most prominent display manager for Linux systems for the past few decades. In conformity with the Linux philosophy, it was designed to give full power to the user of the system, occasionally in detriment of security.</p>
 
-<p>sendo que o ID da sua chave pode ser obtido a partir do comando</p>
+<p>We can understand X.Org by differentiating the following three groups:</p>
 
-<pre><code>gpg --list-keys
-</code></pre>
+<p>1) Hardware: displays/monitors, keyboards, mouse, video cards, USB cards, etc.</p>
 
-<p>3) Peça para pessoas do seu círculo social (que possam comprovar pessoalmente se tratar de uma chave legítima) assinarem a sua nova chave. Eles devem fazer o seguinte:</p>
+<p>2) X.Org Server: a process running on a computer (<code>ps aux | grep X</code>) that can send and receive commands/data to the hardware, and redirects the relevant data to X.Org Clients.</p>
 
-<pre><code>gpg --recv-key IDCHAVE
-</code></pre>
+<p>3) X.Org Client: GUI processes running on a computer (Gnome-Terminal, Mozilla Firefox, Google Chrome, Spotify, Games, etc.) which connect to the X.Org Server in order to indirectly talk to the hardware.</p>
 
-<p>Em seguida</p>
+<p><img src="https://devser.com.br/images/linux-xorg-gui-isolation/xorg-model.png" alt="" /></p>
 
-<pre><code>gpg --sign-key IDCHAVE
-</code></pre>
+<h2 id="x-org-security-concerns-by-design">X.Org security concerns (by design!)</h2>
 
-<p>E por último</p>
+<p>First, it&rsquo;s important to reiterate that the following security concerns pertaining to X.Org are not security bugs/flaws per se, but actually intentional design choices that made sense at the time the software was developed.</p>
 
-<pre><code>gpg --send-keys IDCHAVE
-</code></pre>
+<p>The security concern: every X.Org Client connected to an X.Org Server can intercept hardware data, even when the GUI application (i.e. X.Org Client) is not on focus.</p>
 
-<p>4) Agora que sua chave já foi assinada por uma quantidade razoável de pessoas do seu círculo social, sua chave passou a ter uma “reputação adequada” para ser usada de forma pública.</p>
+<p>That means, for example, that it is extremely easy for a keylogger running without special privileges to connect to the X.Org Server and log all the keystrokes on a keyboard, capturing the data and perhaps sending the stolen data through the network.</p>
 
-<p>5) Instale o addon EnigmaMail no Thunderbird, ele já permitirá usar funcionalidades de encriptar e assinar digitalmente seus próximos e-mails usando as chaves geradas anteriormente.</p>
+<p>This aspect has a name: X.Org does not provide GUI isolation – but don&rsquo;t worry! This new display manager called Wayland is supposed to provide it, so keep an eye on that!</p>
 
-<p>6) Os comandos</p>
+<h2 id="proof-of-concept">Proof-of-concept</h2>
 
-<pre><code>gpg --encrypt
-</code></pre>
+<p>Run the following command on a terminal in a computer running X.Org (currently, most Linux distributions!).</p>
 
-<p>e</p>
+<pre>xinput list | grep -Po 'id=\K\d+(?=.*slave\s*keyboard)' | xargs -P0 -n1 xinput test</pre>
 
-<pre><code>gpg --decrypt
-</code></pre>
+<p>Source: <a href="https://unix.stackexchange.com/a/129171/42520">https://unix.stackexchange.com/a/129171/42520</a></p>
 
-<p>também podem ser utilizados manualmente direto da linha de comando, passando o conteúdo das mensagens pelo pipe. Exemplo:</p>
+<p>Afterward, start browsing the internet using your favorite web browser and voilà! The terminal running the previous command has listed every keyboard event.</p>
 
-<pre><code>echo &quot;Encriptando mensagem&quot; | gpg --encrypt
-</code></pre>
+<p>Credit card numbers, passwords, sensitive personal data. They are all there.</p>
 
-<p>Dessa forma, temos um canal seguro para envio de senhas e credenciais dos nossos sitemas de informação.</p>
+<h2 id="risks-of-installing-untrusted-software">Risks of installing untrusted software</h2>
+
+<p>Given the extremely simple and functional proof-of-concept above, you should always weigh the cost-benefits of installing third-party software on your computer.</p>
+
+<h3 id="software-developers-be-wary">Software developers, be wary!</h3>
+
+<p>This even goes for software dependencies like npm packages, go modules that you perhaps import when are developing software on your local machine.</p>
+
+<p>It is very easy for this kind of library to run the malicious code in the background when you are writing your own software.</p>
+
+<p>Here are some basic tips:
+1) Run your own code inside Docker
+2) Never share the X security token to a docker container running untrusted code.
+3) Do not run commands as npm start outside Docker
+4) Use multi-factor authentication devices (MFA), like Yubikey or Google Authenticator.</p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<p><a href="http://theinvisiblethings.blogspot.com/2011/04/linux-security-circus-on-gui-isolation.html">http://theinvisiblethings.blogspot.com/2011/04/linux-security-circus-on-gui-isolation.html</a></p>
 
     </section>
 </article>
@@ -210,7 +209,7 @@ Uma solução para esse problema de comunicação é utilizar certificados GPG, 
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fcomunicacao-segura-utilizando-gpg%2f - Comunica%c3%a7%c3%a3o%20segura%20utilizando%20GPG "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2flinux-xorg-gui-isolation%2f - GUI%20Isolation%20on%20Linux "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -230,7 +229,7 @@ Uma solução para esse problema de comunicação é utilizar certificados GPG, 
 <center>
     <div class="fb-comments"
          data-width="500"
-         data-href="https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/"
+         data-href="https://devser.com.br/posts/linux-xorg-gui-isolation/"
     >
     </div>
 </center>
@@ -242,10 +241,6 @@ Uma solução para esse problema de comunicação é utilizar certificados GPG, 
 
     
     
-    
-        <li>
-            <a href="https://devser.com.br/posts/linux-xorg-gui-isolation/">GUI Isolation on Linux<aside class="dates">Aug 22 2020</aside></a>
-        </li>
     
         <li>
             <a href="https://devser.com.br/posts/drop-all-mongodb-databases/">Drop every MongoDB database [snippet]<aside class="dates">Jun 20 2020</aside></a>
@@ -301,6 +296,10 @@ Uma solução para esse problema de comunicação é utilizar certificados GPG, 
     
         <li>
             <a href="https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/">Leitura de porta serial utilizando Python e Raspberry PI<aside class="dates">Mar 2 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/">Comunicação segura utilizando GPG<aside class="dates">Nov 28 2017</aside></a>
         </li>
     
         <li>
