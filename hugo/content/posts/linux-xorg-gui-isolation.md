@@ -59,7 +59,7 @@ Run the following command on a terminal in a computer running X.Org (currently, 
 
 Source: https://unix.stackexchange.com/a/129171/42520
 
-Afterward, start browsing the internet using your favorite web browser and voilà! The terminal running the previous command has listed every keyboard event.
+Afterward, start browsing the internet using your favorite web browser and *voilà*! The terminal running the previous command has listed every keyboard event.
 
 Credit card numbers, passwords, sensitive personal data. They are all there.
 
@@ -69,7 +69,7 @@ Given the extremely simple and functional proof-of-concept above, you should alw
 
 ### Software developers, be wary!
 
-This even goes for software dependencies like npm packages, go modules that you perhaps import when are developing software on your local machine.
+This even goes for software dependencies like `npm packages`, `go modules`, `composer`, etc, that you perhaps import when are developing software on your local machine.
 
 It is very easy for this kind of library to run the malicious code in the background when you are writing your own software.
 
@@ -77,11 +77,11 @@ Here are some basic tips:
 
 1) Run your own code inside Docker
 
-2) Never share the X security token to a docker container running untrusted code.
+2) Never share the X security token to a docker container running untrusted code
 
-3) Do not run commands as npm start outside Docker
+3) Avoid running commands that trigger packages downloading such as `npm install` or even `npm start` outside Docker
 
-4) Use multi-factor authentication devices (MFA), like Yubikey or Google Authenticator.
+4) Use multi-factor authentication devices (MFA), like Yubikey or Google Authenticator, for managing sensitive account (you can never be too sure!)
 
 ## Further reading
 http://theinvisiblethings.blogspot.com/2011/04/linux-security-circus-on-gui-isolation.html
