@@ -74,9 +74,13 @@ This even goes for software dependencies like npm packages, go modules that you 
 It is very easy for this kind of library to run the malicious code in the background when you are writing your own software.
 
 Here are some basic tips:
+
 1) Run your own code inside Docker
+
 2) Never share the X security token to a docker container running untrusted code.
+
 3) Do not run commands as npm start outside Docker
+
 4) Use multi-factor authentication devices (MFA), like Yubikey or Google Authenticator.
 
 ## Further reading
