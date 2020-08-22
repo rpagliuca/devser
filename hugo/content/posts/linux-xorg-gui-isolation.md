@@ -69,7 +69,7 @@ Given the extremely simple and functional proof-of-concept above, you should alw
 
 ### Software developers, be wary!
 
-This even goes for software dependencies like `npm packages`, `go modules`, `composer`, etc, that you perhaps import when are developing software on your local machine.
+This even goes for software dependency managers like `npm packages`, `go modules`, `composer`, etc, that you perhaps import when are developing software on your local machine.
 
 It is very easy for this kind of library to run the malicious code in the background when you are writing your own software.
 
