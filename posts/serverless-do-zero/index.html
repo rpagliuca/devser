@@ -39,7 +39,7 @@
 
 <meta itemprop="datePublished" content="2020-05-23T09:18:17-03:00" />
 <meta itemprop="dateModified" content="2020-05-23T09:18:17-03:00" />
-<meta itemprop="wordCount" content="1409">
+<meta itemprop="wordCount" content="1450">
 
 
 
@@ -220,17 +220,21 @@ func main() {
 
 <h1 id="deploy-da-aplicação">Deploy da aplicação</h1>
 
-<p>No meu ambiente local, rodei os seguintes comandos:</p>
+<p>No meu ambiente local, criei uma nova pasta chamada <code>bitcoinQuote</code>,
+salvei o conteúdo do programa acima
+com o nome <code>main.go</code>, e em seguida rodei os seguintes comandos dentro dessa pasta:</p>
 
-<pre><code># Compilar main.go para o binário bitcoinQuote
+<pre><code># Iniciar o go modules para que as dependências sejam baixadas automaticamente
+go mod init bitcoinQuote
+# Compilar main.go para o binário bitcoinQuote
 go build .
 # Criar bicoinQuote.zip contendo apenas o binário
 zip bitcoinQuote.zip bitcoinQuote
 </code></pre>
 
-<p>Criei um arquivo .ZIP (<code>zip bitcoinQuote.zip main.go</code>)contendo apenas o arquivo main.go (código acima), e enviei pelo formulário <code>Function code</code> do console da AWS.</p>
+<p>Fiz o upload do arquivo <code>bitcoinQuote.zip</code> gerado acima, utilizando o formulário <code>Function code</code> &gt; <code>Actions</code> &gt; <code>Upload a .zip file</code> do console da AWS.</p>
 
-<p><em>IMPORTANTE</em>: No formulário de upload, precisei alterar o nome do <code>Handler</code> para bitcoinQuote, já que esse é nome do binário dentro do zip.</p>
+<p><em>IMPORTANTE</em>: No formulário <code>Basic Settings</code> &gt; <code>Edit</code>, precisei alterar o nome do <code>Handler</code> para <code>bitcoinQuote</code>, já que esse é nome do binário dentro do zip.</p>
 
 <p>Em seguida, cliquei em <code>Save</code> no topo da página.</p>
 
