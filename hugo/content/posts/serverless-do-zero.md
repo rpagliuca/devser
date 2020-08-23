@@ -110,18 +110,22 @@ A ideia é receber um JSON via input, e responder com outro JSON.
 
 # Deploy da aplicação
 
-No meu ambiente local, rodei os seguintes comandos:
+No meu ambiente local, criei uma nova pasta chamada `bitcoinQuote`,
+salvei o conteúdo do programa acima
+com o nome `main.go`, e em seguida rodei os seguintes comandos dentro dessa pasta:
 
 ```
+# Iniciar o go modules para que as dependências sejam baixadas automaticamente
+go mod init bitcoinQuote
 # Compilar main.go para o binário bitcoinQuote
 go build .
 # Criar bicoinQuote.zip contendo apenas o binário
 zip bitcoinQuote.zip bitcoinQuote
 ```
 
-Criei um arquivo .ZIP (`zip bitcoinQuote.zip main.go`)contendo apenas o arquivo main.go (código acima), e enviei pelo formulário `Function code` do console da AWS.
+Fiz o upload do arquivo `bitcoinQuote.zip` gerado acima, utilizando o formulário `Function code` > `Actions` > `Upload a .zip file` do console da AWS.
 
-*IMPORTANTE*: No formulário de upload, precisei alterar o nome do `Handler` para bitcoinQuote, já que esse é nome do binário dentro do zip.
+*IMPORTANTE*: No formulário `Basic Settings` > `Edit`, precisei alterar o nome do `Handler` para `bitcoinQuote`, já que esse é nome do binário dentro do zip.
 
 Em seguida, cliquei em `Save` no topo da página.
 
