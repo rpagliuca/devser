@@ -11,6 +11,9 @@ googleAnalytics = "UA-97834327-1"
 disqusShortname = "devser"
 paginate = 1000
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
 	name = "Rafael Santos"
 	bio = "Deve ser um ser dev"
