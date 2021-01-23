@@ -8,7 +8,7 @@
 <meta name="author" content="Rafael Santos">
 
 <meta name="generator" content="Hugo 0.55.6" />
-<title>Criptografia com Caos - Baptista &middot; /dev/ser</title>
+<title>Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
 <link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
@@ -22,36 +22,36 @@
 
 
 
-<meta property="og:title" content="Criptografia com Caos - Baptista" />
-<meta property="og:description" content="Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
-O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
- A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes." />
+<meta property="og:title" content="Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC" />
+<meta property="og:description" content="No vídeo de hoje eu simulo um financiamento utilizando dois sistemas diferentes de amortização: sistema PRICE e sistema SAC.
+ Sistema PRICE: Parcela constante (e amortização variável) Sistema SAC: Amortização constante (e parcela variável)  O consenso geral é que o sistema SAC é sempre mais benéfico, já que os juros absolutos são visivelmente menores para o mesmo prazo de financiamento.
+Entretanto, no vídeo, eu chego a uma conclusão diferente: se possível, prefira sempre o sistema PRICE, mas REDUZA o prazo de financiamento!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devser.com.br/posts/criptografia-com-caos-baptista/" />
-<meta property="article:published_time" content="2012-04-01T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2012-04-01T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://devser.com.br/posts/comparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac/" />
+<meta property="article:published_time" content="2021-01-23T18:50:30-03:00"/>
+<meta property="article:modified_time" content="2021-01-23T18:50:30-03:00"/>
 
 
 
-<meta itemprop="name" content="Criptografia com Caos - Baptista">
-<meta itemprop="description" content="Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
-O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
- A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.">
+<meta itemprop="name" content="Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC">
+<meta itemprop="description" content="No vídeo de hoje eu simulo um financiamento utilizando dois sistemas diferentes de amortização: sistema PRICE e sistema SAC.
+ Sistema PRICE: Parcela constante (e amortização variável) Sistema SAC: Amortização constante (e parcela variável)  O consenso geral é que o sistema SAC é sempre mais benéfico, já que os juros absolutos são visivelmente menores para o mesmo prazo de financiamento.
+Entretanto, no vídeo, eu chego a uma conclusão diferente: se possível, prefira sempre o sistema PRICE, mas REDUZA o prazo de financiamento!">
 
 
-<meta itemprop="datePublished" content="2012-04-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2012-04-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="107">
+<meta itemprop="datePublished" content="2021-01-23T18:50:30-03:00" />
+<meta itemprop="dateModified" content="2021-01-23T18:50:30-03:00" />
+<meta itemprop="wordCount" content="90">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Criptografia com Caos - Baptista"/>
-<meta name="twitter:description" content="Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
-O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
- A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes."/>
+<meta name="twitter:title" content="Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC"/>
+<meta name="twitter:description" content="No vídeo de hoje eu simulo um financiamento utilizando dois sistemas diferentes de amortização: sistema PRICE e sistema SAC.
+ Sistema PRICE: Parcela constante (e amortização variável) Sistema SAC: Amortização constante (e parcela variável)  O consenso geral é que o sistema SAC é sempre mais benéfico, já que os juros absolutos são visivelmente menores para o mesmo prazo de financiamento.
+Entretanto, no vídeo, eu chego a uma conclusão diferente: se possível, prefira sempre o sistema PRICE, mas REDUZA o prazo de financiamento!"/>
 
 
     </head>
@@ -108,25 +108,35 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
         
 <article class="post">
     <header>
-        <h1>Criptografia com Caos - Baptista</h1>
+        <h1>Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        1
-        Abril
-        2012
+        23
+        Janeiro
+        2021
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo <a href="https://encrypted.google.com/url?sa=t&amp;rct=j&amp;q=baptista%20cyrptography%20with%20chaos&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CCIQFjAA&amp;url=http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F1998PhLA..240...50B&amp;ei=2_yKUNqCEYGk8ASdzIC4CA&amp;usg=AFQjCNFc2ZHwJXBLhtRdMD5dHieyCo3FLA">sistema proposto por Baptista</a> em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.</p>
+        <p>No vídeo de hoje eu simulo um financiamento utilizando dois sistemas diferentes de amortização: sistema PRICE e sistema SAC.</p>
 
-<p>O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:</p>
+<ul>
+<li>Sistema PRICE: Parcela constante (e amortização variável)</li>
+<li>Sistema SAC: Amortização constante (e parcela variável)</li>
+</ul>
 
-<ol>
-<li>A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.</li>
-<li>Alguns autores apontaram falhas de segurança ao se utilizar o mapa logístico como sistema caótico.</li>
-</ol>
+<p>O consenso geral é que o sistema SAC é sempre mais benéfico, já que os juros absolutos são visivelmente menores para o mesmo prazo de financiamento.</p>
+
+<p>Entretanto, no vídeo, eu chego a uma conclusão diferente: <b>se possível, prefira sempre o sistema PRICE, mas REDUZA o prazo de financiamento!</b></p>
+
+<p>Assista o vídeo para entender como chego nessa conclusão.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/kXAvZSoLUPc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 
     </section>
 </article>
@@ -138,7 +148,7 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fcriptografia-com-caos-baptista%2f - Criptografia%20com%20Caos%20-%20Baptista "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fcomparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac%2f - Compara%c3%a7%c3%a3o%20de%20sistemas%20de%20amortiza%c3%a7%c3%a3o%20de%20financiamento%3a%20Sistema%20PRICE%20vs.%20Sistema%20SAC "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -158,7 +168,7 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
 <center>
     <div class="fb-comments"
          data-width="500"
-         data-href="https://devser.com.br/posts/criptografia-com-caos-baptista/"
+         data-href="https://devser.com.br/posts/comparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac/"
     >
     </div>
 </center>
@@ -170,10 +180,6 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
 
     
     
-    
-        <li>
-            <a href="https://devser.com.br/posts/comparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac/">Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC<aside class="dates">Jan 23 2021</aside></a>
-        </li>
     
         <li>
             <a href="https://devser.com.br/posts/accessing-kubernetes-api-with-curl/">Accessing the Kubernetes API using curl<aside class="dates">Sep 17 2020</aside></a>
@@ -293,6 +299,10 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
     
         <li>
             <a href="https://devser.com.br/posts/criptografia-com-equacoes-de-chua/">Criptografia Com Equações de Chua<aside class="dates">May 11 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criptografia-com-caos-baptista/">Criptografia com Caos - Baptista<aside class="dates">Apr 1 2012</aside></a>
         </li>
     
         <li>

@@ -6,10 +6,21 @@
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Thu, 17 Sep 2020 09:32:52 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 23 Jan 2021 18:50:30 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC</title>
+      <link>https://devser.com.br/posts/comparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac/</link>
+      <pubDate>Sat, 23 Jan 2021 18:50:30 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/comparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac/</guid>
+      <description>No vídeo de hoje eu simulo um financiamento utilizando dois sistemas diferentes de amortização: sistema PRICE e sistema SAC.
+ Sistema PRICE: Parcela constante (e amortização variável) Sistema SAC: Amortização constante (e parcela variável)  O consenso geral é que o sistema SAC é sempre mais benéfico, já que os juros absolutos são visivelmente menores para o mesmo prazo de financiamento.
+Entretanto, no vídeo, eu chego a uma conclusão diferente: se possível, prefira sempre o sistema PRICE, mas REDUZA o prazo de financiamento!</description>
+    </item>
     
     <item>
       <title>Accessing the Kubernetes API using curl</title>
