@@ -6,6 +6,7 @@ categories:
 - Finanças
 ---
 
+Fique atento:
 * Este artigo ainda é um trabalho em andamento (<i>work in progress</i>)
 * Sugestões e correções são bem vindas
 
@@ -28,8 +29,8 @@ Primeiramente, vamos revisar alguns pontos do mercado financeiro tradicional e e
 O mercado financeiro tradicional é intermediado por agentes financeiros. Algumas das funções frequentemente assumidas por esses intermediários são:
 
 1) **market-making** (criação de mercado): conectam compradores e vendedores de serviços financeiros
-2) **mediador de confiança mútua**: garantem (ou se esforçam para) que ambas as partes, compradores e vendedores, cumpram o acordado
-3) **operadores de <i>pools</i>**: pela lei dos grandes números da probabilidade, o desvio padrão do retorno de um produto financeiro é menor quanto maior for a quantidade de transações independentes entre si. Ou seja, o retorno financeiro do produto é mais previsível utilizando-se de <i>pools</i>, ou carteiras diversificadoras de clientes
+2) **mediador de confiança mútua**: garantem (ou se esforçam para) que ambas as partes, compradores e vendedores, recebam o acordado
+3) **operadores de <i>pools</i>**: pela lei dos grandes números da probabilidade, o desvio padrão do retorno de um produto financeiro é menor quanto maior for a quantidade de transações independentes entre si. Ou seja, o retorno financeiro do produto é mais previsível utilizando-se de <i>pools</i>, ou carteiras diversificadas de clientes
 
 Entenda melhor a vantagem de se utilizar <i>pools</i> em relação a transações individuais na figura abaixo. Observe que nas transações em <i>pool</i>, o prêmio de risco pago pelos tomadores de empréstimo neutralizam as suas inadimplências, de modo que o retorno recebido fica cada vez mais próximo à taxa de juros definida, quanto maior a quantidade de participantes.
 
@@ -39,7 +40,7 @@ Entenda melhor a vantagem de se utilizar <i>pools</i> em relação a transaçõe
 Se uma pessoa física deseja vender um serviço financeiro (conceder um empréstimo, por exemplo) sem passar por um agente financeiro, precisa:
 1) Encontrar alguém interessado em tomar o seu empréstimo, e que concorde com as condições do serviço, como taxa de juros, prazo e forma de pagamento (**market-making**)
 2) Confiar diretamente na outra pessoa (nesse caso **não haveria mediador de confiança mútua**), ou então utilizar a justiça tradicional como mediadora por meio de **contratos**
-3) Avaliar o **nível de risco elevado**. Por se tratar de transação entre um único vendedor e um único comprador, a variância (e desvio padrão) da taxa de inadimplência (<i>default</i>) possui alta amplitude. A taxa oscila facilmente entre os dois extremos de 0% (inadimplência nula) e 100% (inadimplência total)
+3) Avaliar o **nível de risco elevado**. Por se tratar de transação entre um único vendedor e um único comprador, a variância (e desvio padrão) da taxa de inadimplência possui alta amplitude. A taxa oscila facilmente entre os dois extremos de 0% (inadimplência nula) e 100% (inadimplência total)
 
 ### Desvantagens ao se utilizar agentes financeiros tradicionais
 * Custo de intermediação (<i>spread</i>, taxas administrativas)
@@ -49,6 +50,9 @@ No vídeo abaixo comento um pouco mais sobre os três papéis dos agentes financ
 {{<youtube gMsPpVVT3hU>}}
 
 ## DeFi possibilita a compra e venda de serviços financeiros sem o intermédio de agentes financeiros
+
+As aplicações DeFi conseguem oferecer todos os benefícios dos agentes financeiros tradicionais, ao mesmo tempo em que corrigem as principais fraquezas da geração anterior:
+
 1) **market-making**: aplicações descentralizadas conseguem armazenar, na <i>blockchain</i>, a lista de compradores e vendedores para um determinado produto financeiro, e executar o *match-making* de forma automatizada
 2) **mediador de confiança mútua**: <i>smart contracts</i> são contratos imutáveis, auditáveis, construídos na forma de algoritmos, nos quais todos os termos do produto financeiro são especificados explicitamente, sem qualquer tipo de subjetividade.
 3) **criadores de <i>pools</i>** minimizadoras de de risco: <i>smart contracts</i> possibilitam a criação de <i>pools</i> descentralizadas
@@ -73,9 +77,9 @@ A avaliação de crédito tradicional costuma se basear em uma combinação dos 
 
 As primeiras aplicações de empréstimo de DeFi, entretanto, se baseiam principalmente no primeiro C (*collateral*). Mas já há avanço em direção às outras formas de avaliação de crédito, também. Se você quiser saber um pouco mais sobre isso, recomendo esse [artigo da Coindesk](https://www.coindesk.com/aave-unsecured-borrowing-defi).
 
-No momento, aplicações de empréstimos DeFi baseados em garantia (*collateral*) satisfazem, na prática, apenas os casos de uso de *longing* e *shorting* de ativos financeiros (basicamente, apostar na valorização ou desvalorização de tokens ERC-20 ou outras criptomoedas).
+No momento, aplicações de empréstimos DeFi baseadas em garantia (*collateral*) satisfazem, na prática, apenas os casos de uso de *longing* e *shorting* de ativos financeiros (basicamente, apostar na valorização ou desvalorização de tokens ERC-20 ou outras criptomoedas).
 
-Mas no futuro, com a popularização da tokenização de uma varidade de bens físicos (como imóveis ou veículos), os casos de uso de fluxo de caixa (capital de giro) também serão satisfeitos.
+Mas no futuro, com a popularização da tokenização de uma variedade de bens físicos (como imóveis ou veículos), os casos de uso de fluxo de caixa (capital de giro) também serão satisfeitos.
 
 #### Alguns ativos que já foram tokenizados e fazem parte de DeFi
 * Dólar americano (US$) por meio de tokens [DAI](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f), [USDC](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48), entre outros
