@@ -42,3 +42,15 @@ ul ul {
     margin-left: 40px;
     margin-bottom: 0px;
 }
+
+.footnotes {
+    font-size: 80%;
+}
+
+.footnotes li {
+    margin-bottom: 10px;
+}
+
+.footnotes p {
+    display: inline;
+}
