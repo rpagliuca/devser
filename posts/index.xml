@@ -6,10 +6,20 @@
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 23 Jan 2021 18:50:30 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jan 2021 20:20:54 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Finanças Descentralizadas: DeFi, Criptomoedas e Blockchain</title>
+      <link>https://devser.com.br/posts/criptomoedas-e-defi/</link>
+      <pubDate>Wed, 27 Jan 2021 20:20:54 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/criptomoedas-e-defi/</guid>
+      <description>Este artigo ainda é um trabalho em andamento (work in progress) Sugestões e correções são bem vindas  Introdução a DeFi Nos últimos dois anos têm-se falado muito sobre DeFi: Decentralized Finance ou Finanças Descentralizadas.
+Esse é nome que se dá para um conjunto de contratos inteligentes (smart contracts), comumente executados na blockchain Ethereum, mas não limitados a ela. Esses contratos fornecem de forma impessoal (M2C: Machine To Consumer) uma gama de serviços financeiros descentralizados vinculados à criptomoeda Ether e aos tokens ERC-20 existentes na mesma rede.</description>
+    </item>
     
     <item>
       <title>Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC</title>

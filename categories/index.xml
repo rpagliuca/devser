@@ -6,15 +6,24 @@
     <description>Recent content in Categories on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 23 Jan 2021 18:50:30 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 27 Jan 2021 20:20:54 -0300</lastBuildDate>
     
 	<atom:link href="https://devser.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Blockchain</title>
+      <link>https://devser.com.br/categories/blockchain/</link>
+      <pubDate>Wed, 27 Jan 2021 20:20:54 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/blockchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Finanças</title>
       <link>https://devser.com.br/categories/finan%C3%A7as/</link>
-      <pubDate>Sat, 23 Jan 2021 18:50:30 -0300</pubDate>
+      <pubDate>Wed, 27 Jan 2021 20:20:54 -0300</pubDate>
       
       <guid>https://devser.com.br/categories/finan%C3%A7as/</guid>
       <description></description>
