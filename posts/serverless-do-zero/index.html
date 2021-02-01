@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Serverless do zero &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -27,16 +27,13 @@
  Há uns 2 anos instalei, na AWS, uma aplicação de redimensionamento de imagens com AWS Lambda Functions (https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/). Ah, também já instalei Lambda Functions para limpar o cache do CloudFront, que é chamado em um dos stages do AWS Code Pipeline de um de nossos projetos.  Mas minha experiência terminava aí." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/serverless-do-zero/" />
-<meta property="article:published_time" content="2020-05-23T09:18:17-03:00"/>
-<meta property="article:modified_time" content="2020-05-23T09:18:17-03:00"/>
-
+<meta property="article:published_time" content="2020-05-23T09:18:17-03:00" />
+<meta property="article:modified_time" content="2020-05-23T09:18:17-03:00" />
 
 
 <meta itemprop="name" content="Serverless do zero">
 <meta itemprop="description" content="Introdução Antes desse artigo, eu nunca havia programado nenhuma aplicação serverless do zero. Entretanto, já tive algum contato com aplicações desse tipo:
  Há uns 2 anos instalei, na AWS, uma aplicação de redimensionamento de imagens com AWS Lambda Functions (https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/). Ah, também já instalei Lambda Functions para limpar o cache do CloudFront, que é chamado em um dos stages do AWS Code Pipeline de um de nossos projetos.  Mas minha experiência terminava aí.">
-
-
 <meta itemprop="datePublished" content="2020-05-23T09:18:17-03:00" />
 <meta itemprop="dateModified" content="2020-05-23T09:18:17-03:00" />
 <meta itemprop="wordCount" content="1450">
@@ -118,53 +115,30 @@
         </h2>
     </header>
     <section id="post-body">
-        
-
-<h1 id="introdução">Introdução</h1>
-
+        <h1 id="introdução">Introdução</h1>
 <p>Antes desse artigo, eu nunca havia programado nenhuma aplicação serverless do zero. Entretanto, já tive algum contato com aplicações desse tipo:</p>
-
 <ol>
-<li>Há uns 2 anos instalei, na AWS, uma aplicação de redimensionamento de imagens com AWS Lambda Functions (<a href="https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/">https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/</a>).</li>
+<li>Há uns 2 anos instalei, na AWS, uma aplicação de redimensionamento de imagens com AWS Lambda Functions (<a href="https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/)">https://aws.amazon.com/pt/solutions/implementations/serverless-image-handler/)</a>.</li>
 <li>Ah, também já instalei Lambda Functions para limpar o cache do CloudFront, que é chamado em um dos stages do AWS Code Pipeline de um de nossos projetos.</li>
 </ol>
-
 <p>Mas minha experiência terminava aí.</p>
-
 <p>Para mudar isso, hoje vou criar uma aplicação <em>serverless</em> do zero na minha conta pessoal da AWS.</p>
-
 <p>Minha missão: ao acessar uma URL pública, quero exibir um JSON contendo a cotação do Bitcoin.</p>
-
 <h1 id="como-começar">Como começar</h1>
-
 <p>Acessei a minha conta pessoal no console da AWS (<a href="https://console.aws.com">https://console.aws.com</a>), e entrei na página do serviço Lambda.</p>
-
 <p>Cliquei no botão <code>Create Function</code>, depois em <code>Author from scratch</code>, dei o nome para a minha nova função de <code>bitcoinQuote</code> e escolhi o Runtime <code>Go 1.x</code>. Antes de confirmar a criação, o console da AWS me avisou que criaria um novo <code>IAM Role</code> com permissões de adicionar logs no <code>CloudWatch Logs</code>, mas que eu poderia mudar isso se eu quisesse.</p>
-
 <p>Tudo bem, eu topei o <em>role</em> padrão. No futuro, se eu precisar dar acesso a outros recursos para a minha <code>Lambda Function</code>, como por exemplo a algum bucket do S3, eu precisarei vincular mais permissões a esse <code>IAM Role</code>.</p>
-
 <p>Depois de confirmar a criação do <code>bitcoinQuote</code>, me deparei com a tela abaixo.</p>
-
-<p><img src="https://devser.com.br/images/serverless-do-zero/094138.png" alt="" /></p>
-
+<p><img src="https://devser.com.br/images/serverless-do-zero/094138.png" alt=""></p>
 <p>A primeira coisa que eu fiz foi dar uma fuçada nas seções <code>+ Add trigger</code> e <code>+ Add destination</code>. Achei interessante, e percebi que provavelmente vou precisar adicionar um trigger do <code>API Gateway</code> para expor a minha função para o mundo externo. Mas por enquanto ainda não vou mexer em nada disso.</p>
-
 <p>Rolei a tela para baixo, e vi que existe uma seção para upload de código (<code>Function code</code>), e também uma seção de configuração de variáveis de ambiente.</p>
-
 <p>Tenho <strong>certeza</strong> de que em um workflow produtivo de desenvolvimento serverless, não faria sentido usarmos nenhuma dessas funcionalidades manuais via <code>AWS Console</code>, já que tudo seria realizado automaticamente via chamadas de API, por alguma ferramenta de CI/CD.</p>
-
 <p>Mas para essa exploração inicial, será útil.</p>
-
 <p>Além desses blocos de configuração que já comentei, existem algumas outras seções que não parecem relevantes para mim neste primeiro momento, como Tags, AWS X-Ray, VPC, Concurrency, Asynchronous invocation e Database proxies.</p>
-
 <p>Bem, acho que já explorei o bastante essa tela de configuração, para entender suficientemente como tudo se encaixa.</p>
-
 <h1 id="esqueleto-inicial-em-go">Esqueleto inicial em Go</h1>
-
 <p>Pesquisando na documentação da AWS sobre como integrar um programa em Go ao serviço Lambda, encontrei esse artigo: <a href="https://docs.aws.amazon.com/lambda/latest/dg/golang-handler.html">https://docs.aws.amazon.com/lambda/latest/dg/golang-handler.html</a>.</p>
-
 <p>Lá encontro extamente o que eu queria, um esqueleto mínimo:</p>
-
 <pre><code>package main
 
 import (
@@ -184,10 +158,7 @@ func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
 func main() {
   lambda.Start(HandleRequest)
 }
-</code></pre>
-
-<p>Adaptando esse esqueleto, adicionando apenas algumas mudanças básicas, escrevi o meu primeiro programa:</p>
-
+</code></pre><p>Adaptando esse esqueleto, adicionando apenas algumas mudanças básicas, escrevi o meu primeiro programa:</p>
 <pre><code>package main
 
 import (
@@ -218,88 +189,50 @@ func HandleRequest(ctx context.Context, inputEvent InputEvent) (string, error) {
 func main() {
   lambda.Start(HandleRequest)
 }
-</code></pre>
-
-<p>A ideia é receber um JSON via input, e responder com outro JSON.</p>
-
+</code></pre><p>A ideia é receber um JSON via input, e responder com outro JSON.</p>
 <h1 id="deploy-da-aplicação">Deploy da aplicação</h1>
-
 <p>No meu ambiente local, criei uma nova pasta chamada <code>bitcoinQuote</code>,
 salvei o conteúdo do programa acima
 com o nome <code>main.go</code>, e em seguida rodei os seguintes comandos dentro dessa pasta:</p>
-
 <pre><code># Iniciar o go modules para que as dependências sejam baixadas automaticamente
 go mod init bitcoinQuote
 # Compilar main.go para o binário bitcoinQuote
 go build .
 # Criar bicoinQuote.zip contendo apenas o binário
 zip bitcoinQuote.zip bitcoinQuote
-</code></pre>
-
-<p>Fiz o upload do arquivo <code>bitcoinQuote.zip</code> gerado acima, utilizando o formulário <code>Function code</code> &gt; <code>Actions</code> &gt; <code>Upload a .zip file</code> do console da AWS.</p>
-
+</code></pre><p>Fiz o upload do arquivo <code>bitcoinQuote.zip</code> gerado acima, utilizando o formulário <code>Function code</code> &gt; <code>Actions</code> &gt; <code>Upload a .zip file</code> do console da AWS.</p>
 <p><em>IMPORTANTE</em>: No formulário <code>Basic Settings</code> &gt; <code>Edit</code>, precisei alterar o nome do <code>Handler</code> para <code>bitcoinQuote</code>, já que esse é nome do binário dentro do zip.</p>
-
 <p>Em seguida, cliquei em <code>Save</code> no topo da página.</p>
-
 <h1 id="teste-da-aplicação">Teste da aplicação</h1>
-
 <p>Cliquei na opção <code>Select a test event</code> na parte superior da tela, e em seguida em <code>Configure test events</code>. Em <code>EventName</code>, dei o nome OlaRafael, com o seguinte JSON:</p>
-
 <pre><code>{
   &quot;name&quot;: &quot;Rafael&quot;
 }
-</code></pre>
-
-<p>Depois de salvar, selecionei o evento <code>OlaRafael</code> no dropdown superior da tela, e depois no botão <code>Test</code>.</p>
-
-<p><img src="https://devser.com.br/images/serverless-do-zero/101920.png" alt="" /></p>
-
+</code></pre><p>Depois de salvar, selecionei o evento <code>OlaRafael</code> no dropdown superior da tela, e depois no botão <code>Test</code>.</p>
+<p><img src="https://devser.com.br/images/serverless-do-zero/101920.png" alt=""></p>
 <p>Tudo certo!</p>
-
 <p>Na imagem abaixo, dá pra ver que ao enviar esse payload de teste contendo <code>&quot;name&quot;: &quot;Rafael&quot;</code>, a função respondeu corretamente com um JSON contendo <code>&quot;message&quot;: &quot;Hello Rafael!&quot;</code>.</p>
-
-<p><img src="https://devser.com.br/images/serverless-do-zero/101940.png" alt="" /></p>
-
+<p><img src="https://devser.com.br/images/serverless-do-zero/101940.png" alt=""></p>
 <h1 id="configuração-do-api-gateway">Configuração do API Gateway</h1>
-
 <p>Agora eu quero expor essa função serverless em uma URL pública. Para isso, vou configurar o API Gateway.</p>
-
 <p>No bloco <code>Designer</code> da tela de configuração da minha função Lambda, cliquei em <code>+ Add Trigger</code>, e escolhi o tipo <code>API Gateway</code>. Optei pela opção <code>Create an API</code>.</p>
-
-<p><img src="https://devser.com.br/images/serverless-do-zero/102200.png" alt="" /></p>
-
+<p><img src="https://devser.com.br/images/serverless-do-zero/102200.png" alt=""></p>
 <p>Em <code>Security</code>, escolhi a opção <code>Open</code>, já que meu desejo é tornar minha API pública, sem autenticação. Para me ajudar a avaliar o que está acontecendo, cliquei também em <code>Additional settings</code> e habilitei a opção <code>Enable detailed metrics</code>.</p>
-
 <p>Para finalizar, cliquei no botão <code>Add</code>.</p>
-
 <p>Agora, ao clicar no item <code>API Gateway</code> dentro do painel <code>Designer</code>, eu consigo enxergar o endpoint que foi criado para a minha API. Para voltar às configurações anteriores (<code>Function code</code>, <code>Environment variables</code>, etc), é só clicar em <code>bitcoinQuote</code> dentro do painel <code>Designer</code>.</p>
-
 <p>Agora eu consigo acessar, pelo navegador, a URL gerada para a minha API: <code>https://ou0kxsbmjf.execute-api.us-east-1.amazonaws.com/default/bitcoinQuote</code>.</p>
-
 <h1 id="criação-de-scripts-para-deploy">Criação de scripts para deploy</h1>
-
 <p>Foi didático fazer o deploy manualmente fazendo upload do arquivo ZIP na página do <code>Lambda</code>, mas tarefas manuais repetitivas são chatas e com grande propensão a erro.</p>
-
 <p>Agora vamos usar o <code>aws-cli</code> para fazer o deploy das próximas versões.</p>
-
 <p>O meu <code>aws-cli</code> já está configurado na minha máquina local, então vou rodar o comando <code>aws help</code> para ver se consigo encontrar o comando necessário para realizar o deploy. Encontrei o comando <code>aws lambda</code>. Agora vamos ver o help dele (<code>aws lambda help</code>). Dentre diversos comandos disponíveis, um nome em especial me chamou a atenção: <code>aws lambda update-function-code</code>.</p>
-
 <p>Após ler o help desse comando, consegui utilizá-lo com sucesso!
 <code>go build . &amp;&amp; zip bitcoinQuote.zip bitcoinQuote &amp;&amp; aws lambda update-function-code --function-name=bitcoinQuote --zip-file fileb://bitcoinQuote.zip</code></p>
-
 <h1 id="consultar-cotação-do-bitcoin">Consultar cotação do Bitcoin</h1>
-
 <p>Ótimo, agora vai ser mais prático fazer os deploys durante o próximo desafio: consultar a cotação do Bitcoin.</p>
-
 <p>Uma primeira opção seria já utilizar uma API pronta de Bitcoin. Mas aí não faria muito sentido a gente estar fazendo esta API, só para consultar uma outra, né?</p>
-
 <p>Então vamos para uma segunda opção, fazendo algo diferente: vamos fazer scraping do Google para encontrar a cotação BTC/BRL.</p>
-
 <p>Utilizando a biblioteca <em>net/http</em> e <em>regexp</em>, é possível obtermos essa informação.</p>
-
 <p>Dica: adicionei o parâmetro <em>hl=en</em> na URL de busca do Google para que o HTML retorne em inglês, independentemente da geolocalização do IP do cliente.</p>
-
 <pre><code>package main
 
 import (
@@ -364,22 +297,13 @@ func FetchBtcBrlQuote() (int, error) {
   }
   return 0, errors.New(&quot;Erro ao localizar cotação BTC/BRL na resposta HTML&quot;)
 }
-</code></pre>
-
-<p>Após substituir esse código acima, rodei novamente o script de deploy.</p>
-
+</code></pre><p>Após substituir esse código acima, rodei novamente o script de deploy.</p>
 <p>Aguardei alguns segundos antes de acessar a URL pública da minha API, e pronto!</p>
-
-<p><img src="https://devser.com.br/images/serverless-do-zero/142736.png" alt="" /></p>
-
+<p><img src="https://devser.com.br/images/serverless-do-zero/142736.png" alt=""></p>
 <p>Tudo funcionando certinho!</p>
-
 <h1 id="melhorias-futuras">Melhorias futuras</h1>
-
 <p>Espero que ao longo desse artigo tenha ficado claro que tudo isso é apenas um teste de conceito.</p>
-
 <p>Então quais seriam as melhorias necessárias no exemplo acima para ficar qualidade de produção?</p>
-
 <ol>
 <li>Refatoração do código</li>
 <li>Testes automatizados</li>
@@ -387,7 +311,6 @@ func FetchBtcBrlQuote() (int, error) {
 <li>Cache da resposta da API (por alguns minutos, para evitar acessar repetidamente a busca do Google)</li>
 <li>Setup do ambiente local para facilitar testes funcionais durante o desenvolvimento</li>
 </ol>
-
 <p>Sobre esse último ponto, por curiosidade, para testar esse método no ambiente local, eu substituí a linha <code>lambda.Start(HandleRequest)</code> por <code>fmt.Println(HandleRequest())</code>, alterando os imports que foram necessários.</p>
 
     </section>

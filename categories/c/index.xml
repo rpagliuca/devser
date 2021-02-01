@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on /dev/ser</title>
@@ -6,11 +6,7 @@
     <description>Recent content in C on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 19 Aug 2019 20:21:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://devser.com.br/categories/c/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 19 Aug 2019 20:21:00 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello world e SHA-256 em C</title>
       <link>https://devser.com.br/posts/hello-world-e-sha256-em-c/</link>

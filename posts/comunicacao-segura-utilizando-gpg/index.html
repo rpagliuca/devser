@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Comunicação segura utilizando GPG &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -30,9 +30,8 @@ Algumas estratégias importantes para garantir a segurança dos sistemas de info
 Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/" />
-<meta property="article:published_time" content="2017-11-28T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-11-28T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2017-11-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-11-28T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Comunicação segura utilizando GPG">
@@ -41,11 +40,9 @@ Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, p
 Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:
  Rodízio constante de senhas Senhas diferentes para cada usuário  Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.
 Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird.">
-
-
-<meta itemprop="datePublished" content="2017-11-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="354">
+<meta itemprop="datePublished" content="2017-11-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-11-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="348">
 
 
 
@@ -128,81 +125,54 @@ Uma solução para esse problema de comunicação é utilizar certificados GPG, 
     </header>
     <section id="post-body">
         <p>(Co-publicado em <a href="http://www.timeraposa.com.br/2017/11/comunicacao-segura-utilizando-gpg/">Time Raposa</a>)</p>
-
 <p>Todo time de T.I. deve ter a preocupação com políticas de acessos a senhas, principalmente em se tratando de credenciais de produção.</p>
-
 <p>Algumas estratégias importantes para garantir a segurança dos sistemas de informações são:</p>
-
 <ul>
 <li>Rodízio constante de senhas</li>
 <li>Senhas diferentes para cada usuário</li>
 </ul>
-
 <p>Mas um problema corriqueiramente encontrado é como comunicar essas senhas com segurança entre diferentes pessoas do time.</p>
-
 <p>Uma solução para esse problema de comunicação é utilizar certificados GPG, e integrá-los com clientes de e-mail, por exemplo o Thunderbird.</p>
-
 <p>Para isso:</p>
-
-<p>1) Crie uma nova credencial GPG usando um dos dois comandos abaixo:</p>
-
+<ol>
+<li>Crie uma nova credencial GPG usando um dos dois comandos abaixo:</li>
+</ol>
 <p>Em versões mais novas do gpg:</p>
-
 <pre><code>gpg --full-generate-key
-</code></pre>
-
-<p>Em versões mais antigas do gpg:</p>
-
+</code></pre><p>Em versões mais antigas do gpg:</p>
 <pre><code>gpg --gen-key
-</code></pre>
-
-<p>Nessa etapa, é prudente utilizar o maior tamanho de chave possível (no meu caso, foi 4096). Recomendo utilizar seu e-mail pessoal, pois sua identificação não depende diretamente da organização com que você está envolvido. Se for o caso, posteriormente você pode criar chaves específicas (exemplo: e-mail de sua organização) vinculadas à sua chave pessoal.</p>
-
-<p>2) Envie suas credenciais para um servidor público de chaves GPG. O padrão do Debian é o keys.gnupg.net.</p>
-
+</code></pre><p>Nessa etapa, é prudente utilizar o maior tamanho de chave possível (no meu caso, foi 4096). Recomendo utilizar seu e-mail pessoal, pois sua identificação não depende diretamente da organização com que você está envolvido. Se for o caso, posteriormente você pode criar chaves específicas (exemplo: e-mail de sua organização) vinculadas à sua chave pessoal.</p>
+<ol start="2">
+<li>Envie suas credenciais para um servidor público de chaves GPG. O padrão do Debian é o keys.gnupg.net.</li>
+</ol>
 <pre><code>gpg --send-key IDCHAVE
-</code></pre>
-
-<p>sendo que o ID da sua chave pode ser obtido a partir do comando</p>
-
+</code></pre><p>sendo que o ID da sua chave pode ser obtido a partir do comando</p>
 <pre><code>gpg --list-keys
-</code></pre>
-
-<p>3) Peça para pessoas do seu círculo social (que possam comprovar pessoalmente se tratar de uma chave legítima) assinarem a sua nova chave. Eles devem fazer o seguinte:</p>
-
+</code></pre><ol start="3">
+<li>Peça para pessoas do seu círculo social (que possam comprovar pessoalmente se tratar de uma chave legítima) assinarem a sua nova chave. Eles devem fazer o seguinte:</li>
+</ol>
 <pre><code>gpg --recv-key IDCHAVE
-</code></pre>
-
-<p>Em seguida</p>
-
+</code></pre><p>Em seguida</p>
 <pre><code>gpg --sign-key IDCHAVE
-</code></pre>
-
-<p>E por último</p>
-
+</code></pre><p>E por último</p>
 <pre><code>gpg --send-keys IDCHAVE
-</code></pre>
-
-<p>4) Agora que sua chave já foi assinada por uma quantidade razoável de pessoas do seu círculo social, sua chave passou a ter uma “reputação adequada” para ser usada de forma pública.</p>
-
-<p>5) Instale o addon EnigmaMail no Thunderbird, ele já permitirá usar funcionalidades de encriptar e assinar digitalmente seus próximos e-mails usando as chaves geradas anteriormente.</p>
-
-<p>6) Os comandos</p>
-
+</code></pre><ol start="4">
+<li>
+<p>Agora que sua chave já foi assinada por uma quantidade razoável de pessoas do seu círculo social, sua chave passou a ter uma “reputação adequada” para ser usada de forma pública.</p>
+</li>
+<li>
+<p>Instale o addon EnigmaMail no Thunderbird, ele já permitirá usar funcionalidades de encriptar e assinar digitalmente seus próximos e-mails usando as chaves geradas anteriormente.</p>
+</li>
+<li>
+<p>Os comandos</p>
+</li>
+</ol>
 <pre><code>gpg --encrypt
-</code></pre>
-
-<p>e</p>
-
+</code></pre><p>e</p>
 <pre><code>gpg --decrypt
-</code></pre>
-
-<p>também podem ser utilizados manualmente direto da linha de comando, passando o conteúdo das mensagens pelo pipe. Exemplo:</p>
-
+</code></pre><p>também podem ser utilizados manualmente direto da linha de comando, passando o conteúdo das mensagens pelo pipe. Exemplo:</p>
 <pre><code>echo &quot;Encriptando mensagem&quot; | gpg --encrypt
-</code></pre>
-
-<p>Dessa forma, temos um canal seguro para envio de senhas e credenciais dos nossos sitemas de informação.</p>
+</code></pre><p>Dessa forma, temos um canal seguro para envio de senhas e credenciais dos nossos sitemas de informação.</p>
 
     </section>
 </article>

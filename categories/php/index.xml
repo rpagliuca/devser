@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP on /dev/ser</title>
@@ -6,11 +6,7 @@
     <description>Recent content in PHP on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 21 Aug 2019 11:18:05 -0300</lastBuildDate>
-    
-	<atom:link href="https://devser.com.br/categories/php/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Aug 2019 11:18:05 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comparando a perfomance de Go, .NET e PHP</title>
       <link>https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/</link>
@@ -28,8 +24,8 @@ Cenários comparados Utilizando o programa wrk, calculei a capacidade de requisi
       <pubDate>Mon, 17 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/</guid>
-      <description>Introdução  &amp;ldquo;Conheces teu inimigo e conhece-te a ti mesmo&amp;rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&amp;rdquo;)
- Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&amp;rdquo; de tempo de processamento, o gargalo da execução.
+      <description>Introdução  &amp;ldquo;Conheces teu inimigo e conhece-te a ti mesmo&amp;rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&amp;quot;)
+ Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&amp;quot; de tempo de processamento, o gargalo da execução.
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script.</description>
     </item>
     
@@ -40,7 +36,8 @@ Normalmente, das centenas de métodos que são chamados em um único script, pou
       
       <guid>https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/</guid>
       <description>Introdução ao Smarty A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.
-O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:</description>
+O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;{$titulo}&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Olá, {$nome}&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Ao renderizar o template acima, o Smarty irá substituir as tags {$titulo} e {$nome} para os valores correspondentes designados com as chamadas aos métodos $smarty-&amp;gt;assign(‘titulo’, …) a partir do controller.</description>
     </item>
     
     <item>

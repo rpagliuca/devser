@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Deixe seu MySQL muito mais rápido rodando na memória RAM &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -27,18 +27,15 @@
 Claro que esse armazenamento é volátil, portanto é recomendado apenas para ambiente de desenvolvimento, onde muitas vezes um script ou importação de dump é executado múltiplas vezes por dia, tomando preciosos minutos do desenvolvedor." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/" />
-<meta property="article:published_time" content="2017-05-16T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-16T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2017-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-16T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Deixe seu MySQL muito mais rápido rodando na memória RAM">
 <meta itemprop="description" content="Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.
 Claro que esse armazenamento é volátil, portanto é recomendado apenas para ambiente de desenvolvimento, onde muitas vezes um script ou importação de dump é executado múltiplas vezes por dia, tomando preciosos minutos do desenvolvedor.">
-
-
-<meta itemprop="datePublished" content="2017-05-16T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-16T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2017-05-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-05-16T00:00:00+00:00" />
 <meta itemprop="wordCount" content="290">
 
 
@@ -118,16 +115,10 @@ Claro que esse armazenamento é volátil, portanto é recomendado apenas para am
         </h2>
     </header>
     <section id="post-body">
-        
-
-<p>Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.</p>
-
+        <p>Muitas vezes, o gargalo de uma importação de banco, ou execução de queries SQL é o tempo de escrita e leitura no disco rígido. Sabendo disso, uma maneira bacana de deixar o MySQL rapidão é deixar o banco inteiro armazenado na memória RAM, para nunca precisarmos acessar o disco rígido.</p>
 <p>Claro que esse armazenamento é volátil, portanto é recomendado apenas para ambiente de desenvolvimento, onde muitas vezes um script ou importação de dump é executado múltiplas vezes por dia, tomando preciosos minutos do desenvolvedor.</p>
-
 <p>A ideia é rodar todo o MySQL direto na memória RAM, e o passo a passo é bem simples:</p>
-
 <p>Assumindo sistema operacional Linux com distribuição Debian ou Ubuntu, rode como sudo todos os comandos a seguir:</p>
-
 <ol>
 <li><code>service mysql stop</code></li>
 <li><code>cp -r /var/lib/mysql /var/lib/mysql_bkp</code></li>
@@ -138,11 +129,8 @@ Claro que esse armazenamento é volátil, portanto é recomendado apenas para am
 <li><code>ln -s /dev/shm/mysql /var/lib</code></li>
 <li><code>service mysql start</code></li>
 </ol>
-
 <p>OBS – A cada vez que reiniciar o computador a RAM será zerada, e por isso deverão ser repetidos os passos acima (exceto os passos 2 e 3, pois o backup será preservado).</p>
-
 <h2 id="explicação">Explicação</h2>
-
 <p>Estamos reaproveitando a partição /dev/shm, que é uma partição existente por padrão no Debian, do tipo tmpfs (partição montada diretamente sobre a RAM). Se você copia qualquer arquivo para essa partição, esse arquivo só é escrito na RAM, em vez de ser gravado no HD. Ao mover a pasta do mysql para essa partição e criar um link simbólico apontando para a partição /dev/shm, todos os bancos do MySQL são armazenados diretamente na RAM. Além disso, no passo 2 criamos um backup, já que todos os dados da partição /dev/shm são perdidas ao desligar o computador e são necessários para restauração do banco a partir do HD.</p>
 
     </section>

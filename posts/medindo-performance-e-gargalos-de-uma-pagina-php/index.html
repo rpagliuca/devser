@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -23,24 +23,21 @@
 
 
 <meta property="og:title" content="Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug" />
-<meta property="og:description" content="Introdução  &ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&rdquo;)
- Utilizando KCacheGrind &#43; XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&rdquo; de tempo de processamento, o gargalo da execução.
+<meta property="og:description" content="Introdução  &ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&quot;)
+ Utilizando KCacheGrind &#43; XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&quot; de tempo de processamento, o gargalo da execução.
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/" />
-<meta property="article:published_time" content="2017-04-17T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-04-17T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2017-04-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-04-17T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug">
-<meta itemprop="description" content="Introdução  &ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&rdquo;)
- Utilizando KCacheGrind &#43; XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&rdquo; de tempo de processamento, o gargalo da execução.
+<meta itemprop="description" content="Introdução  &ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&quot;)
+ Utilizando KCacheGrind &#43; XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&quot; de tempo de processamento, o gargalo da execução.
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script.">
-
-
-<meta itemprop="datePublished" content="2017-04-17T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-04-17T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2017-04-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-04-17T00:00:00+00:00" />
 <meta itemprop="wordCount" content="558">
 
 
@@ -49,8 +46,8 @@ Normalmente, das centenas de métodos que são chamados em um único script, pou
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug"/>
-<meta name="twitter:description" content="Introdução  &ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&rdquo;)
- Utilizando KCacheGrind &#43; XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&rdquo; de tempo de processamento, o gargalo da execução.
+<meta name="twitter:description" content="Introdução  &ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&quot;)
+ Utilizando KCacheGrind &#43; XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&quot; de tempo de processamento, o gargalo da execução.
 Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script."/>
 
 
@@ -121,62 +118,35 @@ Normalmente, das centenas de métodos que são chamados em um único script, pou
         </h2>
     </header>
     <section id="post-body">
-        
-
-<h1 id="introdução">Introdução</h1>
-
+        <h1 id="introdução">Introdução</h1>
 <blockquote>
-<p>&ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&rdquo;)</p>
+<p>&ldquo;Conheces teu inimigo e conhece-te a ti mesmo&rdquo; — Sun Tzu (a.k.a “Conheça o gargalo de seu script e atue para otimizá-lo&quot;)</p>
 </blockquote>
-
-<p>Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&rdquo; de tempo de processamento, o gargalo da execução.</p>
-
+<p>Utilizando KCacheGrind + XDebug no PHP, podemos medir quais métodos de um script são os principais “inimigos&quot; de tempo de processamento, o gargalo da execução.</p>
 <p>Normalmente, das centenas de métodos que são chamados em um único script, pouquíssimos deles são responsáveis por mais de 90% do processamento, portanto pequenos ajustes nos lugares certos fazem uma grande diferença no tempo de resposta do seu script. Saber como encontrar esses gargalos é o seu maior aliado na hora de otimizar páginas lentas.</p>
-
 <p>Esse será um treinamento bem simples, onde apenas guiarei a instalação desses 2 softwares via apt-get no Debian, e darei exemplo de utilização dos softwares. Não haverá programação envolvida, e não utilizarei o Docker, para diminuir um pouco a complexidade e poder focar no que realmente interessa.</p>
-
 <h1 id="instalação-do-xdebug">Instalação do XDebug</h1>
-
 <p>Instalar o XDebug para PHP é muito fácil no Debian, já que está disponível no repositório oficial:</p>
-
 <p><code>sudo apt-get install php5-xdebug</code></p>
-
 <h1 id="instalação-do-kcachegrind">Instalação do KCachegrind</h1>
-
 <p>O KCacheGrind também está disponível no repositório oficial, mas infelizmente, esse software necessita de diversas bibliotecas do KDE, que por padrão não estão instaladas em uma distribuição Debian, fazendo com que dezenas de pacotes e centenas de megabytes de dependência sejam baixados e instalados pelo comando a seguir:</p>
-
 <p><code>sudo apt-get install kcachegrind</code></p>
-
 <h1 id="configuração-do-xdebug">Configuração do XDebug</h1>
-
 <p>A configuração do XDebug é realizada via php.ini. Em um artigo anterior do blog (<a href="https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/">Ferramentas de debug para desenvolvimento web: Xdebug + Developer Tools Console + Curl + Logs</a>), aprendemos como configurar o XDebug para debugar interativamente seu script. Hoje, não estamos interessados na função Debug, e sim na função Profile do Xdebug, portanto a configuração é um pouco diferente.</p>
-
 <h2 id="modo-sempre-ativado">Modo sempre ativado</h2>
-
 <p>Quando estamos debugando um único script PHP diretamente pelo terminal, podemos configurar o XDebug no php.ini para gerar sempre um novo relatório de performance.
 Nesses casos, adicionaremos a seguinte configuração no arquivo php.ini:</p>
-
 <p><code>xdebug.profiler_enable=1</code></p>
-
-<h2 id="modo-ativação-temporária-gatilho">Modo ativação temporária / gatilho</h2>
-
+<h2 id="modo-ativação-temporária--gatilho">Modo ativação temporária / gatilho</h2>
 <p>Outras vezes, quando estamos testando um script PHP por meio de um navegador de internet, é mais interessante configurar o XDebug em modo gatilho, para que o relatório de performance seja gerado apenas nos requests escolhidos, pois caso contrário, teríamos dificuldade em encontrar os relatórios certos em meio a dezenas de requisições ajax e GET e que muitas vezes são realizadas paralelamente durante o carregamento de uma página simples.</p>
-
 <p><code>xdebug.profiler_enable_trigger=1</code></p>
-
 <p>Além disso, deve ser instalado alguma extensão no navegador de internet para setar um cookie com valor XDEBUG_PROFILE=1 a cada vez que se deseja um novo relatório de performance. A extensão que eu utilizo para o Google Chrome é a Xdebug helper (<a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc">https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc</a>)</p>
-
 <h1 id="visualização-dos-relatórios-de-performance">Visualização dos relatórios de performance</h1>
-
 <p>O XDebug armazena os relatórios de performance na pasta temporária configurada no php.ini na diretiva sys_temp_dir.
 Os arquivos são salvos, por padrão, com a nomenclatura cachegrind.out.*</p>
-
 <p>Para visualizar os relatórios, utilizamos o software KCacheGrind e clicando File -&gt; Open e selecionando o relatório cachegrind.out.* desejado.</p>
-
 <p>Clicando no botão % Relative no menu superior, podemos alternar a exibição entre tempo relativo (percentual) e tempo absoluto (quantidade de milisegundos gastos em cada método).</p>
-
 <p>Clicando sobre o título da coluna Self, temos uma lista ordenadas pelos nossos maiores inimigos, os métodos que mais consomem tempo de execução do nosso script.</p>
-
 <p>Pronto, agora você está pronto para vencer seu inimigo.</p>
 
     </section>

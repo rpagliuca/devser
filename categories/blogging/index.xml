@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogging on /dev/ser</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Blogging on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sat, 08 Jun 2019 09:04:34 -0300</lastBuildDate>
-    
-	<atom:link href="https://devser.com.br/categories/blogging/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 08 Jun 2019 09:04:34 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/blogging/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrando de Wordpress para Hugo (gohugo)</title>
       <link>https://devser.com.br/posts/migrando-de-wordpress-para-gohugo/</link>

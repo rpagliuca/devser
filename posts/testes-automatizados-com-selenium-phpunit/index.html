@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Testes automatizados com Selenium &#43; PHPUnit &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -27,18 +27,15 @@
  Ajuda a evitar lesões por esforço repetivivo Evita erros Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio  Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript &#43; CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/" />
-<meta property="article:published_time" content="2017-03-14T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-03-14T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2017-03-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-14T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Testes automatizados com Selenium &#43; PHPUnit">
 <meta itemprop="description" content="Introdução Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:
  Ajuda a evitar lesões por esforço repetivivo Evita erros Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio  Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript &#43; CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.">
-
-
-<meta itemprop="datePublished" content="2017-03-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-03-14T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2017-03-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-03-14T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1044">
 
 
@@ -118,40 +115,24 @@
         </h2>
     </header>
     <section id="post-body">
-        
-
-<h1 id="introdução">Introdução</h1>
-
+        <h1 id="introdução">Introdução</h1>
 <p>Automatizar tarefas repetitivas é vantajoso por diversos motivos, dentre os quais:</p>
-
 <ol>
 <li>Ajuda a evitar lesões por esforço repetivivo</li>
 <li>Evita erros</li>
 <li>Libera tempo para se dedicar a tarefas criativas que agreguem valor ao seu negócio</li>
 </ol>
-
 <p>Um caso típico de tarefa repetitiva que pode ser automatizada é o teste funcional de um aplicativo web. A cada nova alteração de código, tanto de backend (PHP, banco de dados), quanto de frontend (Javascript + CSS), uma infinidade de páginas devem ser testadas novamente para garantir que estão com funcionamento adequado.</p>
-
 <h1 id="selenium">Selenium</h1>
-
 <p>Para nos ajudar no objetivo de automatizar esses testes, contamos com a biblioteca Selenium (cujo slogan é <strong>Selenium automates browsers</strong>), que se comunica com os principais navegadores de internet do mercado por meio de seus webdrivers, permitindo abrir URLs, clicar em links, inspecionar propriedades de elementos HTML e muito mais.</p>
-
 <p>O Selenium possui <em>bindings</em> para algumas das principais linguagens de programaçaão: Java, Python, PHP, C#, sendo que alguns desses bindings são oficiais, enquanto outros são disponibilizados por terceiros.</p>
-
-<p><img src="https://devser.com.br/images/Screenshot-from-2017-03-13-211245.png" alt="" title="Website do Selenium" /></p>
-
+<p><img src="https://devser.com.br/images/Screenshot-from-2017-03-13-211245.png" alt="" title="Website do Selenium"></p>
 <h1 id="phpunit">PHPUnit</h1>
-
 <p>O PHPUnit é uma biblioteca do PHP tipicamente dedicada a testes unitários. Entretanto, utilizando-a em conjunto com o Selenium, pode-se gerar testes funcionais automatizados. É uma biblioteca com um objetivo bem definido, voltada para validar se algumas alegações (assertions) são verdadeiras ou falsas. Normalmente alegações falsas são comportamentos inesperados, e portanto são reportados pelo PHPUnit na forma de um relatório ao final da bateria de testes.</p>
-
 <p>Exemplo de aplicação do PHPUnit retirado de <a href="https://phpunit.de/getting-started.html">https://phpunit.de/getting-started.html</a>:</p>
-
-<p><a href="https://devser.com.br/images/Screenshot-from-2017-03-13-211923.png"><img src="https://devser.com.br/images/Screenshot-from-2017-03-13-211923.png" alt="" title="Exemplo do PHPUnit" /></a></p>
-
+<p><a href="https://devser.com.br/images/Screenshot-from-2017-03-13-211923.png"><img src="https://devser.com.br/images/Screenshot-from-2017-03-13-211923.png" alt="" title="Exemplo do PHPUnit"></a></p>
 <h1 id="instalação-considerando-o-meu-ambiente-de-desenvolvimento">Instalação considerando o meu ambiente de desenvolvimento:</h1>
-
 <p>Para rodar os testes funcionais via PHPUnit + Selenium (tests/functional/*), acompanhe os passos seguintes:</p>
-
 <ol>
 <li>Baixar o phpunit-5.<em>.</em>.phar <a href="https://phar.phpunit.de">https://phar.phpunit.de</a> e copiar para /usr/local/bin, adicionando permissão de execução (chmod a+x)</li>
 <li>Baixar o Selenium Server (selenium-server-standalone-*.jar) <a href="http://www.seleniumhq.org/download/">http://www.seleniumhq.org/download/</a> em uma pasta de sua preferência</li>
@@ -159,214 +140,213 @@
 <li>Instalar o pacote phpunit-selenium via composer a partir da pasta raiz do git do G. Fox: composer.phar update &ndash;dev</li>
 <li>Configurar config.json do G. Fox, adicionando o grupo abaixo de acordo com suas credenciais:
 &ldquo;selenium&rdquo;: {
-  &ldquo;user&rdquo;: &ldquo;meu.usuario@***.com&rdquo;,
-  &ldquo;password&rdquo;: &ldquo;minha_senha&rdquo;
+&ldquo;user&rdquo;: &ldquo;meu.usuario@***.com&rdquo;,
+&ldquo;password&rdquo;: &ldquo;minha_senha&rdquo;
 }</li>
 <li>Depois de baixar todas as dependências acima:
-
 <ol>
 <li>Entrar na pasta escolhida no passo 2, e rodar servidor do Selenium Server com o comando a seguir
 java -jar selenium-server-standalone-3.0.1.jar. OBS1 - O nome do arquivo pode ser diferente conforme a versão. OBS2 - Se der erro para inicializar selenium-server-standalone, verifique se Google Chrome Driver foi instalado no caminho correto, a partir das mensagens de erros.</li>
 <li>Por último, rode o phpunit a partir da pasta raiz do repositório git do G. Fox: phpunit-5.5.4.phar &ndash;verbose &ndash;bootstrap load.inc tests/functional/browseEveryPageTest.php. OBS - O nome do executável pode ser diferente conforme a versão</li>
-</ol></li>
 </ol>
-
+</li>
+</ol>
 <h1 id="métodos-úteis">Métodos úteis</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyCustomSeleniumTestCase</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">PHPUnit_Extensions_Selenium2TestCase</span> {
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class MyCustomSeleniumTestCase extends PHPUnit_Extensions_Selenium2TestCase {
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">static</span> $implicitTimeout <span style="color:#f92672">=</span> <span style="color:#ae81ff">20000</span>;
 
-  protected static $implicitTimeout = 20000;
-
-  public static $browsers = array(
-    array(
-      &#39;browserName&#39; =&gt; &#39;chrome&#39;,
-      &#39;sessionStrategy&#39; =&gt; &#39;shared&#39;,
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> $browsers <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>(
+    <span style="color:#66d9ef">array</span>(
+      <span style="color:#e6db74">&#39;browserName&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;chrome&#39;</span>,
+      <span style="color:#e6db74">&#39;sessionStrategy&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;shared&#39;</span>,
     ),
   );
 
-  /* This method is required to keep session alive even after failing tests */
-  public function onNotSuccessfulTest($e){
-    throw $e;
+  <span style="color:#75715e">/* This method is required to keep session alive even after failing tests */</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onNotSuccessfulTest</span>($e){
+    <span style="color:#66d9ef">throw</span> $e;
   }
 
-  protected function setUp() {
-    global $CFG;
-    try {
-      $this-&gt;test_user = $CFG-&gt;selenium-&gt;user;
-      $this-&gt;test_password = $CFG-&gt;selenium-&gt;password;
-      $this-&gt;test_url = $CFG-&gt;url-&gt;https;
-    } catch (Exception $e) {
-      throw new Exception(&#39;Incorrect config.json settings ($CFG-&gt;selenium-&gt;user, $CFG-&gt;selenium-&gt;password, $CFG-&gt;url-&gt;http)&#39;);
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setUp</span>() {
+    <span style="color:#66d9ef">global</span> $CFG;
+    <span style="color:#66d9ef">try</span> {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">test_user</span> <span style="color:#f92672">=</span> $CFG<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">selenium</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span>;
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">test_password</span> <span style="color:#f92672">=</span> $CFG<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">selenium</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">password</span>;
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">test_url</span> <span style="color:#f92672">=</span> $CFG<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">https</span>;
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#39;Incorrect config.json settings ($CFG-&gt;selenium-&gt;user, $CFG-&gt;selenium-&gt;password, $CFG-&gt;url-&gt;http)&#39;</span>);
     }
-    $this-&gt;setBrowserUrl($CFG-&gt;url-&gt;http);
-    $this-&gt;prepareSession()-&gt;currentWindow()-&gt;maximize();
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setBrowserUrl</span>($CFG<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">http</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">prepareSession</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">currentWindow</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">maximize</span>();
   }
 
-  /**
-   * Custom assertion
-   * Checks if text of html body contains text
-   */
-  protected function assertPageContains($string) {
-    try {
-      $this-&gt;assertContains($string, $this-&gt;byCssSelector(&#39;body&#39;)-&gt;text());
-    } catch (PHPUnit_Framework_ExpectationFailedException $e) {
-      throw new PHPUnit_Framework_ExpectationFailedException(&#34;Test failed. Page <span style="color:#960050;background-color:#1e0010">&lt;</span>{$this-&gt;url()}&gt; does not contain &#39;$string&#39;.&#34;);
-    }
-  }
-
-  /**
-   * Custom assertion
-   * Checks if text of html body does not contain text
-   */
-  protected function assertPageDoesNotContain($string) {
-    try {
-      $this-&gt;assertNotContains($string, $this-&gt;byCssSelector(&#39;html&#39;)-&gt;attribute(&#39;innerHTML&#39;));
-    } catch (PHPUnit_Framework_ExpectationFailedException $e) {
-      throw new PHPUnit_Framework_ExpectationFailedException(&#34;Test failed. Page <span style="color:#960050;background-color:#1e0010">&lt;</span>{$this-&gt;url()}&gt; contains &#39;$string&#39;.&#34;);
+  <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">   * Custom assertion
+</span><span style="color:#e6db74">   * Checks if text of html body contains text
+</span><span style="color:#e6db74">   */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">assertPageContains</span>($string) {
+    <span style="color:#66d9ef">try</span> {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertContains</span>($string, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byCssSelector</span>(<span style="color:#e6db74">&#39;body&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">text</span>());
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">PHPUnit_Framework_ExpectationFailedException</span> $e) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PHPUnit_Framework_ExpectationFailedException</span>(<span style="color:#e6db74">&#34;Test failed. Page &lt;</span><span style="color:#e6db74">{</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">&gt; does not contain &#39;</span><span style="color:#e6db74">$string</span><span style="color:#e6db74">&#39;.&#34;</span>);
     }
   }
 
-  /* Block that types a value on autocomplete field, waits for
-   * the options and click on the first option */
-  protected function clickOnAutocomplete($selector, $value) {
-    /*  Remove autocomplete elements that are left over on DOM, before trying to use a new one */
-    $this-&gt;execute(array(
-      &#39;script&#39; =&gt; &#39;$(&#34;.ui-menu-item&#34;).remove()&#39;,
-      &#39;args&#39; =&gt; array(),
+  <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">   * Custom assertion
+</span><span style="color:#e6db74">   * Checks if text of html body does not contain text
+</span><span style="color:#e6db74">   */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">assertPageDoesNotContain</span>($string) {
+    <span style="color:#66d9ef">try</span> {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertNotContains</span>($string, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byCssSelector</span>(<span style="color:#e6db74">&#39;html&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attribute</span>(<span style="color:#e6db74">&#39;innerHTML&#39;</span>));
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">PHPUnit_Framework_ExpectationFailedException</span> $e) {
+      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PHPUnit_Framework_ExpectationFailedException</span>(<span style="color:#e6db74">&#34;Test failed. Page &lt;</span><span style="color:#e6db74">{</span>$this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>()<span style="color:#e6db74">}</span><span style="color:#e6db74">&gt; contains &#39;</span><span style="color:#e6db74">$string</span><span style="color:#e6db74">&#39;.&#34;</span>);
+    }
+  }
+
+  <span style="color:#75715e">/* Block that types a value on autocomplete field, waits for
+</span><span style="color:#75715e">   * the options and click on the first option */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">clickOnAutocomplete</span>($selector, $value) {
+    <span style="color:#75715e">/*  Remove autocomplete elements that are left over on DOM, before trying to use a new one */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">execute</span>(<span style="color:#66d9ef">array</span>(
+      <span style="color:#e6db74">&#39;script&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;$(&#34;.ui-menu-item&#34;).remove()&#39;</span>,
+      <span style="color:#e6db74">&#39;args&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
     ));
-    $this-&gt;byCssSelector($selector)-&gt;value($value);
-    $this-&gt;byCssSelector(&#39;.ui-menu-item&#39;)-&gt;click();
-    /* Blur event */
-    $this-&gt;execute(array(
-      &#39;script&#39; =&gt; &#39;!!document.activeElement ? document.activeElement.blur() : 0&#39;,
-      &#39;args&#39; =&gt; array(),
-    ));
-  }
-
-  /* Sometimes Selenium cannot click on an element, so we can use this workaround */
-  protected function jsClick($selector) {
-    $this-&gt;execute(array(
-      &#39;script&#39; =&gt; &#34;$(&#39;$selector&#39;).click();&#34;,
-      &#39;args&#39; =&gt; array(),
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byCssSelector</span>($selector)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>($value);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byCssSelector</span>(<span style="color:#e6db74">&#39;.ui-menu-item&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">click</span>();
+    <span style="color:#75715e">/* Blur event */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">execute</span>(<span style="color:#66d9ef">array</span>(
+      <span style="color:#e6db74">&#39;script&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;!!document.activeElement ? document.activeElement.blur() : 0&#39;</span>,
+      <span style="color:#e6db74">&#39;args&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
     ));
   }
 
-  protected function waitShort() {
-    sleep(2);
+  <span style="color:#75715e">/* Sometimes Selenium cannot click on an element, so we can use this workaround */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">jsClick</span>($selector) {
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">execute</span>(<span style="color:#66d9ef">array</span>(
+      <span style="color:#e6db74">&#39;script&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;$(&#39;</span><span style="color:#e6db74">$selector</span><span style="color:#e6db74">&#39;).click();&#34;</span>,
+      <span style="color:#e6db74">&#39;args&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">array</span>(),
+    ));
   }
 
-  protected function waitLong() {
-    sleep(10);
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">waitShort</span>() {
+    <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">2</span>);
   }
 
-  protected function stop() {
-    sleep(99999);
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">waitLong</span>() {
+    <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">10</span>);
   }
 
-  /* Login */
-  protected function testLoginCorrect() {
-
-    /* Wait for 10 seconds at most for an element to be found */
-    $this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
-
-    /* First we logout */
-    $this-&gt;url(&#39;/login/logout&#39;);
-
-    $this-&gt;url(&#39;/&#39;);
-    $this-&gt;byId(&#39;usuario&#39;)-&gt;value($this-&gt;test_user);
-    $this-&gt;byId(&#39;senha&#39;)-&gt;value($this-&gt;test_password);
-    $this-&gt;byId(&#39;login&#39;)-&gt;submit();
-
-    /* Redirect to home, skipping Tela Favorita */
-    $this-&gt;url($this-&gt;tela_url . &#39;/navegacao&#39;);
-
-    $this-&gt;assertEquals($this-&gt;teste_url . &#39;/navegacao&#39;, $this-&gt;url());
-    $this-&gt;assertPageContains(&#39;AMBIENTE&#39;);
-    $this-&gt;assertPageContains(&#39;NAVEGAR&#39;);
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">stop</span>() {
+    <span style="color:#a6e22e">sleep</span>(<span style="color:#ae81ff">99999</span>);
   }
 
-  /**
-   * Default tests for a page
-   *
-   * Check for Call Stack
-   * Test button INSERIR
-   * Test button VISUALIZAR
-   */
-  protected function defaultPageTests() {
-    $this-&gt;closeOpenedAlert();
-    $url = $this-&gt;url();
-    /* Check if main page does not have Call Stack */
-    $this-&gt;assertPageDoesNotContain(&#34;Call Stack&#34;);
+  <span style="color:#75715e">/* Login */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testLoginCorrect</span>() {
 
-    /* Click on button INSERIR, if exists, and check if does not have Call Stack */
-    $this-&gt;checkButtonByText(&#39;INSERIR&#39;, $url);
+    <span style="color:#75715e">/* Wait for 10 seconds at most for an element to be found */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timeouts</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">implicitWait</span>(<span style="color:#a6e22e">self</span><span style="color:#f92672">::</span>$implicitTimeout);
 
-    /* Do the same check for button BUSCAR */
-    if ($this-&gt;checkButtonByText(array(&#39;BUSCAR&#39;, &#39;VISUALIZAR&#39;))) {
-      $this-&gt;checkShow();
-      $this-&gt;url($url);
-    }
-    $this-&gt;checkShow();
+    <span style="color:#75715e">/* First we logout */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>(<span style="color:#e6db74">&#39;/login/logout&#39;</span>);
+
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>(<span style="color:#e6db74">&#39;/&#39;</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byId</span>(<span style="color:#e6db74">&#39;usuario&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">test_user</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byId</span>(<span style="color:#e6db74">&#39;senha&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">test_password</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byId</span>(<span style="color:#e6db74">&#39;login&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">submit</span>();
+
+    <span style="color:#75715e">/* Redirect to home, skipping Tela Favorita */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">tela_url</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/navegacao&#39;</span>);
+
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">teste_url</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/navegacao&#39;</span>, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>());
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertPageContains</span>(<span style="color:#e6db74">&#39;AMBIENTE&#39;</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertPageContains</span>(<span style="color:#e6db74">&#39;NAVEGAR&#39;</span>);
   }
 
-  function checkShow() {
-    /* Do the same check for button A -&gt; ALTERAR */
-    if ($this-&gt;checkButtonByText(array(&#39;A&#39;, &#39;V&#39;))) {
-      $this-&gt;checkButtonByText(array(&#39;SALVAR&#39;, &#39;GRAVAR&#39;));
+  <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">   * Default tests for a page
+</span><span style="color:#e6db74">   *
+</span><span style="color:#e6db74">   * Check for Call Stack
+</span><span style="color:#e6db74">   * Test button INSERIR
+</span><span style="color:#e6db74">   * Test button VISUALIZAR
+</span><span style="color:#e6db74">   */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">defaultPageTests</span>() {
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">closeOpenedAlert</span>();
+    $url <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>();
+    <span style="color:#75715e">/* Check if main page does not have Call Stack */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertPageDoesNotContain</span>(<span style="color:#e6db74">&#34;Call Stack&#34;</span>);
+
+    <span style="color:#75715e">/* Click on button INSERIR, if exists, and check if does not have Call Stack */</span>
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">checkButtonByText</span>(<span style="color:#e6db74">&#39;INSERIR&#39;</span>, $url);
+
+    <span style="color:#75715e">/* Do the same check for button BUSCAR */</span>
+    <span style="color:#66d9ef">if</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">checkButtonByText</span>(<span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;BUSCAR&#39;</span>, <span style="color:#e6db74">&#39;VISUALIZAR&#39;</span>))) {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">checkShow</span>();
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>($url);
+    }
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">checkShow</span>();
+  }
+
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkShow</span>() {
+    <span style="color:#75715e">/* Do the same check for button A -&gt; ALTERAR */</span>
+    <span style="color:#66d9ef">if</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">checkButtonByText</span>(<span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;V&#39;</span>))) {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">checkButtonByText</span>(<span style="color:#66d9ef">array</span>(<span style="color:#e6db74">&#39;SALVAR&#39;</span>, <span style="color:#e6db74">&#39;GRAVAR&#39;</span>));
     }
   }
 
-  /* Close any opened alert dialog */
-  protected function closeOpenedAlert() {
-    $this-&gt;timeouts()-&gt;implicitWait(0);
-    try {
-      $this-&gt;acceptAlert();
-    } catch (Exception $e) {
-      /* Do nothing... It means that there is no alert dialog at the moment. */
+  <span style="color:#75715e">/* Close any opened alert dialog */</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">closeOpenedAlert</span>() {
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timeouts</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">implicitWait</span>(<span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">try</span> {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">acceptAlert</span>();
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
+      <span style="color:#75715e">/* Do nothing... It means that there is no alert dialog at the moment. */</span>
     }
-    $this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timeouts</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">implicitWait</span>(<span style="color:#a6e22e">self</span><span style="color:#f92672">::</span>$implicitTimeout);
   }
 
-  protected function checkButtonByText($search_texts, $back_url = false, $implicitTimeout = 0) {
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkButtonByText</span>($search_texts, $back_url <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>, $implicitTimeout <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
 
-    /* Transforma primeiro parâmetro em array de textos a serem pesquisados */
-    if (!is_array($search_texts)) {
-      $search_texts = array($search_texts);
+    <span style="color:#75715e">/* Transforma primeiro parâmetro em array de textos a serem pesquisados */</span>
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">is_array</span>($search_texts)) {
+      $search_texts <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>($search_texts);
     }
 
-    $this-&gt;closeOpenedAlert();
-    $this-&gt;timeouts()-&gt;implicitWait($implicitTimeout);
-    try {
-      /* If exists input #bloqueado or name=&#39;bloqueado&#39;, set its val to &#39;0&#39; so we can show records */
-      $this-&gt;select($this-&gt;byXPath(&#34;//*[@id = &#39;#bloqueado&#39;] | //*[@name = &#39;bloqueado&#39;]&#34;))-&gt;selectOptionByValue(&#39;0&#39;);
-    } catch (Exception $e) {
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">closeOpenedAlert</span>();
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timeouts</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">implicitWait</span>($implicitTimeout);
+    <span style="color:#66d9ef">try</span> {
+      <span style="color:#75715e">/* If exists input #bloqueado or name=&#39;bloqueado&#39;, set its val to &#39;0&#39; so we can show records */</span>
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">select</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byXPath</span>(<span style="color:#e6db74">&#34;//*[@id = &#39;#bloqueado&#39;] | //*[@name = &#39;bloqueado&#39;]&#34;</span>))<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">selectOptionByValue</span>(<span style="color:#e6db74">&#39;0&#39;</span>);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
     }
 
-    $xpath_queries = array();
-    foreach ($search_texts as $text) {
-      $xpath_queries[] = &#34;//*[text()=&#39;$text&#39;]/ancestor::*[contains(@class, &#39;btn&#39;)] | //*[text()=&#39;$text&#39; and contains(@class, &#39;btn&#39;)] | //*[@value=&#39;$text&#39; and contains(@class, &#39;btn&#39;)]&#34;;
+    $xpath_queries <span style="color:#f92672">=</span> <span style="color:#66d9ef">array</span>();
+    <span style="color:#66d9ef">foreach</span> ($search_texts <span style="color:#66d9ef">as</span> $text) {
+      $xpath_queries[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;//*[text()=&#39;</span><span style="color:#e6db74">$text</span><span style="color:#e6db74">&#39;]/ancestor::*[contains(@class, &#39;btn&#39;)] | //*[text()=&#39;</span><span style="color:#e6db74">$text</span><span style="color:#e6db74">&#39; and contains(@class, &#39;btn&#39;)] | //*[@value=&#39;</span><span style="color:#e6db74">$text</span><span style="color:#e6db74">&#39; and contains(@class, &#39;btn&#39;)]&#34;</span>;
     }
-    $xpath_query = implode($xpath_queries, &#39; | &#39;);
+    $xpath_query <span style="color:#f92672">=</span> <span style="color:#a6e22e">implode</span>($xpath_queries, <span style="color:#e6db74">&#39; | &#39;</span>);
 
-    try {
-      $button = $this-&gt;byXPath($xpath_query);
-    } catch (Exception $e) {
-      /* If element not found, return test without errors */
-      $this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
-      return false;
+    <span style="color:#66d9ef">try</span> {
+      $button <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">byXPath</span>($xpath_query);
+    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
+      <span style="color:#75715e">/* If element not found, return test without errors */</span>
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timeouts</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">implicitWait</span>(<span style="color:#a6e22e">self</span><span style="color:#f92672">::</span>$implicitTimeout);
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
     }
 
-    /* If found any button that matches $search_texts */
-    $button-&gt;click();
-    $this-&gt;timeouts()-&gt;implicitWait(self::$implicitTimeout);
-    $this-&gt;closeOpenedAlert();
-    $this-&gt;assertPageDoesNotContain(&#34;Call Stack&#34;);
-    if (!empty($back_url)) {
-      $this-&gt;url($back_url);
+    <span style="color:#75715e">/* If found any button that matches $search_texts */</span>
+    $button<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">click</span>();
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timeouts</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">implicitWait</span>(<span style="color:#a6e22e">self</span><span style="color:#f92672">::</span>$implicitTimeout);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">closeOpenedAlert</span>();
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertPageDoesNotContain</span>(<span style="color:#e6db74">&#34;Call Stack&#34;</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">empty</span>($back_url)) {
+      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">url</span>($back_url);
     }
-    return true;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
   }
-}</code></pre></div>
+}
+</code></pre></div>
 
     </section>
 </article>

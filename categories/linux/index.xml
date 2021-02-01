@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on /dev/ser</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Linux on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Tue, 18 Jun 2019 21:36:28 -0300</lastBuildDate>
-    
-	<atom:link href="https://devser.com.br/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 18 Jun 2019 21:36:28 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Como gerar uma senha aleatória no terminal do Linux</title>
       <link>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</link>
@@ -19,7 +15,7 @@
       <guid>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</guid>
       <description>Gerar uma senha aleatória no terminal do Linux não é só possível, como altamente recomendado, pois assim você garante que a senha gerada, em nenhum momento, passe pelas mãos de terceiros.
 Execute o comando abaixo no terminal:
-cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32  Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:
+cat /dev/random | stdbuf -o0 tr -cd &#39;[:graph:]&#39; | stdbuf -o0 head -c 32 Se você quiser entender melhor o que significa cada parte do comando, assista o vídeo a seguir:
   </description>
     </item>
     

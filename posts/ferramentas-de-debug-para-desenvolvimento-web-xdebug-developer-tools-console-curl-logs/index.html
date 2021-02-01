@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -28,19 +28,16 @@ Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas dispon
 OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas muito disso pode ser reaproveitado em outros ambientes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/" />
-<meta property="article:published_time" content="2017-02-21T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-02-21T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2017-02-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-02-21T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs">
 <meta itemprop="description" content="Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C&#43;&#43;, Java, .NET, etc
 Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.
 OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas muito disso pode ser reaproveitado em outros ambientes.">
-
-
-<meta itemprop="datePublished" content="2017-02-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-02-21T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2017-02-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-02-21T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1004">
 
 
@@ -121,144 +118,85 @@ OBS - A partir de agora, assumo um ambiente Linux &#43; Apache &#43; PHP, mas mu
         </h2>
     </header>
     <section id="post-body">
-        
-
-<p>Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc</p>
-
+        <p>Quem migra do desenvolvimento Desktop para o desenvolvimento Web com PHP, usualmente sente falta das ferramentas de debug disponíveis nas IDEs de C++, Java, .NET, etc</p>
 <p>Dessa forma, abordarei neste artigo uma visão geral sobre as ferramentas disponíveis para os desenvolvedores web, e em quais circustâncias cada uma delas pode ser útil.</p>
-
 <p>OBS - A partir de agora, assumo um ambiente Linux + Apache + PHP, mas muito disso pode ser reaproveitado em outros ambientes.</p>
-
-<h1 id="logs-do-apache-php">Logs do Apache + PHP</h1>
-
+<h1 id="logs-do-apache--php">Logs do Apache + PHP</h1>
 <p>Logs do Apache e do PHP são seus melhores amigos, já que eles gravam de forma definitiva todos os erros que possam ter estourado em seu código, independentemente da página a ser testada emitir um redirect para outra página, por exemplo.</p>
-
 <h2 id="logs-do-apache">Logs do Apache</h2>
-
 <p>Os logs do Apache2 estão ativados por padrão, e ficam armazenados nos seguintes caminhos:</p>
-
 <ul>
 <li>/var/log/apache2/error.log</li>
 <li>/var/log/apache2/access.log</li>
 <li>/var/log/apache2/other_vhosts_access.log</li>
 </ul>
-
 <p>Como normalmente utilizamos VirtualHosts dentro do Apache, alguns dos arquivos anteriores estarão vazios, sendo substituídos pelos caminhos de logs configurados no próprio arquivo de configuração do VirtualHost, conforme exemplos de diretivas a seguir:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#75715e"># File: /etc/apache2/sites-enabled/my_virtual_host.conf</span>
 ServerName myvirtualhost
 ErrorLog <span style="color:#e6db74">/var/www/my_virtual_host/log/error.log</span>
 CustomLog <span style="color:#e6db74">/var/www/my_virtual_host/log/access.log</span> combined
  ...</code></pre></div>
-
 <h2 id="logs-do-php"> Logs do PHP</h2>
-
 <p>A maneira mais fácil de investigar o seu ambiente PHP é criar um novo arquivo chamado <strong>phpinfo.php</strong> com o seguinte conteúdo e colocá-lo no diretório público de seu VirtualHost.</p>
-
-<p>Abrindo a url <strong><a href="http://myvirtualhost/phpinfo.php">http://myvirtualhost/phpinfo.php</a></strong> (ou outra URL, conforme sua configuração de VirtualHost e também do arquivo /etc/hosts), teremos acesso a todas as diretivas de configuração do PHP. As que nos interessam, neste instante, são as seguintes:</p>
-
+<p>Abrindo a url <strong>http://myvirtualhost/phpinfo.php</strong> (ou outra URL, conforme sua configuração de VirtualHost e também do arquivo /etc/hosts), teremos acesso a todas as diretivas de configuração do PHP. As que nos interessam, neste instante, são as seguintes:</p>
 <ul>
 <li>Loaded Configuration File: /etc/php/5.6/apache2/php.ini</li>
 <li>log_errors: true</li>
 <li>error_reporting: 32767</li>
 <li>error_log: no value</li>
 </ul>
-
 <p>Informações detalhadas sobre as diretivas acima podem ser obtidas no manual do PHP: <a href="http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log">http://php.net/manual/pt_BR/errorfunc.configuration.php#ini.error-log</a> A parte importante é que os logs de erros estão ativados, e que tudo (incluindo NOTICES) serão exibidas. O fato de error_log ser <strong>null</strong> implica que os logs do PHP vão ser redirecionados para os logs de erro do Apache2. Simples, assim.</p>
-
 <h2 id="visualização-de-logs">Visualização de logs</h2>
-
 <p>Algumas ferramentas que estão disponíveis em qualquer máquina Linux são ótimas para visualizar logs.</p>
-
 <h3 id="tail"> Tail</h3>
-
 <p>O programa <strong>tail</strong>, quando chamado sem nenhum parâmetro exceto o nome do arquivo, apenas exibe as últimas linhas do log.</p>
-
 <p>Exemplo:</p>
-
 <p><code>tail /var/www/my_virtual_host/log/error.log</code></p>
-
 <p>Tudo fica mais interessante ao se adicionar o parâmetro <strong>-f</strong> ao comando tail, pois dessa forma, o terminal se tornará um monitor em tempo real do log, isto é, novos registros serão exibidos instantaneamente.</p>
-
 <p><code>tail -f /var/www/my_virtual_host/log/error.log</code></p>
-
 <h3 id="vim">Vim</h3>
-
 <p>Os programas <strong>vim</strong> ou mesmo o <strong>vi</strong> também são úteis para navegar em logs, principalmente aqueles com dezenas de megabytes ou gigabytes, já que eles só armazenam na memória parte do conteúdo do arquivo, ao contrário de outros editores que tentam ler todo o conteúdo do arquivo para a memória logo ao carregar o arquivo.</p>
-
 <p>Principais comandos para navegação nos logs:</p>
-
 <ul>
 <li><strong>G</strong> -&gt; Ir para o final do log</li>
 <li><strong>gg</strong> -&gt; Ir para o início do log</li>
 <li><strong>/</strong> -&gt; Buscar por uma palavra</li>
 <li><strong>n</strong> -&gt; Ir para próxima ocorrência da busca</li>
 </ul>
-
 <h3 id="colortail">Colortail</h3>
-
 <p>Uma versão estendida do <strong>tail</strong>, que conta com output colorido conforme regex que pode ser customizado por você mesmo.</p>
-
 <p>Este programa pode ser instalado no Debian Jessie com o seguinte comando:</p>
-
 <p><code>sudo apt-get install colortail</code></p>
-
 <p>Link para o meu regex personalizado <strong>(/etc/colortail/conf.colortail)</strong>: <a href="https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e">https://gist.github.com/rpagliuca/75f675869cf8e1ceede5c1f17edfc24e</a></p>
-
-<p>Usando o regex personalizado, seu log ficará parecido com esse: <a href="https://devser.com.br/images/Screenshot-from-2017-02-24-081510.png"><img src="https://devser.com.br/images/Screenshot-from-2017-02-24-081510.png" alt="" title="Colortail com regex personalizado para erros do PHP" /></a></p>
-
+<p>Usando o regex personalizado, seu log ficará parecido com esse: <a href="https://devser.com.br/images/Screenshot-from-2017-02-24-081510.png"><img src="https://devser.com.br/images/Screenshot-from-2017-02-24-081510.png" alt="" title="Colortail com regex personalizado para erros do PHP"></a></p>
 <h1 id="developer-tools-console">Developer Tools Console</h1>
-
 <p>Principalmente utilizado para debugar Javascript, Ajax, e HTTP Requests. Está disponível tanto no navegador Chrome quanto no Firefox apertando a tecla F12. Vou comentar algumas funcionalidades importantes do Developer Tools do navegador Chrome, mas as ferramentas do Firefox são similiares.</p>
-
 <p>As funcionalides a seguir estão todas contidas na aba <strong>Network/Rede</strong>:</p>
-
 <h2 id="1-configuração">1) Configuração:</h2>
-
 <p>1.1) <strong>Filter</strong>: Permite definir quais tipos de request serão listados na aba Network. Normalmente pode não ser interessante logar requests para arquivos JS, CSS ou Img, por exemplo.</p>
-
 <p>1.2) <strong>Preserve Log</strong>: Útil para páginas com redirect, ou com ajax seguido de submissão de form. Preserva o log de todos os request, até que sejam manualmente apagados.</p>
-
 <p>1.3) <strong>Disable Cache</strong>: Desabilita cache de imagens e javascript, crucial para debug de arquivos recém alterados.</p>
-
 <h2 id="2-requests">2) Requests:</h2>
-
 <p>2.1) <strong>Initiator</strong>: Informação sobre quem disparou o request. Pode ter sido um form da página, uma linha de javascript, etc. No caso de javascript, é apresentado um <strong>backtrace</strong> do disparo. Essa informação é fundamental para debugar ajax.</p>
-
 <p>2.2) <strong>Headers</strong> (Response Headers/Request Headers): Permite visualizar se o formulário ou ajax a ser testado está enviando e recebendo corretamente as informações esperadas, via GET ou POST.</p>
-
 <p>2.3) <strong>Cookies</strong>: Lista todos os cookies dispníveis para o navegador a partir da URL atual. Com essa informação, é possível até inspecionar o arquivo de de sessão do PHP dentro do servidor.</p>
-
 <p>2.4) <strong>Replay XHR</strong> (para Ajax): Muito útil, mas no Chrome funciona apenas com ajax. Permite reproduzir um request qualquer. É muito útil para testar ações repetitivas, como submeter formulários. Para suprir essa falta de <strong>Replay</strong> para requests GET e POST em geral, utilizamos o item a seguir.</p>
-
 <p>2.5) <strong>Copy -&gt; Copy as cURL</strong>: Supre muito bem a falta de um <strong>Replay</strong> genérico no Chrome. Utilizando essa ação, um comando de request do tipo cURL é criado e pode ser colado diretamente no terminal. Dessa forma, ações repetitivas podem ser muito facilmente testadas.</p>
-
 <h1 id="xdebug">Xdebug</h1>
-
 <p>O Xdebug é um plugin para o PHP que possibilita debug interativo do de scripts php a partir do interpretador PHP, permitindo <strong>breakpoints</strong>, <strong>step over</strong>, <strong>step into</strong>, visualização de valores de variáveis, etc.</p>
-
 <p>No Debian Jessie, ele pode ser instalado via repositório:</p>
-
 <p><code>apt-get install php5-xdebug</code></p>
-
-<p>As seguintes linhas devem ser adicionadas ao <strong>php.ini </strong>para permitir o modo debug via Xdebug:</p>
-
+<p>As seguintes linhas devem ser adicionadas ao **php.ini **para permitir o modo debug via Xdebug:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">xdebug.remote_enable</span><span style="color:#f92672">=</span><span style="color:#e6db74">on</span>
 <span style="color:#a6e22e">xdebug.remote_handler</span><span style="color:#f92672">=</span><span style="color:#e6db74">dbgp</span>
 <span style="color:#a6e22e">xdebug.remote_host</span><span style="color:#f92672">=</span><span style="color:#e6db74">localhost</span>
 <span style="color:#a6e22e">xdebug.remote_port</span><span style="color:#f92672">=</span><span style="color:#e6db74">9000</span>
 <span style="color:#a6e22e">xdebug.remote_log</span><span style="color:#f92672">=</span><span style="color:#e6db74">/tmp/xdebug.log</span></code></pre></div>
-
 <p>Depois desta etapa, é necessário reiniciar o Apache:</p>
-
 <p><code>sudo service apache2 restart</code></p>
-
 <p>Acesse novamente a página <strong>phpinfo.php</strong> que você criou no início deste tutorial, para conferir se os novos parâmetros de xdebug foram lidos corretamente.</p>
-
 <p>Por último, é necessário configurar a sua IDE para aguardar conexões do Xdebug. Essa configuração depende muito da IDE, então optei por apenas encaminhar o leitor a instruções adicionais:</p>
-
 <p>Para quem utiliza o Netbeans: <a href="https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks">https://netbeans.org/kb/docs/php/debugging_pt_BR.html#howDebuggerWorks</a> <a href="https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger">https://blogs.oracle.com/netbeansphp/entry/path_mapping_in_php_debugger</a></p>
-
 <p>Para quem utiliza o Vim: <a href="https://github.com/joonty/vdebug">https://github.com/joonty/vdebug</a></p>
 
     </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Criptografia com Caos - Baptista &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -28,19 +28,16 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
  A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/criptografia-com-caos-baptista/" />
-<meta property="article:published_time" content="2012-04-01T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2012-04-01T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2012-04-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-04-01T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Criptografia com Caos - Baptista">
 <meta itemprop="description" content="Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo sistema proposto por Baptista em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.
 O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:
  A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.">
-
-
-<meta itemprop="datePublished" content="2012-04-01T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2012-04-01T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2012-04-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2012-04-01T00:00:00+00:00" />
 <meta itemprop="wordCount" content="107">
 
 
@@ -122,9 +119,7 @@ O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele p
     </header>
     <section id="post-body">
         <p>Implementei recentemente o meu primeiro sistema de criptografia simétrica utilizando caos. A fim de experimentação, optei pelo <a href="https://encrypted.google.com/url?sa=t&amp;rct=j&amp;q=baptista%20cyrptography%20with%20chaos&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CCIQFjAA&amp;url=http%3A%2F%2Fadsabs.harvard.edu%2Fabs%2F1998PhLA..240...50B&amp;ei=2_yKUNqCEYGk8ASdzIC4CA&amp;usg=AFQjCNFc2ZHwJXBLhtRdMD5dHieyCo3FLA">sistema proposto por Baptista</a> em 1998. Ou seja, fiz a implementação computacional de um modelo de criptografia descrito por ele em seu artigo.</p>
-
 <p>O sistema de Baptista foi escolhido devido a sua extrema simplicidade, mas ele peca nos seguintes quesitos:</p>
-
 <ol>
 <li>A mensagem cifrada é bem maior do que a mensagem pura, pois cada caractere (1 byte) será representado após a cifragem por um número inteiro maior que 256, ou seja, com no mínimo 2 bytes.</li>
 <li>Alguns autores apontaram falhas de segurança ao se utilizar o mapa logístico como sistema caótico.</li>

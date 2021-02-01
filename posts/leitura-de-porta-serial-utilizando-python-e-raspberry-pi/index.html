@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Leitura de porta serial utilizando Python e Raspberry PI &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -30,9 +30,8 @@ Você quer monitorar, em tempo real, a balança e publicar o valor medido, conti
 Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/" />
-<meta property="article:published_time" content="2018-03-02T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-03-02T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2018-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-03-02T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Leitura de porta serial utilizando Python e Raspberry PI">
@@ -41,10 +40,8 @@ Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspb
 Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.
 Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?
 Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada.">
-
-
-<meta itemprop="datePublished" content="2018-03-02T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-03-02T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2018-03-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-03-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="2023">
 
 
@@ -127,78 +124,40 @@ Passo 1 – Obtenha a documentação do fabricante Sempre que você deseja se co
         </h2>
     </header>
     <section id="post-body">
-        
-
-<p>(Co-publicado em <a href="http://www.timeraposa.com.br/2018/03/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/">Time Raposa</a>)</p>
-
+        <p>(Co-publicado em <a href="http://www.timeraposa.com.br/2018/03/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/">Time Raposa</a>)</p>
 <p>Hoje vou explicar como fazer a leitura de porta serial utilizando Python e Raspberry PI.</p>
-
 <p>Suponhamos que você trabalhe para um cliente que possui uma balança Toledo 820J/XIV, conectada a um display Toledo 8540, ambos fabricados em abril de 2010.</p>
-
 <p>Você quer monitorar, em tempo real, a balança e publicar o valor medido, continuamente, em um webservice. Como fazer isso?</p>
-
-<h2 id="passo-1-obtenha-a-documentação-do-fabricante">Passo 1 – Obtenha a documentação do fabricante</h2>
-
+<h2 id="passo-1--obtenha-a-documentação-do-fabricante">Passo 1 – Obtenha a documentação do fabricante</h2>
 <p>Sempre que você deseja se comunicar com um produto de terceiros (seja ele um hardware, ou até mesmo um webservice), o primeiro passo é obter a documentação do fabricante, para entender como a comunicação deve ser realizada.</p>
-
 <p>Estudando os manuais dos dois produtos (balança Toledo 820J/XIV e display Toledo 8540), você irá descobrir que o fabricante disponibilizou uma porta serial RS232 no display Toledo 8540 que publica, em uma taxa de 4 a 5 vezes por segundo, o valor medido no display.</p>
-
 <p><a href="https://devser.com.br/downloads/protocolo-toledo-8540.pdf">Faça download da documentação do display Toledo 8540</a></p>
-
 <p>O manual pode parecer confuso, mas, com certo esforço e paciência, é possível identificar os principais pontos da comunicação.</p>
-
-<h2 id="passo-2-obtenha-um-emulador-do-hardware">Passo 2 – Obtenha um emulador do hardware</h2>
-
+<h2 id="passo-2--obtenha-um-emulador-do-hardware">Passo 2 – Obtenha um emulador do hardware</h2>
 <p>Este passo é opcional, mas com certeza ajuda muito durante o desenvolvimento quando você não tem um hardware real à sua disposição para os testes iniciais.</p>
-
 <p>Pesquise se existe um emulador oficial produzido pelo próprio fabricante, ou então se alguma alma caridosa implementou e disponibilizou algum emulador extra-oficial em algum fórum especializado, ou blog.</p>
-
 <p>No caso do display Toledo 8540, após 1 ou 2 horas de pesquisa, não encontrei nenhum emulador para o meu sistema operacional Linux (distribuição Debian). Encontrei alguns links somente para Windows.</p>
-
 <p>Sendo assim, pulei esta etapa e prossegui para o próximo passo.</p>
-
-<h2 id="passo-3-emule-uma-porta-serial-com-o-programa-socat-do-linux">Passo 3 – Emule uma porta serial com o programa <code>socat</code>do Linux</h2>
-
+<h2 id="passo-3--emule-uma-porta-serial-com-o-programa-socatdo-linux">Passo 3 – Emule uma porta serial com o programa <code>socat</code>do Linux</h2>
 <p>O programa <code>socat</code>do Linux permite criar portas seriais virtuais (emuladas). Elas podem ser muito úteis para fazer testes rápidos.</p>
-
 <p>Exemplo de execução de comando:</p>
-
 <pre><code>socat -d -d pty,raw,echo=0 pty,raw,echo=0
-</code></pre>
-
-<p>Na minha máquina, o comando acima imprimiu a seguinte saída (pode variar para o seu caso):</p>
-
+</code></pre><p>Na minha máquina, o comando acima imprimiu a seguinte saída (pode variar para o seu caso):</p>
 <pre><code>2018/03/02 14:14:51 socat[27691] N PTY is /dev/pts/29
 2018/03/02 14:14:51 socat[27691] N PTY is /dev/pts/30
 2018/03/02 14:14:51 socat[27691] N starting data transfer loop with FDs [5,5] and [7,7]
-</code></pre>
-
-<h2 id="passo-4-explore-a-comunicação-serial-utilizando-o-programa-screen-do-linux">Passo 4 – Explore a comunicação serial utilizando o programa <em>screen</em> do Linux</h2>
-
+</code></pre><h2 id="passo-4--explore-a-comunicação-serial-utilizando-o-programa-screen-do-linux">Passo 4 – Explore a comunicação serial utilizando o programa <em>screen</em> do Linux</h2>
 <p>O programa <code>screen</code> do Linux, entre outras coisas, é capaz de ler continuamente de uma porta serial e imprimir no terminal tudo o que está sendo lido.</p>
-
 <p>É uma ótima ferramenta exploratória.</p>
-
 <p>Por exemplo, para conectarmos o screen às portas virtuais criadas no passo anterior, executamos em uma janela do terminal o comando a seguir:</p>
-
 <pre><code>screen /dev/pts/29
-</code></pre>
-
-<p>Em outra janela do terminal, conectamos à segunda porta (ver número da porta conforme saída do comando <code>socat</code>)</p>
-
+</code></pre><p>Em outra janela do terminal, conectamos à segunda porta (ver número da porta conforme saída do comando <code>socat</code>)</p>
 <pre><code>screen /dev/pts/30
-</code></pre>
-
-<p>Agora, abra as janelas 1 e 2 do terminal lado a lado. Clique na janela 1, e digite alguns caracteres. Surpresa! Os caracteres digitados serão imprimidos na janela 2.</p>
-
+</code></pre><p>Agora, abra as janelas 1 e 2 do terminal lado a lado. Clique na janela 1, e digite alguns caracteres. Surpresa! Os caracteres digitados serão imprimidos na janela 2.</p>
 <p>Isso acontece porque o programa <code>socat</code> simulou uma conexão serial RS232. Ao digitar caracteres em um lado da conexão, você na verdade está enviando um “sinal elétrico” para o outro lado do cabo.</p>
-
-<h2 id="passo-5-programa-em-python-de-leitura-serial">Passo 5 – Programa em Python de leitura serial</h2>
-
+<h2 id="passo-5--programa-em-python-de-leitura-serial">Passo 5 – Programa em Python de leitura serial</h2>
 <p>Após algumas análises exploratórias do seu hardware e da comunicação serial, você está pronto para criar um programa em Python para fazer a leitura.</p>
-
 <p>Eu utilizei o Python 2.7, mas provavelmente você não terá dificuldades em migrar esse script para Python 3.</p>
-
 <pre><code># Arquivo config.py
 # Serial port (COM port)
 serial_port = '/dev/ttyUSB0' 
@@ -217,9 +176,7 @@ unit = 'kg'
 
 # Interval, in seconds, for updating data into the webservice
 webservice_publication_interval = 1 
-</code></pre>
-
-<pre><code># Arquivo reader.py
+</code></pre><pre><code># Arquivo reader.py
 
 import serial
 import sys
@@ -238,34 +195,20 @@ while True:
         formattedLine = &quot;:&quot;.join(&quot;{:02x}&quot;.format(ord(c)) for c in line)
         print formattedLine
         sys.stdout.flush()
-</code></pre>
-
-<p>O que o programa acima faz é muito simples, mas já é um grande passo rumo ao nosso objetivo.</p>
-
+</code></pre><p>O que o programa acima faz é muito simples, mas já é um grande passo rumo ao nosso objetivo.</p>
 <p>O programa simplesmente define um loop infinito, lendo tudo que chega por meio da porta /dev/ttyUSB0, convertendo para hexadecimal, e imprimindo no terminal, permitindo monitorar com mais qualidade tudo que o hardware (ou emulador) enviou via porta serial, já que nem sempre serão enviados somente dados correspondentes às letras da tabela ASCII.</p>
-
 <p>Agora podemos testar o nosso programa utilizando a conexão serial criada com o comando <code>socat</code> anteriormente. Para isso, temos que fazer as seguintes modificações:</p>
-
 <ol>
 <li>Alterar a porta “/dev/ttyUSB0″ para a porta virtual. No meu caso, “/dev/pts/29″.</li>
 <li>Importante! Precisamos comentar os parâmetros byteserial=… e parity=… do script acima, pois esses dois parâmetros não funcionam com a porta serial emulada. Entretanto, quando formos utilizar o hardware real, devemos reabilitar esses 2 parâmetros, respeitando as especificações do hardware.</li>
 </ol>
-
 <p>Com o programa do passo anterior, podemos gravar, por alguns minutos, a leitura real proveniente do hardware. Verifique se a porta “/dev/ttyUSB0″ realmente se refere ao hardware do seu display Toledo 8540, e em seguida rode o programa usando o python, redirecionando o output para um arquivo de texto.</p>
-
 <pre><code>python reader.py &gt; serial_output
-</code></pre>
-
-<p>Deixe o programa rodando por alguns minutos. O arquivo /tmp/serial_output será util para você testar o restante do programa sem depender do hardware real. O que estamos fazendo é gravar um arquivo de “replay”, assim podemos emular fielmente o hardware real, sempre que precisarmos.</p>
-
+</code></pre><p>Deixe o programa rodando por alguns minutos. O arquivo /tmp/serial_output será util para você testar o restante do programa sem depender do hardware real. O que estamos fazendo é gravar um arquivo de “replay”, assim podemos emular fielmente o hardware real, sempre que precisarmos.</p>
 <p>Se você não tem um hardware real disponível para gravar esse arquivo de “replay”, <a href="https://devser.com.br/downloads/serial_output.txt">baixe aqui o arquivo serial_output.txt que eu gerei com o meu hardware</a>.</p>
-
-<h2 id="passo-7-programa-em-python-para-traduzir-a-saída-hexadecimal-gerada-pelo-programa-anterior">Passo 7 – Programa em python para traduzir a saída hexadecimal (gerada pelo programa anterior)</h2>
-
+<h2 id="passo-7--programa-em-python-para-traduzir-a-saída-hexadecimal-gerada-pelo-programa-anterior">Passo 7 – Programa em python para traduzir a saída hexadecimal (gerada pelo programa anterior)</h2>
 <p>Agora que já temos um arquivo de replay (/tmp/serial_output), podemos emular mais fielmente os dados enviados pelo hardware. Usaremos esse arquivo para testar o restante do nosso programa.</p>
-
 <p>O próximo programa que criaremos será responsável por traduzir a saída hexadecimal para uma saída legível para humanos.</p>
-
 <pre><code># Arquivo processor.py
 
 import sys
@@ -302,28 +245,15 @@ while 1:
     if (formattedWeight):
         print &quot;%s ::: %s ::: %s&quot; % (time.time(), formattedWeight, config.unit)
         sys.stdout.flush()
-</code></pre>
-
-<p>O programa acima lê, linha a linha, o output gerado pelo programa 1 (reader.py), e converte para o formato desejado. Além disso, o método validate() confere que o primeiro byte da linha é 02, e que o byte da posição 17 é 0d. Esses dois bytes estão especificados na documentação obtida no passo 1, e nos permitem descartar qualquer dado com ruído que possa ter sido recebido pela conexão serial.</p>
-
+</code></pre><p>O programa acima lê, linha a linha, o output gerado pelo programa 1 (reader.py), e converte para o formato desejado. Além disso, o método validate() confere que o primeiro byte da linha é 02, e que o byte da posição 17 é 0d. Esses dois bytes estão especificados na documentação obtida no passo 1, e nos permitem descartar qualquer dado com ruído que possa ter sido recebido pela conexão serial.</p>
 <p>Para testar esse programa, vamos imprimir o conteúdo do arquivo de replay de dados (/tmp/serial_output) e fazer um pipe para o programa tradutor.</p>
-
 <pre><code>cat /tmp/serial_output | python processor.py
-</code></pre>
-
-<p>Ao rodar o comando acima, você deverá visualizar a seguinte saída em seu terminal:</p>
-
-<p><img src="https://devser.com.br/images/python-leitura-serial-1.png" alt="" /></p>
-
+</code></pre><p>Ao rodar o comando acima, você deverá visualizar a seguinte saída em seu terminal:</p>
+<p><img src="https://devser.com.br/images/python-leitura-serial-1.png" alt=""></p>
 <p>Para rodar junto ao harware real, o comando é similar:</p>
-
 <pre><code>python reader.py | python processor.py
-</code></pre>
-
-<h2 id="passo-8-publicar-os-dados-traduzidos-via-webservice">Passo 8 – Publicar os dados traduzidos via webservice</h2>
-
+</code></pre><h2 id="passo-8--publicar-os-dados-traduzidos-via-webservice">Passo 8 – Publicar os dados traduzidos via webservice</h2>
 <p>Este passo é opcional, e vai depender da necessidade do seu cliente. No meu caso, optei por publicar via webservice, a cada 1 segundo, o valor lido da balança.</p>
-
 <pre><code># Arquivo publisher.py
 
 import sys
@@ -386,38 +316,20 @@ while 1:
     if data:
         pprint.pprint(data)
         publish(data)
-</code></pre>
-
-<p>Para testar o último programa, podemos usar os dados de replay, ou então o hardware real.</p>
-
-<h3 id="opção-1-arquivo-de-replay">Opção 1 – Arquivo de replay</h3>
-
+</code></pre><p>Para testar o último programa, podemos usar os dados de replay, ou então o hardware real.</p>
+<h3 id="opção-1--arquivo-de-replay">Opção 1 – Arquivo de replay</h3>
 <pre><code>cat /tmp/serial_output | python processor.py | python publisher.py
-</code></pre>
-
-<h3 id="opção-2-hardware-real">Opção 2 - Hardware real</h3>
-
+</code></pre><h3 id="opção-2---hardware-real">Opção 2 - Hardware real</h3>
 <p>Para rodar junto ao harware real, o comando é similar:</p>
-
 <pre><code>python reader.py | python processor.py | python publisher.py
-</code></pre>
-
-<p>Se tudo deu certo, você terá uma leitura contínua (com taxa de 1 publicação por segundo) sendo publicada em seu webservice.</p>
-
-<h2 id="passo-9-testar-software-para-o-raspberry-pi">Passo 9 – Testar software para o Raspberry PI</h2>
-
+</code></pre><p>Se tudo deu certo, você terá uma leitura contínua (com taxa de 1 publicação por segundo) sendo publicada em seu webservice.</p>
+<h2 id="passo-9--testar-software-para-o-raspberry-pi">Passo 9 – Testar software para o Raspberry PI</h2>
 <p>Felizmente, o Raspberry PI utiliza a distribuição Raspbian, baseada no Debian. Portanto, não precisei fazer nenhum tipo de adaptação para que o meu programa que estava rodando no meu notebook com Debian 9 funcionasse sem problemas no Raspberry PI.</p>
-
 <p>Tive apenas que instalar algumas dependências que não são instaladas por padrão, como por exemplo o python. Mas nada que alguns apt-get install não resolvessem rapidamente.</p>
-
 <p>Para conectar o display Toledo 8540 no Raspberry PI, utilizei um cabo conversor RS232/USB da marca Digitus, com chipset FT232RL. Enfim, qualquer conversor comprado no Mercado Livre deve funcionar bem também.</p>
-
-<h2 id="passo-10-configurar-programa-para-rodar-sempre-que-o-raspberry-for-conectado-à-tomada">Passo 10 – Configurar programa para rodar sempre que o Raspberry for conectado à tomada</h2>
-
+<h2 id="passo-10--configurar-programa-para-rodar-sempre-que-o-raspberry-for-conectado-à-tomada">Passo 10 – Configurar programa para rodar sempre que o Raspberry for conectado à tomada</h2>
 <p>Essa etapa também é muito simples, já que o próprio Linux possui esse recurso.</p>
-
 <p>Precisamos apenas editar o arquivo /etc/rc.local e incluir o comando que execute os nossos programas. No meu caso, o arquivo /etc/rc.local ficou assim:</p>
-
 <pre><code>#!/bin/sh -e
 #
 # rc.local
@@ -444,28 +356,17 @@ service ssh start
 cd /home/pi/balanca/ &amp;&amp; (python reader.py | python processor.py | python publisher.py) &gt;&gt; /dev/null 2&gt;&amp;1 &amp;
 
 exit 0
-</code></pre>
-
-<p>Sendo que as únicas alterações que fiz nesse arquivo foram inicializar o servidor SSH (que antes eu instalei com apt-get install), e adicionei a linha que executa o nosso programa em python.</p>
-
-<h2 id="passo-11-instalação-do-watchdog">Passo 11 – Instalação do watchdog</h2>
-
+</code></pre><p>Sendo que as únicas alterações que fiz nesse arquivo foram inicializar o servidor SSH (que antes eu instalei com apt-get install), e adicionei a linha que executa o nosso programa em python.</p>
+<h2 id="passo-11--instalação-do-watchdog">Passo 11 – Instalação do watchdog</h2>
 <p>Nosso projeto já está funcionando muito bem, mas podemos dar mais robustez ao nosso sistema instalando e configurando o programa <code>watchdog</code> do Linux. Não detalherei neste artigo como fazer isso, mas recomendo que você tente estudar e configurar esse programa por sua própria conta.</p>
-
 <p>Com ele, podemos definir alguns critérios de saúde do sistema operacional do nosso Raspberry PI. Quando qualquer desses critérios não estiver sendo respeitado, o aplicativo irá automaticamente rebootar a placa. Assim, não precisamos nos preocupar (tanto!) com desperdício de memória RAM, perda de conexão de rede, CPU load altíssimo, etc.</p>
-
-<p><strong><em>Dica bônus</em></strong> - Armazene seus dados no banco NoSQL AWS DynamoDB
+<p><em><strong>Dica bônus</strong></em> - Armazene seus dados no banco NoSQL AWS DynamoDB
 Você deve ter percebido que, 1 vez por segundo, toda nova leitura da balança é publicada no webservice, mesmo quando o peso é 0kg. Isso pode parecer desperdício à primeira vista, mas é muito útil pois nos passa uma garantia maior de que o sistema está funcionando a todo instante, mesmo quando não há peso na balança.</p>
-
 <p>Mesmo com essa importante vantagem, não podemos ignorar o fato de que essa escolha acarreta um alto custo de armazenamento. Sendo assim, aproveito aqui para oferecer uma dica adicional: o sistema AWS DynamoDB permite armazenar até 25GB de dados gratuitamente, o que estimei que será suficiente para gravar um registro por segundo por mais de 8 anos.</p>
-
 <p>Sendo assim, optei por configurar o webservice para armazenar os meus dados no DynamoDB, e recomendo que você também estude essa opção. Para mais informações, acesse <a href="https://aws.amazon.com/pt/dynamodb/">https://aws.amazon.com/pt/dynamodb/</a>.</p>
-
 <h2 id="até-a-próxima">Até a próxima!</h2>
-
 <p>Pronto, se você chegou até aqui, tem um projeto totalmente funcional que faz a leitura contínua do valor medido pelo display Toledo 8540.
 Em caso de dúvidas, me avise pelos comentários!</p>
-
 <p>Até mais.</p>
 
     </section>

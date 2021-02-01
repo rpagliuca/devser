@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>Criando plugins para a biblioteca de templates Smarty do PHP &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -24,21 +24,20 @@
 
 <meta property="og:title" content="Criando plugins para a biblioteca de templates Smarty do PHP" />
 <meta property="og:description" content="Introdução ao Smarty A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.
-O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:" />
+O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;body&gt; &lt;h1&gt;{$titulo}&lt;/h1&gt; &lt;p&gt;Olá, {$nome}&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; Ao renderizar o template acima, o Smarty irá substituir as tags {$titulo} e {$nome} para os valores correspondentes designados com as chamadas aos métodos $smarty-&gt;assign(‘titulo’, …) a partir do controller." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/" />
-<meta property="article:published_time" content="2017-03-16T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-03-16T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2017-03-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-16T00:00:00+00:00" />
 
 
 <meta itemprop="name" content="Criando plugins para a biblioteca de templates Smarty do PHP">
 <meta itemprop="description" content="Introdução ao Smarty A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.
-O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:">
-
-
-<meta itemprop="datePublished" content="2017-03-16T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-03-16T00:00:00&#43;00:00" />
+O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;body&gt; &lt;h1&gt;{$titulo}&lt;/h1&gt; &lt;p&gt;Olá, {$nome}&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; Ao renderizar o template acima, o Smarty irá substituir as tags {$titulo} e {$nome} para os valores correspondentes designados com as chamadas aos métodos $smarty-&gt;assign(‘titulo’, …) a partir do controller.">
+<meta itemprop="datePublished" content="2017-03-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-03-16T00:00:00+00:00" />
 <meta itemprop="wordCount" content="374">
 
 
@@ -48,7 +47,8 @@ O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetand
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Criando plugins para a biblioteca de templates Smarty do PHP"/>
 <meta name="twitter:description" content="Introdução ao Smarty A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.
-O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:"/>
+O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;body&gt; &lt;h1&gt;{$titulo}&lt;/h1&gt; &lt;p&gt;Olá, {$nome}&lt;/p&gt; &lt;/body&gt; &lt;/html&gt; Ao renderizar o template acima, o Smarty irá substituir as tags {$titulo} e {$nome} para os valores correspondentes designados com as chamadas aos métodos $smarty-&gt;assign(‘titulo’, …) a partir do controller."/>
 
 
     </head>
@@ -118,14 +118,9 @@ O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetand
         </h2>
     </header>
     <section id="post-body">
-        
-
-<h1 id="introdução-ao-smarty">Introdução ao Smarty</h1>
-
+        <h1 id="introdução-ao-smarty">Introdução ao Smarty</h1>
 <p>A biblioteca de template Smarty é mais uma ferramenta para auxiliar a separação de camadas de uma aplicação PHP. Mais especificamente, essa biblioteca normalmente é utilizada para fazer a separação entre arquivos das camadas Controller e View.</p>
-
 <p>O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetando variáveis PHP e retornando o conteúdo renderizado. Um arquivo simples de template do Smarty tem a seguinte forma:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">body</span>&gt;
@@ -133,60 +128,48 @@ O Smarty processa arquivos de template, tipicamente com extensão .tpl, injetand
 &lt;<span style="color:#f92672">p</span>&gt;Olá, {$nome}&lt;/<span style="color:#f92672">p</span>&gt;
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
-
 <p>Ao renderizar o template acima, o Smarty irá substituir as tags {$titulo} e {$nome} para os valores correspondentes designados com as chamadas aos métodos $smarty-&gt;assign(‘titulo’, …) a partir do controller.</p>
-
 <p>Reaproveitando templates
 Muitas vezes nos vemos repetindo muitas e muitas vezes o mesmo trecho de código HTML. Para casos mais simples, podemos dividir um único arquivo de template em vários diferentes, assim poderemos reaproveitar o código. Por exemplo:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{* Template header.tpl *}
 <span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
 &lt;<span style="color:#f92672">body</span>&gt;</code></pre></div>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{* Template footer.tpl *}
 &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{* Template principal *}
 {include file=&#34;header.tpl&#34;}
 &lt;<span style="color:#f92672">h1</span>&gt;{$titulo}&lt;/<span style="color:#f92672">h1</span>&gt;
 &lt;<span style="color:#f92672">p</span>&gt;Olá, {$nome}&lt;/<span style="color:#f92672">p</span>&gt;
 {include file=&#34;footer.tpl&#34;}</code></pre></div>
-
 <h1 id="por-que-plugins">Por que plugins?</h1>
-
 <p>Em determinadas ocasições, a tag <code>{include file=&quot;&quot;}</code> pode não ser suficiente para renderizar algum conteúdo dinamicamente. Nesses casos, podemos lançar da mão de plugins, isto é, extensões para o Smarty.</p>
-
 <p>No exemplo acima, poderíamos criar um plugin implementando uma nova tag chamada <code>{header}</code> e outra chamada <code>{footer}</code>,
 de forma que o template principal seria dado por:</p>
-
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{* Template principal *}
 {header}
 &lt;<span style="color:#f92672">h1</span>&gt;{$titulo}&lt;/<span style="color:#f92672">h1</span>&gt;
 &lt;<span style="color:#f92672">p</span>&gt;Olá, {$nome}&lt;/<span style="color:#f92672">p</span>&gt;
 {footer}</code></pre></div>
-
 <p>A conversão do header e do footer para plugins em vez de subtemplates nesse caso específico não é vantajosa, mas em casos mais complexos isso é interessante pois nos permite executar código PHP toda vez que as tags {header} e {footer} sejam incluídas no template do Smarty.</p>
-
-<p>Suponha, por exemplo, que no {header} você queira sempre exibir uma mensagem customizada de acordo com a hora do dia (“bom dia&rdquo;, “boa tarde&rdquo;, “boa noite&rdquo;). Esse é um caso simples do papel do plugin.</p>
-
+<p>Suponha, por exemplo, que no {header} você queira sempre exibir uma mensagem customizada de acordo com a hora do dia (“bom dia&quot;, “boa tarde&quot;, “boa noite&quot;). Esse é um caso simples do papel do plugin.</p>
 <h1 id="criando-um-plugin">Criando um plugin</h1>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$smarty-&gt;registerPlugin(&#39;function&#39;, &#39;header&#39;, function () {
-    $hora = date(&#39;H:i&#39;);
-    if ($hora &lt; <span style="color:#f92672">6</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
-        <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">frase </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boa noite&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
-    <span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#a6e22e">elseif</span> <span style="color:#960050;background-color:#1e0010">($</span><span style="color:#a6e22e">hora</span> <span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#a6e22e">12</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
-        <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">frase </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bom dia&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
-    <span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#a6e22e">elseif</span> <span style="color:#960050;background-color:#1e0010">($</span><span style="color:#a6e22e">hora</span> <span style="color:#960050;background-color:#1e0010">&lt;</span> <span style="color:#a6e22e">19</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">{</span>
-        <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">frase </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boa tarde&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
-    <span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#a6e22e">else</span> <span style="color:#960050;background-color:#1e0010">{</span>
-        <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">frase </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boa noite&#34;</span><span style="color:#960050;background-color:#1e0010">;</span>
-    <span style="color:#960050;background-color:#1e0010">}</span>
-    <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">smarty-</span>&gt;assign(&#39;frase&#39;, $frase);
-    return $smarty-&gt;fetch(&#39;header.tpl&#39;);
-});</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$smarty<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">registerPlugin</span>(<span style="color:#e6db74">&#39;function&#39;</span>, <span style="color:#e6db74">&#39;header&#39;</span>, <span style="color:#66d9ef">function</span> () {
+    $hora <span style="color:#f92672">=</span> <span style="color:#a6e22e">date</span>(<span style="color:#e6db74">&#39;H:i&#39;</span>);
+    <span style="color:#66d9ef">if</span> ($hora <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>) {
+        $frase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boa noite&#34;</span>;
+    } <span style="color:#66d9ef">elseif</span> ($hora <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">12</span>) {
+        $frase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bom dia&#34;</span>;
+    } <span style="color:#66d9ef">elseif</span> ($hora <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">19</span>) {
+        $frase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boa tarde&#34;</span>;
+    } <span style="color:#66d9ef">else</span> {
+        $frase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Boa noite&#34;</span>;
+    }
+    $smarty<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assign</span>(<span style="color:#e6db74">&#39;frase&#39;</span>, $frase);
+    <span style="color:#66d9ef">return</span> $smarty<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;header.tpl&#39;</span>);
+});
+</code></pre></div>
 
     </section>
 </article>

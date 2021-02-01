@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Rafael Santos">
 
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="generator" content="Hugo 0.78.1" />
 <title>GUI Isolation on Linux &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
@@ -28,20 +28,17 @@ But as of today, many systems still default to using X.Org, so it is still relev
 Key concepts Display managers The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/linux-xorg-gui-isolation/" />
-<meta property="article:published_time" content="2020-08-22T07:42:36-03:00"/>
-<meta property="article:modified_time" content="2020-08-22T07:42:36-03:00"/>
-
+<meta property="article:published_time" content="2020-08-22T07:42:36-03:00" />
+<meta property="article:modified_time" content="2020-08-22T07:42:36-03:00" />
 
 
 <meta itemprop="name" content="GUI Isolation on Linux">
 <meta itemprop="description" content="Introduction The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.
 But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.
 Key concepts Display managers The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc.">
-
-
 <meta itemprop="datePublished" content="2020-08-22T07:42:36-03:00" />
 <meta itemprop="dateModified" content="2020-08-22T07:42:36-03:00" />
-<meta itemprop="wordCount" content="676">
+<meta itemprop="wordCount" content="669">
 
 
 
@@ -121,90 +118,65 @@ Key concepts Display managers The software that is responsible for talking to ha
         </h2>
     </header>
     <section id="post-body">
-        
-
-<h2 id="introduction">Introduction</h2>
-
+        <h2 id="introduction">Introduction</h2>
 <p>The problem of GUI isolation on Linux is supposed to be fixed with the upcoming Wayland display manager.</p>
-
 <p>But as of today, many systems still default to using X.Org, so it is still relevant to explore some properties of the X.Org display manager that could be abused security-wise.</p>
-
 <h2 id="key-concepts">Key concepts</h2>
-
 <h3 id="display-managers">Display managers</h3>
-
 <p>The software that is responsible for talking to hardware (displays/monitors, keyboards, mouse) via boards and drivers, and redirecting their input/output to application graphical windows (clients), like Gnome-Terminal, Mozilla Firefox, Google Chrome, Thunderbird, etc.</p>
-
 <h3 id="window-managers">Window managers</h3>
-
 <p>The software that gives super-powers to the usually super basic windows provided by the display managers.</p>
-
 <h3 id="window-compositors">Window compositors</h3>
-
 <p>The software that provides nice visual effects for windows.</p>
-
 <h2 id="layered-architecture">Layered architecture</h2>
-
 <p>You can have a fully working Linux system without graphics by choosing not to run a display manager and the subsequent layers. More than that, you can choose to stop by whichever layer you prefer, i.e., you can also choose to run your system without a window manager (you will have very basic windows provided by the display manager which cannot be moved or resized), or without a window compositor (windows without opacity control and some other visual tweaks).</p>
-
-<h2 id="about-x-org-design">About X.Org design</h2>
-
+<h2 id="about-xorg-design">About X.Org design</h2>
 <p>X.Org has been the most prominent display manager for Linux systems for the past few decades. In conformity with the Linux philosophy, it was designed to give full power to the user of the system, occasionally in detriment of security.</p>
-
 <p>We can understand X.Org by differentiating the following three groups:</p>
-
-<p>1) Hardware: displays/monitors, keyboards, mouse, video cards, USB cards, etc.</p>
-
-<p>2) X.Org Server: a process running on a computer (<code>ps aux | grep X</code>) that can send and receive commands/data to the hardware, and redirects the relevant data to X.Org Clients.</p>
-
-<p>3) X.Org Client: GUI processes running on a computer (Gnome-Terminal, Mozilla Firefox, Google Chrome, Spotify, Games, etc.) which connect to the X.Org Server in order to indirectly talk to the hardware.</p>
-
-<p><img src="https://devser.com.br/images/linux-xorg-gui-isolation/xorg-model.png" alt="" /></p>
-
-<h2 id="x-org-security-concerns-by-design">X.Org security concerns (by design!)</h2>
-
+<ol>
+<li>
+<p>Hardware: displays/monitors, keyboards, mouse, video cards, USB cards, etc.</p>
+</li>
+<li>
+<p>X.Org Server: a process running on a computer (<code>ps aux | grep X</code>) that can send and receive commands/data to the hardware, and redirects the relevant data to X.Org Clients.</p>
+</li>
+<li>
+<p>X.Org Client: GUI processes running on a computer (Gnome-Terminal, Mozilla Firefox, Google Chrome, Spotify, Games, etc.) which connect to the X.Org Server in order to indirectly talk to the hardware.</p>
+</li>
+</ol>
+<p><img src="https://devser.com.br/images/linux-xorg-gui-isolation/xorg-model.png" alt=""></p>
+<h2 id="xorg-security-concerns-by-design">X.Org security concerns (by design!)</h2>
 <p>First, it&rsquo;s important to reiterate that the following security concerns pertaining to X.Org are not security bugs/flaws per se, but actually intentional design choices that made sense at the time the software was developed.</p>
-
 <p>The security concern: every X.Org Client connected to an X.Org Server can intercept hardware data, even when the GUI application (i.e. X.Org Client) is not on focus.</p>
-
 <p>That means, for example, that it is extremely easy for a keylogger running without special privileges to connect to the X.Org Server and log all the keystrokes on a keyboard, capturing the data and perhaps sending the stolen data through the network.</p>
-
 <p>This aspect has a name: X.Org does not provide GUI isolation – but don&rsquo;t worry! This new display manager called Wayland is supposed to provide it, so keep an eye on that!</p>
-
 <h2 id="proof-of-concept">Proof-of-concept</h2>
-
 <p>Run the following command on a terminal in a computer running X.Org (currently, most Linux distributions!).</p>
-
 <pre>xinput list | grep -Po 'id=\K\d+(?=.*slave\s*keyboard)' | xargs -P0 -n1 xinput test</pre>
-
 <p>Source: <a href="https://unix.stackexchange.com/a/129171/42520">https://unix.stackexchange.com/a/129171/42520</a></p>
-
 <p>Afterward, start browsing the internet using your favorite web browser and <em>voilà</em>! The terminal running the previous command has listed every keyboard event.</p>
-
 <p>Credit card numbers, passwords, sensitive personal data. They are all there.</p>
-
 <h2 id="risks-of-installing-untrusted-software">Risks of installing untrusted software</h2>
-
 <p>Given the extremely simple and functional proof-of-concept above, you should always weigh the cost-benefits of installing third-party software on your computer.</p>
-
 <h3 id="software-developers-be-wary">Software developers, be wary!</h3>
-
 <p>This even goes for libraries installed via dependency managers like <code>npm packages</code>, <code>go modules</code>, <code>composer</code>, etc, that you perhaps import when are developing software on your local machine.</p>
-
 <p>It is very easy for this kind of library to run the malicious code in the background when you are writing your own software.</p>
-
 <p>Here are some basic tips:</p>
-
-<p>1) Run your own code inside Docker</p>
-
-<p>2) Never share the X security token to a docker container running untrusted code</p>
-
-<p>3) Avoid running commands that trigger packages downloading such as <code>npm install</code> or even <code>npm start</code> outside Docker</p>
-
-<p>4) Use multi-factor authentication devices (MFA), like Yubikey or Google Authenticator, for managing sensitive account (you can never be too sure!)</p>
-
+<ol>
+<li>
+<p>Run your own code inside Docker</p>
+</li>
+<li>
+<p>Never share the X security token to a docker container running untrusted code</p>
+</li>
+<li>
+<p>Avoid running commands that trigger packages downloading such as <code>npm install</code> or even <code>npm start</code> outside Docker</p>
+</li>
+<li>
+<p>Use multi-factor authentication devices (MFA), like Yubikey or Google Authenticator, for managing sensitive account (you can never be too sure!)</p>
+</li>
+</ol>
 <h2 id="further-reading">Further reading</h2>
-
 <p><a href="http://theinvisiblethings.blogspot.com/2011/04/linux-security-circus-on-gui-isolation.html">http://theinvisiblethings.blogspot.com/2011/04/linux-security-circus-on-gui-isolation.html</a></p>
 
     </section>
