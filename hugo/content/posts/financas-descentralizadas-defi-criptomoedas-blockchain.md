@@ -47,7 +47,7 @@ Se uma pessoa física deseja vender um serviço financeiro (conceder um emprést
 * Confiança mútua questionável
 
 No vídeo abaixo comento um pouco mais sobre os três papéis dos agentes financeiros (antes de DeFi):
-{{<youtube gMsPpVVT3hU>}}
+{{<youtube vMuGuH8EBY8>}}
 
 ## DeFi possibilita a compra e venda de serviços financeiros sem o intermédio de agentes financeiros
 
