@@ -39,9 +39,16 @@ int main(int argcount, char **args) {
 }
 {{</highlight>}}
 
+Dependências no Debian:
+
+{{<highlight bash>}}
+sudo apt-get install libssl-dev
+{{</highlight>}}
+
 Comandos para compilar e executar a rotina acima, no terminal do Linux:
 
 {{<highlight bash>}}
-gcc -lcrypto main.c
+# Atenção: a ordem dos parâmetros do comando a seguir é importante!
+gcc main.c -lcrypto
 ./a.out "My string"
 {{</highlight>}}
