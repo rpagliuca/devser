@@ -6,7 +6,19 @@
     <description>Recent content on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 27 Jan 2021 20:20:54 -0300</lastBuildDate><atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jul 2021 20:13:01 -0300</lastBuildDate><atom:link href="https://devser.com.br/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anotações sobre o livro &#34;Inspired&#34; do Marty Cagan</title>
+      <link>https://devser.com.br/posts/anotacoes-sobre-livro-inspired-product-management/</link>
+      <pubDate>Fri, 23 Jul 2021 20:13:01 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/anotacoes-sobre-livro-inspired-product-management/</guid>
+      <description>Qual é a diferença entre um Product Manager e um Product Designer?
+O autor Marty Cagan, em sua obra &amp;ldquo;Inspired&amp;rdquo;, aborda essa e outras questões.
+Para ele, o Product Manager é o dono da visão do produto, se questionando continuamente:
+ Quem é o usuário do produto? Como estamos gerando valor para o usuário? Como o produto se alinha ao negócio?  Disso, eu tiro que de fato há um overlap importante entre as funções do Product Designer e do Product Manager, já que ambos pensam no usuário do produto e como entregar o melhor valor, a melhor experiência.</description>
+    </item>
+    
     <item>
       <title>Finanças Descentralizadas: DeFi, Criptomoedas e Blockchain</title>
       <link>https://devser.com.br/posts/financas-descentralizadas-defi-criptomoedas-blockchain/</link>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Product Management on /dev/ser</title>
+    <link>https://devser.com.br/categories/product-management/</link>
+    <description>Recent content in Product Management on /dev/ser</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Fri, 23 Jul 2021 20:13:01 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/product-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anotações sobre o livro &#34;Inspired&#34; do Marty Cagan</title>
+      <link>https://devser.com.br/posts/anotacoes-sobre-livro-inspired-product-management/</link>
+      <pubDate>Fri, 23 Jul 2021 20:13:01 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/anotacoes-sobre-livro-inspired-product-management/</guid>
+      <description>Qual é a diferença entre um Product Manager e um Product Designer?
+O autor Marty Cagan, em sua obra &amp;ldquo;Inspired&amp;rdquo;, aborda essa e outras questões.
+Para ele, o Product Manager é o dono da visão do produto, se questionando continuamente:
+ Quem é o usuário do produto? Como estamos gerando valor para o usuário? Como o produto se alinha ao negócio?  Disso, eu tiro que de fato há um overlap importante entre as funções do Product Designer e do Product Manager, já que ambos pensam no usuário do produto e como entregar o melhor valor, a melhor experiência.</description>
+    </item>
+    
+  </channel>
+</rss>
