@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta property="fb:app_id" content="194513401446491"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Rafael Santos">
+
+<meta name="generator" content="Hugo 0.78.1" />
+<title>Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton &middot; /dev/ser</title>
+<link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
+<link rel="stylesheet" href="https://devser.com.br/css/style.css">
+<link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
+
+<link rel="stylesheet" href="https://devser.com.br/css/custom-styles.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+
+
+
+<meta property="og:title" content="Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton" />
+<meta property="og:description" content="A técnica de se utilizar &ldquo;histórias&rdquo; como ganchos para iniciar conversas sobre usuários, requisitos, funcionalidades e soluções de produtos digitais, substituindo especificações formais e extensas, foi concebida por Kent Beck na década de 90 como parte de sua metodologia Extreme Programming.
+Mais de uma década depois, buscando conciliar &ldquo;histórias&rdquo; de alto nível com outras extremamente detalhadas e técnicas, Jeff Patton desenvolveu a técnica que denominou &ldquo;Story Mapping&rdquo; e a apresentou no livro &ldquo;User Story Mapping: Discover the Whole Story, Build the Right Product&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/" />
+<meta property="article:published_time" content="2021-08-10T15:41:07-03:00" />
+<meta property="article:modified_time" content="2021-08-10T15:41:07-03:00" />
+
+
+<meta itemprop="name" content="Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton">
+<meta itemprop="description" content="A técnica de se utilizar &ldquo;histórias&rdquo; como ganchos para iniciar conversas sobre usuários, requisitos, funcionalidades e soluções de produtos digitais, substituindo especificações formais e extensas, foi concebida por Kent Beck na década de 90 como parte de sua metodologia Extreme Programming.
+Mais de uma década depois, buscando conciliar &ldquo;histórias&rdquo; de alto nível com outras extremamente detalhadas e técnicas, Jeff Patton desenvolveu a técnica que denominou &ldquo;Story Mapping&rdquo; e a apresentou no livro &ldquo;User Story Mapping: Discover the Whole Story, Build the Right Product&rdquo;.">
+<meta itemprop="datePublished" content="2021-08-10T15:41:07-03:00" />
+<meta itemprop="dateModified" content="2021-08-10T15:41:07-03:00" />
+<meta itemprop="wordCount" content="1545">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton"/>
+<meta name="twitter:description" content="A técnica de se utilizar &ldquo;histórias&rdquo; como ganchos para iniciar conversas sobre usuários, requisitos, funcionalidades e soluções de produtos digitais, substituindo especificações formais e extensas, foi concebida por Kent Beck na década de 90 como parte de sua metodologia Extreme Programming.
+Mais de uma década depois, buscando conciliar &ldquo;histórias&rdquo; de alto nível com outras extremamente detalhadas e técnicas, Jeff Patton desenvolveu a técnica que denominou &ldquo;Story Mapping&rdquo; e a apresentou no livro &ldquo;User Story Mapping: Discover the Whole Story, Build the Right Product&rdquo;."/>
+
+
+    </head>
+<body>
+    <nav class="primary-nav">
+<ul>
+
+<li><a href="https://devser.com.br/categories/blockchain/">Blockchain</a></li>
+
+<li><a href="https://devser.com.br/categories/blogging/">Blogging</a></li>
+
+<li><a href="https://devser.com.br/categories/c/">C</a></li>
+
+<li><a href="https://devser.com.br/categories/criptografia/">Criptografia</a></li>
+
+<li><a href="https://devser.com.br/categories/devops/">DevOps</a></li>
+
+<li><a href="https://devser.com.br/categories/finan%C3%A7as/">Finanças</a></li>
+
+<li><a href="https://devser.com.br/categories/golang/">Golang</a></li>
+
+<li><a href="https://devser.com.br/categories/linux/">Linux</a></li>
+
+<li><a href="https://devser.com.br/categories/machine-learning/">Machine Learning</a></li>
+
+<li><a href="https://devser.com.br/categories/microcontroladores/">Microcontroladores</a></li>
+
+<li><a href="https://devser.com.br/categories/mongodb/">MongoDB</a></li>
+
+<li><a href="https://devser.com.br/categories/mysql/">MySQL</a></li>
+
+<li><a href="https://devser.com.br/categories/php/">PHP</a></li>
+
+<li><a href="https://devser.com.br/categories/product-management/">Product Management</a></li>
+
+<li><a href="https://devser.com.br/categories/python/">Python</a></li>
+
+<li><a href="https://devser.com.br/categories/redes-complexas/">Redes Complexas</a></li>
+
+<li><a href="https://devser.com.br/categories/serverless/">Serverless</a></li>
+
+</ul>
+</nav>
+<nav class="secondary-nav">
+	
+        <center><a href='https://devser.com.br/' style="font-size:130%"> <span class="arrow">←</span>Voltar</a></center>
+	
+
+	
+
+	
+</nav>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton</h1>
+        <h2 class="subtitle"></h2>
+        <h2 class="headline">
+        10
+        Agosto
+        2021
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        <p>A técnica de se utilizar &ldquo;histórias&rdquo; como ganchos para iniciar conversas sobre usuários, requisitos,
+funcionalidades e soluções de produtos digitais, substituindo especificações formais e extensas, foi
+concebida por Kent Beck na década de 90 como parte de
+sua metodologia Extreme Programming.</p>
+<p>Mais de uma década depois, buscando conciliar &ldquo;histórias&rdquo; de alto nível com outras
+extremamente detalhadas e técnicas, Jeff Patton desenvolveu a técnica que
+denominou &ldquo;Story Mapping&rdquo;
+e a apresentou no livro &ldquo;User Story Mapping: Discover the Whole Story, Build the Right Product&rdquo;.</p>
+<p>Na obra, Jeff revela os mecanismos por trás da técnica de
+mapeamento de histórias, e revisa a origem e fundamentos do conceito &ldquo;histórias&rdquo;,
+que ao longo dos anos foram corrompidos e mal compreendidos.</p>
+<p>Seguem abaixo algumas anotações sobre o livro.</p>
+<pre>
+User Story Mapping
+
+Autores
+    Jeff Patton
+    Peter Economy
+
+Índice
+    p. 1 - Capa
+    p. 2 - Foreword by Martin Fowler
+    p. 5 - Foreword by Alan Cooper
+    p. 8 - Foreword by Marty Cagan
+    p. 12 - Preface
+    p. 21 - Read This First
+    p. 42 - Chapter 1. The Big Picture
+    p. 65 - Chapter 2. Plan to Build Less
+    p. 81 - Chapter 3. Plan to Learn Faster
+    p. 96 - Chapter 4. Plan to Finish on Time
+    p. 113 - Chapter 5. You Already Know How
+    p. 138 - Chapter 6. The Real Story About Stories
+    p. 148 - Chapter 7. Telling Better Stories
+    p. 163 - Chapter 8. It's Not All on the Card
+    p. 177 - Chapter 9. The Card is Just the Beggining
+    p. 186 - Chapter 10. Bake Stories Like Cake
+    p. 194 - Chapter 11. Rock Breaking
+    p. 217 - Chapter 12. Rock Breakers
+    p. 230 - Chapter 13. Start with Opportunities
+    p. 245 - Chapter 14. Using Discovery to Build Shared Understanding
+    p. 269 - Chapter 15. Using Discovery for Validated Learning
+    p. 288 - Chapter 16. Refine, Define, and Build
+    p. 314 - Chapter 17. Stories Are Actually Like Asteroids
+    p. 322 - Chapter 18 - Learn from Everything You Build
+    p. 335 - The End, or Is It?
+    p. 336 - Acknowledgments
+    p. 340 - References
+    p. 342 - Index
+    p. 384 - Last page
+
+---
+
+p. 3 - Foreword By Martin Fowler
+    Quebrar trabalho em histórias pequenas tem vantagens para o usuário, que não precisa esperar anos para ver o avanço
+    Mas há consequências negativas: fácil de perder o panorama global. Pedaços sem coerência
+    Story mapping é uma técnica que preserva esse panorama global
+    Jeff Patton criou o método de "story mapping"
+    Maior decepção na última década do Ágil: muitos programadores enxergam histórias como um caminho de mão única, sendo que deveriam enxergá-las como gatilhos para iniciar conversação
+    Kent Beck concebeu a noção de "história"
+
+p. 5 - Foreword by Alan Cooper
+    Opinião similar a de Martin Fowler, que é impossível construir "histórias" soltas e esperar que usuários gostem do produto
+    É muito difícil expressar um problema de design em termos de programação, e vice-e-versa
+    "Despite protestations to the contrary, Agile development is not a very useful design tool"
+    É fácil fazer pequenos produtos que as pessoas amam com times pequenos
+    O desafio é fazer produtos grandes que as pessoas amam
+
+p. 8 - Foreword by Marty Cagan
+    Diferença entre times bons vs times ruins
+
+p. 12 - Prefácio
+    Além de apresentar a técnica de Story Mapping, vai falar sobre os fundamentais de User Stories, pois são frequentemente má utilizadas
+
+    Armadilhas comuns com stories:
+        Perda do panorama global
+        Perda da noção do tempo total necessário para finalizar tudo
+        Perda de documentação, já que histórias são gatilhos para conversas informais
+        Times não finalizam dentro do tempo planejado, por falta de documentação explícita e bom planejamento
+        User stories escondem muitas partes invisíveis do sistema
+
+    São erros conceituais que nos fazem cair nas armadilhas acima
+
+p. 16 - Quem deve ler esse livro?
+    PMs, UX Designers, PO, Business Analysts, Project Managers
+    Coaches de Ágil e Lean
+
+p. 18 - Conteúdo dos capítulos
+    Capítulos 1 a 4 - Visão de alto nível de Story Mapping
+    Capítulo 5 - Exercício prático
+    Capítulos 6 a 12 - Fundamentos de "Story"
+    Capítulos 13 a 15 - Ciclo de vida de uma "Story" e gestão de backlog
+    Capítulos 16 a 18 - Utilização tática de stories (no momento de executar/consumir)
+
+p. 21 - Read This First
+    O objetivo de utilizar "stories" não é escrever melhores histórias
+    O objetivo de desenvolver produtos não é construir produtos
+    Telefone sem fio: http://cakewrecks.com/
+    NASA: sistema métrico vs imperial
+    Documentos compartilhados não são entendimento compartilhado
+    Para avaliar entendimento: todos devem externalizar sua interpretação e ideias, e os outros devem fazer perguntas
+
+    Não há documentos perfeitos; não é nem culpa do escritor, nem do leitor
+    Documente o mínimo para começar, e em seguida passe para conversas, palavras e imagens para construir o entendimento compartilhado
+    Se você está utilizando histórias no desenvolvimento, e não estão conversando usando palavras e imagens, vocês estão fazendo errado
+    Documentos auxiliares são menos formais, mas existem igualmente
+    O mais importante não é o que está escrito, e sim o conteúdo que os documentos sinalizam
+    Grave vídeos de você explicando a história e as anotações
+
+p. 35 - Software Isn't the Point
+
+    Output vs outcome
+    Velocity mede output
+
+    Sempre há mais para ser criado, do que o tempo ou recurso que temos disponível
+    Minimize output (saída), maximize outcome (resultados)
+
+    Choosers (quem escolhe/compra seu produto) vs users (usuário final do produto)
+
+p. 42 - Chapter 1. The Big Picture
+    "I love Agile development! Every few weeks we see more working software. But it feels like I've lost the big picture."
+    Contar histórias; e não, escrever histórias
+    Story mapping é um pattern, e não uma invenção. Várias empresas e times chegaram a esse mesmo padrão
+
+    Ideia original de histórias: priorizar entendimento compartilhado em vez de documentos compartilhados
+
+    História sobre o Gary e o "flat backlog" para criar app de colaboração de composição de músicas comerciais
+
+    Talk and doc: enquanto conversa, escreva cartões para externalizar ideias
+
+    Valor de utilizar cartões: comunicação sem utilizar palavras. Reordenar cartões, etc
+
+    Foque em largura (horizontal, visão geral) em vez de profundidade (detalhes)
+
+p. 65 - Chapter 2. Plan to Build Less
+
+    História sobre Globo.com
+    Possui deadlines ancorados a eventos externos, como eventos esportivo
+    Atrasar não é uma opção, portanto eles são muito bons em entregar no prazo
+    Não são mais rápidos que a média: e sim, espertos sobre fazer menos
+    Times estavam prestes a cair na "flat backlog trap": faltava a dependência entre os times
+
+p. 75
+
+    Story mapping normalmente evidencia quantidade enorme de backlog
+    Trabalhe em releases limitados, que façam sentido
+    Foque em outcomes, não output
+    
+    MVP não é o "pior produto que você pode lançar"
+
+p. 80
+
+    MVP é o menor produto que você pode criar para comprovar ou desprovar uma hipótese
+
+p. 82 - Chapter 3. Plan to Learn Faster
+
+    Uma das dificuldades em ser product owner é assumir a ideia de outra pessoa e ajudá-la a ter sucesso, ou então provar que provavelmente não será
+
+    Perguntas-chave:
+    * Qual é a grande ideia?
+    * Quem são os clientes?
+    * Quem são os usuários?
+    * Por que eles querem isso?
+    * Por que estamos construindo isso?
+
+p. 91 - Como não fazer
+
+    Mostra exemplo de "releases" de um automóvel: primeiro apenas o pneu, depois chassi, depois o casco e por último o volante 
+
+    Essa estratégia é fracassada, pois somente no 4º release temos algo utilizável
+
+    Alternativa: skate, patinete, bicicleta, motocicleta, carro
+
+p. 96 - Chapter 4. Plan to Finish on Time
+
+    Estimativas são incertas
+
+    Mas quebrando em pedaços pequenos, conseguimos medir os pedaços que já concluímos, e como compensar as estimativas
+
+    Sinalize os riscos no story map
+
+    Mona Lisa: progressão geral vs incrementos
+
+p. 113 - Chapter 5. You Already Know How
+
+p. 138 - Chapter 6. The Real Story About Stories
+
+    Ideia original de "histórias" concebida por Kent Beck, autor do Extreme Programming, na década de 90
+
+    Reclamação mais comum de times é "requisitos ruins"
+
+    Todos podem ler o mesmo documento, mas têm um entendimento diferente dele
+
+    Requisitos descrevem "o que" queremos, e não "por que" queremos. Aumenta o risco de construir o produto errado
+
+    "Stories get their name from how they're supposed to be used, not from what you're trying to write down"
+
+    Card -> Conversation -> Confirmation (acceptance criteria agreement)
+
+    Conversa != monólogo
+
+    Acceptance criteria (story tests): lista de itens para validar o resultado
+
+p. 148 - Telling Better Stories
+
+    Originalmente stories (e não user stories)
+
+    Ideia de template:
+    "As a [type of user]
+    I want to [do something]
+    So that I can [get some benefit]"
+
+    Cuidado para não virar um zumbi de template!
+
+    Relato de ThoughtWorks e backlog grooming em time de 25 pessoas
+
+    Template é uma ótima prática de aprendizado, mas não necessariamente uma boa prática definitiva
+
+p. 158
+
+    Sobre o que conversar nas histórias:
+    * Quem
+    * O que
+    * Por que
+    * Contextualize o mundo fora do software
+    * O que pode dar errado 
+    * Perguntas e hipóteses
+    * Alternativas de soluções
+    * Como
+    * Duração
+
+p. 163 - Chapter 8. It's Not All on the Card
+
+    Pessoas diferentes do time == conversas diferentes
+
+    Product Owner ou Product Manager
+    !=
+    Project Manager
+    !=
+    Business Analyst
+    !=
+    User Experience Designer
+    !=
+    Developer
+    !=
+    Tester
+
+    Experiência de utilizar as paredes do escritório como "grandes telas" que irradiam cultura e informação permanentemente
+</pre>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    <div>
+        <img class="avatar" src="https://devser.com.br/images/avatar.png" style="float: left">
+        <span class="dark">Rafael Santos</span>
+        <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
+    </div>
+    <section id="sharing" style="margin-top: 20px">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fanotacoes-sobre-livro-user-story-mapping-jeff-patton%2f - Anota%c3%a7%c3%b5es%20sobre%20o%20livro%20%22User%20Story%20Mapping%22%20de%20Jeff%20Patton "><span class="icon-twitter"> Compartilhe</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Compartilhe</span>
+</a>
+
+    </section>
+</footer>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=682823301800780&autoLogAppEvents=1">
+</script>
+<center>
+    <div class="fb-comments"
+         data-width="500"
+         data-href="https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/"
+    >
+    </div>
+</center>
+
+<hr/>
+
+<ul id="post-list" class="archive readmore">
+    <h3>Outros artigos</h3>
+
+    
+    
+    
+        <li>
+            <a href="https://devser.com.br/posts/anota%C3%A7%C3%B5es-livro-the-build-trap-melissa-perri/">Anotações sobre o livro &#34;The Build Trap&#34; de Melissa Perri<aside class="dates">Aug 4 2021</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/anotacoes-sobre-livro-inspired-product-management/">Anotações sobre o livro &#34;Inspired&#34; do Marty Cagan<aside class="dates">Jul 23 2021</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/financas-descentralizadas-defi-criptomoedas-blockchain/">Finanças Descentralizadas: DeFi, Criptomoedas e Blockchain<aside class="dates">Jan 27 2021</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/comparacao-de-sistemas-de-amortizacao-de-financiamento-sistema-price-vs-sistema-sac/">Comparação de sistemas de amortização de financiamento: Sistema PRICE vs. Sistema SAC<aside class="dates">Jan 23 2021</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/accessing-kubernetes-api-with-curl/">Accessing the Kubernetes API using curl<aside class="dates">Sep 17 2020</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/linux-xorg-gui-isolation/">GUI Isolation on Linux<aside class="dates">Aug 22 2020</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/drop-all-mongodb-databases/">Drop every MongoDB database [snippet]<aside class="dates">Jun 20 2020</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/streaming-mysql-changes-to-mongodb-using-go-mysql/">Streaming MySQL changes to MongoDB with go-mysql<aside class="dates">May 26 2020</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/serverless-do-zero/">Serverless do zero<aside class="dates">May 23 2020</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/devopsdays-campinas/">DevOpsDays Campinas<aside class="dates">Oct 28 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/adicionandos-usuarios-a-um-cluster-kubernetes/">Adicionando usuários a um cluster do Kubernetes<aside class="dates">Oct 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/comparando-a-perfomance-de-go-dotnet-e-php/">Comparando a perfomance de Go, .NET e PHP<aside class="dates">Aug 21 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/hello-world-e-sha256-em-c/">Hello world e SHA-256 em C<aside class="dates">Aug 19 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/">Como gerar uma senha aleatória no terminal do Linux<aside class="dates">Jun 18 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/tirando-par-ou-impar-pelo-whatsapp/">Tirando par ou ímpar pelo Whatsapp<aside class="dates">Jun 11 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/investigacao-de-fatores-de-latencia-de-rede-em-um-cluster-kubernetes/">Investigação de fatores de latência de rede em um cluster Kubernetes<aside class="dates">Jun 11 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/defesa-dissertacao-mestrado/">Defesa da Dissertação de Mestrado<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/migrando-de-wordpress-para-gohugo/">Migrando de Wordpress para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/">Como aumentar o espaço da partição /dev/shm<aside class="dates">Nov 6 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/leitura-de-porta-serial-utilizando-python-e-raspberry-pi/">Leitura de porta serial utilizando Python e Raspberry PI<aside class="dates">Mar 2 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/comunicacao-segura-utilizando-gpg/">Comunicação segura utilizando GPG<aside class="dates">Nov 28 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/deixe-seu-mysql-muito-mais-rapido-rodando-na-memoria-ram/">Deixe seu MySQL muito mais rápido rodando na memória RAM<aside class="dates">May 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/aprendizado-de-maquina-com-python-tensor-flow/">Aprendizado de máquina com Python &#43; Tensor Flow<aside class="dates">May 12 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/compilador-para-computador-sap-1/">Compilador para computador SAP-1<aside class="dates">Apr 18 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/medindo-performance-e-gargalos-de-uma-pagina-php/">Medindo performance e gargalos de uma página PHP com KCacheGrind &#43; XDebug<aside class="dates">Apr 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criando-plugins-para-a-biblioteca-de-templates-smarty-do-php/">Criando plugins para a biblioteca de templates Smarty do PHP<aside class="dates">Mar 16 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/testes-automatizados-com-selenium-phpunit/">Testes automatizados com Selenium &#43; PHPUnit<aside class="dates">Mar 14 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/ferramentas-de-debug-para-desenvolvimento-web-xdebug-developer-tools-console-curl-logs/">Ferramentas de debug para desenvolvimento web: Xdebug &#43; Developer Tools Console &#43; Curl &#43; Logs<aside class="dates">Feb 21 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/simulando-um-computador-sap-1-simple-as-possible-1/">Simulando um computador SAP-1 (Simple As Possible 1)<aside class="dates">Oct 15 2013</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/diagrama-de-bifurcacao-do-mapa-logistico/">Diagrama de Bifurcação do Mapa Logístico<aside class="dates">Nov 17 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/gerenciador-de-artigos-cientificos/">Gerenciador de Artigos Científicos<aside class="dates">Nov 15 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/relacao-entre-otp-e-mapas-binarios/">Relação entre OTP e Mapas Binários<aside class="dates">Nov 14 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/modelo-da-particula-na-caixa/">Modelo da Partícula na Caixa<aside class="dates">Jun 19 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criptografia-com-equacoes-de-chua/">Criptografia Com Equações de Chua<aside class="dates">May 11 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/criptografia-com-caos-baptista/">Criptografia com Caos - Baptista<aside class="dates">Apr 1 2012</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/primeira-atividade-pratica-mapa-logistico/">Mapa logístico<aside class="dates">Dec 11 2011</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/historia-da-chave-assimetrica/">História da chave assimétrica<aside class="dates">Dec 11 2011</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/inicio-de-iniciacao-cientifica-em-criptografia/">Início de iniciação científica em criptografia<aside class="dates">Dec 11 2011</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/rafaelpagliuca">
+        <i class="fa fa-facebook"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/rpagliuca">
+        <i class="fa fa-github"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2021 Rafael Santos
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://devser.com.br/js/main.js"></script>
+<script src="https://devser.com.br/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-97834327-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

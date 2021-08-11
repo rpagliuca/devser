@@ -6,7 +6,17 @@
     <description>Recent content in Posts on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Wed, 04 Aug 2021 17:09:14 -0300</lastBuildDate><atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Aug 2021 15:41:07 -0300</lastBuildDate><atom:link href="https://devser.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton</title>
+      <link>https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/</link>
+      <pubDate>Tue, 10 Aug 2021 15:41:07 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/</guid>
+      <description>A técnica de se utilizar &amp;ldquo;histórias&amp;rdquo; como ganchos para iniciar conversas sobre usuários, requisitos, funcionalidades e soluções de produtos digitais, substituindo especificações formais e extensas, foi concebida por Kent Beck na década de 90 como parte de sua metodologia Extreme Programming.
+Mais de uma década depois, buscando conciliar &amp;ldquo;histórias&amp;rdquo; de alto nível com outras extremamente detalhadas e técnicas, Jeff Patton desenvolveu a técnica que denominou &amp;ldquo;Story Mapping&amp;rdquo; e a apresentou no livro &amp;ldquo;User Story Mapping: Discover the Whole Story, Build the Right Product&amp;rdquo;.</description>
+    </item>
+    
     <item>
       <title>Anotações sobre o livro &#34;The Build Trap&#34; de Melissa Perri</title>
       <link>https://devser.com.br/posts/anota%C3%A7%C3%B5es-livro-the-build-trap-melissa-perri/</link>
