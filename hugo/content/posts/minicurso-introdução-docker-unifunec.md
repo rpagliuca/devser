@@ -11,6 +11,7 @@ Artigo de apoio ao minicurso "Introdução a Docker: desenvolvendo aplicações 
 * Data: 12/05/2022
 * Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil
 * Duração do conteúdo: 130 minutos
+* Duração total: 180 minutos (130 minutos de conteúdo + 20 minutos de intervalo + 30 minutos de suporte e dúvidas)
 * Cronograma:
     * 19h00: Etapas 1 a 8 (70 minutos)
     * 20h10: Intervalo (20 minutos)
@@ -69,6 +70,8 @@ Para ser acessível a uma grande diversidade da audiência do curso, composta po
 * Docker Compose
 * Diferentes modos de interagir com o Docker: manualmente vs de forma automatizada
 
+### << Intervalo de 20 minutos >>
+
 ### Etapa 9 - Deploy de uma aplicação complexa (chat) no Docker Playground (10 minutos)
 * Esta aplicação possui ao mesmo tempo 2 contêineres rodando: 1 banco de dados + 1 webapp Javascript
 * Página do projeto: https://hub.docker.com/r/ageapps/docker-chat
@@ -90,6 +93,19 @@ Para ser acessível a uma grande diversidade da audiência do curso, composta po
 * Docker não é a melhor solução para aplicações GUI Linux ou Windows
 * Docker não é máquina virtual
 * Docker é principalmente recomendado para aplicações WEB
+* Aplicação web monolítica versus microsserviços
+
+### Etapa 12 - Build de aplicação customizada com Docker + GitHub Actions (20 minutos)
+* Fork do repositório: https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub
+* Configurar as secrets de USUÁRIO e SENHA do Docker Hub dentro do projeto do GitHub
+* Comando: `git clone https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub.git`
+* Alterar arquivo `.github/workflows/build-docker-image.yml` e atualizar o seu nome de usuário do Docker Hub
+* Alterar o arquivo `app/main.go`, customizando a string da linha 29
+* Commit e push das mudanças para o seu fork, com os comandos abaixo
+* Comando 1: `git commit -am 'Customização'`
+* Comando 2: `git push`
+
+### Etapa 13 - Conclusão (10 minutos)
 * Plataformas que dão suporte a construir (build) aplicações/imagens Docker
     * Bitbucket (Bitbucket Pipelines)
     * Github (Github Actions)
@@ -102,15 +118,7 @@ Para ser acessível a uma grande diversidade da audiência do curso, composta po
     * Digital Ocean
     * Google Cloud
     * Kubernetes (em qualquer provedor)
-
-### Etapa 12 - Build de aplicação customizada com Docker + GitHub Actions (20 minutos)
-* Fork do repositório: https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub
-* Configurar as secrets de USUÁRIO e SENHA do Docker Hub dentro do projeto do GitHub
-* Comando: `git clone https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub.git`
-* Alterar arquivo `.github/workflows/build-docker-image.yml` e atualizar o seu nome de usuário do Docker Hub
-* Alterar o arquivo `app/main.go`, customizando a string da linha 29
-* Commit e push das mudanças para o seu fork, com os comandos abaixo
-* Comando 1: `git commit -am 'Customização'`
-* Comando 2: `git push`
-
-### Etapa 13 - Conclusão e dúvidas (10 minutos)
+* Próximos passos
+    * Construir uma imagem Docker customizada para a sua aplicação web (Javascript / Golang / Java / .NET / Python / Ruby on Rails / PHP / etc)
+    * Criar um pipeline de automação da imagem Docker usando sua plataforma favorita
+    * Hospedar sua aplicação Docker usando seu provedor favorito. Atenção: usualmente hospedar uma aplicação é um serviço com custos financeiros!
