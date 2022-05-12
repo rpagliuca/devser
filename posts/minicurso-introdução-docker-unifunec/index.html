@@ -24,7 +24,7 @@
 
 <meta property="og:title" content="Minicurso UNIFUNEC: Introdução a Docker" />
 <meta property="og:description" content="Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.
- Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos." />
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Duração total: 180 minutos (130 minutos de conteúdo &#43; 20 minutos de intervalo &#43; 30 minutos de suporte e dúvidas) Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/" />
 <meta property="article:published_time" content="2022-05-12T10:48:26-03:00" />
@@ -33,10 +33,10 @@
 
 <meta itemprop="name" content="Minicurso UNIFUNEC: Introdução a Docker">
 <meta itemprop="description" content="Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.
- Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos.">
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Duração total: 180 minutos (130 minutos de conteúdo &#43; 20 minutos de intervalo &#43; 30 minutos de suporte e dúvidas) Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado.">
 <meta itemprop="datePublished" content="2022-05-12T10:48:26-03:00" />
 <meta itemprop="dateModified" content="2022-05-12T10:48:26-03:00" />
-<meta itemprop="wordCount" content="834">
+<meta itemprop="wordCount" content="923">
 
 
 
@@ -45,7 +45,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Minicurso UNIFUNEC: Introdução a Docker"/>
 <meta name="twitter:description" content="Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.
- Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos."/>
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Duração total: 180 minutos (130 minutos de conteúdo &#43; 20 minutos de intervalo &#43; 30 minutos de suporte e dúvidas) Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado."/>
 
 
     </head>
@@ -122,6 +122,7 @@
 <li>Data: 12/05/2022</li>
 <li>Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil</li>
 <li>Duração do conteúdo: 130 minutos</li>
+<li>Duração total: 180 minutos (130 minutos de conteúdo + 20 minutos de intervalo + 30 minutos de suporte e dúvidas)</li>
 <li>Cronograma:
 <ul>
 <li>19h00: Etapas 1 a 8 (70 minutos)</li>
@@ -179,6 +180,7 @@
 <li>Docker Compose</li>
 <li>Diferentes modos de interagir com o Docker: manualmente vs de forma automatizada</li>
 </ul>
+<h3 id="-intervalo-de-20-minutos-">&laquo; Intervalo de 20 minutos &raquo;</h3>
 <h3 id="etapa-9---deploy-de-uma-aplicação-complexa-chat-no-docker-playground-10-minutos">Etapa 9 - Deploy de uma aplicação complexa (chat) no Docker Playground (10 minutos)</h3>
 <ul>
 <li>Esta aplicação possui ao mesmo tempo 2 contêineres rodando: 1 banco de dados + 1 webapp Javascript</li>
@@ -205,6 +207,21 @@
 <li>Docker não é a melhor solução para aplicações GUI Linux ou Windows</li>
 <li>Docker não é máquina virtual</li>
 <li>Docker é principalmente recomendado para aplicações WEB</li>
+<li>Aplicação web monolítica versus microsserviços</li>
+</ul>
+<h3 id="etapa-12---build-de-aplicação-customizada-com-docker--github-actions-20-minutos">Etapa 12 - Build de aplicação customizada com Docker + GitHub Actions (20 minutos)</h3>
+<ul>
+<li>Fork do repositório: <a href="https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub">https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub</a></li>
+<li>Configurar as secrets de USUÁRIO e SENHA do Docker Hub dentro do projeto do GitHub</li>
+<li>Comando: <code>git clone https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub.git</code></li>
+<li>Alterar arquivo <code>.github/workflows/build-docker-image.yml</code> e atualizar o seu nome de usuário do Docker Hub</li>
+<li>Alterar o arquivo <code>app/main.go</code>, customizando a string da linha 29</li>
+<li>Commit e push das mudanças para o seu fork, com os comandos abaixo</li>
+<li>Comando 1: <code>git commit -am 'Customização'</code></li>
+<li>Comando 2: <code>git push</code></li>
+</ul>
+<h3 id="etapa-13---conclusão-10-minutos">Etapa 13 - Conclusão (10 minutos)</h3>
+<ul>
 <li>Plataformas que dão suporte a construir (build) aplicações/imagens Docker
 <ul>
 <li>Bitbucket (Bitbucket Pipelines)</li>
@@ -223,19 +240,14 @@
 <li>Kubernetes (em qualquer provedor)</li>
 </ul>
 </li>
-</ul>
-<h3 id="etapa-12---build-de-aplicação-customizada-com-docker--github-actions-20-minutos">Etapa 12 - Build de aplicação customizada com Docker + GitHub Actions (20 minutos)</h3>
+<li>Próximos passos
 <ul>
-<li>Fork do repositório: <a href="https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub">https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub</a></li>
-<li>Configurar as secrets de USUÁRIO e SENHA do Docker Hub dentro do projeto do GitHub</li>
-<li>Comando: <code>git clone https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub.git</code></li>
-<li>Alterar arquivo <code>.github/workflows/build-docker-image.yml</code> e atualizar o seu nome de usuário do Docker Hub</li>
-<li>Alterar o arquivo <code>app/main.go</code>, customizando a string da linha 29</li>
-<li>Commit e push das mudanças para o seu fork, com os comandos abaixo</li>
-<li>Comando 1: <code>git commit -am 'Customização'</code></li>
-<li>Comando 2: <code>git push</code></li>
+<li>Construir uma imagem Docker customizada para a sua aplicação web (Javascript / Golang / Java / .NET / Python / Ruby on Rails / PHP / etc)</li>
+<li>Criar um pipeline de automação da imagem Docker usando sua plataforma favorita</li>
+<li>Hospedar sua aplicação Docker usando seu provedor favorito. Atenção: usualmente hospedar uma aplicação é um serviço com custos financeiros!</li>
 </ul>
-<h3 id="etapa-13---conclusão-e-dúvidas-10-minutos">Etapa 13 - Conclusão e dúvidas (10 minutos)</h3>
+</li>
+</ul>
 
     </section>
 </article>
