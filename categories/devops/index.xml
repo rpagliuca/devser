@@ -6,7 +6,17 @@
     <description>Recent content in DevOps on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://devser.com.br/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 10:48:26 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Minicurso UNIFUNEC: Introdução a Docker</title>
+      <link>https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/</link>
+      <pubDate>Thu, 12 May 2022 10:48:26 -0300</pubDate>
+      
+      <guid>https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/</guid>
+      <description>Artigo de apoio ao minicurso &amp;ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&amp;rdquo;.
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos.</description>
+    </item>
+    
     <item>
       <title>DevOpsDays Campinas</title>
       <link>https://devser.com.br/posts/devopsdays-campinas/</link>

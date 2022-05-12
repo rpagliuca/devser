@@ -6,7 +6,25 @@
     <description>Recent content in Categories on /dev/ser</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 23 Jul 2021 20:13:01 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 May 2022 10:48:26 -0300</lastBuildDate><atom:link href="https://devser.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps</title>
+      <link>https://devser.com.br/categories/devops/</link>
+      <pubDate>Thu, 12 May 2022 10:48:26 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://devser.com.br/categories/linux/</link>
+      <pubDate>Thu, 12 May 2022 10:48:26 -0300</pubDate>
+      
+      <guid>https://devser.com.br/categories/linux/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Product Management</title>
       <link>https://devser.com.br/categories/product-management/</link>
@@ -71,15 +89,6 @@
     </item>
     
     <item>
-      <title>DevOps</title>
-      <link>https://devser.com.br/categories/devops/</link>
-      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://devser.com.br/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PHP</title>
       <link>https://devser.com.br/categories/php/</link>
       <pubDate>Wed, 21 Aug 2019 11:18:05 -0300</pubDate>
@@ -94,15 +103,6 @@
       <pubDate>Mon, 19 Aug 2019 20:21:00 -0300</pubDate>
       
       <guid>https://devser.com.br/categories/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://devser.com.br/categories/linux/</link>
-      <pubDate>Tue, 18 Jun 2019 21:36:28 -0300</pubDate>
-      
-      <guid>https://devser.com.br/categories/linux/</guid>
       <description></description>
     </item>
     

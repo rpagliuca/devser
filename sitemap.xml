@@ -4,16 +4,36 @@
   
   <url>
     <loc>https://devser.com.br/</loc>
-    <lastmod>2021-08-10T15:41:07-03:00</lastmod>
+    <lastmod>2022-05-12T10:48:26-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/</loc>
-    <lastmod>2021-08-10T15:41:07-03:00</lastmod>
+    <loc>https://devser.com.br/categories/</loc>
+    <lastmod>2022-05-12T10:48:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/devops/</loc>
+    <lastmod>2022-05-12T10:48:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/categories/linux/</loc>
+    <lastmod>2022-05-12T10:48:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/</loc>
+    <lastmod>2022-05-12T10:48:26-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://devser.com.br/posts/</loc>
+    <lastmod>2022-05-12T10:48:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/</loc>
     <lastmod>2021-08-10T15:41:07-03:00</lastmod>
   </url>
   
@@ -24,11 +44,6 @@
   
   <url>
     <loc>https://devser.com.br/posts/anotacoes-sobre-livro-inspired-product-management/</loc>
-    <lastmod>2021-07-23T20:13:01-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://devser.com.br/categories/</loc>
     <lastmod>2021-07-23T20:13:01-03:00</lastmod>
   </url>
   
@@ -103,11 +118,6 @@
   </url>
   
   <url>
-    <loc>https://devser.com.br/categories/devops/</loc>
-    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://devser.com.br/posts/devopsdays-campinas/</loc>
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url>
@@ -139,11 +149,6 @@
   
   <url>
     <loc>https://devser.com.br/posts/como-gerar-uma-senha-aleatoria-no-terminal-do-linux/</loc>
-    <lastmod>2019-06-18T21:36:28-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://devser.com.br/categories/linux/</loc>
     <lastmod>2019-06-18T21:36:28-03:00</lastmod>
   </url>
   

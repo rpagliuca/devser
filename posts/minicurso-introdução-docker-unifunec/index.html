@@ -8,7 +8,7 @@
 <meta name="author" content="Rafael Santos">
 
 <meta name="generator" content="Hugo 0.78.1" />
-<title>Como aumentar o espaço da partição /dev/shm &middot; /dev/ser</title>
+<title>Minicurso UNIFUNEC: Introdução a Docker &middot; /dev/ser</title>
 <link rel="shortcut icon" href="https://devser.com.br/images/favicon.ico">
 <link rel="stylesheet" href="https://devser.com.br/css/style.css">
 <link rel="stylesheet" href="https://devser.com.br/css/highlight.css">
@@ -22,36 +22,30 @@
 
 
 
-<meta property="og:title" content="Como aumentar o espaço da partição /dev/shm" />
-<meta property="og:description" content="(Co-publicado em Time Raposa)
-A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.
-Essa partição é muito importante para facilitar a troca de informações entre diferentes processos do sistema operacional, e também para deixar alguns processos mais rápidos.
-No Debian 9 (e em outras distros também), o padrão é que essa partição seja montada com 50% da memória RAM. No meu caso, tenho uma máquina com 16GB de RAM, então quando eu ligo meu sistema, possuo 8GB nessa partição:" />
+<meta property="og:title" content="Minicurso UNIFUNEC: Introdução a Docker" />
+<meta property="og:description" content="Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/" />
-<meta property="article:published_time" content="2018-11-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2018-11-06T00:00:00+00:00" />
+<meta property="og:url" content="https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/" />
+<meta property="article:published_time" content="2022-05-12T10:48:26-03:00" />
+<meta property="article:modified_time" content="2022-05-12T10:48:26-03:00" />
 
 
-<meta itemprop="name" content="Como aumentar o espaço da partição /dev/shm">
-<meta itemprop="description" content="(Co-publicado em Time Raposa)
-A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.
-Essa partição é muito importante para facilitar a troca de informações entre diferentes processos do sistema operacional, e também para deixar alguns processos mais rápidos.
-No Debian 9 (e em outras distros também), o padrão é que essa partição seja montada com 50% da memória RAM. No meu caso, tenho uma máquina com 16GB de RAM, então quando eu ligo meu sistema, possuo 8GB nessa partição:">
-<meta itemprop="datePublished" content="2018-11-06T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2018-11-06T00:00:00+00:00" />
-<meta itemprop="wordCount" content="402">
+<meta itemprop="name" content="Minicurso UNIFUNEC: Introdução a Docker">
+<meta itemprop="description" content="Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos.">
+<meta itemprop="datePublished" content="2022-05-12T10:48:26-03:00" />
+<meta itemprop="dateModified" content="2022-05-12T10:48:26-03:00" />
+<meta itemprop="wordCount" content="834">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Como aumentar o espaço da partição /dev/shm"/>
-<meta name="twitter:description" content="(Co-publicado em Time Raposa)
-A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.
-Essa partição é muito importante para facilitar a troca de informações entre diferentes processos do sistema operacional, e também para deixar alguns processos mais rápidos.
-No Debian 9 (e em outras distros também), o padrão é que essa partição seja montada com 50% da memória RAM. No meu caso, tenho uma máquina com 16GB de RAM, então quando eu ligo meu sistema, possuo 8GB nessa partição:"/>
+<meta name="twitter:title" content="Minicurso UNIFUNEC: Introdução a Docker"/>
+<meta name="twitter:description" content="Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.
+ Data: 12/05/2022 Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil Duração do conteúdo: 130 minutos Cronograma:  19h00: Etapas 1 a 8 (70 minutos) 20h10: Intervalo (20 minutos) 20h30: Etapas 9 a 13 (60 minutos) 21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.    Conteúdo O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos."/>
 
 
     </head>
@@ -112,50 +106,136 @@ No Debian 9 (e em outras distros também), o padrão é que essa partição seja
         
 <article class="post">
     <header>
-        <h1>Como aumentar o espaço da partição /dev/shm</h1>
+        <h1>Minicurso UNIFUNEC: Introdução a Docker</h1>
         <h2 class="subtitle"></h2>
         <h2 class="headline">
-        6
-        Novembro
-        2018
+        12
+        Maio
+        2022
         <br>
         
         </h2>
     </header>
     <section id="post-body">
-        <p>(Co-publicado em <a href="http://www.timeraposa.com.br/2018/11/como-aumentar-o-espaco-da-particao-devshm/">Time Raposa</a>)</p>
-<p>A partição /dev/shm utiliza o filesystem tmpfs, sistema de arquivos especial, armazenado 100% na memória RAM.</p>
-<p>Essa partição é muito importante para facilitar a troca de informações entre diferentes processos do sistema operacional, e também para deixar alguns processos mais rápidos.</p>
-<p>No Debian 9 (e em outras distros também), o padrão é que essa partição seja montada com 50% da memória RAM. No meu caso, tenho uma máquina com 16GB de RAM, então quando eu ligo meu sistema, possuo 8GB nessa partição:</p>
-<pre><code>$ df -h
-Filesystem Size Used Avail Use% Mounted on
-udev 7.8G 0 7.8G 0% /dev
-tmpfs 1.6G 126M 1.5G 8% /run
-/dev/sda10 425G 357G 47G 89% /
-tmpfs 8.0G 221M 7.8G 3% /dev/shm
-tmpfs 5.0M 4.0K 5.0M 1% /run/lock
-tmpfs 7.8G 0 7.8G 0% /sys/fs/cgroup
-/dev/sda1 496M 58M 439M 12% /boot/efi
-tmpfs 1.6G 28K 1.6G 1% /run/user/118
-tmpfs 1.6G 88K 1.6G 1% /run/user/1000
-</code></pre><p>Entretanto, em alguns casos específicos, eu preciso aumentar provisoriamente o tempo dessa partição. Um exemplo é quando eu utilizo alguns scripts de importação de grandes bases de dados, que utilizam mais de 8GB de memória. Esses scripts que eu utilizo rodam um container da imagem mysql:5 utilizando Docker, utilizando o /dev/shm/mysql como volume do container. E eu utilizo esse container provisório para importar o banco, o que em alguns casos fica 10x mais rápido do que importar diretamente no HD convencional.</p>
-<p>Neste momento, preciso importar um banco de dados que utiliza até 12GB de RAM no total, então eu preciso fazer o seguinte:</p>
-<p>sudo mount -o remount,size=12G tmpfs /dev/shm</p>
-<p>Após rodar esse comando, minha partição /dev/shm foi aumentada para 12GB da memória RAM.</p>
-<p>Rodando novamente, o comando df -h, agora tenho o seguinte output:</p>
-<pre><code>$ df -h
-Filesystem Size Used Avail Use% Mounted on
-udev 7.8G 0 7.8G 0% /dev
-tmpfs 1.6G 126M 1.5G 8% /run
-/dev/sda10 425G 357G 47G 89% /
-tmpfs 12G 222M 12G 2% /dev/shm
-tmpfs 5.0M 4.0K 5.0M 1% /run/lock
-tmpfs 7.8G 0 7.8G 0% /sys/fs/cgroup
-/dev/sda1 496M 58M 439M 12% /boot/efi
-tmpfs 1.6G 28K 1.6G 1% /run/user/118
-tmpfs 1.6G 84K 1.6G 1% /run/user/1000
-</code></pre><p>Não esqueça de depois de rodar seus scripts, voltar o tamanho /dev/shm para o tamanho original (50% da sua memória RAM), rodando o mesmo comando que utilizou para alterar para 12GB. Caso você esqueça de reduzir o tamanho do /dev/shm, aumenta a probabilidade de sua máquina travar por escassez de memória!</p>
-<p>Até a próxima!</p>
+        <p>Artigo de apoio ao minicurso &ldquo;Introdução a Docker: desenvolvendo aplicações prontas para a nuvem&rdquo;.</p>
+<ul>
+<li>Data: 12/05/2022</li>
+<li>Local: UNIFUNEC, Santa Fé do Sul, SP - Brasil</li>
+<li>Duração do conteúdo: 130 minutos</li>
+<li>Cronograma:
+<ul>
+<li>19h00: Etapas 1 a 8 (70 minutos)</li>
+<li>20h10: Intervalo (20 minutos)</li>
+<li>20h30: Etapas 9 a 13 (60 minutos)</li>
+<li>21h30: Encerramento do conteúdo programado. Suporte, solução de dúvidas e dicas até 22h00.</li>
+</ul>
+</li>
+</ul>
+<h2 id="conteúdo">Conteúdo</h2>
+<p>O minicurso é dividido em 13 etapas, com duração total estimada em 130 minutos.</p>
+<h3 id="etapa-1---cadastro-de-usuário-no-docker-hub-e-github-5-minutos">Etapa 1 - Cadastro de usuário no Docker Hub e GitHub (5 minutos)</h3>
+<p>Antes de começarmos com o curso, faça seu cadastro de usuário nas plataformas Docker Hub e GitHub. Vamos precisar usar essas 2 plataformas, e sem esses usuários é impossível prosseguir com o curso.</p>
+<p>É importante fazer isso de imediato, pois às vezes os e-mails de confirmação de conta podem demorar alguns minutos até serem recebidos. Em caso de demora, não esqueça de verificar sua caixa de SPAM.</p>
+<ul>
+<li>Cadastro de usuário no Docker Hub: <a href="https://hub.docker.com">https://hub.docker.com</a></li>
+<li>Cadastro de usuário no GitHub: <a href="https://github.com">https://github.com</a></li>
+</ul>
+<h3 id="etapa-2---objetivos-do-minicurso-5-minutos">Etapa 2 - Objetivos do minicurso (5 minutos)</h3>
+<p>Para ser acessível a uma grande diversidade da audiência do curso, composta por alunos com diferentes níveis de experiência, temos objetivos que vão do básico ao avançado. Se você é novo na área e tiver problemas em atingir os objetivos intermediários ou avançados, não se preocupe, isso é compreensível. Foque nos objetivos básicos, e o curso já terá sido proveitoso para você.</p>
+<ul>
+<li>Objetivo básico 1: obter familiaridade básica com ferramentas como Docker e Git, e entender seus propósitos na engenharia de software</li>
+<li>Objetivo básico 2: rodar uma aplicação simples (jogo do Mario) no Docker Playground usando modo imperativo</li>
+<li>Objetivo intermediário: rodar uma aplicação complexa (Wikipédia) no Docker Playground usando modo declarativo (Docker Compose)</li>
+<li>Objetivo avançado: construir uma imagem Docker (aplicação Docker) customizada utilizando GitHub Actions e rodá-la no Docker Playground</li>
+</ul>
+<h3 id="etapa-3---apresentação-dos-softwares-e-serviços-que-usaremos-no-minicurso-10-minutos">Etapa 3 - Apresentação dos softwares e serviços que usaremos no minicurso (10 minutos)</h3>
+<ul>
+<li>Git: software utilizado usualmente via terminal/console para controle de versão de projetos de software</li>
+<li>GitHub: aplicação web/ecossistema integrado ao Git para controle de versão de projetos de software, cooperação entre colaboradores, e pipelines automatizados</li>
+<li>Docker: software utilizado usualmente via terminal/console para criar e rodar aplicações contêneirizadas</li>
+<li>Docker Hub: repositório (&ldquo;loja&rdquo;) de aplicativos Docker</li>
+<li>Docker Playground (<a href="https://labs.play-with-docker.com/):">https://labs.play-with-docker.com/):</a> fornece um ambiente de laboratório virtual Linux com as principais ferramentas pré-instaladas: Docker + Docker Compose + Git</li>
+</ul>
+<h3 id="etapa-4---tópicos-teóricos---parte-1-10-minutos">Etapa 4 - Tópicos teóricos - Parte 1 (10 minutos)</h3>
+<ul>
+<li>Apresentação do problema: &ldquo;na minha máquina funciona&rdquo;</li>
+<li>Apresentação da solução: contêinerização</li>
+<li>Docker no Windows (WSL2 ou Máquina Virtual) vs Docker no Linux</li>
+</ul>
+<h3 id="etapa-5---deploy-de-um-jogo-do-mario-no-docker-playground-20-minutos">Etapa 5 - Deploy de um jogo do Mario no Docker Playground (20 minutos)</h3>
+<ul>
+<li>Comando: <code>docker run -d -p 8001:8080 pengbai/docker-supermario</code></li>
+</ul>
+<h3 id="etapa-6---deploy-de-um-jogo-de-tetris-no-docker-playground-75-minutos">Etapa 6 - Deploy de um jogo de Tetris no Docker Playground (7,5 minutos)</h3>
+<ul>
+<li>Comando: <code>docker run -d -p 8002:80 uzyexe/tetris</code></li>
+</ul>
+<h3 id="etapa-7---deploy-de-uma-aplicação-de-lista-de-tarefas-no-docker-playground-75-minutos">Etapa 7 - Deploy de uma aplicação de &ldquo;Lista de tarefas&rdquo; no Docker Playground (7,5 minutos)</h3>
+<ul>
+<li>Comando: <code>docker run -it -p 8003:8080 --name todo_list_app thoba/todo-list-app</code></li>
+</ul>
+<h3 id="etapa-8---tópicos-teóricos---parte-2-5-minutos">Etapa 8 - Tópicos teóricos - Parte 2 (5 minutos)</h3>
+<ul>
+<li>Docker Compose</li>
+<li>Diferentes modos de interagir com o Docker: manualmente vs de forma automatizada</li>
+</ul>
+<h3 id="etapa-9---deploy-de-uma-aplicação-complexa-chat-no-docker-playground-10-minutos">Etapa 9 - Deploy de uma aplicação complexa (chat) no Docker Playground (10 minutos)</h3>
+<ul>
+<li>Esta aplicação possui ao mesmo tempo 2 contêineres rodando: 1 banco de dados + 1 webapp Javascript</li>
+<li>Página do projeto: <a href="https://hub.docker.com/r/ageapps/docker-chat">https://hub.docker.com/r/ageapps/docker-chat</a></li>
+<li>Vamos rodá-la de modo imperativo (manual)</li>
+<li>Comando 1: <code>docker run -v &quot;$(pwd)&quot;/database:/data --name mongo_chat_db -d mongo mongod</code></li>
+<li>Comando 2: <code>docker run -d --name node_chat_server -v &quot;$(pwd)&quot;/database:/data --link mongo_chat_db:db -p 8004:4000 ageapps/docker-chat</code></li>
+</ul>
+<h3 id="etapa-10---deploy-de-uma-aplicação-complexa-wikipédia-no-docker-playground-15-minutos">Etapa 10 - Deploy de uma aplicação complexa (Wikipédia) no Docker Playground (15 minutos)</h3>
+<ul>
+<li>Esta aplicação inclui ao mesmo tempo 2 contêineres:
+<ul>
+<li>1 banco de dados</li>
+<li>1 aplicação WEB em PHP</li>
+</ul>
+</li>
+<li>Vamos rodá-la de modo declarativo (manifesto) com Docker Compose</li>
+<li>Instruções: <a href="https://hub.docker.com/r/bitnami/mediawiki/">https://hub.docker.com/r/bitnami/mediawiki/</a></li>
+<li>Adicionar env: <code>- MEDIAWIKI_HOST=&lt;seu_host_aqui&gt;</code> (para descobrir o seu host, abra o link de uma das aplicações que subimos anteriormente, remova o http:// e a barra final, e substitua a porta (exemplo: 8004) para 80)</li>
+<li>Rodar comando: <code>docker-compose up</code></li>
+</ul>
+<h3 id="etapa-11---tópicos-teóricos---parte-2-5-minutos">Etapa 11 - Tópicos teóricos - Parte 2 (5 minutos)</h3>
+<ul>
+<li>Docker não é a melhor solução para aplicações GUI Linux ou Windows</li>
+<li>Docker não é máquina virtual</li>
+<li>Docker é principalmente recomendado para aplicações WEB</li>
+<li>Plataformas que dão suporte a construir (build) aplicações/imagens Docker
+<ul>
+<li>Bitbucket (Bitbucket Pipelines)</li>
+<li>Github (Github Actions)</li>
+<li>GitLab</li>
+<li>Travis CI</li>
+<li>Jenkins</li>
+<li>Circle CI</li>
+</ul>
+</li>
+<li>Algumas plataformas que dão suporte a rodar/hospedar aplicações Docker
+<ul>
+<li>AWS (Elastic Beanstalk; Elastic Container Service)</li>
+<li>Digital Ocean</li>
+<li>Google Cloud</li>
+<li>Kubernetes (em qualquer provedor)</li>
+</ul>
+</li>
+</ul>
+<h3 id="etapa-12---build-de-aplicação-customizada-com-docker--github-actions-20-minutos">Etapa 12 - Build de aplicação customizada com Docker + GitHub Actions (20 minutos)</h3>
+<ul>
+<li>Fork do repositório: <a href="https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub">https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub</a></li>
+<li>Configurar as secrets de USUÁRIO e SENHA do Docker Hub dentro do projeto do GitHub</li>
+<li>Comando: <code>git clone https://github.com/rpagliuca/demo-github-actions-publish-to-docker-hub.git</code></li>
+<li>Alterar arquivo <code>.github/workflows/build-docker-image.yml</code> e atualizar o seu nome de usuário do Docker Hub</li>
+<li>Alterar o arquivo <code>app/main.go</code>, customizando a string da linha 29</li>
+<li>Commit e push das mudanças para o seu fork, com os comandos abaixo</li>
+<li>Comando 1: <code>git commit -am 'Customização'</code></li>
+<li>Comando 2: <code>git push</code></li>
+</ul>
+<h3 id="etapa-13---conclusão-e-dúvidas-10-minutos">Etapa 13 - Conclusão e dúvidas (10 minutos)</h3>
 
     </section>
 </article>
@@ -167,7 +247,7 @@ tmpfs 1.6G 84K 1.6G 1% /run/user/1000
         <span>Engenheiro Físico (UFSCar) e Mestre em Ciências da Computação (USP). A paixão veio de criança: criou seu primeiro website pessoal em 1999. Trabalha com desenvolvimento de software desde 2006.</span>
     </div>
     <section id="sharing" style="margin-top: 20px">
-        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fcomo-aumentar-o-espaco-da-particao-dev-shm%2f - Como%20aumentar%20o%20espa%c3%a7o%20da%20parti%c3%a7%c3%a3o%20%2fdev%2fshm "><span class="icon-twitter"> Compartilhe</span></a>
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdevser.com.br%2fposts%2fminicurso-introdu%25C3%25A7%25C3%25A3o-docker-unifunec%2f - Minicurso%20UNIFUNEC%3a%20Introdu%c3%a7%c3%a3o%20a%20Docker "><span class="icon-twitter"> Compartilhe</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -187,7 +267,7 @@ tmpfs 1.6G 84K 1.6G 1% /run/user/1000
 <center>
     <div class="fb-comments"
          data-width="500"
-         data-href="https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/"
+         data-href="https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/"
     >
     </div>
 </center>
@@ -199,10 +279,6 @@ tmpfs 1.6G 84K 1.6G 1% /run/user/1000
 
     
     
-    
-        <li>
-            <a href="https://devser.com.br/posts/minicurso-introdu%C3%A7%C3%A3o-docker-unifunec/">Minicurso UNIFUNEC: Introdução a Docker<aside class="dates">May 12 2022</aside></a>
-        </li>
     
         <li>
             <a href="https://devser.com.br/posts/anotacoes-sobre-livro-user-story-mapping-jeff-patton/">Anotações sobre o livro &#34;User Story Mapping&#34; de Jeff Patton<aside class="dates">Aug 10 2021</aside></a>
@@ -278,6 +354,10 @@ tmpfs 1.6G 84K 1.6G 1% /run/user/1000
     
         <li>
             <a href="https://devser.com.br/posts/migrando-de-wordpress-para-gohugo/">Migrando de Wordpress para Hugo (gohugo)<aside class="dates">Jun 8 2019</aside></a>
+        </li>
+    
+        <li>
+            <a href="https://devser.com.br/posts/como-aumentar-o-espaco-da-particao-dev-shm/">Como aumentar o espaço da partição /dev/shm<aside class="dates">Nov 6 2018</aside></a>
         </li>
     
         <li>
